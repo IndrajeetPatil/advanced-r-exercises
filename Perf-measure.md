@@ -68,7 +68,7 @@ rm
 #>     }
 #>     .Internal(remove(list, envir, inherits))
 #> }
-#> <bytecode: 0x564a013caec8>
+#> <bytecode: 0x55e130a42eb8>
 #> <environment: namespace:base>
 ```
 
@@ -144,8 +144,8 @@ full_join(t_bench_df, t_systime_df, by = "expression")
 #> # A tibble: 2 × 4
 #>   expression bench_mean systime_with_gc systime_with_nogc
 #>   <bch:expr>   <bch:tm>           <dbl>             <dbl>
-#> 1 sqrt(x)      869.08ns           0.682             0.452
-#> 2 x^0.5          2.16µs           2.02              2.03
+#> 1 sqrt(x)      843.33ns           0.643             0.431
+#> 2 x^0.5          2.16µs           2.00              2.00
 ```
 
 The comparison reveals that these two approaches yield quite similar results. Slight differences in exact values is possibly due to differences in the precision of timers used internally by these functions.
@@ -180,10 +180,10 @@ bench::mark(
 #> # A tibble: 4 × 2
 #>   expression      median
 #>   <bch:expr>    <bch:tm>
-#> 1 sqrt(x)         3.02µs
-#> 2 exp(log(x)/2)  12.61µs
+#> 1 sqrt(x)         3.01µs
+#> 2 exp(log(x)/2)   12.6µs
 #> 3 x^0.5          18.77µs
-#> 4 x^(1/2)        18.93µs
+#> 4 x^(1/2)        18.94µs
 ```
 
 The specialized primitive function `sqrt()` (written in `C`) is the fastest way to compute square root.
@@ -205,7 +205,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2024-12-15
+#>  date     2024-12-22
 #>  pandoc   3.6 @ /opt/hostedtoolcache/pandoc/3.6/x64/ (via rmarkdown)
 #> 
 #> ─ Packages ───────────────────────────────────────────────
@@ -220,7 +220,6 @@ sessioninfo::session_info(include_base = TRUE)
 #>  dplyr       * 1.1.4   2023-11-17 [1] RSPM
 #>  emoji         16.0.0  2024-10-28 [1] RSPM
 #>  evaluate      1.0.1   2024-10-10 [1] RSPM
-#>  fansi         1.0.6   2023-12-08 [1] RSPM
 #>  fastmap       1.2.0   2024-05-15 [1] RSPM
 #>  generics      0.1.3   2022-07-05 [1] RSPM
 #>  glue          1.8.0   2024-09-30 [1] RSPM
@@ -232,7 +231,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  lifecycle     1.0.4   2023-11-07 [1] RSPM
 #>  magrittr    * 2.0.3   2022-03-30 [1] RSPM
 #>  methods     * 4.4.2   2024-10-31 [3] local
-#>  pillar        1.9.0   2023-03-22 [1] RSPM
+#>  pillar        1.10.0  2024-12-17 [1] RSPM
 #>  pkgconfig     2.0.3   2019-09-22 [1] RSPM
 #>  profmem       0.6.0   2020-12-13 [1] RSPM
 #>  profvis     * 0.4.0   2024-09-20 [1] RSPM

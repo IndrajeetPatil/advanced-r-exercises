@@ -94,7 +94,7 @@ possibly
 #>         })
 #>     }
 #> }
-#> <bytecode: 0x56247ff6cf98>
+#> <bytecode: 0x55c325fd6c90>
 #> <environment: namespace:purrr>
 ```
 
@@ -120,7 +120,7 @@ safely
 #>     check_bool(quiet)
 #>     function(...) capture_error(.f(...), otherwise, quiet)
 #> }
-#> <bytecode: 0x562480140af8>
+#> <bytecode: 0x55c3261a89a0>
 #> <environment: namespace:purrr>
 
 purrr:::capture_error
@@ -132,7 +132,7 @@ purrr:::capture_error
 #>         list(result = otherwise, error = e)
 #>     })
 #> }
-#> <bytecode: 0x56248017aee8>
+#> <bytecode: 0x55c3261e6f80>
 #> <environment: namespace:purrr>
 ```
 
@@ -281,10 +281,10 @@ withr::with_tempfile("logfile", code = {
 
   cat(readLines(logfile), sep = "\n")
 })
-#> Function created at: 2024-12-15 01:09:32.963444
-#> Function called at:  2024-12-15 01:09:37.970414
-#> Function called at:  2024-12-15 01:09:42.975785
-#> Function called at:  2024-12-15 01:09:50.984221
+#> Function created at: 2024-12-22 01:06:28.950703
+#> Function called at:  2024-12-22 01:06:33.957574
+#> Function called at:  2024-12-22 01:06:38.962997
+#> Function called at:  2024-12-22 01:06:46.971461
 ```
 
 ---
@@ -333,7 +333,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2024-12-15
+#>  date     2024-12-22
 #>  pandoc   3.6 @ /opt/hostedtoolcache/pandoc/3.6/x64/ (via rmarkdown)
 #> 
 #> ─ Packages ───────────────────────────────────────────────
@@ -347,7 +347,6 @@ sessioninfo::session_info(include_base = TRUE)
 #>  dplyr         1.1.4   2023-11-17 [1] RSPM
 #>  emoji         16.0.0  2024-10-28 [1] RSPM
 #>  evaluate      1.0.1   2024-10-10 [1] RSPM
-#>  fansi         1.0.6   2023-12-08 [1] RSPM
 #>  fastmap       1.2.0   2024-05-15 [1] RSPM
 #>  generics      0.1.3   2022-07-05 [1] RSPM
 #>  glue          1.8.0   2024-09-30 [1] RSPM
@@ -358,7 +357,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  lifecycle     1.0.4   2023-11-07 [1] RSPM
 #>  magrittr    * 2.0.3   2022-03-30 [1] RSPM
 #>  methods     * 4.4.2   2024-10-31 [3] local
-#>  pillar        1.9.0   2023-03-22 [1] RSPM
+#>  pillar        1.10.0  2024-12-17 [1] RSPM
 #>  pkgconfig     2.0.3   2019-09-22 [1] RSPM
 #>  purrr       * 1.0.2   2023-08-10 [1] RSPM
 #>  R6            2.5.1   2021-08-19 [1] RSPM
@@ -371,7 +370,6 @@ sessioninfo::session_info(include_base = TRUE)
 #>  tibble        3.2.1   2023-03-20 [1] RSPM
 #>  tidyselect    1.2.1   2024-03-11 [1] RSPM
 #>  tools         4.4.2   2024-10-31 [3] local
-#>  utf8          1.2.4   2023-10-22 [1] RSPM
 #>  utils       * 4.4.2   2024-10-31 [3] local
 #>  vctrs         0.6.5   2023-12-01 [1] RSPM
 #>  withr         3.0.2   2024-10-28 [1] RSPM

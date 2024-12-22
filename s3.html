@@ -512,7 +512,7 @@ etc.</li>
 <code class="sourceCode R"><span><span class="va">t</span></span>
 <span><span class="co">#&gt; function (x) </span></span>
 <span><span class="co">#&gt; UseMethod("t")</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x563e7f533b28&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x56416807dbb0&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:base&gt;</span></span>
 <span><span class="fu">sloop</span><span class="fu">::</span><span class="fu"><a href="https://sloop.r-lib.org/reference/is_s3_generic.html">is_s3_generic</a></span><span class="op">(</span><span class="st">"t"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] TRUE</span></span>
@@ -520,7 +520,7 @@ etc.</li>
 <span><span class="va">t.test</span></span>
 <span><span class="co">#&gt; function (x, ...) </span></span>
 <span><span class="co">#&gt; UseMethod("t.test")</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x563e7e156638&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x564164f1a638&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:stats&gt;</span></span>
 <span><span class="fu">sloop</span><span class="fu">::</span><span class="fu"><a href="https://sloop.r-lib.org/reference/is_s3_generic.html">is_s3_generic</a></span><span class="op">(</span><span class="st">"t.test"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] TRUE</span></span></code></pre></div>
@@ -848,14 +848,14 @@ It just adds a new class to the object to indicate that it should be treated <em
 <span><span class="co">#&gt; {</span></span>
 <span><span class="co">#&gt;     .Date(NextMethod("["), oldClass(x))</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x563e80963418&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x56416726b750&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:base&gt;</span></span></code></pre></div>
 <p>The <code>.Date</code> function looks like this:</p>
 <div class="sourceCode" id="cb402"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">.Date</span></span>
 <span><span class="co">#&gt; function (xx, cl = "Date") </span></span>
 <span><span class="co">#&gt; `class&lt;-`(xx, cl)</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x563e809e7438&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x564167637bc8&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:base&gt;</span></span></code></pre></div>
 <p>Here, <code>oldClass</code> is the same as <code><a href="https://rdrr.io/r/base/class.html">class()</a></code>.</p>
 <p>Therefore, by reading this code, we can surmise that:</p>
@@ -875,7 +875,7 @@ It just adds a new class to the object to indicate that it should be treated <em
 <span><span class="co">#&gt; [1] "subDate" "Date"</span></span>
 <span></span>
 <span><span class="va">x</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span>
-<span><span class="co">#&gt; [1] "2024-12-15"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "2024-12-22"</span></span></code></pre></div>
 <p><strong>Q2.</strong> R has two classes for representing date time data, <code>POSIXct</code> and <code>POSIXlt</code>, which both inherit from <code>POSIXt</code>. Which generics have different behaviours for the two classes? Which generics share the same behaviour?</p>
 <p><strong>A2.</strong> First, let’s demonstrate that <code>POSIXct</code> and <code>POSIXlt</code> are indeed subclasses and <code>POSIXt</code> is the superclass.</p>
 <div class="sourceCode" id="cb404"><pre class="downlit sourceCode r">
@@ -1169,7 +1169,7 @@ It just adds a new class to the object to indicate that it should be treated <em
 <span><span class="co">#&gt;  collate  C.UTF-8</span></span>
 <span><span class="co">#&gt;  ctype    C.UTF-8</span></span>
 <span><span class="co">#&gt;  tz       UTC</span></span>
-<span><span class="co">#&gt;  date     2024-12-15</span></span>
+<span><span class="co">#&gt;  date     2024-12-22</span></span>
 <span><span class="co">#&gt;  pandoc   3.6 @ /opt/hostedtoolcache/pandoc/3.6/x64/ (via rmarkdown)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; ─ Packages ───────────────────────────────────────────────</span></span>
@@ -1188,7 +1188,6 @@ It just adds a new class to the object to indicate that it should be treated <em
 <span><span class="co">#&gt;  dplyr       * 1.1.4   2023-11-17 [1] RSPM</span></span>
 <span><span class="co">#&gt;  emoji         16.0.0  2024-10-28 [1] RSPM</span></span>
 <span><span class="co">#&gt;  evaluate      1.0.1   2024-10-10 [1] RSPM</span></span>
-<span><span class="co">#&gt;  fansi         1.0.6   2023-12-08 [1] RSPM</span></span>
 <span><span class="co">#&gt;  fastmap       1.2.0   2024-05-15 [1] RSPM</span></span>
 <span><span class="co">#&gt;  fs            1.6.5   2024-10-30 [1] RSPM</span></span>
 <span><span class="co">#&gt;  generics      0.1.3   2022-07-05 [1] RSPM</span></span>
@@ -1203,7 +1202,7 @@ It just adds a new class to the object to indicate that it should be treated <em
 <span><span class="co">#&gt;  magrittr    * 2.0.3   2022-03-30 [1] RSPM</span></span>
 <span><span class="co">#&gt;  memoise       2.0.1   2021-11-26 [1] RSPM</span></span>
 <span><span class="co">#&gt;  methods     * 4.4.2   2024-10-31 [3] local</span></span>
-<span><span class="co">#&gt;  pillar        1.9.0   2023-03-22 [1] RSPM</span></span>
+<span><span class="co">#&gt;  pillar        1.10.0  2024-12-17 [1] RSPM</span></span>
 <span><span class="co">#&gt;  pkgconfig     2.0.3   2019-09-22 [1] RSPM</span></span>
 <span><span class="co">#&gt;  purrr       * 1.0.2   2023-08-10 [1] RSPM</span></span>
 <span><span class="co">#&gt;  R6            2.5.1   2021-08-19 [1] RSPM</span></span>
@@ -1266,7 +1265,7 @@ It just adds a new class to the object to indicate that it should be treated <em
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2024-12-15.</p>
+    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2024-12-22.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -159,7 +159,7 @@
 <span><span class="co">#&gt;         })</span></span>
 <span><span class="co">#&gt;     }</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x556ab4d8a078&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x562199200e60&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:purrr&gt;</span></span></code></pre></div>
 <p>Looking at this code, we can see that <code><a href="https://purrr.tidyverse.org/reference/possibly.html">possibly()</a></code>:</p>
 <ul>
@@ -179,7 +179,7 @@
 <span><span class="co">#&gt;     check_bool(quiet)</span></span>
 <span><span class="co">#&gt;     function(...) capture_error(.f(...), otherwise, quiet)</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x556ab4f609e0&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x562199403d18&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:purrr&gt;</span></span>
 <span></span>
 <span><span class="fu">purrr</span><span class="fu">:::</span><span class="va">capture_error</span></span>
@@ -191,7 +191,7 @@
 <span><span class="co">#&gt;         list(result = otherwise, error = e)</span></span>
 <span><span class="co">#&gt;     })</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x556ab4f9f630&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x562199447a08&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:purrr&gt;</span></span></code></pre></div>
 <p>Looking at this code, we can see that <code><a href="https://purrr.tidyverse.org/reference/safely.html">safely()</a></code>:</p>
 <ul>
@@ -316,10 +316,10 @@
 <span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/readLines.html">readLines</a></span><span class="op">(</span><span class="va">logfile</span><span class="op">)</span>, sep <span class="op">=</span> <span class="st">"\n"</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Function created at: 2024-12-15 01:01:12.933084</span></span>
-<span><span class="co">#&gt; Function called at:  2024-12-15 01:01:17.939883</span></span>
-<span><span class="co">#&gt; Function called at:  2024-12-15 01:01:22.941753</span></span>
-<span><span class="co">#&gt; Function called at:  2024-12-15 01:01:30.950191</span></span></code></pre></div>
+<span><span class="co">#&gt; Function created at: 2024-12-22 00:57:55.611857</span></span>
+<span><span class="co">#&gt; Function called at:  2024-12-22 00:58:00.618795</span></span>
+<span><span class="co">#&gt; Function called at:  2024-12-22 00:58:05.624211</span></span>
+<span><span class="co">#&gt; Function called at:  2024-12-22 00:58:13.633145</span></span></code></pre></div>
 <hr>
 <p><strong>Q5.</strong> Modify <code>delay_by()</code> so that instead of delaying by a fixed amount of time, it ensures that a certain amount of time has elapsed since the function was last called. That is, if you called <code>g &lt;- delay_by(1, f); g(); Sys.sleep(2); g()</code> there shouldn’t be an extra delay.</p>
 <p><strong>A5.</strong> Modified version of the function meeting the specified requirements:</p>
@@ -361,7 +361,7 @@
 <span><span class="co">#&gt;  collate  C.UTF-8</span></span>
 <span><span class="co">#&gt;  ctype    C.UTF-8</span></span>
 <span><span class="co">#&gt;  tz       UTC</span></span>
-<span><span class="co">#&gt;  date     2024-12-15</span></span>
+<span><span class="co">#&gt;  date     2024-12-22</span></span>
 <span><span class="co">#&gt;  pandoc   3.6 @ /opt/hostedtoolcache/pandoc/3.6/x64/ (via rmarkdown)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; ─ Packages ───────────────────────────────────────────────</span></span>
@@ -378,7 +378,6 @@
 <span><span class="co">#&gt;  dplyr         1.1.4   2023-11-17 [1] RSPM</span></span>
 <span><span class="co">#&gt;  emoji         16.0.0  2024-10-28 [1] RSPM</span></span>
 <span><span class="co">#&gt;  evaluate      1.0.1   2024-10-10 [1] RSPM</span></span>
-<span><span class="co">#&gt;  fansi         1.0.6   2023-12-08 [1] RSPM</span></span>
 <span><span class="co">#&gt;  fastmap       1.2.0   2024-05-15 [1] RSPM</span></span>
 <span><span class="co">#&gt;  fs            1.6.5   2024-10-30 [1] RSPM</span></span>
 <span><span class="co">#&gt;  generics      0.1.3   2022-07-05 [1] RSPM</span></span>
@@ -393,7 +392,7 @@
 <span><span class="co">#&gt;  magrittr    * 2.0.3   2022-03-30 [1] RSPM</span></span>
 <span><span class="co">#&gt;  memoise       2.0.1   2021-11-26 [1] RSPM</span></span>
 <span><span class="co">#&gt;  methods     * 4.4.2   2024-10-31 [3] local</span></span>
-<span><span class="co">#&gt;  pillar        1.9.0   2023-03-22 [1] RSPM</span></span>
+<span><span class="co">#&gt;  pillar        1.10.0  2024-12-17 [1] RSPM</span></span>
 <span><span class="co">#&gt;  pkgconfig     2.0.3   2019-09-22 [1] RSPM</span></span>
 <span><span class="co">#&gt;  purrr       * 1.0.2   2023-08-10 [1] RSPM</span></span>
 <span><span class="co">#&gt;  R6            2.5.1   2021-08-19 [1] RSPM</span></span>
@@ -407,7 +406,6 @@
 <span><span class="co">#&gt;  tibble        3.2.1   2023-03-20 [1] RSPM</span></span>
 <span><span class="co">#&gt;  tidyselect    1.2.1   2024-03-11 [1] RSPM</span></span>
 <span><span class="co">#&gt;  tools         4.4.2   2024-10-31 [3] local</span></span>
-<span><span class="co">#&gt;  utf8          1.2.4   2023-10-22 [1] RSPM</span></span>
 <span><span class="co">#&gt;  utils       * 4.4.2   2024-10-31 [3] local</span></span>
 <span><span class="co">#&gt;  vctrs         0.6.5   2023-12-01 [1] RSPM</span></span>
 <span><span class="co">#&gt;  withr         3.0.2   2024-10-28 [1] RSPM</span></span>
@@ -450,7 +448,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2024-12-15.</p>
+    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2024-12-22.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
