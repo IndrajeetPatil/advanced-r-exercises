@@ -99,7 +99,7 @@
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/match.fun.html">match.fun</a></span><span class="op">(</span><span class="st">"mean"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; function (x, ...) </span></span>
 <span><span class="co">#&gt; UseMethod("mean")</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x55e057b39d80&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x55bbda316d80&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:base&gt;</span></span></code></pre></div>
 <p>But, given a function, it doesn’t make sense to find its name because there can be multiple names bound to the same function.</p>
 <div class="sourceCode" id="cb119"><pre class="downlit sourceCode r">
@@ -372,7 +372,7 @@
 <span><span class="va">mean</span></span>
 <span><span class="co">#&gt; function (x, ...) </span></span>
 <span><span class="co">#&gt; UseMethod("mean")</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x55e057b39d80&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x55bbda316d80&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:base&gt;</span></span>
 <span></span>
 <span><span class="co"># other package function</span></span>
@@ -381,7 +381,7 @@
 <span><span class="co">#&gt; {</span></span>
 <span><span class="co">#&gt;     map_("list", .x, .f, ..., .progress = .progress)</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x55e05bcb6820&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x55bbde4937b0&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:purrr&gt;</span></span></code></pre></div>
 <p>There are two exceptions where the enclosing environment won’t be printed:</p>
 <ul>
@@ -538,7 +538,7 @@
 <span><span class="op">}</span></span>
 <span></span>
 <span><span class="fu">f2</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "0x55e05ffa4450" "0x55e05ffa4450"</span></span>
+<span><span class="co">#&gt; [1] "0x55bbe2780c80" "0x55bbe2780c80"</span></span>
 <span><span class="co">#&gt; [1] 100</span></span></code></pre></div>
 <p><strong>Q3.</strong> What does this function return? Why? Which principle does it illustrate?</p>
 <div class="sourceCode" id="cb146"><pre class="downlit sourceCode r">
@@ -599,7 +599,7 @@
 <span><span class="op">}</span></span>
 <span></span>
 <span><span class="fu">show_time</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "2024-12-22 00:57:42 UTC"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "2024-12-29 00:57:05 UTC"</span></span></code></pre></div>
 <p><strong>A5.</strong> Let’s take this step-by-step.</p>
 <p>The function argument <code>x</code> is missing in the function call. This means that <code>stop("Error!")</code> is evaluated in the function environment, and not global environment.</p>
 <p>But, due to lazy evaluation, the promise <code>stop("Error!")</code> is evaluated only when <code>x</code> is accessed. This happens only when <code>print(x)</code> is called.</p>
@@ -755,7 +755,7 @@
 <span><span class="co">#&gt;     on.exit(setwd(old))</span></span>
 <span><span class="co">#&gt;     force(code)</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x55e05ecac2c8&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x55bbe1488d98&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:withr&gt;</span></span></code></pre></div>
 <p>More importantly, its parameters <code>dir</code> allows temporarily changing working directory to <em>any</em> directory.</p>
 <p><strong>Q4.</strong> Write a function that opens a graphics device, runs the supplied code, and closes the graphics device (always, regardless of whether or not the plotting code works).</p>
@@ -822,7 +822,7 @@
 <span><span class="co">#&gt;         close(file)</span></span>
 <span><span class="co">#&gt;     rval %||% invisible(NULL)</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x55e05f733678&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x55bbe1f10148&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:utils&gt;</span></span></code></pre></div>
 <p>Here are few key differences:</p>
 <ul>
@@ -1081,8 +1081,8 @@
 <span><span class="co">#&gt;  collate  C.UTF-8</span></span>
 <span><span class="co">#&gt;  ctype    C.UTF-8</span></span>
 <span><span class="co">#&gt;  tz       UTC</span></span>
-<span><span class="co">#&gt;  date     2024-12-22</span></span>
-<span><span class="co">#&gt;  pandoc   3.6 @ /opt/hostedtoolcache/pandoc/3.6/x64/ (via rmarkdown)</span></span>
+<span><span class="co">#&gt;  date     2024-12-29</span></span>
+<span><span class="co">#&gt;  pandoc   3.6.1 @ /opt/hostedtoolcache/pandoc/3.6.1/x64/ (via rmarkdown)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; ─ Packages ───────────────────────────────────────────────</span></span>
 <span><span class="co">#&gt;  package     * version date (UTC) lib source</span></span>
@@ -1188,7 +1188,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2024-12-22.</p>
+    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2024-12-29.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
