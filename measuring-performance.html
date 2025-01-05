@@ -131,7 +131,7 @@
 <span><span class="co">#&gt;     }</span></span>
 <span><span class="co">#&gt;     .Internal(remove(list, envir, inherits))</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x55d467000ec8&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x55fee3412ec8&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:base&gt;</span></span></code></pre></div>
 <p>I still couldn’t figure out why. I would recommend checking out the <a href="https://advanced-r-solutions.rbind.io/measuring-performance.html#profiling">official answer</a>.</p>
 <hr>
@@ -194,8 +194,8 @@
 <span><span class="co">#&gt; # A tibble: 2 × 4</span></span>
 <span><span class="co">#&gt;   expression bench_mean systime_with_gc systime_with_nogc</span></span>
 <span><span class="co">#&gt;   &lt;bch:expr&gt;   &lt;bch:tm&gt;           &lt;dbl&gt;             &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt; 1 sqrt(x)      844.88ns           0.683             0.472</span></span>
-<span><span class="co">#&gt; 2 x^0.5          2.22µs           2.05              2.03</span></span></code></pre></div>
+<span><span class="co">#&gt; 1 sqrt(x)      800.31ns           0.674             0.419</span></span>
+<span><span class="co">#&gt; 2 x^0.5          2.18µs           2.01              2.00</span></span></code></pre></div>
 <p>The comparison reveals that these two approaches yield quite similar results. Slight differences in exact values is possibly due to differences in the precision of timers used internally by these functions.</p>
 <hr>
 <p><strong>Q2.</strong> Here are two other ways to compute the square root of a vector. Which do you think will be fastest? Which will be slowest? Use microbenchmarking to test your answers.</p>
@@ -220,9 +220,9 @@
 <span><span class="co">#&gt;   expression      median</span></span>
 <span><span class="co">#&gt;   &lt;bch:expr&gt;    &lt;bch:tm&gt;</span></span>
 <span><span class="co">#&gt; 1 sqrt(x)         3.04µs</span></span>
-<span><span class="co">#&gt; 2 exp(log(x)/2)  12.61µs</span></span>
-<span><span class="co">#&gt; 3 x^0.5          18.84µs</span></span>
-<span><span class="co">#&gt; 4 x^(1/2)        18.99µs</span></span></code></pre></div>
+<span><span class="co">#&gt; 2 exp(log(x)/2)  12.64µs</span></span>
+<span><span class="co">#&gt; 3 x^0.5          18.82µs</span></span>
+<span><span class="co">#&gt; 4 x^(1/2)        18.98µs</span></span></code></pre></div>
 <p>The specialized primitive function <code><a href="https://rdrr.io/r/base/MathFun.html">sqrt()</a></code> (written in <code>C</code>) is the fastest way to compute square root.</p>
 <hr>
 </div>
@@ -242,7 +242,7 @@
 <span><span class="co">#&gt;  collate  C.UTF-8</span></span>
 <span><span class="co">#&gt;  ctype    C.UTF-8</span></span>
 <span><span class="co">#&gt;  tz       UTC</span></span>
-<span><span class="co">#&gt;  date     2024-12-29</span></span>
+<span><span class="co">#&gt;  date     2025-01-05</span></span>
 <span><span class="co">#&gt;  pandoc   3.6.1 @ /opt/hostedtoolcache/pandoc/3.6.1/x64/ (via rmarkdown)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; ─ Packages ───────────────────────────────────────────────</span></span>
@@ -333,7 +333,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2024-12-29.</p>
+    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-01-05.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
