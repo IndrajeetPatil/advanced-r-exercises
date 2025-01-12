@@ -45,7 +45,7 @@ library(rlang)
 e <- env()
 e$loop <- e
 env_print(e)
-#> <environment: 0x56157f70dc78>
+#> <environment: 0x55879f838540>
 #> Parent: <environment: global>
 #> Bindings:
 #> • loop: <env>
@@ -56,8 +56,8 @@ The binding `loop` should have the same memory address as the environment `e`:
 
 ``` r
 lobstr::ref(e$loop)
-#> █ [1:0x56157f70dc78] <env> 
-#> └─loop = [1:0x56157f70dc78]
+#> █ [1:0x55879f838540] <env> 
+#> └─loop = [1:0x55879f838540]
 ```
 
 **Q3.** Create a pair of environments as illustrated by this picture.
@@ -76,9 +76,9 @@ e2$deloop <- e1
 
 # following should be the same
 lobstr::obj_addrs(list(e1, e2$deloop))
-#> [1] "0x561581b4d3e0" "0x561581b4d3e0"
+#> [1] "0x5587a1f4c130" "0x5587a1f4c130"
 lobstr::obj_addrs(list(e2, e1$loop))
-#> [1] "0x561581b9f9b0" "0x561581b9f9b0"
+#> [1] "0x5587a1f96940" "0x5587a1f96940"
 ```
 
 **Q4.** Explain why `e[[1]]` and `e[c("a", "b")]` don't make sense when `e` is an environment.
@@ -305,7 +305,7 @@ fget("mean", inherits = FALSE)
 fget("mean", inherits = TRUE)
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x56157d67bd90>
+#> <bytecode: 0x55879daa75f8>
 #> <environment: namespace:base>
 
 mean <- 5
@@ -512,7 +512,7 @@ rlang::caller_env
 #> {
 #>     parent.frame(n + 1)
 #> }
-#> <bytecode: 0x56157d3a0888>
+#> <bytecode: 0x55879d7dc8a0>
 #> <environment: namespace:rlang>
 ```
 
@@ -558,54 +558,54 @@ sessioninfo::session_info(include_base = TRUE)
 #> ─ Session info ───────────────────────────────────────────
 #>  setting  value
 #>  version  R version 4.4.2 (2024-10-31)
-#>  os       Ubuntu 22.04.5 LTS
+#>  os       Ubuntu 24.04.1 LTS
 #>  system   x86_64, linux-gnu
 #>  ui       X11
 #>  language (EN)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-01-05
+#>  date     2025-01-12
 #>  pandoc   3.6.1 @ /opt/hostedtoolcache/pandoc/3.6.1/x64/ (via rmarkdown)
 #> 
 #> ─ Packages ───────────────────────────────────────────────
 #>  package     * version date (UTC) lib source
-#>  base        * 4.4.2   2024-10-31 [3] local
-#>  bookdown      0.41    2024-10-16 [1] RSPM
+#>  base        * 4.4.2   2024-11-07 [3] local
+#>  bookdown      0.42    2025-01-07 [1] RSPM
 #>  cli           3.6.3   2024-06-21 [1] RSPM
-#>  compiler      4.4.2   2024-10-31 [3] local
+#>  compiler      4.4.2   2024-11-07 [3] local
 #>  crayon        1.5.3   2024-06-20 [1] RSPM
-#>  datasets    * 4.4.2   2024-10-31 [3] local
+#>  datasets    * 4.4.2   2024-11-07 [3] local
 #>  digest        0.6.37  2024-08-19 [1] RSPM
 #>  dplyr         1.1.4   2023-11-17 [1] RSPM
 #>  emoji         16.0.0  2024-10-28 [1] RSPM
-#>  evaluate      1.0.1   2024-10-10 [1] RSPM
+#>  evaluate      1.0.3   2025-01-10 [1] RSPM
 #>  fastmap       1.2.0   2024-05-15 [1] RSPM
 #>  generics      0.1.3   2022-07-05 [1] RSPM
 #>  glue          1.8.0   2024-09-30 [1] RSPM
-#>  graphics    * 4.4.2   2024-10-31 [3] local
-#>  grDevices   * 4.4.2   2024-10-31 [3] local
+#>  graphics    * 4.4.2   2024-11-07 [3] local
+#>  grDevices   * 4.4.2   2024-11-07 [3] local
 #>  htmltools     0.5.8.1 2024-04-04 [1] RSPM
 #>  knitr         1.49    2024-11-08 [1] RSPM
 #>  lifecycle     1.0.4   2023-11-07 [1] RSPM
 #>  lobstr        1.1.2   2022-06-22 [1] RSPM
 #>  magrittr    * 2.0.3   2022-03-30 [1] RSPM
-#>  methods     * 4.4.2   2024-10-31 [3] local
-#>  pillar        1.10.0  2024-12-17 [1] RSPM
+#>  methods     * 4.4.2   2024-11-07 [3] local
+#>  pillar        1.10.1  2025-01-07 [1] RSPM
 #>  pkgconfig     2.0.3   2019-09-22 [1] RSPM
 #>  R6            2.5.1   2021-08-19 [1] RSPM
 #>  rlang       * 1.1.4   2024-06-04 [1] RSPM
 #>  rmarkdown     2.29    2024-11-04 [1] RSPM
 #>  sessioninfo   1.2.2   2021-12-06 [1] RSPM
-#>  stats       * 4.4.2   2024-10-31 [3] local
+#>  stats       * 4.4.2   2024-11-07 [3] local
 #>  stringi       1.8.4   2024-05-06 [1] RSPM
 #>  stringr       1.5.1   2023-11-14 [1] RSPM
 #>  tibble        3.2.1   2023-03-20 [1] RSPM
 #>  tidyselect    1.2.1   2024-03-11 [1] RSPM
-#>  tools         4.4.2   2024-10-31 [3] local
-#>  utils       * 4.4.2   2024-10-31 [3] local
+#>  tools         4.4.2   2024-11-07 [3] local
+#>  utils       * 4.4.2   2024-11-07 [3] local
 #>  vctrs         0.6.5   2023-12-01 [1] RSPM
-#>  xfun          0.49    2024-10-31 [1] RSPM
+#>  xfun          0.50    2025-01-07 [1] RSPM
 #>  yaml          2.3.10  2024-07-26 [1] RSPM
 #> 
 #>  [1] /home/runner/work/_temp/Library
