@@ -131,7 +131,7 @@
 <span><span class="co">#&gt;     }</span></span>
 <span><span class="co">#&gt;     .Internal(remove(list, envir, inherits))</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x5638d973e108&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x55c8d6993108&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:base&gt;</span></span></code></pre></div>
 <p>I still couldn’t figure out why. I would recommend checking out the <a href="https://advanced-r-solutions.rbind.io/measuring-performance.html#profiling">official answer</a>.</p>
 <hr>
@@ -141,12 +141,12 @@
 <span class="header-section-number">23.2</span> Microbenchmarking (Exercises 23.3.3)<a class="anchor" aria-label="anchor" href="#microbenchmarking-exercises-23.3.3"><i class="fas fa-link"></i></a>
 </h2>
 <hr>
-<p><strong>Q1.</strong> Instead of using <code><a href="http://bench.r-lib.org/reference/mark.html">bench::mark()</a></code>, you could use the built-in function <code><a href="https://rdrr.io/r/base/system.time.html">system.time()</a></code>. But <code><a href="https://rdrr.io/r/base/system.time.html">system.time()</a></code> is much less precise, so you’ll need to repeat each operation many times with a loop, and then divide to find the average time of each operation, as in the code below.</p>
+<p><strong>Q1.</strong> Instead of using <code><a href="https://bench.r-lib.org/reference/mark.html">bench::mark()</a></code>, you could use the built-in function <code><a href="https://rdrr.io/r/base/system.time.html">system.time()</a></code>. But <code><a href="https://rdrr.io/r/base/system.time.html">system.time()</a></code> is much less precise, so you’ll need to repeat each operation many times with a loop, and then divide to find the average time of each operation, as in the code below.</p>
 <div class="sourceCode" id="cb641"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">1e6</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span><span class="op">(</span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="va">n</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span> <span class="op">/</span> <span class="va">n</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span><span class="op">(</span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="va">n</span><span class="op">)</span> <span class="va">x</span><span class="op">^</span><span class="fl">0.5</span><span class="op">)</span> <span class="op">/</span> <span class="va">n</span></span></code></pre></div>
-<p>How do the estimates from <code><a href="https://rdrr.io/r/base/system.time.html">system.time()</a></code> compare to those from <code><a href="http://bench.r-lib.org/reference/mark.html">bench::mark()</a></code>? Why are they different?</p>
+<p>How do the estimates from <code><a href="https://rdrr.io/r/base/system.time.html">system.time()</a></code> compare to those from <code><a href="https://bench.r-lib.org/reference/mark.html">bench::mark()</a></code>? Why are they different?</p>
 <p><strong>A1.</strong> Let’s benchmark first using these two approaches:</p>
 <div class="sourceCode" id="cb642"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">1e6</span></span>
@@ -154,7 +154,7 @@
 <span></span>
 <span><span class="co"># bench -------------------</span></span>
 <span></span>
-<span><span class="va">bench_df</span> <span class="op">&lt;-</span> <span class="fu">bench</span><span class="fu">::</span><span class="fu"><a href="http://bench.r-lib.org/reference/mark.html">mark</a></span><span class="op">(</span></span>
+<span><span class="va">bench_df</span> <span class="op">&lt;-</span> <span class="fu">bench</span><span class="fu">::</span><span class="fu"><a href="https://bench.r-lib.org/reference/mark.html">mark</a></span><span class="op">(</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>,</span>
 <span>  <span class="va">x</span><span class="op">^</span><span class="fl">0.5</span>,</span>
 <span>  iterations <span class="op">=</span> <span class="va">n</span>,</span>
@@ -194,8 +194,8 @@
 <span><span class="co">#&gt; # A tibble: 2 × 4</span></span>
 <span><span class="co">#&gt;   expression bench_mean systime_with_gc systime_with_nogc</span></span>
 <span><span class="co">#&gt;   &lt;bch:expr&gt;   &lt;bch:tm&gt;           &lt;dbl&gt;             &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt; 1 sqrt(x)      804.66ns           0.655             0.434</span></span>
-<span><span class="co">#&gt; 2 x^0.5          2.11µs           1.96              1.95</span></span></code></pre></div>
+<span><span class="co">#&gt; 1 sqrt(x)       809.3ns           0.681             0.435</span></span>
+<span><span class="co">#&gt; 2 x^0.5           2.1µs           1.97              1.96</span></span></code></pre></div>
 <p>The comparison reveals that these two approaches yield quite similar results. Slight differences in exact values is possibly due to differences in the precision of timers used internally by these functions.</p>
 <hr>
 <p><strong>Q2.</strong> Here are two other ways to compute the square root of a vector. Which do you think will be fastest? Which will be slowest? Use microbenchmarking to test your answers.</p>
@@ -207,7 +207,7 @@
 <div class="sourceCode" id="cb645"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="fl">1000</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">bench</span><span class="fu">::</span><span class="fu"><a href="http://bench.r-lib.org/reference/mark.html">mark</a></span><span class="op">(</span></span>
+<span><span class="fu">bench</span><span class="fu">::</span><span class="fu"><a href="https://bench.r-lib.org/reference/mark.html">mark</a></span><span class="op">(</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>,</span>
 <span>  <span class="va">x</span><span class="op">^</span><span class="fl">0.5</span>,</span>
 <span>  <span class="va">x</span><span class="op">^</span><span class="op">(</span><span class="fl">1</span> <span class="op">/</span> <span class="fl">2</span><span class="op">)</span>,</span>
@@ -219,10 +219,10 @@
 <span><span class="co">#&gt; # A tibble: 4 × 2</span></span>
 <span><span class="co">#&gt;   expression      median</span></span>
 <span><span class="co">#&gt;   &lt;bch:expr&gt;    &lt;bch:tm&gt;</span></span>
-<span><span class="co">#&gt; 1 sqrt(x)         2.95µs</span></span>
-<span><span class="co">#&gt; 2 exp(log(x)/2)  12.54µs</span></span>
-<span><span class="co">#&gt; 3 x^0.5          18.34µs</span></span>
-<span><span class="co">#&gt; 4 x^(1/2)        18.43µs</span></span></code></pre></div>
+<span><span class="co">#&gt; 1 sqrt(x)            3µs</span></span>
+<span><span class="co">#&gt; 2 exp(log(x)/2)   12.6µs</span></span>
+<span><span class="co">#&gt; 3 x^0.5           18.3µs</span></span>
+<span><span class="co">#&gt; 4 x^(1/2)         18.4µs</span></span></code></pre></div>
 <p>The specialized primitive function <code><a href="https://rdrr.io/r/base/MathFun.html">sqrt()</a></code> (written in <code>C</code>) is the fastest way to compute square root.</p>
 <hr>
 </div>
@@ -242,13 +242,13 @@
 <span><span class="co">#&gt;  collate  C.UTF-8</span></span>
 <span><span class="co">#&gt;  ctype    C.UTF-8</span></span>
 <span><span class="co">#&gt;  tz       UTC</span></span>
-<span><span class="co">#&gt;  date     2025-01-12</span></span>
-<span><span class="co">#&gt;  pandoc   3.6.1 @ /opt/hostedtoolcache/pandoc/3.6.1/x64/ (via rmarkdown)</span></span>
+<span><span class="co">#&gt;  date     2025-01-19</span></span>
+<span><span class="co">#&gt;  pandoc   3.6.2 @ /opt/hostedtoolcache/pandoc/3.6.2/x64/ (via rmarkdown)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; ─ Packages ───────────────────────────────────────────────</span></span>
 <span><span class="co">#&gt;  package     * version date (UTC) lib source</span></span>
 <span><span class="co">#&gt;  base        * 4.4.2   2024-11-07 [3] local</span></span>
-<span><span class="co">#&gt;  bench         1.1.3   2023-05-04 [1] RSPM</span></span>
+<span><span class="co">#&gt;  bench         1.1.4   2025-01-16 [1] RSPM</span></span>
 <span><span class="co">#&gt;  bookdown      0.42    2025-01-07 [1] RSPM</span></span>
 <span><span class="co">#&gt;  bslib         0.8.0   2024-07-29 [1] RSPM</span></span>
 <span><span class="co">#&gt;  cachem        1.1.0   2024-05-16 [1] RSPM</span></span>
@@ -280,7 +280,7 @@
 <span><span class="co">#&gt;  profmem       0.6.0   2020-12-13 [1] RSPM</span></span>
 <span><span class="co">#&gt;  profvis     * 0.4.0   2024-09-20 [1] RSPM</span></span>
 <span><span class="co">#&gt;  R6            2.5.1   2021-08-19 [1] RSPM</span></span>
-<span><span class="co">#&gt;  rlang         1.1.4   2024-06-04 [1] RSPM</span></span>
+<span><span class="co">#&gt;  rlang         1.1.5   2025-01-17 [1] RSPM</span></span>
 <span><span class="co">#&gt;  rmarkdown     2.29    2024-11-04 [1] RSPM</span></span>
 <span><span class="co">#&gt;  sass          0.4.9   2024-03-15 [1] RSPM</span></span>
 <span><span class="co">#&gt;  sessioninfo   1.2.2   2021-12-06 [1] RSPM</span></span>
@@ -333,7 +333,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-01-12.</p>
+    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-01-19.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

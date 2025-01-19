@@ -374,7 +374,7 @@ call_standardise(quote(mean(x = 1:10, , TRUE)))
 mean
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x56402d7b85f8>
+#> <bytecode: 0x55d66272f608>
 #> <environment: namespace:base>
 ```
 
@@ -993,8 +993,8 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-01-12
-#>  pandoc   3.6.1 @ /opt/hostedtoolcache/pandoc/3.6.1/x64/ (via rmarkdown)
+#>  date     2025-01-19
+#>  pandoc   3.6.2 @ /opt/hostedtoolcache/pandoc/3.6.2/x64/ (via rmarkdown)
 #> 
 #> ─ Packages ───────────────────────────────────────────────
 #>  package     * version date (UTC) lib source
@@ -1019,7 +1019,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  methods     * 4.4.2   2024-11-07 [3] local
 #>  pillar        1.10.1  2025-01-07 [1] RSPM
 #>  purrr         1.0.2   2023-08-10 [1] RSPM
-#>  rlang       * 1.1.4   2024-06-04 [1] RSPM
+#>  rlang       * 1.1.5   2025-01-17 [1] RSPM
 #>  rmarkdown     2.29    2024-11-04 [1] RSPM
 #>  sessioninfo   1.2.2   2021-12-06 [1] RSPM
 #>  stats       * 4.4.2   2024-11-07 [3] local
