@@ -22,7 +22,7 @@
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><link href="libs/Roboto-0.4.9/font.css" rel="stylesheet">
 <link href="libs/JetBrains_Mono-0.4.9/font.css" rel="stylesheet">
 <link href="libs/Roboto_Slab-0.4.9/font.css" rel="stylesheet">
-<script src="libs/bs3compat-0.8.0/transition.js"></script><script src="libs/bs3compat-0.8.0/tabs.js"></script><script src="libs/bs3compat-0.8.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
@@ -115,7 +115,7 @@
 <span><span class="fu"><a href="https://purrr.tidyverse.org/reference/as_mapper.html">as_mapper</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
 <span><span class="co">#&gt; function (x, ...) </span></span>
 <span><span class="co">#&gt; pluck_raw(x, list(1), .default = NULL)</span></span>
-<span><span class="co">#&gt; &lt;environment: 0x55bce5166968&gt;</span></span>
+<span><span class="co">#&gt; &lt;environment: 0x56178bcd5b58&gt;</span></span>
 <span></span>
 <span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">x</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [[1]]</span></span>
@@ -126,7 +126,7 @@
 <span><span class="fu"><a href="https://purrr.tidyverse.org/reference/as_mapper.html">as_mapper</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; function (x, ...) </span></span>
 <span><span class="co">#&gt; pluck_raw(x, list(2, 1), .default = NULL)</span></span>
-<span><span class="co">#&gt; &lt;environment: 0x55bce51d7830&gt;</span></span>
+<span><span class="co">#&gt; &lt;environment: 0x56178bd44bf0&gt;</span></span>
 <span></span>
 <span><span class="co"># mapping by name -----------------------</span></span>
 <span></span>
@@ -144,7 +144,7 @@
 <span><span class="fu"><a href="https://purrr.tidyverse.org/reference/as_mapper.html">as_mapper</a></span><span class="op">(</span><span class="st">"m"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; function (x, ...) </span></span>
 <span><span class="co">#&gt; pluck_raw(x, list("m"), .default = NULL)</span></span>
-<span><span class="co">#&gt; &lt;environment: 0x55bce5289a20&gt;</span></span>
+<span><span class="co">#&gt; &lt;environment: 0x56178bdfd080&gt;</span></span>
 <span></span>
 <span><span class="co"># mixing position and name</span></span>
 <span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">y</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fl">2</span>, <span class="st">"m"</span><span class="op">)</span><span class="op">)</span></span>
@@ -156,7 +156,7 @@
 <span><span class="fu"><a href="https://purrr.tidyverse.org/reference/as_mapper.html">as_mapper</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fl">2</span>, <span class="st">"m"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; function (x, ...) </span></span>
 <span><span class="co">#&gt; pluck_raw(x, list(2, "m"), .default = NULL)</span></span>
-<span><span class="co">#&gt; &lt;environment: 0x55bce5304d10&gt;</span></span>
+<span><span class="co">#&gt; &lt;environment: 0x56178be74a80&gt;</span></span>
 <span></span>
 <span><span class="co"># compact functions ----------------------------</span></span>
 <span></span>
@@ -210,7 +210,7 @@
 <span><span class="fu"><a href="https://purrr.tidyverse.org/reference/as_mapper.html">as_mapper</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; function (x, ...) </span></span>
 <span><span class="co">#&gt; pluck_raw(x, list(0.597890264587477, 0.587997315218672), .default = NULL)</span></span>
-<span><span class="co">#&gt; &lt;environment: 0x55bce3ae5f28&gt;</span></span></code></pre></div>
+<span><span class="co">#&gt; &lt;environment: 0x5617873fe688&gt;</span></span></code></pre></div>
 <hr>
 <p><strong>Q3.</strong> Use the appropriate <code><a href="https://purrr.tidyverse.org/reference/map.html">map()</a></code> function to:</p>
 <pre><code>a) Compute the standard deviation of every column in a numeric data frame.
@@ -787,7 +787,7 @@ In <code><a href="https://purrr.tidyverse.org/reference/map2.html">walk2()</a></
 <span></span>
 <span><span class="va">e</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rlang.r-lib.org/reference/env.html">env</a></span><span class="op">(</span><span class="st">"x"</span> <span class="op">=</span> <span class="fl">1</span>, <span class="st">"y"</span> <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
 <span><span class="fu">rlang</span><span class="fu">::</span><span class="fu"><a href="https://rlang.r-lib.org/reference/env_print.html">env_print</a></span><span class="op">(</span><span class="va">e</span><span class="op">)</span></span>
-<span><span class="co">#&gt; &lt;environment: 0x55bce447e768&gt;</span></span>
+<span><span class="co">#&gt; &lt;environment: 0x56178b4958e8&gt;</span></span>
 <span><span class="co">#&gt; Parent: &lt;environment: global&gt;</span></span>
 <span><span class="co">#&gt; Bindings:</span></span>
 <span><span class="co">#&gt; • x: &lt;dbl&gt;</span></span>
@@ -901,14 +901,14 @@ In <code><a href="https://purrr.tidyverse.org/reference/map2.html">walk2()</a></
 <span><span class="co">#&gt;  collate  C.UTF-8</span></span>
 <span><span class="co">#&gt;  ctype    C.UTF-8</span></span>
 <span><span class="co">#&gt;  tz       UTC</span></span>
-<span><span class="co">#&gt;  date     2025-01-26</span></span>
+<span><span class="co">#&gt;  date     2025-02-02</span></span>
 <span><span class="co">#&gt;  pandoc   3.6.2 @ /opt/hostedtoolcache/pandoc/3.6.2/x64/ (via rmarkdown)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; ─ Packages ───────────────────────────────────────────────</span></span>
 <span><span class="co">#&gt;  package     * version date (UTC) lib source</span></span>
 <span><span class="co">#&gt;  base        * 4.4.2   2024-11-07 [3] local</span></span>
 <span><span class="co">#&gt;  bookdown      0.42    2025-01-07 [1] RSPM</span></span>
-<span><span class="co">#&gt;  bslib         0.8.0   2024-07-29 [1] RSPM</span></span>
+<span><span class="co">#&gt;  bslib         0.9.0   2025-01-30 [1] RSPM</span></span>
 <span><span class="co">#&gt;  cachem        1.1.0   2024-05-16 [1] RSPM</span></span>
 <span><span class="co">#&gt;  cli           3.6.3   2024-06-21 [1] RSPM</span></span>
 <span><span class="co">#&gt;  compiler      4.4.2   2024-11-07 [3] local</span></span>
@@ -990,7 +990,7 @@ In <code><a href="https://purrr.tidyverse.org/reference/map2.html">walk2()</a></
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-01-26.</p>
+    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-02-02.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

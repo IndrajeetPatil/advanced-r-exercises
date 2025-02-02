@@ -374,7 +374,7 @@ call_standardise(quote(mean(x = 1:10, , TRUE)))
 mean
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x55c2ac5fb618>
+#> <bytecode: 0x55baf343a618>
 #> <environment: namespace:base>
 ```
 
@@ -993,7 +993,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-01-26
+#>  date     2025-02-02
 #>  pandoc   3.6.2 @ /opt/hostedtoolcache/pandoc/3.6.2/x64/ (via rmarkdown)
 #> 
 #> ─ Packages ───────────────────────────────────────────────

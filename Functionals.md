@@ -36,7 +36,7 @@ map(x, 1)
 as_mapper(1)
 #> function (x, ...) 
 #> pluck_raw(x, list(1), .default = NULL)
-#> <environment: 0x55f93175b110>
+#> <environment: 0x562d47425110>
 
 map(x, list(2, 1))
 #> [[1]]
@@ -47,7 +47,7 @@ map(x, list(2, 1))
 as_mapper(list(2, 1))
 #> function (x, ...) 
 #> pluck_raw(x, list(2, 1), .default = NULL)
-#> <environment: 0x55f931901cc8>
+#> <environment: 0x562d475cbcc8>
 
 # mapping by name -----------------------
 
@@ -65,7 +65,7 @@ map(y, "m")
 as_mapper("m")
 #> function (x, ...) 
 #> pluck_raw(x, list("m"), .default = NULL)
-#> <environment: 0x55f93179dca8>
+#> <environment: 0x562d47467ca8>
 
 # mixing position and name
 map(y, list(2, "m"))
@@ -77,7 +77,7 @@ map(y, list(2, "m"))
 as_mapper(list(2, "m"))
 #> function (x, ...) 
 #> pluck_raw(x, list(2, "m"), .default = NULL)
-#> <environment: 0x55f92fd192e0>
+#> <environment: 0x562d459e32e0>
 
 # compact functions ----------------------------
 
@@ -139,7 +139,7 @@ map(1:3, runif(2))
 as_mapper(runif(2))
 #> function (x, ...) 
 #> pluck_raw(x, list(0.597890264587477, 0.587997315218672), .default = NULL)
-#> <environment: 0x55f931562570>
+#> <environment: 0x562d4722c570>
 ```
 
 ---
@@ -880,7 +880,7 @@ library(rlang)
 
 e <- env("x" = 1, "y" = 2)
 rlang::env_print(e)
-#> <environment: 0x55f935048788>
+#> <environment: 0x562d4ad12600>
 #> Parent: <environment: global>
 #> Bindings:
 #> • x: <dbl>
@@ -1015,7 +1015,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-01-26
+#>  date     2025-02-02
 #>  pandoc   3.6.2 @ /opt/hostedtoolcache/pandoc/3.6.2/x64/ (via rmarkdown)
 #> 
 #> ─ Packages ───────────────────────────────────────────────

@@ -22,7 +22,7 @@
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><link href="libs/Roboto-0.4.9/font.css" rel="stylesheet">
 <link href="libs/JetBrains_Mono-0.4.9/font.css" rel="stylesheet">
 <link href="libs/Roboto_Slab-0.4.9/font.css" rel="stylesheet">
-<script src="libs/bs3compat-0.8.0/transition.js"></script><script src="libs/bs3compat-0.8.0/tabs.js"></script><script src="libs/bs3compat-0.8.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
@@ -261,12 +261,12 @@
 <span><span class="co">#&gt; # A tibble: 2 × 6</span></span>
 <span><span class="co">#&gt;   expression                                      min</span></span>
 <span><span class="co">#&gt;   &lt;bch:expr&gt;                                 &lt;bch:tm&gt;</span></span>
-<span><span class="co">#&gt; 1 all(c(rep(TRUE, 1000), rep(FALSE, 1000)))    6.07µs</span></span>
-<span><span class="co">#&gt; 2 allC(c(rep(TRUE, 1000), rep(FALSE, 1000)))   7.92µs</span></span>
+<span><span class="co">#&gt; 1 all(c(rep(TRUE, 1000), rep(FALSE, 1000)))    6.16µs</span></span>
+<span><span class="co">#&gt; 2 allC(c(rep(TRUE, 1000), rep(FALSE, 1000)))   7.84µs</span></span>
 <span><span class="co">#&gt;     median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt; 1   6.38µs   151889.    15.8KB        0</span></span>
-<span><span class="co">#&gt; 2   8.45µs   114832.    15.8KB        0</span></span></code></pre></div>
+<span><span class="co">#&gt; 1   6.48µs   149806.    15.8KB        0</span></span>
+<span><span class="co">#&gt; 2   8.25µs   117745.    15.8KB        0</span></span></code></pre></div>
 <ul>
 <li><code><a href="https://rdrr.io/r/base/cumsum.html">cumprod()</a></code></li>
 </ul>
@@ -301,8 +301,8 @@
 <span><span class="co">#&gt; # A tibble: 2 × 6</span></span>
 <span><span class="co">#&gt;   expression        min   median `itr/sec` mem_alloc</span></span>
 <span><span class="co">#&gt;   &lt;bch:expr&gt;   &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;</span></span>
-<span><span class="co">#&gt; 1 cumprod(v1)     100ns    110ns  7697902.        0B</span></span>
-<span><span class="co">#&gt; 2 cumprodC(v1)    691ns    721ns  1249952.    4.12KB</span></span>
+<span><span class="co">#&gt; 1 cumprod(v1)    90.1ns    101ns  8044290.        0B</span></span>
+<span><span class="co">#&gt; 2 cumprodC(v1)  721.1ns    757ns  1159855.    4.12KB</span></span>
 <span><span class="co">#&gt;   `gc/sec`</span></span>
 <span><span class="co">#&gt;      &lt;dbl&gt;</span></span>
 <span><span class="co">#&gt; 1        0</span></span>
@@ -342,8 +342,8 @@
 <span><span class="co">#&gt; # A tibble: 2 × 6</span></span>
 <span><span class="co">#&gt;   expression       min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   &lt;bch:expr&gt;  &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt; 1 cummin(v1)     100ns    111ns  7292398.        0B        0</span></span>
-<span><span class="co">#&gt; 2 cumminC(v1)    761ns    871ns   901273.    4.12KB        0</span></span></code></pre></div>
+<span><span class="co">#&gt; 1 cummin(v1)     100ns    111ns  6059619.        0B        0</span></span>
+<span><span class="co">#&gt; 2 cumminC(v1)    771ns    942ns   970711.    4.12KB        0</span></span></code></pre></div>
 <ul>
 <li><code>cummaxC()</code></li>
 </ul>
@@ -379,8 +379,8 @@
 <span><span class="co">#&gt; # A tibble: 2 × 6</span></span>
 <span><span class="co">#&gt;   expression       min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   &lt;bch:expr&gt;  &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt; 1 cummax(v1)    99.9ns    111ns  6178476.        0B        0</span></span>
-<span><span class="co">#&gt; 2 cummaxC(v1)  761.1ns    822ns  1043230.    4.12KB        0</span></span></code></pre></div>
+<span><span class="co">#&gt; 1 cummax(v1)     100ns    111ns  7034069.        0B        0</span></span>
+<span><span class="co">#&gt; 2 cummaxC(v1)    782ns    851ns  1055271.    4.12KB        0</span></span></code></pre></div>
 <ul>
 <li><code><a href="https://rdrr.io/r/base/diff.html">diff()</a></code></li>
 </ul>
@@ -437,8 +437,8 @@
 <span><span class="co">#&gt; # A tibble: 2 × 6</span></span>
 <span><span class="co">#&gt;   expression        min   median `itr/sec` mem_alloc</span></span>
 <span><span class="co">#&gt;   &lt;bch:expr&gt;   &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;</span></span>
-<span><span class="co">#&gt; 1 diff(v1, 2)    3.83µs   4.25µs   226275.        0B</span></span>
-<span><span class="co">#&gt; 2 diffC(v1, 2)   1.06µs   1.15µs   817598.        0B</span></span>
+<span><span class="co">#&gt; 1 diff(v1, 2)    3.77µs   4.21µs   224474.        0B</span></span>
+<span><span class="co">#&gt; 2 diffC(v1, 2)   1.15µs   1.24µs   756744.        0B</span></span>
 <span><span class="co">#&gt;   `gc/sec`</span></span>
 <span><span class="co">#&gt;      &lt;dbl&gt;</span></span>
 <span><span class="co">#&gt; 1        0</span></span>
@@ -478,8 +478,8 @@
 <span><span class="co">#&gt; # A tibble: 2 × 6</span></span>
 <span><span class="co">#&gt;   expression      min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   &lt;bch:expr&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt; 1 range(v1)    2.52µs   2.83µs   324393.        0B        0</span></span>
-<span><span class="co">#&gt; 2 rangeC(v1) 681.15ns 832.08ns  1101777.    4.12KB        0</span></span></code></pre></div>
+<span><span class="co">#&gt; 1 range(v1)    2.35µs   2.54µs   320548.        0B    3238.</span></span>
+<span><span class="co">#&gt; 2 rangeC(v1) 721.08ns 751.58ns  1229204.    4.12KB       0</span></span></code></pre></div>
 <ul>
 <li><code><a href="https://rdrr.io/r/stats/cor.html">var()</a></code></li>
 </ul>
@@ -520,8 +520,8 @@
 <span><span class="co">#&gt; # A tibble: 2 × 6</span></span>
 <span><span class="co">#&gt;   expression        min   median `itr/sec` mem_alloc</span></span>
 <span><span class="co">#&gt;   &lt;bch:expr&gt;   &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;</span></span>
-<span><span class="co">#&gt; 1 var(v1)        5.23µs   5.89µs   165976.        0B</span></span>
-<span><span class="co">#&gt; 2 variance(v1) 662.17ns 761.12ns  1216587.    4.12KB</span></span>
+<span><span class="co">#&gt; 1 var(v1)        5.19µs   5.75µs   163682.        0B</span></span>
+<span><span class="co">#&gt; 2 variance(v1) 682.08ns  766.6ns  1203740.    4.12KB</span></span>
 <span><span class="co">#&gt;   `gc/sec`</span></span>
 <span><span class="co">#&gt;      &lt;dbl&gt;</span></span>
 <span><span class="co">#&gt; 1        0</span></span>
@@ -680,8 +680,8 @@
 <span><span class="co">#&gt; # A tibble: 2 × 6</span></span>
 <span><span class="co">#&gt;   expression              min   median `itr/sec` mem_alloc</span></span>
 <span><span class="co">#&gt;   &lt;bch:expr&gt;         &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;</span></span>
-<span><span class="co">#&gt; 1 median.default(v2)   20.2µs   21.6µs    43503.        0B</span></span>
-<span><span class="co">#&gt; 2 medianC(v2)         701.1ns    732ns  1260849.        0B</span></span>
+<span><span class="co">#&gt; 1 median.default(v2)   20.3µs   21.4µs    44727.        0B</span></span>
+<span><span class="co">#&gt; 2 medianC(v2)         701.2ns  786.6ns  1178296.        0B</span></span>
 <span><span class="co">#&gt;   `gc/sec`</span></span>
 <span><span class="co">#&gt;      &lt;dbl&gt;</span></span>
 <span><span class="co">#&gt; 1        0</span></span>
@@ -726,8 +726,8 @@
 <span><span class="co">#&gt; # A tibble: 2 × 6</span></span>
 <span><span class="co">#&gt;   expression          min   median `itr/sec` mem_alloc</span></span>
 <span><span class="co">#&gt;   &lt;bch:expr&gt;     &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;</span></span>
-<span><span class="co">#&gt; 1 x1 %in% x2     862.05ns   1.07µs   886065.        0B</span></span>
-<span><span class="co">#&gt; 2 matchC(x1, x2)   1.23µs    1.3µs   714135.    4.12KB</span></span>
+<span><span class="co">#&gt; 1 x1 %in% x2          1µs   1.27µs   742275.        0B</span></span>
+<span><span class="co">#&gt; 2 matchC(x1, x2)   1.26µs   1.38µs   534062.    4.12KB</span></span>
 <span><span class="co">#&gt;   `gc/sec`</span></span>
 <span><span class="co">#&gt;      &lt;dbl&gt;</span></span>
 <span><span class="co">#&gt; 1        0</span></span>
@@ -788,12 +788,12 @@
 <span><span class="co">#&gt; # A tibble: 2 × 6</span></span>
 <span><span class="co">#&gt;   expression        min   median `itr/sec` mem_alloc</span></span>
 <span><span class="co">#&gt;   &lt;bch:expr&gt;   &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;</span></span>
-<span><span class="co">#&gt; 1 unique(v1)     2.04µs   2.33µs   408556.        0B</span></span>
-<span><span class="co">#&gt; 2 uniqueC2(v1) 861.01ns 982.08ns   938645.    4.12KB</span></span>
+<span><span class="co">#&gt; 1 unique(v1)     2.08µs   2.42µs   338711.        0B</span></span>
+<span><span class="co">#&gt; 2 uniqueC2(v1) 890.93ns 991.98ns   931297.    4.12KB</span></span>
 <span><span class="co">#&gt;   `gc/sec`</span></span>
 <span><span class="co">#&gt;      &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt; 1        0</span></span>
-<span><span class="co">#&gt; 2        0</span></span></code></pre></div>
+<span><span class="co">#&gt; 1    3421.</span></span>
+<span><span class="co">#&gt; 2       0</span></span></code></pre></div>
 <ol style="list-style-type: decimal">
 <li>
 <code><a href="https://rdrr.io/r/base/Extremes.html">min()</a></code> using <code>std::min()</code>, or <code><a href="https://rdrr.io/r/base/Extremes.html">max()</a></code> using <code>std::max()</code>.</li>
@@ -832,8 +832,8 @@
 <span><span class="co">#&gt; # A tibble: 2 × 6</span></span>
 <span><span class="co">#&gt;   expression      min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   &lt;bch:expr&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt; 1 min(v1)       201ns    221ns  3853924.        0B        0</span></span>
-<span><span class="co">#&gt; 2 minC(v1)      671ns    711ns  1303439.    4.12KB        0</span></span>
+<span><span class="co">#&gt; 1 min(v1)       210ns    230ns  3518590.        0B        0</span></span>
+<span><span class="co">#&gt; 2 minC(v1)      671ns    757ns  1253374.    4.12KB        0</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">v1</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 9</span></span>
@@ -849,8 +849,8 @@
 <span><span class="co">#&gt; # A tibble: 2 × 6</span></span>
 <span><span class="co">#&gt;   expression      min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   &lt;bch:expr&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt; 1 max(v1)       210ns    221ns  3921413.        0B        0</span></span>
-<span><span class="co">#&gt; 2 maxC(v1)      661ns    701ns  1278557.    4.12KB        0</span></span></code></pre></div>
+<span><span class="co">#&gt; 1 max(v1)       210ns    231ns  2345701.        0B        0</span></span>
+<span><span class="co">#&gt; 2 maxC(v1)      681ns    736ns  1257493.    4.12KB        0</span></span></code></pre></div>
 <ol style="list-style-type: decimal">
 <li>
 <code><a href="https://rdrr.io/r/base/which.min.html">which.min()</a></code> using <code>min_element</code>, or <code><a href="https://rdrr.io/r/base/which.min.html">which.max()</a></code> using <code>max_element</code>.</li>
@@ -894,8 +894,8 @@
 <span><span class="co">#&gt; # A tibble: 2 × 6</span></span>
 <span><span class="co">#&gt;   expression          min   median `itr/sec` mem_alloc</span></span>
 <span><span class="co">#&gt;   &lt;bch:expr&gt;     &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;</span></span>
-<span><span class="co">#&gt; 1 which.min(v1)     371ns    401ns  2313332.        0B</span></span>
-<span><span class="co">#&gt; 2 which_minC(v1)    661ns    732ns  1264660.    4.12KB</span></span>
+<span><span class="co">#&gt; 1 which.min(v1)     381ns    411ns  2137560.        0B</span></span>
+<span><span class="co">#&gt; 2 which_minC(v1)    681ns    761ns  1236942.    4.12KB</span></span>
 <span><span class="co">#&gt;   `gc/sec`</span></span>
 <span><span class="co">#&gt;      &lt;dbl&gt;</span></span>
 <span><span class="co">#&gt; 1        0</span></span>
@@ -915,8 +915,8 @@
 <span><span class="co">#&gt; # A tibble: 2 × 6</span></span>
 <span><span class="co">#&gt;   expression          min   median `itr/sec` mem_alloc</span></span>
 <span><span class="co">#&gt;   &lt;bch:expr&gt;     &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;</span></span>
-<span><span class="co">#&gt; 1 which.max(v1)     380ns    410ns  2151033.        0B</span></span>
-<span><span class="co">#&gt; 2 which_maxC(v1)    671ns    767ns  1214771.    4.12KB</span></span>
+<span><span class="co">#&gt; 1 which.max(v1)     371ns    441ns  2140084.        0B</span></span>
+<span><span class="co">#&gt; 2 which_maxC(v1)    681ns    781ns  1164476.    4.12KB</span></span>
 <span><span class="co">#&gt;   `gc/sec`</span></span>
 <span><span class="co">#&gt;      &lt;dbl&gt;</span></span>
 <span><span class="co">#&gt; 1        0</span></span>
@@ -1039,7 +1039,7 @@
 <span><span class="co">#&gt;  collate  C.UTF-8</span></span>
 <span><span class="co">#&gt;  ctype    C.UTF-8</span></span>
 <span><span class="co">#&gt;  tz       UTC</span></span>
-<span><span class="co">#&gt;  date     2025-01-26</span></span>
+<span><span class="co">#&gt;  date     2025-02-02</span></span>
 <span><span class="co">#&gt;  pandoc   3.6.2 @ /opt/hostedtoolcache/pandoc/3.6.2/x64/ (via rmarkdown)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; ─ Packages ───────────────────────────────────────────────</span></span>
@@ -1047,7 +1047,7 @@
 <span><span class="co">#&gt;  base        * 4.4.2   2024-11-07 [3] local</span></span>
 <span><span class="co">#&gt;  bench         1.1.4   2025-01-16 [1] RSPM</span></span>
 <span><span class="co">#&gt;  bookdown      0.42    2025-01-07 [1] RSPM</span></span>
-<span><span class="co">#&gt;  bslib         0.8.0   2024-07-29 [1] RSPM</span></span>
+<span><span class="co">#&gt;  bslib         0.9.0   2025-01-30 [1] RSPM</span></span>
 <span><span class="co">#&gt;  cachem        1.1.0   2024-05-16 [1] RSPM</span></span>
 <span><span class="co">#&gt;  cli           3.6.3   2024-06-21 [1] RSPM</span></span>
 <span><span class="co">#&gt;  compiler      4.4.2   2024-11-07 [3] local</span></span>
@@ -1140,7 +1140,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-01-26.</p>
+    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-02-02.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
