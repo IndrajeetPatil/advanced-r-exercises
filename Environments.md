@@ -45,7 +45,7 @@ library(rlang)
 e <- env()
 e$loop <- e
 env_print(e)
-#> <environment: 0x56511e5d7480>
+#> <environment: 0x559622f3a480>
 #> Parent: <environment: global>
 #> Bindings:
 #> • loop: <env>
@@ -56,8 +56,8 @@ The binding `loop` should have the same memory address as the environment `e`:
 
 ``` r
 lobstr::ref(e$loop)
-#> █ [1:0x56511e5d7480] <env> 
-#> └─loop = [1:0x56511e5d7480]
+#> █ [1:0x559622f3a480] <env> 
+#> └─loop = [1:0x559622f3a480]
 ```
 
 **Q3.** Create a pair of environments as illustrated by this picture.
@@ -76,9 +76,9 @@ e2$deloop <- e1
 
 # following should be the same
 lobstr::obj_addrs(list(e1, e2$deloop))
-#> [1] "0x565120ceb6a0" "0x565120ceb6a0"
+#> [1] "0x55962564e6e0" "0x55962564e6e0"
 lobstr::obj_addrs(list(e2, e1$loop))
-#> [1] "0x565120d35eb0" "0x565120d35eb0"
+#> [1] "0x559625698ef0" "0x559625698ef0"
 ```
 
 **Q4.** Explain why `e[[1]]` and `e[c("a", "b")]` don't make sense when `e` is an environment.
@@ -305,7 +305,7 @@ fget("mean", inherits = FALSE)
 fget("mean", inherits = TRUE)
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x56511c846618>
+#> <bytecode: 0x5596211a9618>
 #> <environment: namespace:base>
 
 mean <- 5
@@ -512,7 +512,7 @@ rlang::caller_env
 #> {
 #>     parent.frame(n + 1)
 #> }
-#> <bytecode: 0x56511c57b8c0>
+#> <bytecode: 0x559620ede8c0>
 #> <environment: namespace:rlang>
 ```
 
@@ -565,8 +565,9 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-02-02
+#>  date     2025-02-09
 #>  pandoc   3.6.2 @ /opt/hostedtoolcache/pandoc/3.6.2/x64/ (via rmarkdown)
+#>  quarto   NA
 #> 
 #> ─ Packages ───────────────────────────────────────────────
 #>  package     * version date (UTC) lib source
@@ -596,7 +597,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  R6            2.5.1   2021-08-19 [1] RSPM
 #>  rlang       * 1.1.5   2025-01-17 [1] RSPM
 #>  rmarkdown     2.29    2024-11-04 [1] RSPM
-#>  sessioninfo   1.2.2   2021-12-06 [1] RSPM
+#>  sessioninfo   1.2.3   2025-02-05 [1] RSPM
 #>  stats       * 4.4.2   2024-11-07 [3] local
 #>  stringi       1.8.4   2024-05-06 [1] RSPM
 #>  stringr       1.5.1   2023-11-14 [1] RSPM
@@ -611,6 +612,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  [1] /home/runner/work/_temp/Library
 #>  [2] /opt/R/4.4.2/lib/R/site-library
 #>  [3] /opt/R/4.4.2/lib/R/library
+#>  * ── Packages attached to the search path.
 #> 
 #> ──────────────────────────────────────────────────────────
 ```

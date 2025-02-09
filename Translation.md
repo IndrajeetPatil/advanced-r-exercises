@@ -419,8 +419,9 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-02-02
+#>  date     2025-02-09
 #>  pandoc   3.6.2 @ /opt/hostedtoolcache/pandoc/3.6.2/x64/ (via rmarkdown)
+#>  quarto   NA
 #> 
 #> ─ Packages ───────────────────────────────────────────────
 #>  package     * version date (UTC) lib source
@@ -442,10 +443,10 @@ sessioninfo::session_info(include_base = TRUE)
 #>  magrittr    * 2.0.3   2022-03-30 [1] RSPM
 #>  methods     * 4.4.2   2024-11-07 [3] local
 #>  pillar        1.10.1  2025-01-07 [1] RSPM
-#>  purrr       * 1.0.2   2023-08-10 [1] RSPM
+#>  purrr       * 1.0.4   2025-02-05 [1] RSPM
 #>  rlang       * 1.1.5   2025-01-17 [1] RSPM
 #>  rmarkdown     2.29    2024-11-04 [1] RSPM
-#>  sessioninfo   1.2.2   2021-12-06 [1] RSPM
+#>  sessioninfo   1.2.3   2025-02-05 [1] RSPM
 #>  stats       * 4.4.2   2024-11-07 [3] local
 #>  stringi       1.8.4   2024-05-06 [1] RSPM
 #>  stringr       1.5.1   2023-11-14 [1] RSPM
@@ -458,6 +459,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  [1] /home/runner/work/_temp/Library
 #>  [2] /opt/R/4.4.2/lib/R/site-library
 #>  [3] /opt/R/4.4.2/lib/R/library
+#>  * ── Packages attached to the search path.
 #> 
 #> ──────────────────────────────────────────────────────────
 ```

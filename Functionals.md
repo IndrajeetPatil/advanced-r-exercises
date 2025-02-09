@@ -36,7 +36,7 @@ map(x, 1)
 as_mapper(1)
 #> function (x, ...) 
 #> pluck_raw(x, list(1), .default = NULL)
-#> <environment: 0x562d47425110>
+#> <environment: 0x564cbd6a0218>
 
 map(x, list(2, 1))
 #> [[1]]
@@ -47,7 +47,7 @@ map(x, list(2, 1))
 as_mapper(list(2, 1))
 #> function (x, ...) 
 #> pluck_raw(x, list(2, 1), .default = NULL)
-#> <environment: 0x562d475cbcc8>
+#> <environment: 0x564cbd541ba8>
 
 # mapping by name -----------------------
 
@@ -65,7 +65,7 @@ map(y, "m")
 as_mapper("m")
 #> function (x, ...) 
 #> pluck_raw(x, list("m"), .default = NULL)
-#> <environment: 0x562d47467ca8>
+#> <environment: 0x564cbe2043b8>
 
 # mixing position and name
 map(y, list(2, "m"))
@@ -77,7 +77,7 @@ map(y, list(2, "m"))
 as_mapper(list(2, "m"))
 #> function (x, ...) 
 #> pluck_raw(x, list(2, "m"), .default = NULL)
-#> <environment: 0x562d459e32e0>
+#> <environment: 0x564cbdd3ba08>
 
 # compact functions ----------------------------
 
@@ -139,7 +139,7 @@ map(1:3, runif(2))
 as_mapper(runif(2))
 #> function (x, ...) 
 #> pluck_raw(x, list(0.597890264587477, 0.587997315218672), .default = NULL)
-#> <environment: 0x562d4722c570>
+#> <environment: 0x564cbd50a000>
 ```
 
 ---
@@ -880,7 +880,7 @@ library(rlang)
 
 e <- env("x" = 1, "y" = 2)
 rlang::env_print(e)
-#> <environment: 0x562d4ad12600>
+#> <environment: 0x564cc19c5760>
 #> Parent: <environment: global>
 #> Bindings:
 #> • x: <dbl>
@@ -1015,8 +1015,9 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-02-02
+#>  date     2025-02-09
 #>  pandoc   3.6.2 @ /opt/hostedtoolcache/pandoc/3.6.2/x64/ (via rmarkdown)
+#>  quarto   NA
 #> 
 #> ─ Packages ───────────────────────────────────────────────
 #>  package     * version date (UTC) lib source
@@ -1041,11 +1042,11 @@ sessioninfo::session_info(include_base = TRUE)
 #>  methods     * 4.4.2   2024-11-07 [3] local
 #>  pillar        1.10.1  2025-01-07 [1] RSPM
 #>  pkgconfig     2.0.3   2019-09-22 [1] RSPM
-#>  purrr       * 1.0.2   2023-08-10 [1] RSPM
+#>  purrr       * 1.0.4   2025-02-05 [1] RSPM
 #>  R6            2.5.1   2021-08-19 [1] RSPM
 #>  rlang       * 1.1.5   2025-01-17 [1] RSPM
 #>  rmarkdown     2.29    2024-11-04 [1] RSPM
-#>  sessioninfo   1.2.2   2021-12-06 [1] RSPM
+#>  sessioninfo   1.2.3   2025-02-05 [1] RSPM
 #>  stats       * 4.4.2   2024-11-07 [3] local
 #>  stringi       1.8.4   2024-05-06 [1] RSPM
 #>  stringr       1.5.1   2023-11-14 [1] RSPM
@@ -1061,6 +1062,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  [1] /home/runner/work/_temp/Library
 #>  [2] /opt/R/4.4.2/lib/R/site-library
 #>  [3] /opt/R/4.4.2/lib/R/library
+#>  * ── Packages attached to the search path.
 #> 
 #> ──────────────────────────────────────────────────────────
 ```

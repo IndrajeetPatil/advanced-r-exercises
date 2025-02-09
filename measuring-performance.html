@@ -131,7 +131,7 @@
 <span><span class="co">#&gt;     }</span></span>
 <span><span class="co">#&gt;     .Internal(remove(list, envir, inherits))</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x5612feb350f8&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x558927d86108&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:base&gt;</span></span></code></pre></div>
 <p>I still couldn’t figure out why. I would recommend checking out the <a href="https://advanced-r-solutions.rbind.io/measuring-performance.html#profiling">official answer</a>.</p>
 <hr>
@@ -194,8 +194,8 @@
 <span><span class="co">#&gt; # A tibble: 2 × 4</span></span>
 <span><span class="co">#&gt;   expression bench_mean systime_with_gc systime_with_nogc</span></span>
 <span><span class="co">#&gt;   &lt;bch:expr&gt;   &lt;bch:tm&gt;           &lt;dbl&gt;             &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt; 1 sqrt(x)      765.02ns           0.425             0.396</span></span>
-<span><span class="co">#&gt; 2 x^0.5          2.09µs           1.93              1.94</span></span></code></pre></div>
+<span><span class="co">#&gt; 1 sqrt(x)      799.34ns           0.430             0.421</span></span>
+<span><span class="co">#&gt; 2 x^0.5          2.08µs           1.94              1.93</span></span></code></pre></div>
 <p>The comparison reveals that these two approaches yield quite similar results. Slight differences in exact values is possibly due to differences in the precision of timers used internally by these functions.</p>
 <hr>
 <p><strong>Q2.</strong> Here are two other ways to compute the square root of a vector. Which do you think will be fastest? Which will be slowest? Use microbenchmarking to test your answers.</p>
@@ -220,9 +220,9 @@
 <span><span class="co">#&gt;   expression      median</span></span>
 <span><span class="co">#&gt;   &lt;bch:expr&gt;    &lt;bch:tm&gt;</span></span>
 <span><span class="co">#&gt; 1 sqrt(x)         2.92µs</span></span>
-<span><span class="co">#&gt; 2 exp(log(x)/2)   12.5µs</span></span>
-<span><span class="co">#&gt; 3 x^0.5          18.25µs</span></span>
-<span><span class="co">#&gt; 4 x^(1/2)        18.38µs</span></span></code></pre></div>
+<span><span class="co">#&gt; 2 exp(log(x)/2)  12.55µs</span></span>
+<span><span class="co">#&gt; 3 x^0.5          18.29µs</span></span>
+<span><span class="co">#&gt; 4 x^(1/2)        18.36µs</span></span></code></pre></div>
 <p>The specialized primitive function <code><a href="https://rdrr.io/r/base/MathFun.html">sqrt()</a></code> (written in <code>C</code>) is the fastest way to compute square root.</p>
 <hr>
 </div>
@@ -231,7 +231,7 @@
 <span class="header-section-number">23.3</span> Session information<a class="anchor" aria-label="anchor" href="#session-information-17"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb646"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">sessioninfo</span><span class="fu">::</span><span class="fu"><a href="https://r-lib.github.io/sessioninfo/reference/session_info.html">session_info</a></span><span class="op">(</span>include_base <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu">sessioninfo</span><span class="fu">::</span><span class="fu"><a href="https://sessioninfo.r-lib.org/reference/session_info.html">session_info</a></span><span class="op">(</span>include_base <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; ─ Session info ───────────────────────────────────────────</span></span>
 <span><span class="co">#&gt;  setting  value</span></span>
 <span><span class="co">#&gt;  version  R version 4.4.2 (2024-10-31)</span></span>
@@ -242,8 +242,9 @@
 <span><span class="co">#&gt;  collate  C.UTF-8</span></span>
 <span><span class="co">#&gt;  ctype    C.UTF-8</span></span>
 <span><span class="co">#&gt;  tz       UTC</span></span>
-<span><span class="co">#&gt;  date     2025-02-02</span></span>
+<span><span class="co">#&gt;  date     2025-02-09</span></span>
 <span><span class="co">#&gt;  pandoc   3.6.2 @ /opt/hostedtoolcache/pandoc/3.6.2/x64/ (via rmarkdown)</span></span>
+<span><span class="co">#&gt;  quarto   NA</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; ─ Packages ───────────────────────────────────────────────</span></span>
 <span><span class="co">#&gt;  package     * version date (UTC) lib source</span></span>
@@ -283,7 +284,7 @@
 <span><span class="co">#&gt;  rlang         1.1.5   2025-01-17 [1] RSPM</span></span>
 <span><span class="co">#&gt;  rmarkdown     2.29    2024-11-04 [1] RSPM</span></span>
 <span><span class="co">#&gt;  sass          0.4.9   2024-03-15 [1] RSPM</span></span>
-<span><span class="co">#&gt;  sessioninfo   1.2.2   2021-12-06 [1] RSPM</span></span>
+<span><span class="co">#&gt;  sessioninfo   1.2.3   2025-02-05 [1] RSPM</span></span>
 <span><span class="co">#&gt;  stats       * 4.4.2   2024-11-07 [3] local</span></span>
 <span><span class="co">#&gt;  stringi       1.8.4   2024-05-06 [1] RSPM</span></span>
 <span><span class="co">#&gt;  stringr       1.5.1   2023-11-14 [1] RSPM</span></span>
@@ -301,6 +302,7 @@
 <span><span class="co">#&gt;  [1] /home/runner/work/_temp/Library</span></span>
 <span><span class="co">#&gt;  [2] /opt/R/4.4.2/lib/R/site-library</span></span>
 <span><span class="co">#&gt;  [3] /opt/R/4.4.2/lib/R/library</span></span>
+<span><span class="co">#&gt;  * ── Packages attached to the search path.</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; ──────────────────────────────────────────────────────────</span></span></code></pre></div>
 
@@ -333,7 +335,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-02-02.</p>
+    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-02-09.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

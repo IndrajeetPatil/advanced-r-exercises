@@ -218,7 +218,7 @@
 <span><span class="co">#&gt; {</span></span>
 <span><span class="co">#&gt;     enexpr(expr)</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x555b5fa28828&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x5622ff955010&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:rlang&gt;</span></span></code></pre></div>
 <p>For example:</p>
 <div class="sourceCode" id="cb548"><pre class="downlit sourceCode r">
@@ -232,7 +232,7 @@
 <span><span class="co">#&gt; {</span></span>
 <span><span class="co">#&gt;     .Call(ffi_enexpr, substitute(arg), parent.frame())</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x555b5fddc458&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x5622fcdab468&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:rlang&gt;</span></span></code></pre></div>
 <hr>
 <p><strong>Q2.</strong> Compare and contrast the following two functions. Can you predict the output before running them?</p>
@@ -731,7 +731,7 @@ the expression slot of the promise replaces the symbol.</p>
 <span class="header-section-number">19.6</span> Session information<a class="anchor" aria-label="anchor" href="#session-information-14"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb583"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">sessioninfo</span><span class="fu">::</span><span class="fu"><a href="https://r-lib.github.io/sessioninfo/reference/session_info.html">session_info</a></span><span class="op">(</span>include_base <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu">sessioninfo</span><span class="fu">::</span><span class="fu"><a href="https://sessioninfo.r-lib.org/reference/session_info.html">session_info</a></span><span class="op">(</span>include_base <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; ─ Session info ───────────────────────────────────────────</span></span>
 <span><span class="co">#&gt;  setting  value</span></span>
 <span><span class="co">#&gt;  version  R version 4.4.2 (2024-10-31)</span></span>
@@ -742,8 +742,9 @@ the expression slot of the promise replaces the symbol.</p>
 <span><span class="co">#&gt;  collate  C.UTF-8</span></span>
 <span><span class="co">#&gt;  ctype    C.UTF-8</span></span>
 <span><span class="co">#&gt;  tz       UTC</span></span>
-<span><span class="co">#&gt;  date     2025-02-02</span></span>
+<span><span class="co">#&gt;  date     2025-02-09</span></span>
 <span><span class="co">#&gt;  pandoc   3.6.2 @ /opt/hostedtoolcache/pandoc/3.6.2/x64/ (via rmarkdown)</span></span>
+<span><span class="co">#&gt;  quarto   NA</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; ─ Packages ───────────────────────────────────────────────</span></span>
 <span><span class="co">#&gt;  package     * version date (UTC) lib source</span></span>
@@ -786,13 +787,13 @@ the expression slot of the promise replaces the symbol.</p>
 <span><span class="co">#&gt;  munsell       0.5.1   2024-04-01 [1] RSPM</span></span>
 <span><span class="co">#&gt;  pillar        1.10.1  2025-01-07 [1] RSPM</span></span>
 <span><span class="co">#&gt;  pkgconfig     2.0.3   2019-09-22 [1] RSPM</span></span>
-<span><span class="co">#&gt;  purrr       * 1.0.2   2023-08-10 [1] RSPM</span></span>
+<span><span class="co">#&gt;  purrr       * 1.0.4   2025-02-05 [1] RSPM</span></span>
 <span><span class="co">#&gt;  R6            2.5.1   2021-08-19 [1] RSPM</span></span>
 <span><span class="co">#&gt;  rlang       * 1.1.5   2025-01-17 [1] RSPM</span></span>
 <span><span class="co">#&gt;  rmarkdown     2.29    2024-11-04 [1] RSPM</span></span>
 <span><span class="co">#&gt;  sass          0.4.9   2024-03-15 [1] RSPM</span></span>
 <span><span class="co">#&gt;  scales        1.3.0   2023-11-28 [1] RSPM</span></span>
-<span><span class="co">#&gt;  sessioninfo   1.2.2   2021-12-06 [1] RSPM</span></span>
+<span><span class="co">#&gt;  sessioninfo   1.2.3   2025-02-05 [1] RSPM</span></span>
 <span><span class="co">#&gt;  stats       * 4.4.2   2024-11-07 [3] local</span></span>
 <span><span class="co">#&gt;  stringi       1.8.4   2024-05-06 [1] RSPM</span></span>
 <span><span class="co">#&gt;  stringr       1.5.1   2023-11-14 [1] RSPM</span></span>
@@ -810,6 +811,7 @@ the expression slot of the promise replaces the symbol.</p>
 <span><span class="co">#&gt;  [1] /home/runner/work/_temp/Library</span></span>
 <span><span class="co">#&gt;  [2] /opt/R/4.4.2/lib/R/site-library</span></span>
 <span><span class="co">#&gt;  [3] /opt/R/4.4.2/lib/R/library</span></span>
+<span><span class="co">#&gt;  * ── Packages attached to the search path.</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; ──────────────────────────────────────────────────────────</span></span></code></pre></div>
 
@@ -845,7 +847,7 @@ the expression slot of the promise replaces the symbol.</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-02-02.</p>
+    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-02-09.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
