@@ -292,7 +292,7 @@ rlang::catch_cnd
 #>         return(NULL)
 #>     })))
 #> }
-#> <bytecode: 0x55e7f283b8f8>
+#> <bytecode: 0x5568bb7b67b0>
 #> <environment: namespace:rlang>
 ```
 
@@ -697,8 +697,8 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-02-09
-#>  pandoc   3.6.2 @ /opt/hostedtoolcache/pandoc/3.6.2/x64/ (via rmarkdown)
+#>  date     2025-02-16
+#>  pandoc   3.6.3 @ /opt/hostedtoolcache/pandoc/3.6.3/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
 #> ─ Packages ───────────────────────────────────────────────
@@ -706,7 +706,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  base        * 4.4.2   2024-11-07 [3] local
 #>  bookdown      0.42    2025-01-07 [1] RSPM
 #>  brio          1.1.5   2024-04-24 [1] RSPM
-#>  cli           3.6.3   2024-06-21 [1] RSPM
+#>  cli           3.6.4   2025-02-13 [1] RSPM
 #>  compiler      4.4.2   2024-11-07 [3] local
 #>  datasets    * 4.4.2   2024-11-07 [3] local
 #>  desc          1.4.3   2023-12-10 [1] RSPM
@@ -728,7 +728,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  pillar        1.10.1  2025-01-07 [1] RSPM
 #>  pkgconfig     2.0.3   2019-09-22 [1] RSPM
 #>  pkgload       1.4.0   2024-06-28 [1] RSPM
-#>  R6            2.5.1   2021-08-19 [1] RSPM
+#>  R6            2.6.1   2025-02-15 [1] RSPM
 #>  rlang       * 1.1.5   2025-01-17 [1] RSPM
 #>  rmarkdown     2.29    2024-11-04 [1] RSPM
 #>  rprojroot     2.0.4   2023-11-05 [1] RSPM
