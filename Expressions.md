@@ -374,7 +374,7 @@ call_standardise(quote(mean(x = 1:10, , TRUE)))
 mean
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x55e3a691e618>
+#> <bytecode: 0x5616fe763e98>
 #> <environment: namespace:base>
 ```
 
@@ -993,7 +993,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-02-16
+#>  date     2025-02-23
 #>  pandoc   3.6.3 @ /opt/hostedtoolcache/pandoc/3.6.3/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -1029,7 +1029,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  tools         4.4.2   2024-11-07 [3] local
 #>  utils       * 4.4.2   2024-11-07 [3] local
 #>  vctrs         0.6.5   2023-12-01 [1] RSPM
-#>  xfun          0.50    2025-01-07 [1] RSPM
+#>  xfun          0.51    2025-02-19 [1] RSPM
 #>  yaml          2.3.10  2024-07-26 [1] RSPM
 #> 
 #>  [1] /home/runner/work/_temp/Library
