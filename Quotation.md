@@ -171,7 +171,7 @@ rlang::expr
 #> {
 #>     enexpr(expr)
 #> }
-#> <bytecode: 0x56273f930c28>
+#> <bytecode: 0x55c8442352f8>
 #> <environment: namespace:rlang>
 ```
 
@@ -193,7 +193,7 @@ rlang::enexpr
 #> {
 #>     .Call(ffi_enexpr, substitute(arg), parent.frame())
 #> }
-#> <bytecode: 0x56273b8431f8>
+#> <bytecode: 0x55c8401495b8>
 #> <environment: namespace:rlang>
 ```
 
@@ -816,27 +816,27 @@ not_null2(4)
 sessioninfo::session_info(include_base = TRUE)
 #> ─ Session info ───────────────────────────────────────────
 #>  setting  value
-#>  version  R version 4.4.2 (2024-10-31)
-#>  os       Ubuntu 24.04.1 LTS
+#>  version  R version 4.4.3 (2025-02-28)
+#>  os       Ubuntu 24.04.2 LTS
 #>  system   x86_64, linux-gnu
 #>  ui       X11
 #>  language (EN)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-02-23
+#>  date     2025-03-02
 #>  pandoc   3.6.3 @ /opt/hostedtoolcache/pandoc/3.6.3/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
 #> ─ Packages ───────────────────────────────────────────────
 #>  package     * version date (UTC) lib source
-#>  base        * 4.4.2   2024-11-07 [3] local
+#>  base        * 4.4.3   2025-02-28 [3] local
 #>  bookdown      0.42    2025-01-07 [1] RSPM
 #>  cli           3.6.4   2025-02-13 [1] RSPM
 #>  colorspace    2.1-1   2024-07-26 [1] RSPM
-#>  compiler      4.4.2   2024-11-07 [3] local
+#>  compiler      4.4.3   2025-02-28 [3] local
 #>  crayon        1.5.3   2024-06-20 [1] RSPM
-#>  datasets    * 4.4.2   2024-11-07 [3] local
+#>  datasets    * 4.4.3   2025-02-28 [3] local
 #>  diffobj       0.3.5   2021-10-05 [1] RSPM
 #>  digest        0.6.37  2024-08-19 [1] RSPM
 #>  dplyr       * 1.1.4   2023-11-17 [1] RSPM
@@ -847,9 +847,9 @@ sessioninfo::session_info(include_base = TRUE)
 #>  generics      0.1.3   2022-07-05 [1] RSPM
 #>  ggplot2     * 3.5.1   2024-04-23 [1] RSPM
 #>  glue          1.8.0   2024-09-30 [1] RSPM
-#>  graphics    * 4.4.2   2024-11-07 [3] local
-#>  grDevices   * 4.4.2   2024-11-07 [3] local
-#>  grid          4.4.2   2024-11-07 [3] local
+#>  graphics    * 4.4.3   2025-02-28 [3] local
+#>  grDevices   * 4.4.3   2025-02-28 [3] local
+#>  grid          4.4.3   2025-02-28 [3] local
 #>  gtable        0.3.6   2024-10-25 [1] RSPM
 #>  htmltools     0.5.8.1 2024-04-04 [1] RSPM
 #>  knitr         1.49    2024-11-08 [1] RSPM
@@ -857,8 +857,8 @@ sessioninfo::session_info(include_base = TRUE)
 #>  lifecycle     1.0.4   2023-11-07 [1] RSPM
 #>  lobstr      * 1.1.2   2022-06-22 [1] RSPM
 #>  magrittr    * 2.0.3   2022-03-30 [1] RSPM
-#>  MASS        * 7.3-61  2024-06-13 [3] CRAN (R 4.4.2)
-#>  methods     * 4.4.2   2024-11-07 [3] local
+#>  MASS        * 7.3-64  2025-01-04 [3] CRAN (R 4.4.3)
+#>  methods     * 4.4.3   2025-02-28 [3] local
 #>  munsell       0.5.1   2024-04-01 [1] RSPM
 #>  pillar        1.10.1  2025-01-07 [1] RSPM
 #>  pkgconfig     2.0.3   2019-09-22 [1] RSPM
@@ -868,13 +868,13 @@ sessioninfo::session_info(include_base = TRUE)
 #>  rmarkdown     2.29    2024-11-04 [1] RSPM
 #>  scales        1.3.0   2023-11-28 [1] RSPM
 #>  sessioninfo   1.2.3   2025-02-05 [1] RSPM
-#>  stats       * 4.4.2   2024-11-07 [3] local
+#>  stats       * 4.4.3   2025-02-28 [3] local
 #>  stringi       1.8.4   2024-05-06 [1] RSPM
 #>  stringr       1.5.1   2023-11-14 [1] RSPM
 #>  tibble        3.2.1   2023-03-20 [1] RSPM
 #>  tidyselect    1.2.1   2024-03-11 [1] RSPM
-#>  tools         4.4.2   2024-11-07 [3] local
-#>  utils       * 4.4.2   2024-11-07 [3] local
+#>  tools         4.4.3   2025-02-28 [3] local
+#>  utils       * 4.4.3   2025-02-28 [3] local
 #>  vctrs         0.6.5   2023-12-01 [1] RSPM
 #>  waldo         0.6.1   2024-11-07 [1] RSPM
 #>  withr         3.0.2   2024-10-28 [1] RSPM
@@ -882,8 +882,8 @@ sessioninfo::session_info(include_base = TRUE)
 #>  yaml          2.3.10  2024-07-26 [1] RSPM
 #> 
 #>  [1] /home/runner/work/_temp/Library
-#>  [2] /opt/R/4.4.2/lib/R/site-library
-#>  [3] /opt/R/4.4.2/lib/R/library
+#>  [2] /opt/R/4.4.3/lib/R/site-library
+#>  [3] /opt/R/4.4.3/lib/R/library
 #>  * ── Packages attached to the search path.
 #> 
 #> ──────────────────────────────────────────────────────────
