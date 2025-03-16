@@ -171,7 +171,7 @@ rlang::expr
 #> {
 #>     enexpr(expr)
 #> }
-#> <bytecode: 0x56222d93a258>
+#> <bytecode: 0x5621069782f8>
 #> <environment: namespace:rlang>
 ```
 
@@ -193,7 +193,7 @@ rlang::enexpr
 #> {
 #>     .Call(ffi_enexpr, substitute(arg), parent.frame())
 #> }
-#> <bytecode: 0x56222984e5b8>
+#> <bytecode: 0x56210288c5b8>
 #> <environment: namespace:rlang>
 ```
 
@@ -824,7 +824,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-03-09
+#>  date     2025-03-16
 #>  pandoc   3.6.3 @ /opt/hostedtoolcache/pandoc/3.6.3/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
