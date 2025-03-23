@@ -50,7 +50,7 @@ withr::with_tempdir(
     foo()
   }
 )
-#> <environment: 0x563e5162d048>
+#> <environment: 0x55f10ffe86d0>
 #> Parent: <environment: global>
 ```
 
@@ -251,17 +251,17 @@ q1 <- new_quosure(expr(x), env(x = 1))
 q1
 #> <quosure>
 #> expr: ^x
-#> env:  0x563e52161bb8
+#> env:  0x55f110804580
 q2 <- new_quosure(expr(x + !!q1), env(x = 10))
 q2
 #> <quosure>
 #> expr: ^x + (^x)
-#> env:  0x563e5386f348
+#> env:  0x55f1122df740
 q3 <- new_quosure(expr(x + !!q2), env(x = 100))
 q3
 #> <quosure>
 #> expr: ^x + (^x + (^x))
-#> env:  0x563e52ecbe50
+#> env:  0x55f112537230
 ```
 
 **A1.** Correctly predicted 😉
@@ -299,7 +299,7 @@ enenv(x)
 
 foo <- function(x) enenv(x)
 foo()
-#> <environment: 0x563e53fb47c8>
+#> <environment: 0x55f112c60788>
 ```
 
 ---
@@ -675,8 +675,8 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-03-16
-#>  pandoc   3.6.3 @ /opt/hostedtoolcache/pandoc/3.6.3/x64/ (via rmarkdown)
+#>  date     2025-03-23
+#>  pandoc   3.6.4 @ /opt/hostedtoolcache/pandoc/3.6.4/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
 #> ─ Packages ───────────────────────────────────────────────
@@ -694,7 +694,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  graphics    * 4.4.3   2025-02-28 [3] local
 #>  grDevices   * 4.4.3   2025-02-28 [3] local
 #>  htmltools     0.5.8.1 2024-04-04 [1] RSPM
-#>  knitr         1.49    2024-11-08 [1] RSPM
+#>  knitr         1.50    2025-03-16 [1] RSPM
 #>  lifecycle     1.0.4   2023-11-07 [1] RSPM
 #>  magrittr    * 2.0.3   2022-03-30 [1] RSPM
 #>  methods     * 4.4.3   2025-02-28 [3] local

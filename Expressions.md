@@ -374,7 +374,7 @@ call_standardise(quote(mean(x = 1:10, , TRUE)))
 mean
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x55da7431a0c0>
+#> <bytecode: 0x558c2be640a8>
 #> <environment: namespace:base>
 ```
 
@@ -993,8 +993,8 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-03-16
-#>  pandoc   3.6.3 @ /opt/hostedtoolcache/pandoc/3.6.3/x64/ (via rmarkdown)
+#>  date     2025-03-23
+#>  pandoc   3.6.4 @ /opt/hostedtoolcache/pandoc/3.6.4/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
 #> ─ Packages ───────────────────────────────────────────────
@@ -1013,7 +1013,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  graphics    * 4.4.3   2025-02-28 [3] local
 #>  grDevices   * 4.4.3   2025-02-28 [3] local
 #>  htmltools     0.5.8.1 2024-04-04 [1] RSPM
-#>  knitr         1.49    2024-11-08 [1] RSPM
+#>  knitr         1.50    2025-03-16 [1] RSPM
 #>  lifecycle     1.0.4   2023-11-07 [1] RSPM
 #>  lobstr      * 1.1.2   2022-06-22 [1] RSPM
 #>  magrittr    * 2.0.3   2022-03-30 [1] RSPM

@@ -20,7 +20,7 @@ library(tidyverse, warn.conflicts = FALSE)
 match.fun("mean")
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x563e970dd0c0>
+#> <bytecode: 0x55edcd1c20a8>
 #> <environment: namespace:base>
 ```
 
@@ -354,7 +354,7 @@ names(primitives)
 mean
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x563e970dd0c0>
+#> <bytecode: 0x55edcd1c20a8>
 #> <environment: namespace:base>
 
 # other package function
@@ -363,7 +363,7 @@ purrr::map
 #> {
 #>     map_("list", .x, .f, ..., .progress = .progress)
 #> }
-#> <bytecode: 0x563e9c9656f8>
+#> <bytecode: 0x55edd2a26df8>
 #> <environment: namespace:purrr>
 ```
 
@@ -567,7 +567,7 @@ f2 <- function(x = z) {
 }
 
 f2()
-#> [1] "0x563e9d033de0" "0x563e9d033de0"
+#> [1] "0x55edd2033480" "0x55edd2033480"
 #> [1] 100
 ```
 
@@ -662,7 +662,7 @@ show_time <- function(x = stop("Error!")) {
 }
 
 show_time()
-#> [1] "2025-03-16 00:18:27 UTC"
+#> [1] "2025-03-23 00:21:53 UTC"
 ```
 
 **A5.** Let's take this step-by-step.
@@ -887,7 +887,7 @@ withr::with_dir
 #>     on.exit(setwd(old))
 #>     force(code)
 #> }
-#> <bytecode: 0x563e9c7363b0>
+#> <bytecode: 0x55edd28706a0>
 #> <environment: namespace:withr>
 ```
 
@@ -969,7 +969,7 @@ capture.output
 #>         close(file)
 #>     rval %||% invisible(NULL)
 #> }
-#> <bytecode: 0x563e9be49cd8>
+#> <bytecode: 0x55edd2060480>
 #> <environment: namespace:utils>
 ```
 
@@ -1309,8 +1309,8 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-03-16
-#>  pandoc   3.6.3 @ /opt/hostedtoolcache/pandoc/3.6.3/x64/ (via rmarkdown)
+#>  date     2025-03-23
+#>  pandoc   3.6.4 @ /opt/hostedtoolcache/pandoc/3.6.4/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
 #> ─ Packages ───────────────────────────────────────────────
@@ -1336,7 +1336,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  gtable        0.3.6   2024-10-25 [1] RSPM
 #>  hms           1.1.3   2023-03-21 [1] RSPM
 #>  htmltools     0.5.8.1 2024-04-04 [1] RSPM
-#>  knitr         1.49    2024-11-08 [1] RSPM
+#>  knitr         1.50    2025-03-16 [1] RSPM
 #>  lifecycle     1.0.4   2023-11-07 [1] RSPM
 #>  lobstr        1.1.2   2022-06-22 [1] RSPM
 #>  lubridate   * 1.9.4   2024-12-08 [1] RSPM
@@ -1361,7 +1361,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  tidyverse   * 2.0.0   2023-02-22 [1] RSPM
 #>  timechange    0.3.0   2024-01-18 [1] RSPM
 #>  tools         4.4.3   2025-02-28 [3] local
-#>  tzdb          0.4.0   2023-05-12 [1] RSPM
+#>  tzdb          0.5.0   2025-03-15 [1] RSPM
 #>  utf8          1.2.4   2023-10-22 [1] RSPM
 #>  utils       * 4.4.3   2025-02-28 [3] local
 #>  vctrs         0.6.5   2023-12-01 [1] RSPM
