@@ -45,7 +45,7 @@ library(rlang)
 e <- env()
 e$loop <- e
 env_print(e)
-#> <environment: 0x55c2e6898810>
+#> <environment: 0x5648c46f05e8>
 #> Parent: <environment: global>
 #> Bindings:
 #> • loop: <env>
@@ -56,8 +56,8 @@ The binding `loop` should have the same memory address as the environment `e`:
 
 ``` r
 lobstr::ref(e$loop)
-#> █ [1:0x55c2e6898810] <env> 
-#> └─loop = [1:0x55c2e6898810]
+#> █ [1:0x5648c46f05e8] <env> 
+#> └─loop = [1:0x5648c46f05e8]
 ```
 
 **Q3.** Create a pair of environments as illustrated by this picture.
@@ -76,9 +76,9 @@ e2$deloop <- e1
 
 # following should be the same
 lobstr::obj_addrs(list(e1, e2$deloop))
-#> [1] "0x55c2e8d1ab88" "0x55c2e8d1ab88"
+#> [1] "0x5648c6b75be0" "0x5648c6b75be0"
 lobstr::obj_addrs(list(e2, e1$loop))
-#> [1] "0x55c2e8d6a0d8" "0x55c2e8d6a0d8"
+#> [1] "0x5648c6bc1300" "0x5648c6bc1300"
 ```
 
 **Q4.** Explain why `e[[1]]` and `e[c("a", "b")]` don't make sense when `e` is an environment.
@@ -305,7 +305,7 @@ fget("mean", inherits = FALSE)
 fget("mean", inherits = TRUE)
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x55c2e48220a8>
+#> <bytecode: 0x5648c2667b30>
 #> <environment: namespace:base>
 
 mean <- 5
@@ -512,7 +512,7 @@ rlang::caller_env
 #> {
 #>     parent.frame(n + 1)
 #> }
-#> <bytecode: 0x55c2e4f38e28>
+#> <bytecode: 0x5648c2376e58>
 #> <environment: namespace:rlang>
 ```
 
@@ -565,7 +565,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-03-30
+#>  date     2025-04-06
 #>  pandoc   3.6.4 @ /opt/hostedtoolcache/pandoc/3.6.4/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -606,7 +606,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  tools         4.4.3   2025-02-28 [3] local
 #>  utils       * 4.4.3   2025-02-28 [3] local
 #>  vctrs         0.6.5   2023-12-01 [1] RSPM
-#>  xfun          0.51    2025-02-19 [1] RSPM
+#>  xfun          0.52    2025-04-02 [1] RSPM
 #>  yaml          2.3.10  2024-07-26 [1] RSPM
 #> 
 #>  [1] /home/runner/work/_temp/Library
