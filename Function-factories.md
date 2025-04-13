@@ -21,7 +21,7 @@ library(ggplot2, warn.conflicts = FALSE)
 force
 #> function (x) 
 #> x
-#> <bytecode: 0x563d582b5830>
+#> <bytecode: 0x55d904451e60>
 #> <environment: namespace:base>
 ```
 
@@ -47,8 +47,8 @@ f <- approxfun(x, y)
 f
 #> function (v) 
 #> .approxfun(x, y, v, method, yleft, yright, f, na.rm)
-#> <bytecode: 0x563d5a8965e8>
-#> <environment: 0x563d5a891358>
+#> <bytecode: 0x55d90a909888>
+#> <environment: 0x55d90a908f58>
 f(x)
 #>  [1] -0.7786629 -0.3894764 -2.0337983 -0.9823731  0.2478901
 #>  [6] -2.1038646 -0.3814180  2.0749198  1.0271384  0.4730142
@@ -213,7 +213,7 @@ new_counter3()
 #>     i <- i + 1
 #>     i
 #> }
-#> <environment: 0x563d5e594400>
+#> <environment: 0x55d90a032a40>
 
 new_counter3()
 #> function () 
@@ -221,8 +221,8 @@ new_counter3()
 #>     i <- i + 1
 #>     i
 #> }
-#> <bytecode: 0x563d5e6e8620>
-#> <environment: 0x563d5e5cd408>
+#> <bytecode: 0x55d90a187c90>
+#> <environment: 0x55d90a0697d0>
 ```
 
 ---
@@ -260,7 +260,7 @@ ggplot2::label_bquote
 #>     }
 #>     structure(fun, class = "labeller")
 #> }
-#> <bytecode: 0x563d5e8f3178>
+#> <bytecode: 0x55d90a378b30>
 #> <environment: namespace:ggplot2>
 ```
 
@@ -283,7 +283,7 @@ scales::number_format
 #>             scale_cut = scale_cut, trim = trim, ...)
 #>     }
 #> }
-#> <bytecode: 0x563d5afdcb48>
+#> <bytecode: 0x55d90a579280>
 #> <environment: namespace:scales>
 ```
 
@@ -380,7 +380,7 @@ Let's have a look at one example with each:
 boxcox2(1)
 #> function (x) 
 #> (x^lambda - 1)/lambda
-#> <environment: 0x563d5d66a0f8>
+#> <environment: 0x55d90a5cce58>
 
 boxcox3(mtcars$wt)
 #> function (lambda) 
@@ -392,7 +392,7 @@ boxcox3(mtcars$wt)
 #>         (x^lambda - 1)/lambda
 #>     }
 #> }
-#> <environment: 0x563d5d6aa020>
+#> <environment: 0x55d90a604d50>
 ```
 
 As can be seen:
@@ -426,7 +426,7 @@ boot_permute(mtcars, "mpg")
 #>     col <- df[[var]]
 #>     col[sample(n, replace = TRUE)]
 #> }
-#> <environment: 0x563d5d934b08>
+#> <environment: 0x55d907612858>
 ```
 
 This is why we don't need to worry about a copy being made because the `df` in the function environment points to the memory address of the data frame. We can confirm this by comparing their memory addresses:
@@ -435,7 +435,7 @@ This is why we don't need to worry about a copy being made because the `df` in t
 ``` r
 boot_permute_env <- rlang::fn_env(boot_permute(mtcars, "mpg"))
 rlang::env_print(boot_permute_env)
-#> <environment: 0x563d5dbea1d8>
+#> <environment: 0x55d908057aa8>
 #> Parent: <environment: global>
 #> Bindings:
 #> • n: <int>
@@ -494,8 +494,8 @@ bench::mark(
 #> # A tibble: 2 × 6
 #>   expression      min   median `itr/sec` mem_alloc `gc/sec`
 #>   <bch:expr> <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 LL1          28.6µs   30.5µs    31398.    12.8KB     28.3
-#> 2 LL2          15.2µs   16.2µs    57734.        0B     28.9
+#> 1 LL1          29.6µs   31.5µs    30632.    12.8KB     24.5
+#> 2 LL2          15.9µs     17µs    55647.        0B     22.3
 ```
 
 As can be seen, the second version is much faster than the first version.
@@ -521,16 +521,16 @@ generate_ll_benches <- function(n) {
 #> # A tibble: 10 × 5
 #>    length expression      min   median `itr/sec`
 #>     <dbl> <bch:expr> <bch:tm> <bch:tm>     <dbl>
-#>  1     10 LL1          40.5µs   42.9µs    22434.
-#>  2     10 LL2            18µs   19.2µs    49890.
-#>  3     20 LL1          42.4µs   44.7µs    21609.
-#>  4     20 LL2          17.4µs   18.6µs    51619.
-#>  5     50 LL1          46.7µs   48.8µs    19848.
-#>  6     50 LL2          16.4µs   17.7µs    54134.
-#>  7    100 LL1          62.2µs   64.8µs    14960.
-#>  8    100 LL2          17.7µs     19µs    50495.
-#>  9   1000 LL1         868.7µs  990.5µs     1019.
-#> 10   1000 LL2          54.5µs   56.7µs    16989.
+#>  1     10 LL1          41.7µs   44.1µs    22097.
+#>  2     10 LL2          19.2µs   20.4µs    47542.
+#>  3     20 LL1          43.6µs   45.9µs    21274.
+#>  4     20 LL2          18.7µs   19.8µs    49074.
+#>  5     50 LL1          47.3µs   49.4µs    19758.
+#>  6     50 LL2          17.6µs   18.9µs    51478.
+#>  7    100 LL1          62.8µs     65µs    15030.
+#>  8    100 LL2          18.8µs   20.1µs    48364.
+#>  9   1000 LL1         843.6µs  960.3µs     1074.
+#> 10   1000 LL2          57.7µs   59.8µs    16314.
 
 ggplot(
   df_bench,
@@ -650,7 +650,7 @@ Note that there is no `"funs"` in this output.
 sessioninfo::session_info(include_base = TRUE)
 #> ─ Session info ───────────────────────────────────────────
 #>  setting  value
-#>  version  R version 4.4.3 (2025-02-28)
+#>  version  R version 4.5.0 (2025-04-11)
 #>  os       Ubuntu 24.04.2 LTS
 #>  system   x86_64, linux-gnu
 #>  ui       X11
@@ -658,19 +658,19 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-04-06
+#>  date     2025-04-13
 #>  pandoc   3.6.4 @ /opt/hostedtoolcache/pandoc/3.6.4/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
 #> ─ Packages ───────────────────────────────────────────────
 #>  package     * version date (UTC) lib source
-#>  base        * 4.4.3   2025-02-28 [3] local
+#>  base        * 4.5.0   2025-04-11 [3] local
 #>  bench         1.1.4   2025-01-16 [1] RSPM
 #>  bookdown      0.42    2025-01-07 [1] RSPM
 #>  cli           3.6.4   2025-02-13 [1] RSPM
 #>  colorspace    2.1-1   2024-07-26 [1] RSPM
-#>  compiler      4.4.3   2025-02-28 [3] local
-#>  datasets    * 4.4.3   2025-02-28 [3] local
+#>  compiler      4.5.0   2025-04-11 [3] local
+#>  datasets    * 4.5.0   2025-04-11 [3] local
 #>  digest        0.6.37  2024-08-19 [1] RSPM
 #>  dplyr         1.1.4   2023-11-17 [1] RSPM
 #>  emoji         16.0.0  2024-10-28 [1] RSPM
@@ -678,11 +678,11 @@ sessioninfo::session_info(include_base = TRUE)
 #>  farver        2.1.2   2024-05-13 [1] RSPM
 #>  fastmap       1.2.0   2024-05-15 [1] RSPM
 #>  generics      0.1.3   2022-07-05 [1] RSPM
-#>  ggplot2     * 3.5.1   2024-04-23 [1] RSPM
+#>  ggplot2     * 3.5.2   2025-04-09 [1] RSPM
 #>  glue          1.8.0   2024-09-30 [1] RSPM
-#>  graphics    * 4.4.3   2025-02-28 [3] local
-#>  grDevices   * 4.4.3   2025-02-28 [3] local
-#>  grid          4.4.3   2025-02-28 [3] local
+#>  graphics    * 4.5.0   2025-04-11 [3] local
+#>  grDevices   * 4.5.0   2025-04-11 [3] local
+#>  grid          4.5.0   2025-04-11 [3] local
 #>  gtable        0.3.6   2024-10-25 [1] RSPM
 #>  htmltools     0.5.8.1 2024-04-04 [1] RSPM
 #>  knitr         1.50    2025-03-16 [1] RSPM
@@ -690,9 +690,9 @@ sessioninfo::session_info(include_base = TRUE)
 #>  lifecycle     1.0.4   2023-11-07 [1] RSPM
 #>  lobstr        1.1.2   2022-06-22 [1] RSPM
 #>  magrittr    * 2.0.3   2022-03-30 [1] RSPM
-#>  methods     * 4.4.3   2025-02-28 [3] local
+#>  methods     * 4.5.0   2025-04-11 [3] local
 #>  munsell       0.5.1   2024-04-01 [1] RSPM
-#>  pillar        1.10.1  2025-01-07 [1] RSPM
+#>  pillar        1.10.2  2025-04-05 [1] RSPM
 #>  pkgconfig     2.0.3   2019-09-22 [1] RSPM
 #>  profmem       0.6.0   2020-12-13 [1] RSPM
 #>  purrr         1.0.4   2025-02-05 [1] RSPM
@@ -701,22 +701,22 @@ sessioninfo::session_info(include_base = TRUE)
 #>  rmarkdown     2.29    2024-11-04 [1] RSPM
 #>  scales      * 1.3.0   2023-11-28 [1] RSPM
 #>  sessioninfo   1.2.3   2025-02-05 [1] RSPM
-#>  stats       * 4.4.3   2025-02-28 [3] local
+#>  stats       * 4.5.0   2025-04-11 [3] local
 #>  stringi       1.8.7   2025-03-27 [1] RSPM
 #>  stringr       1.5.1   2023-11-14 [1] RSPM
 #>  tibble        3.2.1   2023-03-20 [1] RSPM
 #>  tidyselect    1.2.1   2024-03-11 [1] RSPM
-#>  tools         4.4.3   2025-02-28 [3] local
+#>  tools         4.5.0   2025-04-11 [3] local
 #>  utf8          1.2.4   2023-10-22 [1] RSPM
-#>  utils       * 4.4.3   2025-02-28 [3] local
+#>  utils       * 4.5.0   2025-04-11 [3] local
 #>  vctrs         0.6.5   2023-12-01 [1] RSPM
 #>  withr         3.0.2   2024-10-28 [1] RSPM
 #>  xfun          0.52    2025-04-02 [1] RSPM
 #>  yaml          2.3.10  2024-07-26 [1] RSPM
 #> 
 #>  [1] /home/runner/work/_temp/Library
-#>  [2] /opt/R/4.4.3/lib/R/site-library
-#>  [3] /opt/R/4.4.3/lib/R/library
+#>  [2] /opt/R/4.5.0/lib/R/site-library
+#>  [3] /opt/R/4.5.0/lib/R/library
 #>  * ── Packages attached to the search path.
 #> 
 #> ──────────────────────────────────────────────────────────

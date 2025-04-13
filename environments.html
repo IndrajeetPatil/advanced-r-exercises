@@ -143,15 +143,15 @@
 <span><span class="va">e</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rlang.r-lib.org/reference/env.html">env</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">e</span><span class="op">$</span><span class="va">loop</span> <span class="op">&lt;-</span> <span class="va">e</span></span>
 <span><span class="fu"><a href="https://rlang.r-lib.org/reference/env_print.html">env_print</a></span><span class="op">(</span><span class="va">e</span><span class="op">)</span></span>
-<span><span class="co">#&gt; &lt;environment: 0x558443233638&gt;</span></span>
+<span><span class="co">#&gt; &lt;environment: 0x5564581716e8&gt;</span></span>
 <span><span class="co">#&gt; Parent: &lt;environment: global&gt;</span></span>
 <span><span class="co">#&gt; Bindings:</span></span>
 <span><span class="co">#&gt; • loop: &lt;env&gt;</span></span></code></pre></div>
 <p>The binding <code>loop</code> should have the same memory address as the environment <code>e</code>:</p>
 <div class="sourceCode" id="cb193"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">lobstr</span><span class="fu">::</span><span class="fu"><a href="https://lobstr.r-lib.org/reference/ref.html">ref</a></span><span class="op">(</span><span class="va">e</span><span class="op">$</span><span class="va">loop</span><span class="op">)</span></span>
-<span><span class="co">#&gt; █ [1:0x558443233638] &lt;env&gt; </span></span>
-<span><span class="co">#&gt; └─loop = [1:0x558443233638]</span></span></code></pre></div>
+<span><span class="co">#&gt; █ [1:0x5564581716e8] &lt;env&gt; </span></span>
+<span><span class="co">#&gt; └─loop = [1:0x5564581716e8]</span></span></code></pre></div>
 <p><strong>Q3.</strong> Create a pair of environments as illustrated by this picture.</p>
 <div class="inline-figure"><img src="diagrams/environments/recursive-2.png" width="100%"></div>
 <p><strong>A3.</strong> Creating the specified environment:</p>
@@ -164,9 +164,9 @@
 <span></span>
 <span><span class="co"># following should be the same</span></span>
 <span><span class="fu">lobstr</span><span class="fu">::</span><span class="fu"><a href="https://lobstr.r-lib.org/reference/obj_addr.html">obj_addrs</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="va">e1</span>, <span class="va">e2</span><span class="op">$</span><span class="va">deloop</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "0x55843e703150" "0x55843e703150"</span></span>
+<span><span class="co">#&gt; [1] "0x5564551e5940" "0x5564551e5940"</span></span>
 <span><span class="fu">lobstr</span><span class="fu">::</span><span class="fu"><a href="https://lobstr.r-lib.org/reference/obj_addr.html">obj_addrs</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="va">e2</span>, <span class="va">e1</span><span class="op">$</span><span class="va">loop</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "0x55843ea69b98" "0x55843ea69b98"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "0x556455144b20" "0x556455144b20"</span></span></code></pre></div>
 <p><strong>Q4.</strong> Explain why <code>e[[1]]</code> and <code>e[c("a", "b")]</code> don’t make sense when <code>e</code> is an environment.</p>
 <p><strong>A4.</strong> An environment is a non-linear data structure, and has no concept of ordered elements. Therefore, indexing it (e.g. <code>e[[1]]</code>) doesn’t make sense.</p>
 <p>Subsetting a list or a vector returns a subset of the underlying data structure. For example, subsetting a vector returns another vector. But it’s unclear what subsetting an environment (e.g. <code>e[c("a", "b")]</code>) should return because there is no data structure to contain its returns. It can’t be another environment since environments have reference semantics.</p>
@@ -313,7 +313,7 @@
 <span><span class="co">#&gt; attr(,"name")</span></span>
 <span><span class="co">#&gt; [1] "package:stats"</span></span>
 <span><span class="co">#&gt; attr(,"path")</span></span>
-<span><span class="co">#&gt; [1] "/opt/R/4.4.3/lib/R/library/stats"</span></span>
+<span><span class="co">#&gt; [1] "/opt/R/4.5.0/lib/R/library/stats"</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/detach.html">detach</a></span><span class="op">(</span><span class="st">"package:dplyr"</span><span class="op">)</span></span></code></pre></div>
 <p><strong>Q2.</strong> Write a function called <code>fget()</code> that finds only function objects. It should have two arguments, <code>name</code> and <code>env</code>, and should obey the regular scoping rules for functions: if there’s an object with a matching name that’s not a function, look in the parent. For an added challenge, also add an <code>inherits</code> argument which controls whether the function recurses up the parents or only looks in one environment.</p>
 <p><strong>A2.</strong> Here is a function that recursively looks for function objects:</p>
@@ -349,7 +349,7 @@
 <span><span class="fu">fget</span><span class="op">(</span><span class="st">"mean"</span>, inherits <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; function (x, ...) </span></span>
 <span><span class="co">#&gt; UseMethod("mean")</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x55843efe9b40&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x556453e66498&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:base&gt;</span></span>
 <span></span>
 <span><span class="va">mean</span> <span class="op">&lt;-</span> <span class="fl">5</span></span>
@@ -517,7 +517,7 @@
 <span><span class="co">#&gt; {</span></span>
 <span><span class="co">#&gt;     parent.frame(n + 1)</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x55843ecf8e68&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x55645412d480&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:rlang&gt;</span></span></code></pre></div>
 <p>Let’s try it out:</p>
 <ul>
@@ -557,7 +557,7 @@
 <code class="sourceCode R"><span><span class="fu">sessioninfo</span><span class="fu">::</span><span class="fu"><a href="https://sessioninfo.r-lib.org/reference/session_info.html">session_info</a></span><span class="op">(</span>include_base <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; ─ Session info ───────────────────────────────────────────</span></span>
 <span><span class="co">#&gt;  setting  value</span></span>
-<span><span class="co">#&gt;  version  R version 4.4.3 (2025-02-28)</span></span>
+<span><span class="co">#&gt;  version  R version 4.5.0 (2025-04-11)</span></span>
 <span><span class="co">#&gt;  os       Ubuntu 24.04.2 LTS</span></span>
 <span><span class="co">#&gt;  system   x86_64, linux-gnu</span></span>
 <span><span class="co">#&gt;  ui       X11</span></span>
@@ -565,20 +565,20 @@
 <span><span class="co">#&gt;  collate  C.UTF-8</span></span>
 <span><span class="co">#&gt;  ctype    C.UTF-8</span></span>
 <span><span class="co">#&gt;  tz       UTC</span></span>
-<span><span class="co">#&gt;  date     2025-04-06</span></span>
+<span><span class="co">#&gt;  date     2025-04-13</span></span>
 <span><span class="co">#&gt;  pandoc   3.6.4 @ /opt/hostedtoolcache/pandoc/3.6.4/x64/ (via rmarkdown)</span></span>
 <span><span class="co">#&gt;  quarto   NA</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; ─ Packages ───────────────────────────────────────────────</span></span>
 <span><span class="co">#&gt;  package     * version date (UTC) lib source</span></span>
-<span><span class="co">#&gt;  base        * 4.4.3   2025-02-28 [3] local</span></span>
+<span><span class="co">#&gt;  base        * 4.5.0   2025-04-11 [3] local</span></span>
 <span><span class="co">#&gt;  bookdown      0.42    2025-01-07 [1] RSPM</span></span>
 <span><span class="co">#&gt;  bslib         0.9.0   2025-01-30 [1] RSPM</span></span>
 <span><span class="co">#&gt;  cachem        1.1.0   2024-05-16 [1] RSPM</span></span>
 <span><span class="co">#&gt;  cli           3.6.4   2025-02-13 [1] RSPM</span></span>
-<span><span class="co">#&gt;  compiler      4.4.3   2025-02-28 [3] local</span></span>
+<span><span class="co">#&gt;  compiler      4.5.0   2025-04-11 [3] local</span></span>
 <span><span class="co">#&gt;  crayon        1.5.3   2024-06-20 [1] RSPM</span></span>
-<span><span class="co">#&gt;  datasets    * 4.4.3   2025-02-28 [3] local</span></span>
+<span><span class="co">#&gt;  datasets    * 4.5.0   2025-04-11 [3] local</span></span>
 <span><span class="co">#&gt;  digest        0.6.37  2024-08-19 [1] RSPM</span></span>
 <span><span class="co">#&gt;  downlit       0.4.4   2024-06-10 [1] RSPM</span></span>
 <span><span class="co">#&gt;  dplyr         1.1.4   2023-11-17 [1] RSPM</span></span>
@@ -588,8 +588,8 @@
 <span><span class="co">#&gt;  fs            1.6.5   2024-10-30 [1] RSPM</span></span>
 <span><span class="co">#&gt;  generics      0.1.3   2022-07-05 [1] RSPM</span></span>
 <span><span class="co">#&gt;  glue          1.8.0   2024-09-30 [1] RSPM</span></span>
-<span><span class="co">#&gt;  graphics    * 4.4.3   2025-02-28 [3] local</span></span>
-<span><span class="co">#&gt;  grDevices   * 4.4.3   2025-02-28 [3] local</span></span>
+<span><span class="co">#&gt;  graphics    * 4.5.0   2025-04-11 [3] local</span></span>
+<span><span class="co">#&gt;  grDevices   * 4.5.0   2025-04-11 [3] local</span></span>
 <span><span class="co">#&gt;  htmltools     0.5.8.1 2024-04-04 [1] RSPM</span></span>
 <span><span class="co">#&gt;  jquerylib     0.1.4   2021-04-26 [1] RSPM</span></span>
 <span><span class="co">#&gt;  jsonlite      2.0.0   2025-03-27 [1] RSPM</span></span>
@@ -598,21 +598,21 @@
 <span><span class="co">#&gt;  lobstr        1.1.2   2022-06-22 [1] RSPM</span></span>
 <span><span class="co">#&gt;  magrittr    * 2.0.3   2022-03-30 [1] RSPM</span></span>
 <span><span class="co">#&gt;  memoise       2.0.1   2021-11-26 [1] RSPM</span></span>
-<span><span class="co">#&gt;  methods     * 4.4.3   2025-02-28 [3] local</span></span>
-<span><span class="co">#&gt;  pillar        1.10.1  2025-01-07 [1] RSPM</span></span>
+<span><span class="co">#&gt;  methods     * 4.5.0   2025-04-11 [3] local</span></span>
+<span><span class="co">#&gt;  pillar        1.10.2  2025-04-05 [1] RSPM</span></span>
 <span><span class="co">#&gt;  pkgconfig     2.0.3   2019-09-22 [1] RSPM</span></span>
 <span><span class="co">#&gt;  R6            2.6.1   2025-02-15 [1] RSPM</span></span>
 <span><span class="co">#&gt;  rlang       * 1.1.5   2025-01-17 [1] RSPM</span></span>
 <span><span class="co">#&gt;  rmarkdown     2.29    2024-11-04 [1] RSPM</span></span>
 <span><span class="co">#&gt;  sass          0.4.9   2024-03-15 [1] RSPM</span></span>
 <span><span class="co">#&gt;  sessioninfo   1.2.3   2025-02-05 [1] RSPM</span></span>
-<span><span class="co">#&gt;  stats       * 4.4.3   2025-02-28 [3] local</span></span>
+<span><span class="co">#&gt;  stats       * 4.5.0   2025-04-11 [3] local</span></span>
 <span><span class="co">#&gt;  stringi       1.8.7   2025-03-27 [1] RSPM</span></span>
 <span><span class="co">#&gt;  stringr       1.5.1   2023-11-14 [1] RSPM</span></span>
 <span><span class="co">#&gt;  tibble        3.2.1   2023-03-20 [1] RSPM</span></span>
 <span><span class="co">#&gt;  tidyselect    1.2.1   2024-03-11 [1] RSPM</span></span>
-<span><span class="co">#&gt;  tools         4.4.3   2025-02-28 [3] local</span></span>
-<span><span class="co">#&gt;  utils       * 4.4.3   2025-02-28 [3] local</span></span>
+<span><span class="co">#&gt;  tools         4.5.0   2025-04-11 [3] local</span></span>
+<span><span class="co">#&gt;  utils       * 4.5.0   2025-04-11 [3] local</span></span>
 <span><span class="co">#&gt;  vctrs         0.6.5   2023-12-01 [1] RSPM</span></span>
 <span><span class="co">#&gt;  withr         3.0.2   2024-10-28 [1] RSPM</span></span>
 <span><span class="co">#&gt;  xfun          0.52    2025-04-02 [1] RSPM</span></span>
@@ -620,8 +620,8 @@
 <span><span class="co">#&gt;  yaml          2.3.10  2024-07-26 [1] RSPM</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;  [1] /home/runner/work/_temp/Library</span></span>
-<span><span class="co">#&gt;  [2] /opt/R/4.4.3/lib/R/site-library</span></span>
-<span><span class="co">#&gt;  [3] /opt/R/4.4.3/lib/R/library</span></span>
+<span><span class="co">#&gt;  [2] /opt/R/4.5.0/lib/R/site-library</span></span>
+<span><span class="co">#&gt;  [3] /opt/R/4.5.0/lib/R/library</span></span>
 <span><span class="co">#&gt;  * ── Packages attached to the search path.</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; ──────────────────────────────────────────────────────────</span></span></code></pre></div>
@@ -657,7 +657,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-04-06.</p>
+    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-04-13.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

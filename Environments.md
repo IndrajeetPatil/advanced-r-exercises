@@ -45,7 +45,7 @@ library(rlang)
 e <- env()
 e$loop <- e
 env_print(e)
-#> <environment: 0x5648c46f05e8>
+#> <environment: 0x55874e5504b0>
 #> Parent: <environment: global>
 #> Bindings:
 #> • loop: <env>
@@ -56,8 +56,8 @@ The binding `loop` should have the same memory address as the environment `e`:
 
 ``` r
 lobstr::ref(e$loop)
-#> █ [1:0x5648c46f05e8] <env> 
-#> └─loop = [1:0x5648c46f05e8]
+#> █ [1:0x55874e5504b0] <env> 
+#> └─loop = [1:0x55874e5504b0]
 ```
 
 **Q3.** Create a pair of environments as illustrated by this picture.
@@ -76,9 +76,9 @@ e2$deloop <- e1
 
 # following should be the same
 lobstr::obj_addrs(list(e1, e2$deloop))
-#> [1] "0x5648c6b75be0" "0x5648c6b75be0"
+#> [1] "0x558750d40098" "0x558750d40098"
 lobstr::obj_addrs(list(e2, e1$loop))
-#> [1] "0x5648c6bc1300" "0x5648c6bc1300"
+#> [1] "0x558750d90208" "0x558750d90208"
 ```
 
 **Q4.** Explain why `e[[1]]` and `e[c("a", "b")]` don't make sense when `e` is an environment.
@@ -260,7 +260,7 @@ where("filter")
 #> attr(,"name")
 #> [1] "package:stats"
 #> attr(,"path")
-#> [1] "/opt/R/4.4.3/lib/R/library/stats"
+#> [1] "/opt/R/4.5.0/lib/R/library/stats"
 detach("package:dplyr")
 ```
 
@@ -305,7 +305,7 @@ fget("mean", inherits = FALSE)
 fget("mean", inherits = TRUE)
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x5648c2667b30>
+#> <bytecode: 0x55874c7eb488>
 #> <environment: namespace:base>
 
 mean <- 5
@@ -512,7 +512,7 @@ rlang::caller_env
 #> {
 #>     parent.frame(n + 1)
 #> }
-#> <bytecode: 0x5648c2376e58>
+#> <bytecode: 0x55874cab2470>
 #> <environment: namespace:rlang>
 ```
 
@@ -557,7 +557,7 @@ foo()
 sessioninfo::session_info(include_base = TRUE)
 #> ─ Session info ───────────────────────────────────────────
 #>  setting  value
-#>  version  R version 4.4.3 (2025-02-28)
+#>  version  R version 4.5.0 (2025-04-11)
 #>  os       Ubuntu 24.04.2 LTS
 #>  system   x86_64, linux-gnu
 #>  ui       X11
@@ -565,18 +565,18 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-04-06
+#>  date     2025-04-13
 #>  pandoc   3.6.4 @ /opt/hostedtoolcache/pandoc/3.6.4/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
 #> ─ Packages ───────────────────────────────────────────────
 #>  package     * version date (UTC) lib source
-#>  base        * 4.4.3   2025-02-28 [3] local
+#>  base        * 4.5.0   2025-04-11 [3] local
 #>  bookdown      0.42    2025-01-07 [1] RSPM
 #>  cli           3.6.4   2025-02-13 [1] RSPM
-#>  compiler      4.4.3   2025-02-28 [3] local
+#>  compiler      4.5.0   2025-04-11 [3] local
 #>  crayon        1.5.3   2024-06-20 [1] RSPM
-#>  datasets    * 4.4.3   2025-02-28 [3] local
+#>  datasets    * 4.5.0   2025-04-11 [3] local
 #>  digest        0.6.37  2024-08-19 [1] RSPM
 #>  dplyr         1.1.4   2023-11-17 [1] RSPM
 #>  emoji         16.0.0  2024-10-28 [1] RSPM
@@ -584,34 +584,34 @@ sessioninfo::session_info(include_base = TRUE)
 #>  fastmap       1.2.0   2024-05-15 [1] RSPM
 #>  generics      0.1.3   2022-07-05 [1] RSPM
 #>  glue          1.8.0   2024-09-30 [1] RSPM
-#>  graphics    * 4.4.3   2025-02-28 [3] local
-#>  grDevices   * 4.4.3   2025-02-28 [3] local
+#>  graphics    * 4.5.0   2025-04-11 [3] local
+#>  grDevices   * 4.5.0   2025-04-11 [3] local
 #>  htmltools     0.5.8.1 2024-04-04 [1] RSPM
 #>  knitr         1.50    2025-03-16 [1] RSPM
 #>  lifecycle     1.0.4   2023-11-07 [1] RSPM
 #>  lobstr        1.1.2   2022-06-22 [1] RSPM
 #>  magrittr    * 2.0.3   2022-03-30 [1] RSPM
-#>  methods     * 4.4.3   2025-02-28 [3] local
-#>  pillar        1.10.1  2025-01-07 [1] RSPM
+#>  methods     * 4.5.0   2025-04-11 [3] local
+#>  pillar        1.10.2  2025-04-05 [1] RSPM
 #>  pkgconfig     2.0.3   2019-09-22 [1] RSPM
 #>  R6            2.6.1   2025-02-15 [1] RSPM
 #>  rlang       * 1.1.5   2025-01-17 [1] RSPM
 #>  rmarkdown     2.29    2024-11-04 [1] RSPM
 #>  sessioninfo   1.2.3   2025-02-05 [1] RSPM
-#>  stats       * 4.4.3   2025-02-28 [3] local
+#>  stats       * 4.5.0   2025-04-11 [3] local
 #>  stringi       1.8.7   2025-03-27 [1] RSPM
 #>  stringr       1.5.1   2023-11-14 [1] RSPM
 #>  tibble        3.2.1   2023-03-20 [1] RSPM
 #>  tidyselect    1.2.1   2024-03-11 [1] RSPM
-#>  tools         4.4.3   2025-02-28 [3] local
-#>  utils       * 4.4.3   2025-02-28 [3] local
+#>  tools         4.5.0   2025-04-11 [3] local
+#>  utils       * 4.5.0   2025-04-11 [3] local
 #>  vctrs         0.6.5   2023-12-01 [1] RSPM
 #>  xfun          0.52    2025-04-02 [1] RSPM
 #>  yaml          2.3.10  2024-07-26 [1] RSPM
 #> 
 #>  [1] /home/runner/work/_temp/Library
-#>  [2] /opt/R/4.4.3/lib/R/site-library
-#>  [3] /opt/R/4.4.3/lib/R/library
+#>  [2] /opt/R/4.5.0/lib/R/site-library
+#>  [3] /opt/R/4.5.0/lib/R/library
 #>  * ── Packages attached to the search path.
 #> 
 #> ──────────────────────────────────────────────────────────

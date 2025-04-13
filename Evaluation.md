@@ -50,7 +50,7 @@ withr::with_tempdir(
     foo()
   }
 )
-#> <environment: 0x55e9024c0840>
+#> <environment: 0x55ca6147b6c8>
 #> Parent: <environment: global>
 ```
 
@@ -251,17 +251,17 @@ q1 <- new_quosure(expr(x), env(x = 1))
 q1
 #> <quosure>
 #> expr: ^x
-#> env:  0x55e902ca2d98
+#> env:  0x55ca61c32850
 q2 <- new_quosure(expr(x + !!q1), env(x = 10))
 q2
 #> <quosure>
 #> expr: ^x + (^x)
-#> env:  0x55e9047e3ac0
+#> env:  0x55ca631ffb80
 q3 <- new_quosure(expr(x + !!q2), env(x = 100))
 q3
 #> <quosure>
 #> expr: ^x + (^x + (^x))
-#> env:  0x55e904a3f280
+#> env:  0x55ca63471c90
 ```
 
 **A1.** Correctly predicted 😉
@@ -299,7 +299,7 @@ enenv(x)
 
 foo <- function(x) enenv(x)
 foo()
-#> <environment: 0x55e905165620>
+#> <environment: 0x55ca63b928b8>
 ```
 
 ---
@@ -667,7 +667,7 @@ This makes use of R's lazy evaluation of function arguments. That is, `resample_
 sessioninfo::session_info(include_base = TRUE)
 #> ─ Session info ───────────────────────────────────────────
 #>  setting  value
-#>  version  R version 4.4.3 (2025-02-28)
+#>  version  R version 4.5.0 (2025-04-11)
 #>  os       Ubuntu 24.04.2 LTS
 #>  system   x86_64, linux-gnu
 #>  ui       X11
@@ -675,47 +675,47 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-04-06
+#>  date     2025-04-13
 #>  pandoc   3.6.4 @ /opt/hostedtoolcache/pandoc/3.6.4/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
 #> ─ Packages ───────────────────────────────────────────────
 #>  package     * version date (UTC) lib source
-#>  base        * 4.4.3   2025-02-28 [3] local
+#>  base        * 4.5.0   2025-04-11 [3] local
 #>  bookdown      0.42    2025-01-07 [1] RSPM
 #>  cli           3.6.4   2025-02-13 [1] RSPM
-#>  compiler      4.4.3   2025-02-28 [3] local
-#>  datasets    * 4.4.3   2025-02-28 [3] local
+#>  compiler      4.5.0   2025-04-11 [3] local
+#>  datasets    * 4.5.0   2025-04-11 [3] local
 #>  digest        0.6.37  2024-08-19 [1] RSPM
 #>  emoji         16.0.0  2024-10-28 [1] RSPM
 #>  evaluate      1.0.3   2025-01-10 [1] RSPM
 #>  fastmap       1.2.0   2024-05-15 [1] RSPM
 #>  glue          1.8.0   2024-09-30 [1] RSPM
-#>  graphics    * 4.4.3   2025-02-28 [3] local
-#>  grDevices   * 4.4.3   2025-02-28 [3] local
+#>  graphics    * 4.5.0   2025-04-11 [3] local
+#>  grDevices   * 4.5.0   2025-04-11 [3] local
 #>  htmltools     0.5.8.1 2024-04-04 [1] RSPM
 #>  knitr         1.50    2025-03-16 [1] RSPM
 #>  lifecycle     1.0.4   2023-11-07 [1] RSPM
 #>  magrittr    * 2.0.3   2022-03-30 [1] RSPM
-#>  methods     * 4.4.3   2025-02-28 [3] local
-#>  pillar        1.10.1  2025-01-07 [1] RSPM
+#>  methods     * 4.5.0   2025-04-11 [3] local
+#>  pillar        1.10.2  2025-04-05 [1] RSPM
 #>  purrr         1.0.4   2025-02-05 [1] RSPM
 #>  rlang       * 1.1.5   2025-01-17 [1] RSPM
 #>  rmarkdown     2.29    2024-11-04 [1] RSPM
 #>  sessioninfo   1.2.3   2025-02-05 [1] RSPM
-#>  stats       * 4.4.3   2025-02-28 [3] local
+#>  stats       * 4.5.0   2025-04-11 [3] local
 #>  stringi       1.8.7   2025-03-27 [1] RSPM
 #>  stringr       1.5.1   2023-11-14 [1] RSPM
-#>  tools         4.4.3   2025-02-28 [3] local
-#>  utils       * 4.4.3   2025-02-28 [3] local
+#>  tools         4.5.0   2025-04-11 [3] local
+#>  utils       * 4.5.0   2025-04-11 [3] local
 #>  vctrs         0.6.5   2023-12-01 [1] RSPM
 #>  withr         3.0.2   2024-10-28 [1] RSPM
 #>  xfun          0.52    2025-04-02 [1] RSPM
 #>  yaml          2.3.10  2024-07-26 [1] RSPM
 #> 
 #>  [1] /home/runner/work/_temp/Library
-#>  [2] /opt/R/4.4.3/lib/R/site-library
-#>  [3] /opt/R/4.4.3/lib/R/library
+#>  [2] /opt/R/4.5.0/lib/R/site-library
+#>  [3] /opt/R/4.5.0/lib/R/library
 #>  * ── Packages attached to the search path.
 #> 
 #> ──────────────────────────────────────────────────────────

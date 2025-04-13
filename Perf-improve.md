@@ -64,10 +64,10 @@ bench::mark(
 #> # A tibble: 4 × 5
 #>   expression      min   median `itr/sec` mem_alloc
 #>   <bch:expr> <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 lm         859.57µs 905.66µs     1073.    1.26MB
-#> 2 speedglm     1.53ms   1.58ms      630.   70.75MB
-#> 3 biglm      780.03µs 817.33µs     1146.  589.44KB
-#> 4 fastLm     968.11µs      1ms      991.    4.54MB
+#> 1 lm         850.09µs 891.09µs     1097.    1.26MB
+#> 2 speedglm     1.07ms   1.55ms      658.      71MB
+#> 3 biglm      793.12µs 828.49µs     1175.  589.43KB
+#> 4 fastLm     971.38µs   1.01ms      984.    4.61MB
 ```
 
 The results might change depending on the size of the dataset, with the performance benefits accruing bigger the dataset.
@@ -100,8 +100,8 @@ bench::mark(
 #> # A tibble: 2 × 5
 #>   expression      min   median `itr/sec` mem_alloc
 #>   <bch:expr> <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 base         1.15µs   1.23µs   708564.     2.8KB
-#> 2 fastmatch    1.04µs   1.08µs   870195.    2.66KB
+#> 1 base         1.17µs   1.23µs   746678.     2.8KB
+#> 2 fastmatch    1.07µs   1.13µs   827766.    2.66KB
 ```
 
 But, with a larger vector, `fmatch()` is orders of magnitude faster! ⚡
@@ -117,13 +117,11 @@ bench::mark(
   "base" = match(c("x", "y"), large_vec),
   "fastmatch" = fmatch(c("x", "y"), large_vec)
 )[1:5]
-#> Warning: Some expressions had a GC in every iteration; so
-#> filtering is disabled.
 #> # A tibble: 2 × 5
 #>   expression      min   median `itr/sec` mem_alloc
 #>   <bch:expr> <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 base        22.51ms  22.87ms      42.6    31.4MB
-#> 2 fastmatch    1.02µs   1.13µs  833572.         0B
+#> 1 base         23.6ms  25.23ms      39.9    31.4MB
+#> 2 fastmatch    1.07µs   1.12µs  831504.         0B
 ```
 
 We can also look at the hash table:
@@ -202,10 +200,10 @@ bench::mark(
 #> # A tibble: 4 × 6
 #>   expression       min   median `itr/sec` mem_alloc `gc/sec`
 #>   <bch:expr>  <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 as.POSIXct   28.29µs  30.37µs    29040.        0B     0   
-#> 2 as.POSIXlt   19.69µs  20.93µs    46509.        0B     0   
-#> 3 ymd_hms       2.23ms   2.31ms      431.    21.5KB     5.23
-#> 4 fastPOSIXct   1.24µs   1.33µs   682318.        0B     0
+#> 1 as.POSIXct   29.41µs  31.02µs    31144.        0B    31.2 
+#> 2 as.POSIXlt   20.15µs  21.13µs    46168.        0B     0   
+#> 3 ymd_hms       2.24ms    2.3ms      433.    21.5KB     7.04
+#> 4 fastPOSIXct   1.17µs   1.21µs   775162.        0B     0
 ```
 
 There are many more packages that implement a way to convert from string to a date time object. For more, see [CRAN Task View: Time Series Analysis](https://cran.r-project.org/web/views/TimeSeries.html)
@@ -251,7 +249,8 @@ rowSums
 #>         x <- as.matrix(x)
 #>     if (!is.array(x) || length(dn <- dim(x)) < 2L) 
 #>         stop("'x' must be an array of at least two dimensions")
-#>     if (dims < 1L || dims > length(dn) - 1L) 
+#>     if (length(dims) != 1L || dims < 1L || dims > length(dn) - 
+#>         1L) 
 #>         stop("invalid 'dims'")
 #>     p <- prod(dn[-(id <- seq_len(dims))])
 #>     dn <- dn[id]
@@ -266,7 +265,7 @@ rowSums
 #>     else names(z) <- dimnames(x)[[1L]]
 #>     z
 #> }
-#> <bytecode: 0x55c7f6316cd0>
+#> <bytecode: 0x556e51cbf8d0>
 #> <environment: namespace:base>
 ```
 
@@ -277,7 +276,7 @@ rowSums
 .rowSums
 #> function (x, m, n, na.rm = FALSE) 
 #> .Internal(rowSums(x, m, n, na.rm))
-#> <bytecode: 0x55c7f895f348>
+#> <bytecode: 0x556e54dc6000>
 #> <environment: namespace:base>
 ```
 
@@ -294,8 +293,8 @@ bench::mark(
 #> # A tibble: 2 × 5
 #>   expression      min   median `itr/sec` mem_alloc
 #>   <bch:expr> <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 rowSums       826µs    1.3ms      776.     859KB
-#> 2 .rowSums      824µs    1.3ms      768.     859KB
+#> 1 rowSums      1.28ms   1.31ms      762.     859KB
+#> 2 .rowSums     1.27ms    1.3ms      761.     859KB
 ```
 
 **Q2.** Make a faster version of `chisq.test()` that only computes the chi-square test statistic when the input is two numeric vectors with no missing values. You can try simplifying `chisq.test()` or by coding from the [mathematical definition](http://en.wikipedia.org/wiki/Pearson%27s_chi-squared_test).
@@ -362,8 +361,8 @@ bench::mark(
 #> # A tibble: 2 × 5
 #>   expression      min   median `itr/sec` mem_alloc
 #>   <bch:expr> <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 base          881µs    926µs     1059.    1.57MB
-#> 2 custom        677µs    709µs     1406.    1.12MB
+#> 1 base         1.08ms    1.1ms      898.    1.57MB
+#> 2 custom     683.14µs  711.1µs     1395.    1.12MB
 ```
 
 **Q3.** Can you make a faster version of `table()` for the case of an input of two integer vectors with no missing values? Can you use it to speed up your chi-square test?
@@ -420,8 +419,8 @@ bench::mark(
 #> # A tibble: 2 × 5
 #>   expression      min   median `itr/sec` mem_alloc
 #>   <bch:expr> <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 base          604µs    637µs     1558.     960KB
-#> 2 custom        345µs    358µs     2757.     484KB
+#> 1 base          612µs    636µs     1561.     960KB
+#> 2 custom        342µs    352µs     2808.     484KB
 ```
 
 We can also use this function in our custom chi-squared test function and see if the performance improves any further:
@@ -479,8 +478,8 @@ bench::mark(
 #> # A tibble: 2 × 5
 #>   expression      min   median `itr/sec` mem_alloc
 #>   <bch:expr> <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 base          891µs    932µs     1061.    1.28MB
-#> 2 custom        406µs    428µs     2305.  586.98KB
+#> 1 base         1.08ms   1.11ms      887.    1.28MB
+#> 2 custom     406.01µs 424.59µs     2333.  586.98KB
 ```
 
 ## Exercises 24.5.1
@@ -603,6 +602,6 @@ bench::mark(
 #> # A tibble: 2 × 5
 #>   expression                min   median `itr/sec` mem_alloc
 #>   <bch:expr>           <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 crossprod(x, w)[[1]]    400ns    432ns  2093087.        0B
-#> 2 sum(x * w)[[1]]         430ns    481ns  1882259.        0B
+#> 1 crossprod(x, w)[[1]]    380ns    420ns  2209247.        0B
+#> 2 sum(x * w)[[1]]         440ns    501ns  1855155.        0B
 ```
