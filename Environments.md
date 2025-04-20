@@ -45,7 +45,7 @@ library(rlang)
 e <- env()
 e$loop <- e
 env_print(e)
-#> <environment: 0x55874e5504b0>
+#> <environment: 0x55a8cf30d678>
 #> Parent: <environment: global>
 #> Bindings:
 #> • loop: <env>
@@ -56,8 +56,8 @@ The binding `loop` should have the same memory address as the environment `e`:
 
 ``` r
 lobstr::ref(e$loop)
-#> █ [1:0x55874e5504b0] <env> 
-#> └─loop = [1:0x55874e5504b0]
+#> █ [1:0x55a8cf30d678] <env> 
+#> └─loop = [1:0x55a8cf30d678]
 ```
 
 **Q3.** Create a pair of environments as illustrated by this picture.
@@ -76,9 +76,9 @@ e2$deloop <- e1
 
 # following should be the same
 lobstr::obj_addrs(list(e1, e2$deloop))
-#> [1] "0x558750d40098" "0x558750d40098"
+#> [1] "0x55a8d1b20098" "0x55a8d1b20098"
 lobstr::obj_addrs(list(e2, e1$loop))
-#> [1] "0x558750d90208" "0x558750d90208"
+#> [1] "0x55a8d1b70208" "0x55a8d1b70208"
 ```
 
 **Q4.** Explain why `e[[1]]` and `e[c("a", "b")]` don't make sense when `e` is an environment.
@@ -305,7 +305,7 @@ fget("mean", inherits = FALSE)
 fget("mean", inherits = TRUE)
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x55874c7eb488>
+#> <bytecode: 0x55a8cd5db818>
 #> <environment: namespace:base>
 
 mean <- 5
@@ -512,7 +512,7 @@ rlang::caller_env
 #> {
 #>     parent.frame(n + 1)
 #> }
-#> <bytecode: 0x55874cab2470>
+#> <bytecode: 0x55a8cd89a3a0>
 #> <environment: namespace:rlang>
 ```
 
@@ -565,14 +565,14 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-04-13
+#>  date     2025-04-20
 #>  pandoc   3.6.4 @ /opt/hostedtoolcache/pandoc/3.6.4/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
 #> ─ Packages ───────────────────────────────────────────────
 #>  package     * version date (UTC) lib source
 #>  base        * 4.5.0   2025-04-11 [3] local
-#>  bookdown      0.42    2025-01-07 [1] RSPM
+#>  bookdown      0.43    2025-04-15 [1] RSPM
 #>  cli           3.6.4   2025-02-13 [1] RSPM
 #>  compiler      4.5.0   2025-04-11 [3] local
 #>  crayon        1.5.3   2024-06-20 [1] RSPM
@@ -595,7 +595,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  pillar        1.10.2  2025-04-05 [1] RSPM
 #>  pkgconfig     2.0.3   2019-09-22 [1] RSPM
 #>  R6            2.6.1   2025-02-15 [1] RSPM
-#>  rlang       * 1.1.5   2025-01-17 [1] RSPM
+#>  rlang       * 1.1.6   2025-04-11 [1] RSPM
 #>  rmarkdown     2.29    2024-11-04 [1] RSPM
 #>  sessioninfo   1.2.3   2025-02-05 [1] RSPM
 #>  stats       * 4.5.0   2025-04-11 [3] local

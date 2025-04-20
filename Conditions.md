@@ -292,7 +292,7 @@ rlang::catch_cnd
 #>         return(NULL)
 #>     })))
 #> }
-#> <bytecode: 0x5596943fe858>
+#> <bytecode: 0x563c0f14cc68>
 #> <environment: namespace:rlang>
 ```
 
@@ -697,14 +697,14 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-04-13
+#>  date     2025-04-20
 #>  pandoc   3.6.4 @ /opt/hostedtoolcache/pandoc/3.6.4/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
 #> ─ Packages ───────────────────────────────────────────────
 #>  package     * version date (UTC) lib source
 #>  base        * 4.5.0   2025-04-11 [3] local
-#>  bookdown      0.42    2025-01-07 [1] RSPM
+#>  bookdown      0.43    2025-04-15 [1] RSPM
 #>  brio          1.1.5   2024-04-24 [1] RSPM
 #>  cli           3.6.4   2025-02-13 [1] RSPM
 #>  compiler      4.5.0   2025-04-11 [3] local
@@ -715,7 +715,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  emoji         16.0.0  2024-10-28 [1] RSPM
 #>  evaluate      1.0.3   2025-01-10 [1] RSPM
 #>  fastmap       1.2.0   2024-05-15 [1] RSPM
-#>  fs            1.6.5   2024-10-30 [1] RSPM
+#>  fs            1.6.6   2025-04-12 [1] RSPM
 #>  generics      0.1.3   2022-07-05 [1] RSPM
 #>  glue          1.8.0   2024-09-30 [1] RSPM
 #>  graphics    * 4.5.0   2025-04-11 [3] local
@@ -729,7 +729,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  pkgconfig     2.0.3   2019-09-22 [1] RSPM
 #>  pkgload       1.4.0   2024-06-28 [1] RSPM
 #>  R6            2.6.1   2025-02-15 [1] RSPM
-#>  rlang       * 1.1.5   2025-01-17 [1] RSPM
+#>  rlang       * 1.1.6   2025-04-11 [1] RSPM
 #>  rmarkdown     2.29    2024-11-04 [1] RSPM
 #>  rprojroot     2.0.4   2023-11-05 [1] RSPM
 #>  sessioninfo   1.2.3   2025-02-05 [1] RSPM

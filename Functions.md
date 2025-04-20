@@ -20,7 +20,7 @@ library(tidyverse, warn.conflicts = FALSE)
 match.fun("mean")
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x55b070afb488>
+#> <bytecode: 0x5580c4c73818>
 #> <environment: namespace:base>
 ```
 
@@ -354,7 +354,7 @@ names(primitives)
 mean
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x55b070afb488>
+#> <bytecode: 0x5580c4c73818>
 #> <environment: namespace:base>
 
 # other package function
@@ -363,7 +363,7 @@ purrr::map
 #> {
 #>     map_("list", .x, .f, ..., .progress = .progress)
 #> }
-#> <bytecode: 0x55b076293618>
+#> <bytecode: 0x5580ca414378>
 #> <environment: namespace:purrr>
 ```
 
@@ -567,7 +567,7 @@ f2 <- function(x = z) {
 }
 
 f2()
-#> [1] "0x55b07705f790" "0x55b07705f790"
+#> [1] "0x5580cb26c158" "0x5580cb26c158"
 #> [1] 100
 ```
 
@@ -662,7 +662,7 @@ show_time <- function(x = stop("Error!")) {
 }
 
 show_time()
-#> [1] "2025-04-13 00:45:23 UTC"
+#> [1] "2025-04-20 00:19:19 UTC"
 ```
 
 **A5.** Let's take this step-by-step.
@@ -887,7 +887,7 @@ withr::with_dir
 #>     on.exit(setwd(old))
 #>     force(code)
 #> }
-#> <bytecode: 0x55b0753369a0>
+#> <bytecode: 0x5580c9377708>
 #> <environment: namespace:withr>
 ```
 
@@ -969,7 +969,7 @@ capture.output
 #>         close(file)
 #>     rval %||% invisible(NULL)
 #> }
-#> <bytecode: 0x55b075c9a200>
+#> <bytecode: 0x5580c9ccfbe8>
 #> <environment: namespace:utils>
 ```
 
@@ -1309,14 +1309,14 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-04-13
+#>  date     2025-04-20
 #>  pandoc   3.6.4 @ /opt/hostedtoolcache/pandoc/3.6.4/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
 #> ─ Packages ───────────────────────────────────────────────
 #>  package     * version date (UTC) lib source
 #>  base        * 4.5.0   2025-04-11 [3] local
-#>  bookdown      0.42    2025-01-07 [1] RSPM
+#>  bookdown      0.43    2025-04-15 [1] RSPM
 #>  cli           3.6.4   2025-02-13 [1] RSPM
 #>  colorspace    2.1-1   2024-07-26 [1] RSPM
 #>  compiler      4.5.0   2025-04-11 [3] local
@@ -1348,7 +1348,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  purrr       * 1.0.4   2025-02-05 [1] RSPM
 #>  R6            2.6.1   2025-02-15 [1] RSPM
 #>  readr       * 2.1.5   2024-01-10 [1] RSPM
-#>  rlang         1.1.5   2025-01-17 [1] RSPM
+#>  rlang         1.1.6   2025-04-11 [1] RSPM
 #>  rmarkdown     2.29    2024-11-04 [1] RSPM
 #>  scales        1.3.0   2023-11-28 [1] RSPM
 #>  sessioninfo   1.2.3   2025-02-05 [1] RSPM
