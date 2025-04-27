@@ -45,7 +45,7 @@ library(rlang)
 e <- env()
 e$loop <- e
 env_print(e)
-#> <environment: 0x55a8cf30d678>
+#> <environment: 0x55e516db76e0>
 #> Parent: <environment: global>
 #> Bindings:
 #> • loop: <env>
@@ -56,8 +56,8 @@ The binding `loop` should have the same memory address as the environment `e`:
 
 ``` r
 lobstr::ref(e$loop)
-#> █ [1:0x55a8cf30d678] <env> 
-#> └─loop = [1:0x55a8cf30d678]
+#> █ [1:0x55e516db76e0] <env> 
+#> └─loop = [1:0x55e516db76e0]
 ```
 
 **Q3.** Create a pair of environments as illustrated by this picture.
@@ -76,9 +76,9 @@ e2$deloop <- e1
 
 # following should be the same
 lobstr::obj_addrs(list(e1, e2$deloop))
-#> [1] "0x55a8d1b20098" "0x55a8d1b20098"
+#> [1] "0x55e5195cc218" "0x55e5195cc218"
 lobstr::obj_addrs(list(e2, e1$loop))
-#> [1] "0x55a8d1b70208" "0x55a8d1b70208"
+#> [1] "0x55e51961a478" "0x55e51961a478"
 ```
 
 **Q4.** Explain why `e[[1]]` and `e[c("a", "b")]` don't make sense when `e` is an environment.
@@ -305,7 +305,7 @@ fget("mean", inherits = FALSE)
 fget("mean", inherits = TRUE)
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x55a8cd5db818>
+#> <bytecode: 0x55e515080818>
 #> <environment: namespace:base>
 
 mean <- 5
@@ -512,7 +512,7 @@ rlang::caller_env
 #> {
 #>     parent.frame(n + 1)
 #> }
-#> <bytecode: 0x55a8cd89a3a0>
+#> <bytecode: 0x55e51533f3a0>
 #> <environment: namespace:rlang>
 ```
 
@@ -565,18 +565,18 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-04-20
+#>  date     2025-04-27
 #>  pandoc   3.6.4 @ /opt/hostedtoolcache/pandoc/3.6.4/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
 #> ─ Packages ───────────────────────────────────────────────
 #>  package     * version date (UTC) lib source
-#>  base        * 4.5.0   2025-04-11 [3] local
+#>  base        * 4.5.0   2025-04-26 [3] local
 #>  bookdown      0.43    2025-04-15 [1] RSPM
-#>  cli           3.6.4   2025-02-13 [1] RSPM
-#>  compiler      4.5.0   2025-04-11 [3] local
+#>  cli           3.6.5   2025-04-23 [1] RSPM
+#>  compiler      4.5.0   2025-04-26 [3] local
 #>  crayon        1.5.3   2024-06-20 [1] RSPM
-#>  datasets    * 4.5.0   2025-04-11 [3] local
+#>  datasets    * 4.5.0   2025-04-26 [3] local
 #>  digest        0.6.37  2024-08-19 [1] RSPM
 #>  dplyr         1.1.4   2023-11-17 [1] RSPM
 #>  emoji         16.0.0  2024-10-28 [1] RSPM
@@ -584,27 +584,27 @@ sessioninfo::session_info(include_base = TRUE)
 #>  fastmap       1.2.0   2024-05-15 [1] RSPM
 #>  generics      0.1.3   2022-07-05 [1] RSPM
 #>  glue          1.8.0   2024-09-30 [1] RSPM
-#>  graphics    * 4.5.0   2025-04-11 [3] local
-#>  grDevices   * 4.5.0   2025-04-11 [3] local
+#>  graphics    * 4.5.0   2025-04-26 [3] local
+#>  grDevices   * 4.5.0   2025-04-26 [3] local
 #>  htmltools     0.5.8.1 2024-04-04 [1] RSPM
 #>  knitr         1.50    2025-03-16 [1] RSPM
 #>  lifecycle     1.0.4   2023-11-07 [1] RSPM
 #>  lobstr        1.1.2   2022-06-22 [1] RSPM
 #>  magrittr    * 2.0.3   2022-03-30 [1] RSPM
-#>  methods     * 4.5.0   2025-04-11 [3] local
+#>  methods     * 4.5.0   2025-04-26 [3] local
 #>  pillar        1.10.2  2025-04-05 [1] RSPM
 #>  pkgconfig     2.0.3   2019-09-22 [1] RSPM
 #>  R6            2.6.1   2025-02-15 [1] RSPM
 #>  rlang       * 1.1.6   2025-04-11 [1] RSPM
 #>  rmarkdown     2.29    2024-11-04 [1] RSPM
 #>  sessioninfo   1.2.3   2025-02-05 [1] RSPM
-#>  stats       * 4.5.0   2025-04-11 [3] local
+#>  stats       * 4.5.0   2025-04-26 [3] local
 #>  stringi       1.8.7   2025-03-27 [1] RSPM
 #>  stringr       1.5.1   2023-11-14 [1] RSPM
 #>  tibble        3.2.1   2023-03-20 [1] RSPM
 #>  tidyselect    1.2.1   2024-03-11 [1] RSPM
-#>  tools         4.5.0   2025-04-11 [3] local
-#>  utils       * 4.5.0   2025-04-11 [3] local
+#>  tools         4.5.0   2025-04-26 [3] local
+#>  utils       * 4.5.0   2025-04-26 [3] local
 #>  vctrs         0.6.5   2023-12-01 [1] RSPM
 #>  xfun          0.52    2025-04-02 [1] RSPM
 #>  yaml          2.3.10  2024-07-26 [1] RSPM
