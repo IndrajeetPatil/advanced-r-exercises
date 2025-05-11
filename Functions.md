@@ -20,7 +20,7 @@ library(tidyverse, warn.conflicts = FALSE)
 match.fun("mean")
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x55f4cba0b808>
+#> <bytecode: 0x5646f8701818>
 #> <environment: namespace:base>
 ```
 
@@ -354,7 +354,7 @@ names(primitives)
 mean
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x55f4cba0b808>
+#> <bytecode: 0x5646f8701818>
 #> <environment: namespace:base>
 
 # other package function
@@ -363,7 +363,7 @@ purrr::map
 #> {
 #>     map_("list", .x, .f, ..., .progress = .progress)
 #> }
-#> <bytecode: 0x55f4d0577aa0>
+#> <bytecode: 0x5646fd27a530>
 #> <environment: namespace:purrr>
 ```
 
@@ -567,7 +567,7 @@ f2 <- function(x = z) {
 }
 
 f2()
-#> [1] "0x55f4d3a82da8" "0x55f4d3a82da8"
+#> [1] "0x564700773458" "0x564700773458"
 #> [1] 100
 ```
 
@@ -662,7 +662,7 @@ show_time <- function(x = stop("Error!")) {
 }
 
 show_time()
-#> [1] "2025-05-04 00:21:48 UTC"
+#> [1] "2025-05-11 00:18:47 UTC"
 ```
 
 **A5.** Let's take this step-by-step.
@@ -887,7 +887,7 @@ withr::with_dir
 #>     on.exit(setwd(old))
 #>     force(code)
 #> }
-#> <bytecode: 0x55f4ce8fc988>
+#> <bytecode: 0x5646fb5f3c68>
 #> <environment: namespace:withr>
 ```
 
@@ -969,7 +969,7 @@ capture.output
 #>         close(file)
 #>     rval %||% invisible(NULL)
 #> }
-#> <bytecode: 0x55f4d24aa8c8>
+#> <bytecode: 0x5646ff196958>
 #> <environment: namespace:utils>
 ```
 
@@ -1309,7 +1309,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-05-04
+#>  date     2025-05-11
 #>  pandoc   3.6.4 @ /opt/hostedtoolcache/pandoc/3.6.4/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -1327,7 +1327,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  farver         2.1.2   2024-05-13 [1] RSPM
 #>  fastmap        1.2.0   2024-05-15 [1] RSPM
 #>  forcats      * 1.0.0   2023-01-29 [1] RSPM
-#>  generics       0.1.3   2022-07-05 [1] RSPM
+#>  generics       0.1.4   2025-05-09 [1] RSPM
 #>  ggplot2      * 3.5.2   2025-04-09 [1] RSPM
 #>  glue           1.8.0   2024-09-30 [1] RSPM
 #>  graphics     * 4.5.0   2025-04-28 [3] local

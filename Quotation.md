@@ -171,7 +171,7 @@ rlang::expr
 #> {
 #>     enexpr(expr)
 #> }
-#> <bytecode: 0x560055fb7778>
+#> <bytecode: 0x561e2e63ef80>
 #> <environment: namespace:rlang>
 ```
 
@@ -193,7 +193,7 @@ rlang::enexpr
 #> {
 #>     .Call(ffi_enexpr, substitute(arg), parent.frame())
 #> }
-#> <bytecode: 0x560052f1c198>
+#> <bytecode: 0x561e2b5a11a8>
 #> <environment: namespace:rlang>
 ```
 
@@ -824,7 +824,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-05-04
+#>  date     2025-05-11
 #>  pandoc   3.6.4 @ /opt/hostedtoolcache/pandoc/3.6.4/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -843,7 +843,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  evaluate       1.0.3   2025-01-10 [1] RSPM
 #>  farver         2.1.2   2024-05-13 [1] RSPM
 #>  fastmap        1.2.0   2024-05-15 [1] RSPM
-#>  generics       0.1.3   2022-07-05 [1] RSPM
+#>  generics       0.1.4   2025-05-09 [1] RSPM
 #>  ggplot2      * 3.5.2   2025-04-09 [1] RSPM
 #>  glue           1.8.0   2024-09-30 [1] RSPM
 #>  graphics     * 4.5.0   2025-04-28 [3] local

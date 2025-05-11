@@ -45,7 +45,7 @@ library(rlang)
 e <- env()
 e$loop <- e
 env_print(e)
-#> <environment: 0x557595aa4740>
+#> <environment: 0x55d2332b2750>
 #> Parent: <environment: global>
 #> Bindings:
 #> • loop: <env>
@@ -56,8 +56,8 @@ The binding `loop` should have the same memory address as the environment `e`:
 
 ``` r
 lobstr::ref(e$loop)
-#> █ [1:0x557595aa4740] <env> 
-#> └─loop = [1:0x557595aa4740]
+#> █ [1:0x55d2332b2750] <env> 
+#> └─loop = [1:0x55d2332b2750]
 ```
 
 **Q3.** Create a pair of environments as illustrated by this picture.
@@ -76,9 +76,9 @@ e2$deloop <- e1
 
 # following should be the same
 lobstr::obj_addrs(list(e1, e2$deloop))
-#> [1] "0x5575982b81f8" "0x5575982b81f8"
+#> [1] "0x55d235ac6208" "0x55d235ac6208"
 lobstr::obj_addrs(list(e2, e1$loop))
-#> [1] "0x557598306458" "0x557598306458"
+#> [1] "0x55d235b14468" "0x55d235b14468"
 ```
 
 **Q4.** Explain why `e[[1]]` and `e[c("a", "b")]` don't make sense when `e` is an environment.
@@ -305,7 +305,7 @@ fget("mean", inherits = FALSE)
 fget("mean", inherits = TRUE)
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x557593d6d808>
+#> <bytecode: 0x55d23157b818>
 #> <environment: namespace:base>
 
 mean <- 5
@@ -512,7 +512,7 @@ rlang::caller_env
 #> {
 #>     parent.frame(n + 1)
 #> }
-#> <bytecode: 0x55759402c390>
+#> <bytecode: 0x55d23183a3a0>
 #> <environment: namespace:rlang>
 ```
 
@@ -565,7 +565,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-05-04
+#>  date     2025-05-11
 #>  pandoc   3.6.4 @ /opt/hostedtoolcache/pandoc/3.6.4/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -582,7 +582,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  emoji         16.0.0  2024-10-28 [1] RSPM
 #>  evaluate      1.0.3   2025-01-10 [1] RSPM
 #>  fastmap       1.2.0   2024-05-15 [1] RSPM
-#>  generics      0.1.3   2022-07-05 [1] RSPM
+#>  generics      0.1.4   2025-05-09 [1] RSPM
 #>  glue          1.8.0   2024-09-30 [1] RSPM
 #>  graphics    * 4.5.0   2025-04-28 [3] local
 #>  grDevices   * 4.5.0   2025-04-28 [3] local
