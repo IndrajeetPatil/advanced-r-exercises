@@ -131,7 +131,7 @@
 <span><span class="co">#&gt;     }</span></span>
 <span><span class="co">#&gt;     .Internal(remove(list, envir, inherits))</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x556185534368&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x55cd9b30e368&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:base&gt;</span></span></code></pre></div>
 <p>I still couldn’t figure out why. I would recommend checking out the <a href="https://advanced-r-solutions.rbind.io/measuring-performance.html#profiling">official answer</a>.</p>
 <hr>
@@ -194,8 +194,8 @@
 <span><span class="co">#&gt; # A tibble: 2 × 4</span></span>
 <span><span class="co">#&gt;   expression bench_mean systime_with_gc systime_with_nogc</span></span>
 <span><span class="co">#&gt;   &lt;bch:expr&gt;   &lt;bch:tm&gt;           &lt;dbl&gt;             &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt; 1 sqrt(x)       774.7ns           0.617             0.429</span></span>
-<span><span class="co">#&gt; 2 x^0.5           2.1µs           1.97              1.95</span></span></code></pre></div>
+<span><span class="co">#&gt; 1 sqrt(x)      765.64ns           0.645             0.434</span></span>
+<span><span class="co">#&gt; 2 x^0.5          2.12µs           1.97              1.95</span></span></code></pre></div>
 <p>The comparison reveals that these two approaches yield quite similar results. Slight differences in exact values is possibly due to differences in the precision of timers used internally by these functions.</p>
 <hr>
 <p><strong>Q2.</strong> Here are two other ways to compute the square root of a vector. Which do you think will be fastest? Which will be slowest? Use microbenchmarking to test your answers.</p>
@@ -220,9 +220,9 @@
 <span><span class="co">#&gt;   expression      median</span></span>
 <span><span class="co">#&gt;   &lt;bch:expr&gt;    &lt;bch:tm&gt;</span></span>
 <span><span class="co">#&gt; 1 sqrt(x)         2.94µs</span></span>
-<span><span class="co">#&gt; 2 exp(log(x)/2)  12.58µs</span></span>
-<span><span class="co">#&gt; 3 x^0.5          18.22µs</span></span>
-<span><span class="co">#&gt; 4 x^(1/2)        18.38µs</span></span></code></pre></div>
+<span><span class="co">#&gt; 2 exp(log(x)/2)   12.6µs</span></span>
+<span><span class="co">#&gt; 3 x^0.5           18.2µs</span></span>
+<span><span class="co">#&gt; 4 x^(1/2)        18.37µs</span></span></code></pre></div>
 <p>The specialized primitive function <code><a href="https://rdrr.io/r/base/MathFun.html">sqrt()</a></code> (written in <code>C</code>) is the fastest way to compute square root.</p>
 <hr>
 </div>
@@ -242,7 +242,7 @@
 <span><span class="co">#&gt;  collate  C.UTF-8</span></span>
 <span><span class="co">#&gt;  ctype    C.UTF-8</span></span>
 <span><span class="co">#&gt;  tz       UTC</span></span>
-<span><span class="co">#&gt;  date     2025-06-29</span></span>
+<span><span class="co">#&gt;  date     2025-07-06</span></span>
 <span><span class="co">#&gt;  pandoc   3.7.0.2 @ /opt/hostedtoolcache/pandoc/3.7.0.2/x64/ (via rmarkdown)</span></span>
 <span><span class="co">#&gt;  quarto   NA</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -276,7 +276,7 @@
 <span><span class="co">#&gt;  magrittr    * 2.0.3   2022-03-30 [1] RSPM</span></span>
 <span><span class="co">#&gt;  memoise       2.0.1   2021-11-26 [1] RSPM</span></span>
 <span><span class="co">#&gt;  methods     * 4.5.1   2025-06-13 [3] local</span></span>
-<span><span class="co">#&gt;  pillar        1.10.2  2025-04-05 [1] RSPM</span></span>
+<span><span class="co">#&gt;  pillar        1.11.0  2025-07-04 [1] RSPM</span></span>
 <span><span class="co">#&gt;  pkgconfig     2.0.3   2019-09-22 [1] RSPM</span></span>
 <span><span class="co">#&gt;  profmem       0.7.0   2025-05-02 [1] RSPM</span></span>
 <span><span class="co">#&gt;  profvis     * 0.4.0   2024-09-20 [1] RSPM</span></span>
@@ -335,7 +335,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-06-29.</p>
+    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-07-06.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

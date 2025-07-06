@@ -159,7 +159,7 @@
 <span><span class="co">#&gt;         })</span></span>
 <span><span class="co">#&gt;     }</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x560364de8ff8&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x555a74704b60&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:purrr&gt;</span></span></code></pre></div>
 <p>Looking at this code, we can see that <code><a href="https://purrr.tidyverse.org/reference/possibly.html">possibly()</a></code>:</p>
 <ul>
@@ -179,7 +179,7 @@
 <span><span class="co">#&gt;     check_bool(quiet)</span></span>
 <span><span class="co">#&gt;     function(...) capture_error(.f(...), otherwise, quiet)</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x560368389ed8&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x555a77ca48c8&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:purrr&gt;</span></span>
 <span></span>
 <span><span class="fu">purrr</span><span class="fu">:::</span><span class="va">capture_error</span></span>
@@ -191,7 +191,7 @@
 <span><span class="co">#&gt;         list(result = otherwise, error = e)</span></span>
 <span><span class="co">#&gt;     })</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x5603684032d0&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x555a77d21a10&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:purrr&gt;</span></span></code></pre></div>
 <p>Looking at this code, we can see that <code><a href="https://purrr.tidyverse.org/reference/safely.html">safely()</a></code>:</p>
 <ul>
@@ -316,10 +316,10 @@
 <span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/readLines.html">readLines</a></span><span class="op">(</span><span class="va">logfile</span><span class="op">)</span>, sep <span class="op">=</span> <span class="st">"\n"</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Function created at: 2025-06-29 00:12:46.423944</span></span>
-<span><span class="co">#&gt; Function called at:  2025-06-29 00:12:51.431027</span></span>
-<span><span class="co">#&gt; Function called at:  2025-06-29 00:12:56.436432</span></span>
-<span><span class="co">#&gt; Function called at:  2025-06-29 00:13:04.444869</span></span></code></pre></div>
+<span><span class="co">#&gt; Function created at: 2025-07-06 00:11:58.533148</span></span>
+<span><span class="co">#&gt; Function called at:  2025-07-06 00:12:03.540098</span></span>
+<span><span class="co">#&gt; Function called at:  2025-07-06 00:12:08.545502</span></span>
+<span><span class="co">#&gt; Function called at:  2025-07-06 00:12:16.553994</span></span></code></pre></div>
 <hr>
 <p><strong>Q5.</strong> Modify <code>delay_by()</code> so that instead of delaying by a fixed amount of time, it ensures that a certain amount of time has elapsed since the function was last called. That is, if you called <code>g &lt;- delay_by(1, f); g(); Sys.sleep(2); g()</code> there shouldn’t be an extra delay.</p>
 <p><strong>A5.</strong> Modified version of the function meeting the specified requirements:</p>
@@ -361,7 +361,7 @@
 <span><span class="co">#&gt;  collate  C.UTF-8</span></span>
 <span><span class="co">#&gt;  ctype    C.UTF-8</span></span>
 <span><span class="co">#&gt;  tz       UTC</span></span>
-<span><span class="co">#&gt;  date     2025-06-29</span></span>
+<span><span class="co">#&gt;  date     2025-07-06</span></span>
 <span><span class="co">#&gt;  pandoc   3.7.0.2 @ /opt/hostedtoolcache/pandoc/3.7.0.2/x64/ (via rmarkdown)</span></span>
 <span><span class="co">#&gt;  quarto   NA</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -393,7 +393,7 @@
 <span><span class="co">#&gt;  magrittr    * 2.0.3   2022-03-30 [1] RSPM</span></span>
 <span><span class="co">#&gt;  memoise       2.0.1   2021-11-26 [1] RSPM</span></span>
 <span><span class="co">#&gt;  methods     * 4.5.1   2025-06-13 [3] local</span></span>
-<span><span class="co">#&gt;  pillar        1.10.2  2025-04-05 [1] RSPM</span></span>
+<span><span class="co">#&gt;  pillar        1.11.0  2025-07-04 [1] RSPM</span></span>
 <span><span class="co">#&gt;  pkgconfig     2.0.3   2019-09-22 [1] RSPM</span></span>
 <span><span class="co">#&gt;  purrr       * 1.0.4   2025-02-05 [1] RSPM</span></span>
 <span><span class="co">#&gt;  R6            2.6.1   2025-02-15 [1] RSPM</span></span>
@@ -450,7 +450,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-06-29.</p>
+    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-07-06.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
