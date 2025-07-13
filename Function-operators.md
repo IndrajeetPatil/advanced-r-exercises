@@ -88,13 +88,14 @@ possibly
 #>     check_bool(quiet)
 #>     function(...) {
 #>         tryCatch(.f(...), error = function(e) {
-#>             if (!quiet) 
+#>             if (!quiet) {
 #>                 message("Error: ", conditionMessage(e))
+#>             }
 #>             otherwise
 #>         })
 #>     }
 #> }
-#> <bytecode: 0x5557f8e55038>
+#> <bytecode: 0x5641bb1eefe0>
 #> <environment: namespace:purrr>
 ```
 
@@ -120,19 +121,20 @@ safely
 #>     check_bool(quiet)
 #>     function(...) capture_error(.f(...), otherwise, quiet)
 #> }
-#> <bytecode: 0x5557f90476c0>
+#> <bytecode: 0x5641bb3dd7a8>
 #> <environment: namespace:purrr>
 
 purrr:::capture_error
 #> function (code, otherwise = NULL, quiet = TRUE) 
 #> {
 #>     tryCatch(list(result = code, error = NULL), error = function(e) {
-#>         if (!quiet) 
+#>         if (!quiet) {
 #>             message("Error: ", conditionMessage(e))
+#>         }
 #>         list(result = otherwise, error = e)
 #>     })
 #> }
-#> <bytecode: 0x5557f907fa40>
+#> <bytecode: 0x5641bb417978>
 #> <environment: namespace:purrr>
 ```
 
@@ -281,10 +283,10 @@ withr::with_tempfile("logfile", code = {
 
   cat(readLines(logfile), sep = "\n")
 })
-#> Function created at: 2025-07-06 00:20:31.922474
-#> Function called at:  2025-07-06 00:20:36.929385
-#> Function called at:  2025-07-06 00:20:41.93482
-#> Function called at:  2025-07-06 00:20:49.94324
+#> Function created at: 2025-07-13 00:24:24.968096
+#> Function called at:  2025-07-13 00:24:29.975035
+#> Function called at:  2025-07-13 00:24:34.980436
+#> Function called at:  2025-07-13 00:24:42.988924
 ```
 
 ---
@@ -333,7 +335,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-07-06
+#>  date     2025-07-13
 #>  pandoc   3.7.0.2 @ /opt/hostedtoolcache/pandoc/3.7.0.2/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -360,7 +362,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  methods     * 4.5.1   2025-06-13 [3] local
 #>  pillar        1.11.0  2025-07-04 [1] RSPM
 #>  pkgconfig     2.0.3   2019-09-22 [1] RSPM
-#>  purrr       * 1.0.4   2025-02-05 [1] RSPM
+#>  purrr       * 1.1.0   2025-07-10 [1] RSPM
 #>  R6            2.6.1   2025-02-15 [1] RSPM
 #>  rlang         1.1.6   2025-04-11 [1] RSPM
 #>  rmarkdown     2.29    2024-11-04 [1] RSPM

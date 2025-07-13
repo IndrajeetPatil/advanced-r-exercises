@@ -171,7 +171,7 @@ rlang::expr
 #> {
 #>     enexpr(expr)
 #> }
-#> <bytecode: 0x5589453a7608>
+#> <bytecode: 0x5561cadc38d8>
 #> <environment: namespace:rlang>
 ```
 
@@ -193,7 +193,7 @@ rlang::enexpr
 #> {
 #>     .Call(ffi_enexpr, substitute(arg), parent.frame())
 #> }
-#> <bytecode: 0x5589422e9310>
+#> <bytecode: 0x5561c7d02310>
 #> <environment: namespace:rlang>
 ```
 
@@ -824,7 +824,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-07-06
+#>  date     2025-07-13
 #>  pandoc   3.7.0.2 @ /opt/hostedtoolcache/pandoc/3.7.0.2/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -860,7 +860,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  methods      * 4.5.1   2025-06-13 [3] local
 #>  pillar         1.11.0  2025-07-04 [1] RSPM
 #>  pkgconfig      2.0.3   2019-09-22 [1] RSPM
-#>  purrr        * 1.0.4   2025-02-05 [1] RSPM
+#>  purrr        * 1.1.0   2025-07-10 [1] RSPM
 #>  R6             2.6.1   2025-02-15 [1] RSPM
 #>  RColorBrewer   1.1-3   2022-04-03 [1] RSPM
 #>  rlang        * 1.1.6   2025-04-11 [1] RSPM
@@ -875,7 +875,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  tools          4.5.1   2025-06-13 [3] local
 #>  utils        * 4.5.1   2025-06-13 [3] local
 #>  vctrs          0.6.5   2023-12-01 [1] RSPM
-#>  waldo          0.6.1   2024-11-07 [1] RSPM
+#>  waldo          0.6.2   2025-07-11 [1] RSPM
 #>  withr          3.0.2   2024-10-28 [1] RSPM
 #>  xfun           0.52    2025-04-02 [1] RSPM
 #>  yaml           2.3.10  2024-07-26 [1] RSPM

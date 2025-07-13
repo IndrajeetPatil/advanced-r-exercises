@@ -20,7 +20,7 @@ library(tidyverse, warn.conflicts = FALSE)
 match.fun("mean")
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x560f8e907e08>
+#> <bytecode: 0x56408effee08>
 #> <environment: namespace:base>
 ```
 
@@ -354,7 +354,7 @@ names(primitives)
 mean
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x560f8e907e08>
+#> <bytecode: 0x56408effee08>
 #> <environment: namespace:base>
 
 # other package function
@@ -363,7 +363,7 @@ purrr::map
 #> {
 #>     map_("list", .x, .f, ..., .progress = .progress)
 #> }
-#> <bytecode: 0x560f934a5138>
+#> <bytecode: 0x564093ba0440>
 #> <environment: namespace:purrr>
 ```
 
@@ -567,7 +567,7 @@ f2 <- function(x = z) {
 }
 
 f2()
-#> [1] "0x560f969e5380" "0x560f969e5380"
+#> [1] "0x5640970f9400" "0x5640970f9400"
 #> [1] 100
 ```
 
@@ -662,7 +662,7 @@ show_time <- function(x = stop("Error!")) {
 }
 
 show_time()
-#> [1] "2025-07-06 00:20:20 UTC"
+#> [1] "2025-07-13 00:24:13 UTC"
 ```
 
 **A5.** Let's take this step-by-step.
@@ -887,7 +887,7 @@ withr::with_dir
 #>     on.exit(setwd(old))
 #>     force(code)
 #> }
-#> <bytecode: 0x560f94ed45d0>
+#> <bytecode: 0x5640955d7348>
 #> <environment: namespace:withr>
 ```
 
@@ -969,7 +969,7 @@ capture.output
 #>         close(file)
 #>     rval %||% invisible(NULL)
 #> }
-#> <bytecode: 0x560f95208a88>
+#> <bytecode: 0x56409590b800>
 #> <environment: namespace:utils>
 ```
 
@@ -1309,7 +1309,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-07-06
+#>  date     2025-07-13
 #>  pandoc   3.7.0.2 @ /opt/hostedtoolcache/pandoc/3.7.0.2/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -1344,7 +1344,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  methods      * 4.5.1   2025-06-13 [3] local
 #>  pillar         1.11.0  2025-07-04 [1] RSPM
 #>  pkgconfig      2.0.3   2019-09-22 [1] RSPM
-#>  purrr        * 1.0.4   2025-02-05 [1] RSPM
+#>  purrr        * 1.1.0   2025-07-10 [1] RSPM
 #>  R6             2.6.1   2025-02-15 [1] RSPM
 #>  RColorBrewer   1.1-3   2022-04-03 [1] RSPM
 #>  readr        * 2.1.5   2024-01-10 [1] RSPM
