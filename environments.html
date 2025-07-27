@@ -143,15 +143,15 @@
 <span><span class="va">e</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rlang.r-lib.org/reference/env.html">env</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">e</span><span class="op">$</span><span class="va">loop</span> <span class="op">&lt;-</span> <span class="va">e</span></span>
 <span><span class="fu"><a href="https://rlang.r-lib.org/reference/env_print.html">env_print</a></span><span class="op">(</span><span class="va">e</span><span class="op">)</span></span>
-<span><span class="co">#&gt; &lt;environment: 0x556d600f1048&gt;</span></span>
+<span><span class="co">#&gt; &lt;environment: 0x55cee753e058&gt;</span></span>
 <span><span class="co">#&gt; Parent: &lt;environment: global&gt;</span></span>
 <span><span class="co">#&gt; Bindings:</span></span>
 <span><span class="co">#&gt; • loop: &lt;env&gt;</span></span></code></pre></div>
 <p>The binding <code>loop</code> should have the same memory address as the environment <code>e</code>:</p>
 <div class="sourceCode" id="cb193"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">lobstr</span><span class="fu">::</span><span class="fu"><a href="https://lobstr.r-lib.org/reference/ref.html">ref</a></span><span class="op">(</span><span class="va">e</span><span class="op">$</span><span class="va">loop</span><span class="op">)</span></span>
-<span><span class="co">#&gt; █ [1:0x556d600f1048] &lt;env&gt; </span></span>
-<span><span class="co">#&gt; └─loop = [1:0x556d600f1048]</span></span></code></pre></div>
+<span><span class="co">#&gt; █ [1:0x55cee753e058] &lt;env&gt; </span></span>
+<span><span class="co">#&gt; └─loop = [1:0x55cee753e058]</span></span></code></pre></div>
 <p><strong>Q3.</strong> Create a pair of environments as illustrated by this picture.</p>
 <div class="inline-figure"><img src="diagrams/environments/recursive-2.png" width="100%"></div>
 <p><strong>A3.</strong> Creating the specified environment:</p>
@@ -164,9 +164,9 @@
 <span></span>
 <span><span class="co"># following should be the same</span></span>
 <span><span class="fu">lobstr</span><span class="fu">::</span><span class="fu"><a href="https://lobstr.r-lib.org/reference/obj_addr.html">obj_addrs</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="va">e1</span>, <span class="va">e2</span><span class="op">$</span><span class="va">deloop</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "0x556d5d644e98" "0x556d5d644e98"</span></span>
+<span><span class="co">#&gt; [1] "0x55cee4a91e38" "0x55cee4a91e38"</span></span>
 <span><span class="fu">lobstr</span><span class="fu">::</span><span class="fu"><a href="https://lobstr.r-lib.org/reference/obj_addr.html">obj_addrs</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="va">e2</span>, <span class="va">e1</span><span class="op">$</span><span class="va">loop</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "0x556d5d5d14a0" "0x556d5d5d14a0"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "0x55cee4a1e478" "0x55cee4a1e478"</span></span></code></pre></div>
 <p><strong>Q4.</strong> Explain why <code>e[[1]]</code> and <code>e[c("a", "b")]</code> don’t make sense when <code>e</code> is an environment.</p>
 <p><strong>A4.</strong> An environment is a non-linear data structure, and has no concept of ordered elements. Therefore, indexing it (e.g. <code>e[[1]]</code>) doesn’t make sense.</p>
 <p>Subsetting a list or a vector returns a subset of the underlying data structure. For example, subsetting a vector returns another vector. But it’s unclear what subsetting an environment (e.g. <code>e[c("a", "b")]</code>) should return because there is no data structure to contain its returns. It can’t be another environment since environments have reference semantics.</p>
@@ -349,7 +349,7 @@
 <span><span class="fu">fget</span><span class="op">(</span><span class="st">"mean"</span>, inherits <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; function (x, ...) </span></span>
 <span><span class="co">#&gt; UseMethod("mean")</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x556d5bf07df8&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x55cee3354e08&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:base&gt;</span></span>
 <span></span>
 <span><span class="va">mean</span> <span class="op">&lt;-</span> <span class="fl">5</span></span>
@@ -517,7 +517,7 @@
 <span><span class="co">#&gt; {</span></span>
 <span><span class="co">#&gt;     parent.frame(n + 1)</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x556d5c1c5ee8&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x55cee3612ef8&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:rlang&gt;</span></span></code></pre></div>
 <p>Let’s try it out:</p>
 <ul>
@@ -565,7 +565,7 @@
 <span><span class="co">#&gt;  collate  C.UTF-8</span></span>
 <span><span class="co">#&gt;  ctype    C.UTF-8</span></span>
 <span><span class="co">#&gt;  tz       UTC</span></span>
-<span><span class="co">#&gt;  date     2025-07-20</span></span>
+<span><span class="co">#&gt;  date     2025-07-27</span></span>
 <span><span class="co">#&gt;  pandoc   3.7.0.2 @ /opt/hostedtoolcache/pandoc/3.7.0.2/x64/ (via rmarkdown)</span></span>
 <span><span class="co">#&gt;  quarto   NA</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -657,7 +657,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-07-20.</p>
+    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-07-27.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
