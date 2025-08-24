@@ -68,7 +68,7 @@ rm
 #>     }
 #>     .Internal(remove(list, envir, inherits))
 #> }
-#> <bytecode: 0x55b03acd8368>
+#> <bytecode: 0x56499e946278>
 #> <environment: namespace:base>
 ```
 
@@ -144,8 +144,8 @@ full_join(t_bench_df, t_systime_df, by = "expression")
 #> # A tibble: 2 × 4
 #>   expression bench_mean systime_with_gc systime_with_nogc
 #>   <bch:expr>   <bch:tm>           <dbl>             <dbl>
-#> 1 sqrt(x)       829.5ns           0.615             0.466
-#> 2 x^0.5          2.09µs           1.97              1.96
+#> 1 sqrt(x)      808.49ns           0.611             0.487
+#> 2 x^0.5          2.11µs           1.97              1.97
 ```
 
 The comparison reveals that these two approaches yield quite similar results. Slight differences in exact values is possibly due to differences in the precision of timers used internally by these functions.
@@ -182,8 +182,8 @@ bench::mark(
 #>   <bch:expr>    <bch:tm>
 #> 1 sqrt(x)         2.99µs
 #> 2 exp(log(x)/2)  12.55µs
-#> 3 x^0.5          18.22µs
-#> 4 x^(1/2)        18.38µs
+#> 3 x^0.5          18.21µs
+#> 4 x^(1/2)        18.36µs
 ```
 
 The specialized primitive function `sqrt()` (written in `C`) is the fastest way to compute square root.
@@ -205,7 +205,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-08-17
+#>  date     2025-08-24
 #>  pandoc   3.7.0.2 @ /opt/hostedtoolcache/pandoc/3.7.0.2/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -213,7 +213,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  package     * version date (UTC) lib source
 #>  base        * 4.5.1   2025-06-13 [3] local
 #>  bench         1.1.4   2025-01-16 [1] RSPM
-#>  bookdown      0.43    2025-04-15 [1] RSPM
+#>  bookdown      0.44    2025-08-21 [1] RSPM
 #>  cli           3.6.5   2025-04-23 [1] RSPM
 #>  compiler      4.5.1   2025-06-13 [3] local
 #>  datasets    * 4.5.1   2025-06-13 [3] local
@@ -250,7 +250,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  utils       * 4.5.1   2025-06-13 [3] local
 #>  vctrs         0.6.5   2023-12-01 [1] RSPM
 #>  withr         3.0.2   2024-10-28 [1] RSPM
-#>  xfun          0.52    2025-04-02 [1] RSPM
+#>  xfun          0.53    2025-08-19 [1] RSPM
 #>  yaml          2.3.10  2024-07-26 [1] RSPM
 #> 
 #>  [1] /home/runner/work/_temp/Library

@@ -216,12 +216,12 @@ bench::mark(
 #> # A tibble: 2 × 6
 #>   expression                                      min
 #>   <bch:expr>                                 <bch:tm>
-#> 1 all(c(rep(TRUE, 1000), rep(FALSE, 1000)))    6.06µs
-#> 2 allC(c(rep(TRUE, 1000), rep(FALSE, 1000)))   7.95µs
+#> 1 all(c(rep(TRUE, 1000), rep(FALSE, 1000)))    6.07µs
+#> 2 allC(c(rep(TRUE, 1000), rep(FALSE, 1000)))   8.05µs
 #>     median `itr/sec` mem_alloc `gc/sec`
 #>   <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1   6.53µs   126952.    15.8KB        0
-#> 2   8.38µs   113634.    15.8KB        0
+#> 1   6.76µs   115407.    15.8KB        0
+#> 2   8.44µs   113915.    15.8KB        0
 ```
 
 - `cumprod()`
@@ -263,8 +263,8 @@ bench::mark(
 #> # A tibble: 2 × 6
 #>   expression        min   median `itr/sec` mem_alloc
 #>   <bch:expr>   <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 cumprod(v1)      90ns    100ns  7243633.        0B
-#> 2 cumprodC(v1)    701ns    742ns  1002525.    4.12KB
+#> 1 cumprod(v1)    80.1ns    100ns  7865016.        0B
+#> 2 cumprodC(v1)    681ns    722ns  1250194.    4.12KB
 #>   `gc/sec`
 #>      <dbl>
 #> 1        0
@@ -310,8 +310,8 @@ bench::mark(
 #> # A tibble: 2 × 6
 #>   expression       min   median `itr/sec` mem_alloc `gc/sec`
 #>   <bch:expr>  <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 cummin(v1)     100ns    110ns  7804136.        0B        0
-#> 2 cumminC(v1)    751ns    812ns  1105524.    4.12KB        0
+#> 1 cummin(v1)     100ns    110ns  7056315.        0B        0
+#> 2 cumminC(v1)    751ns    832ns  1063419.    4.12KB        0
 ```
 
 - `cummaxC()`
@@ -353,8 +353,8 @@ bench::mark(
 #> # A tibble: 2 × 6
 #>   expression       min   median `itr/sec` mem_alloc `gc/sec`
 #>   <bch:expr>  <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 cummax(v1)     110ns    186ns  5620692.        0B        0
-#> 2 cummaxC(v1)    751ns    892ns  1069785.    4.12KB        0
+#> 1 cummax(v1)     100ns    120ns  5916014.        0B        0
+#> 2 cummaxC(v1)    761ns    912ns  1003983.    4.12KB        0
 ```
 
 - `diff()`
@@ -417,8 +417,8 @@ bench::mark(
 #> # A tibble: 2 × 6
 #>   expression        min   median `itr/sec` mem_alloc
 #>   <bch:expr>   <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 diff(v1, 2)     3.9µs   4.19µs   214030.        0B
-#> 2 diffC(v1, 2)   1.05µs   1.13µs   825335.        0B
+#> 1 diff(v1, 2)    3.89µs   4.24µs   226436.        0B
+#> 2 diffC(v1, 2)   1.07µs   1.15µs   807385.        0B
 #>   `gc/sec`
 #>      <dbl>
 #> 1        0
@@ -464,8 +464,8 @@ bench::mark(
 #> # A tibble: 2 × 6
 #>   expression      min   median `itr/sec` mem_alloc `gc/sec`
 #>   <bch:expr> <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 range(v1)    2.49µs    2.7µs   355552.        0B        0
-#> 2 rangeC(v1) 711.07ns  771.1ns  1161284.    4.12KB        0
+#> 1 range(v1)    2.46µs   2.69µs   356028.        0B        0
+#> 2 rangeC(v1) 691.04ns 761.59ns  1186124.    4.12KB        0
 ```
 
 - `var()`
@@ -513,8 +513,8 @@ bench::mark(
 #> # A tibble: 2 × 6
 #>   expression        min   median `itr/sec` mem_alloc
 #>   <bch:expr>   <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 var(v1)        5.55µs   6.01µs   160931.        0B
-#> 2 variance(v1) 661.12ns  766.6ns  1213199.    4.12KB
+#> 1 var(v1)        5.38µs   5.87µs   164257.        0B
+#> 2 variance(v1) 671.02ns 762.17ns  1194105.    4.12KB
 #>   `gc/sec`
 #>      <dbl>
 #> 1        0
@@ -695,8 +695,8 @@ bench::mark(
 #> # A tibble: 2 × 6
 #>   expression              min   median `itr/sec` mem_alloc
 #>   <bch:expr>         <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 median.default(v2)   20.4µs   22.5µs    42608.        0B
-#> 2 medianC(v2)         701.1ns    782ns  1149520.        0B
+#> 1 median.default(v2)   20.3µs   22.2µs    42281.        0B
+#> 2 medianC(v2)           691ns    741ns  1228615.        0B
 #>   `gc/sec`
 #>      <dbl>
 #> 1        0
@@ -746,8 +746,8 @@ bench::mark(
 #> # A tibble: 2 × 6
 #>   expression          min   median `itr/sec` mem_alloc
 #>   <bch:expr>     <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 x1 %in% x2     891.04ns   1.01µs   917598.        0B
-#> 2 matchC(x1, x2)   1.23µs   1.32µs   696493.    4.12KB
+#> 1 x1 %in% x2        881ns 992.09ns   918855.        0B
+#> 2 matchC(x1, x2)    1.2µs   1.26µs   709948.    4.12KB
 #>   `gc/sec`
 #>      <dbl>
 #> 1        0
@@ -822,8 +822,8 @@ bench::mark(
 #> # A tibble: 2 × 6
 #>   expression        min   median `itr/sec` mem_alloc
 #>   <bch:expr>   <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 unique(v1)      2.1µs   2.42µs   394413.        0B
-#> 2 uniqueC2(v1)    871ns 982.08ns   926248.    4.12KB
+#> 1 unique(v1)     2.13µs   2.46µs   387224.        0B
+#> 2 uniqueC2(v1) 861.01ns 956.59ns   952328.    4.12KB
 #>   `gc/sec`
 #>      <dbl>
 #> 1        0
@@ -871,8 +871,8 @@ bench::mark(
 #> # A tibble: 2 × 6
 #>   expression      min   median `itr/sec` mem_alloc `gc/sec`
 #>   <bch:expr> <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 min(v1)       200ns    211ns  3535505.        0B        0
-#> 2 minC(v1)      661ns    711ns  1225869.    4.12KB        0
+#> 1 min(v1)       190ns    211ns  3934579.        0B        0
+#> 2 minC(v1)      652ns    682ns  1334931.    4.12KB        0
 
 max(v1)
 #> [1] 9
@@ -888,8 +888,8 @@ bench::mark(
 #> # A tibble: 2 × 6
 #>   expression      min   median `itr/sec` mem_alloc `gc/sec`
 #>   <bch:expr> <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 max(v1)       200ns    220ns  3870107.        0B        0
-#> 2 maxC(v1)      661ns    692ns  1303886.    4.12KB        0
+#> 1 max(v1)       190ns    211ns  4121316.        0B        0
+#> 2 maxC(v1)      641ns    761ns  1227802.    4.12KB        0
 ```
 
 1. `which.min()` using `min_element`, or `which.max()` using `max_element`.
@@ -939,8 +939,8 @@ bench::mark(
 #> # A tibble: 2 × 6
 #>   expression          min   median `itr/sec` mem_alloc
 #>   <bch:expr>     <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 which.min(v1)     380ns    411ns  2216866.        0B
-#> 2 which_minC(v1)    671ns    757ns  1216184.    4.12KB
+#> 1 which.min(v1)     380ns    411ns  2181925.        0B
+#> 2 which_minC(v1)    662ns    731ns   981565.    4.12KB
 #>   `gc/sec`
 #>      <dbl>
 #> 1        0
@@ -960,8 +960,8 @@ bench::mark(
 #> # A tibble: 2 × 6
 #>   expression          min   median `itr/sec` mem_alloc
 #>   <bch:expr>     <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 which.max(v1)     390ns    420ns  2211558.        0B
-#> 2 which_maxC(v1)    661ns    711ns  1274274.    4.12KB
+#> 1 which.max(v1)     381ns    411ns  1661821.        0B
+#> 2 which_maxC(v1)    661ns    712ns  1278580.    4.12KB
 #>   `gc/sec`
 #>      <dbl>
 #> 1        0
@@ -1101,7 +1101,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-08-17
+#>  date     2025-08-24
 #>  pandoc   3.7.0.2 @ /opt/hostedtoolcache/pandoc/3.7.0.2/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -1109,7 +1109,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  package     * version date (UTC) lib source
 #>  base        * 4.5.1   2025-06-13 [3] local
 #>  bench         1.1.4   2025-01-16 [1] RSPM
-#>  bookdown      0.43    2025-04-15 [1] RSPM
+#>  bookdown      0.44    2025-08-21 [1] RSPM
 #>  cli           3.6.5   2025-04-23 [1] RSPM
 #>  compiler      4.5.1   2025-06-13 [3] local
 #>  datasets    * 4.5.1   2025-06-13 [3] local
@@ -1140,7 +1140,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  utf8          1.2.6   2025-06-08 [1] RSPM
 #>  utils       * 4.5.1   2025-06-13 [3] local
 #>  vctrs         0.6.5   2023-12-01 [1] RSPM
-#>  xfun          0.52    2025-04-02 [1] RSPM
+#>  xfun          0.53    2025-08-19 [1] RSPM
 #>  yaml          2.3.10  2024-07-26 [1] RSPM
 #> 
 #>  [1] /home/runner/work/_temp/Library

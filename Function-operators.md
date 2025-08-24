@@ -95,7 +95,7 @@ possibly
 #>         })
 #>     }
 #> }
-#> <bytecode: 0x5631452e4ce0>
+#> <bytecode: 0x5603e0227820>
 #> <environment: namespace:purrr>
 ```
 
@@ -121,7 +121,7 @@ safely
 #>     check_bool(quiet)
 #>     function(...) capture_error(.f(...), otherwise, quiet)
 #> }
-#> <bytecode: 0x5631454d34a8>
+#> <bytecode: 0x5603e0415fe8>
 #> <environment: namespace:purrr>
 
 purrr:::capture_error
@@ -134,7 +134,7 @@ purrr:::capture_error
 #>         list(result = otherwise, error = e)
 #>     })
 #> }
-#> <bytecode: 0x56314550d678>
+#> <bytecode: 0x5603e04501b8>
 #> <environment: namespace:purrr>
 ```
 
@@ -283,10 +283,10 @@ withr::with_tempfile("logfile", code = {
 
   cat(readLines(logfile), sep = "\n")
 })
-#> Function created at: 2025-08-17 00:20:45.736321
-#> Function called at:  2025-08-17 00:20:50.743269
-#> Function called at:  2025-08-17 00:20:55.745403
-#> Function called at:  2025-08-17 00:21:03.753922
+#> Function created at: 2025-08-24 00:19:52.922035
+#> Function called at:  2025-08-24 00:19:57.929105
+#> Function called at:  2025-08-24 00:20:02.934515
+#> Function called at:  2025-08-24 00:20:10.942957
 ```
 
 ---
@@ -335,14 +335,14 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-08-17
+#>  date     2025-08-24
 #>  pandoc   3.7.0.2 @ /opt/hostedtoolcache/pandoc/3.7.0.2/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
 #> ─ Packages ───────────────────────────────────────────────
 #>  package     * version date (UTC) lib source
 #>  base        * 4.5.1   2025-06-13 [3] local
-#>  bookdown      0.43    2025-04-15 [1] RSPM
+#>  bookdown      0.44    2025-08-21 [1] RSPM
 #>  cli           3.6.5   2025-04-23 [1] RSPM
 #>  compiler      4.5.1   2025-06-13 [3] local
 #>  datasets    * 4.5.1   2025-06-13 [3] local
@@ -376,7 +376,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  utils       * 4.5.1   2025-06-13 [3] local
 #>  vctrs         0.6.5   2023-12-01 [1] RSPM
 #>  withr         3.0.2   2024-10-28 [1] RSPM
-#>  xfun          0.52    2025-04-02 [1] RSPM
+#>  xfun          0.53    2025-08-19 [1] RSPM
 #>  yaml          2.3.10  2024-07-26 [1] RSPM
 #> 
 #>  [1] /home/runner/work/_temp/Library

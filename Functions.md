@@ -20,7 +20,7 @@ library(tidyverse, warn.conflicts = FALSE)
 match.fun("mean")
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x55bab00c5e08>
+#> <bytecode: 0x556b9f6cded8>
 #> <environment: namespace:base>
 ```
 
@@ -354,7 +354,7 @@ names(primitives)
 mean
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x55bab00c5e08>
+#> <bytecode: 0x556b9f6cded8>
 #> <environment: namespace:base>
 
 # other package function
@@ -363,7 +363,7 @@ purrr::map
 #> {
 #>     map_("list", .x, .f, ..., .progress = .progress)
 #> }
-#> <bytecode: 0x55bab4c6b010>
+#> <bytecode: 0x556ba426e190>
 #> <environment: namespace:purrr>
 ```
 
@@ -567,7 +567,7 @@ f2 <- function(x = z) {
 }
 
 f2()
-#> [1] "0x55bab81bb1a0" "0x55bab81bb1a0"
+#> [1] "0x556ba77cad90" "0x556ba77cad90"
 #> [1] 100
 ```
 
@@ -662,7 +662,7 @@ show_time <- function(x = stop("Error!")) {
 }
 
 show_time()
-#> [1] "2025-08-17 00:20:34 UTC"
+#> [1] "2025-08-24 00:19:41 UTC"
 ```
 
 **A5.** Let's take this step-by-step.
@@ -887,7 +887,7 @@ withr::with_dir
 #>     on.exit(setwd(old))
 #>     force(code)
 #> }
-#> <bytecode: 0x55bab6699008>
+#> <bytecode: 0x556ba5ca8df0>
 #> <environment: namespace:withr>
 ```
 
@@ -969,7 +969,7 @@ capture.output
 #>         close(file)
 #>     rval %||% invisible(NULL)
 #> }
-#> <bytecode: 0x55bab69d12f0>
+#> <bytecode: 0x556ba5fdd2a8>
 #> <environment: namespace:utils>
 ```
 
@@ -1309,14 +1309,14 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-08-17
+#>  date     2025-08-24
 #>  pandoc   3.7.0.2 @ /opt/hostedtoolcache/pandoc/3.7.0.2/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
 #> ─ Packages ───────────────────────────────────────────────
 #>  package      * version date (UTC) lib source
 #>  base         * 4.5.1   2025-06-13 [3] local
-#>  bookdown       0.43    2025-04-15 [1] RSPM
+#>  bookdown       0.44    2025-08-21 [1] RSPM
 #>  cli            3.6.5   2025-04-23 [1] RSPM
 #>  compiler       4.5.1   2025-06-13 [3] local
 #>  datasets     * 4.5.1   2025-06-13 [3] local
@@ -1366,7 +1366,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  utils        * 4.5.1   2025-06-13 [3] local
 #>  vctrs          0.6.5   2023-12-01 [1] RSPM
 #>  withr          3.0.2   2024-10-28 [1] RSPM
-#>  xfun           0.52    2025-04-02 [1] RSPM
+#>  xfun           0.53    2025-08-19 [1] RSPM
 #>  yaml           2.3.10  2024-07-26 [1] RSPM
 #> 
 #>  [1] /home/runner/work/_temp/Library

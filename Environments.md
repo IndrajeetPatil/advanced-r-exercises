@@ -45,7 +45,7 @@ library(rlang)
 e <- env()
 e$loop <- e
 env_print(e)
-#> <environment: 0x56142d4ccff0>
+#> <environment: 0x559d912af090>
 #> Parent: <environment: global>
 #> Bindings:
 #> • loop: <env>
@@ -56,8 +56,8 @@ The binding `loop` should have the same memory address as the environment `e`:
 
 ``` r
 lobstr::ref(e$loop)
-#> █ [1:0x56142d4ccff0] <env> 
-#> └─loop = [1:0x56142d4ccff0]
+#> █ [1:0x559d912af090] <env> 
+#> └─loop = [1:0x559d912af090]
 ```
 
 **Q3.** Create a pair of environments as illustrated by this picture.
@@ -76,9 +76,9 @@ e2$deloop <- e1
 
 # following should be the same
 lobstr::obj_addrs(list(e1, e2$deloop))
-#> [1] "0x56142fce0938" "0x56142fce0938"
+#> [1] "0x559d93ac2bf8" "0x559d93ac2bf8"
 lobstr::obj_addrs(list(e2, e1$loop))
-#> [1] "0x56142fd34f78" "0x56142fd34f78"
+#> [1] "0x559d93b13408" "0x559d93b13408"
 ```
 
 **Q4.** Explain why `e[[1]]` and `e[c("a", "b")]` don't make sense when `e` is an environment.
@@ -305,7 +305,7 @@ fget("mean", inherits = FALSE)
 fget("mean", inherits = TRUE)
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x56142b786e08>
+#> <bytecode: 0x559d8f568ed8>
 #> <environment: namespace:base>
 
 mean <- 5
@@ -512,7 +512,7 @@ rlang::caller_env
 #> {
 #>     parent.frame(n + 1)
 #> }
-#> <bytecode: 0x56142ba44ef8>
+#> <bytecode: 0x559d8f826e08>
 #> <environment: namespace:rlang>
 ```
 
@@ -565,14 +565,14 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-08-17
+#>  date     2025-08-24
 #>  pandoc   3.7.0.2 @ /opt/hostedtoolcache/pandoc/3.7.0.2/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
 #> ─ Packages ───────────────────────────────────────────────
 #>  package     * version date (UTC) lib source
 #>  base        * 4.5.1   2025-06-13 [3] local
-#>  bookdown      0.43    2025-04-15 [1] RSPM
+#>  bookdown      0.44    2025-08-21 [1] RSPM
 #>  cli           3.6.5   2025-04-23 [1] RSPM
 #>  compiler      4.5.1   2025-06-13 [3] local
 #>  crayon        1.5.3   2024-06-20 [1] RSPM
@@ -606,7 +606,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  tools         4.5.1   2025-06-13 [3] local
 #>  utils       * 4.5.1   2025-06-13 [3] local
 #>  vctrs         0.6.5   2023-12-01 [1] RSPM
-#>  xfun          0.52    2025-04-02 [1] RSPM
+#>  xfun          0.53    2025-08-19 [1] RSPM
 #>  yaml          2.3.10  2024-07-26 [1] RSPM
 #> 
 #>  [1] /home/runner/work/_temp/Library
