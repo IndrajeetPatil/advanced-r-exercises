@@ -20,7 +20,7 @@ library(tidyverse, warn.conflicts = FALSE)
 match.fun("mean")
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x556b9f6cded8>
+#> <bytecode: 0x55884c6f0f90>
 #> <environment: namespace:base>
 ```
 
@@ -354,7 +354,7 @@ names(primitives)
 mean
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x556b9f6cded8>
+#> <bytecode: 0x55884c6f0f90>
 #> <environment: namespace:base>
 
 # other package function
@@ -363,7 +363,7 @@ purrr::map
 #> {
 #>     map_("list", .x, .f, ..., .progress = .progress)
 #> }
-#> <bytecode: 0x556ba426e190>
+#> <bytecode: 0x558851299730>
 #> <environment: namespace:purrr>
 ```
 
@@ -567,7 +567,7 @@ f2 <- function(x = z) {
 }
 
 f2()
-#> [1] "0x556ba77cad90" "0x556ba77cad90"
+#> [1] "0x5588547e9528" "0x5588547e9528"
 #> [1] 100
 ```
 
@@ -662,7 +662,7 @@ show_time <- function(x = stop("Error!")) {
 }
 
 show_time()
-#> [1] "2025-08-24 00:19:41 UTC"
+#> [1] "2025-08-31 00:23:02 UTC"
 ```
 
 **A5.** Let's take this step-by-step.
@@ -887,7 +887,7 @@ withr::with_dir
 #>     on.exit(setwd(old))
 #>     force(code)
 #> }
-#> <bytecode: 0x556ba5ca8df0>
+#> <bytecode: 0x558852cc4b08>
 #> <environment: namespace:withr>
 ```
 
@@ -969,7 +969,7 @@ capture.output
 #>         close(file)
 #>     rval %||% invisible(NULL)
 #> }
-#> <bytecode: 0x556ba5fdd2a8>
+#> <bytecode: 0x558852ffcdf0>
 #> <environment: namespace:utils>
 ```
 
@@ -1302,14 +1302,14 @@ sessioninfo::session_info(include_base = TRUE)
 #> ─ Session info ───────────────────────────────────────────
 #>  setting  value
 #>  version  R version 4.5.1 (2025-06-13)
-#>  os       Ubuntu 24.04.2 LTS
+#>  os       Ubuntu 24.04.3 LTS
 #>  system   x86_64, linux-gnu
 #>  ui       X11
 #>  language (EN)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-08-24
+#>  date     2025-08-31
 #>  pandoc   3.7.0.2 @ /opt/hostedtoolcache/pandoc/3.7.0.2/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -1323,7 +1323,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  digest         0.6.37  2024-08-19 [1] RSPM
 #>  dplyr        * 1.1.4   2023-11-17 [1] RSPM
 #>  emoji          16.0.0  2024-10-28 [1] RSPM
-#>  evaluate       1.0.4   2025-06-18 [1] RSPM
+#>  evaluate       1.0.5   2025-08-27 [1] RSPM
 #>  farver         2.1.2   2024-05-13 [1] RSPM
 #>  fastmap        1.2.0   2024-05-15 [1] RSPM
 #>  forcats      * 1.0.0   2023-01-29 [1] RSPM

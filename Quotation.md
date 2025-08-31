@@ -171,7 +171,7 @@ rlang::expr
 #> {
 #>     enexpr(expr)
 #> }
-#> <bytecode: 0x561cc1d44230>
+#> <bytecode: 0x5611c2f13cc8>
 #> <environment: namespace:rlang>
 ```
 
@@ -193,7 +193,7 @@ rlang::enexpr
 #> {
 #>     .Call(ffi_enexpr, substitute(arg), parent.frame())
 #> }
-#> <bytecode: 0x561cbec82220>
+#> <bytecode: 0x5611bfe4e188>
 #> <environment: namespace:rlang>
 ```
 
@@ -817,14 +817,14 @@ sessioninfo::session_info(include_base = TRUE)
 #> ─ Session info ───────────────────────────────────────────
 #>  setting  value
 #>  version  R version 4.5.1 (2025-06-13)
-#>  os       Ubuntu 24.04.2 LTS
+#>  os       Ubuntu 24.04.3 LTS
 #>  system   x86_64, linux-gnu
 #>  ui       X11
 #>  language (EN)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-08-24
+#>  date     2025-08-31
 #>  pandoc   3.7.0.2 @ /opt/hostedtoolcache/pandoc/3.7.0.2/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -840,7 +840,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  digest         0.6.37  2024-08-19 [1] RSPM
 #>  dplyr        * 1.1.4   2023-11-17 [1] RSPM
 #>  emoji          16.0.0  2024-10-28 [1] RSPM
-#>  evaluate       1.0.4   2025-06-18 [1] RSPM
+#>  evaluate       1.0.5   2025-08-27 [1] RSPM
 #>  farver         2.1.2   2024-05-13 [1] RSPM
 #>  fastmap        1.2.0   2024-05-15 [1] RSPM
 #>  generics       0.1.4   2025-05-09 [1] RSPM

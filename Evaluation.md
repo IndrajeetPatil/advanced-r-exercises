@@ -50,7 +50,7 @@ withr::with_tempdir(
     foo()
   }
 )
-#> <environment: 0x55b916af8f90>
+#> <environment: 0x5603187ca540>
 #> Parent: <environment: global>
 ```
 
@@ -251,17 +251,17 @@ q1 <- new_quosure(expr(x), env(x = 1))
 q1
 #> <quosure>
 #> expr: ^x
-#> env:  0x55b91719ada8
+#> env:  0x560318e6df70
 q2 <- new_quosure(expr(x + !!q1), env(x = 10))
 q2
 #> <quosure>
 #> expr: ^x + (^x)
-#> env:  0x55b9187acbd0
+#> env:  0x56031a47be70
 q3 <- new_quosure(expr(x + !!q2), env(x = 100))
 q3
 #> <quosure>
 #> expr: ^x + (^x + (^x))
-#> env:  0x55b918aee5d0
+#> env:  0x56031a7b9d10
 ```
 
 **A1.** Correctly predicted 😉
@@ -299,7 +299,7 @@ enenv(x)
 
 foo <- function(x) enenv(x)
 foo()
-#> <environment: 0x55b919867e28>
+#> <environment: 0x56031b5308e8>
 ```
 
 ---
@@ -668,14 +668,14 @@ sessioninfo::session_info(include_base = TRUE)
 #> ─ Session info ───────────────────────────────────────────
 #>  setting  value
 #>  version  R version 4.5.1 (2025-06-13)
-#>  os       Ubuntu 24.04.2 LTS
+#>  os       Ubuntu 24.04.3 LTS
 #>  system   x86_64, linux-gnu
 #>  ui       X11
 #>  language (EN)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-08-24
+#>  date     2025-08-31
 #>  pandoc   3.7.0.2 @ /opt/hostedtoolcache/pandoc/3.7.0.2/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -688,7 +688,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  datasets    * 4.5.1   2025-06-13 [3] local
 #>  digest        0.6.37  2024-08-19 [1] RSPM
 #>  emoji         16.0.0  2024-10-28 [1] RSPM
-#>  evaluate      1.0.4   2025-06-18 [1] RSPM
+#>  evaluate      1.0.5   2025-08-27 [1] RSPM
 #>  fastmap       1.2.0   2024-05-15 [1] RSPM
 #>  glue          1.8.0   2024-09-30 [1] RSPM
 #>  graphics    * 4.5.1   2025-06-13 [3] local

@@ -104,11 +104,11 @@
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">obj_addrs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://lobstr.r-lib.org/reference/obj_addr.html">obj_addrs</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span>, <span class="va">c</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">obj_addrs</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "0x55fab2ba8fb8"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "0x55beef2e85a8"</span></span></code></pre></div>
 <p>Except <code>d</code>, which is a different object, even if it has the same value as <code>a</code>, <code>b</code>, and <code>c</code>:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://lobstr.r-lib.org/reference/obj_addr.html">obj_addr</a></span><span class="op">(</span><span class="va">d</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "0x55fab2c2a360"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "0x55beef36d780"</span></span></code></pre></div>
 <hr>
 <p><strong>Q2.</strong> The following code accesses the mean function in multiple ways. Do they all point to the same underlying function object? Verify this with <code><a href="https://lobstr.r-lib.org/reference/obj_addr.html">lobstr::obj_addr()</a></code>.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
@@ -128,7 +128,7 @@
 <span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">obj_addrs</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "0x55faae8e5e40"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "0x55beeb020ee8"</span></span></code></pre></div>
 <hr>
 <p><strong>Q3.</strong> By default, base R data import functions, like <code><a href="https://rdrr.io/r/utils/read.table.html">read.csv()</a></code>, will automatically convert non-syntactic names to syntactic ones. Why might this be problematic? What option allows you to suppress this behaviour?</p>
 <p><strong>A3.</strong> The conversion of non-syntactic names to syntactic ones can sometimes corrupt the data. Some datasets may require non-syntactic names.</p>
@@ -170,7 +170,7 @@
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/tracemem.html">tracemem</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "&lt;0x55fab0b6da30&gt;"</span></span>
+<span><span class="co">#&gt; [1] "&lt;0x55beed2a86b0&gt;"</span></span>
 <span></span>
 <span><span class="va">x</span> <span class="op">&lt;-</span> <span class="va">x</span> <span class="op">+</span> <span class="fl">1</span></span>
 <span></span>
@@ -178,10 +178,10 @@
 <p>But since the object created in memory by <code>1:10</code> is not assigned a name, it can’t be addressed or modified from R, and so there is nothing to trace.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://lobstr.r-lib.org/reference/obj_addr.html">obj_addr</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "0x55fab0043928"</span></span>
+<span><span class="co">#&gt; [1] "0x55beec77ba48"</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/tracemem.html">tracemem</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "&lt;0x55faaffbe560&gt;"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "&lt;0x55beec6f9e20&gt;"</span></span></code></pre></div>
 <hr>
 <p><strong>Q2.</strong> Explain why <code><a href="https://rdrr.io/r/base/tracemem.html">tracemem()</a></code> shows two copies when you run this code. Hint: carefully look at the difference between this code and the code shown earlier in the section.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
@@ -196,11 +196,11 @@
 <span><span class="fu"><a href="https://rdrr.io/r/base/typeof.html">typeof</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "integer"</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/tracemem.html">tracemem</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "&lt;0x55fab367ce38&gt;"</span></span>
+<span><span class="co">#&gt; [1] "&lt;0x55beefdb4e78&gt;"</span></span>
 <span></span>
 <span><span class="va">x</span><span class="op">[[</span><span class="fl">3</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fl">4</span></span>
-<span><span class="co">#&gt; tracemem[0x55fab367ce38 -&gt; 0x55fab41c9f08]: eval eval withVisible withCallingHandlers eval eval with_handlers doWithOneRestart withOneRestart withRestartList doWithOneRestart withOneRestart withRestartList withRestarts &lt;Anonymous&gt; evaluate in_dir in_input_dir eng_r block_exec call_block process_group withCallingHandlers &lt;Anonymous&gt; process_file &lt;Anonymous&gt; &lt;Anonymous&gt; do.call eval eval eval eval eval.parent local </span></span>
-<span><span class="co">#&gt; tracemem[0x55fab41c9f08 -&gt; 0x55fab40af418]: eval eval withVisible withCallingHandlers eval eval with_handlers doWithOneRestart withOneRestart withRestartList doWithOneRestart withOneRestart withRestartList withRestarts &lt;Anonymous&gt; evaluate in_dir in_input_dir eng_r block_exec call_block process_group withCallingHandlers &lt;Anonymous&gt; process_file &lt;Anonymous&gt; &lt;Anonymous&gt; do.call eval eval eval eval eval.parent local</span></span>
+<span><span class="co">#&gt; tracemem[0x55beefdb4e78 -&gt; 0x55bef06caac8]: eval eval withVisible withCallingHandlers eval eval with_handlers doWithOneRestart withOneRestart withRestartList doWithOneRestart withOneRestart withRestartList withRestarts &lt;Anonymous&gt; evaluate in_dir in_input_dir eng_r block_exec call_block process_group withCallingHandlers &lt;Anonymous&gt; process_file &lt;Anonymous&gt; &lt;Anonymous&gt; do.call eval eval eval eval eval.parent local </span></span>
+<span><span class="co">#&gt; tracemem[0x55bef06caac8 -&gt; 0x55bef07bf6b8]: eval eval withVisible withCallingHandlers eval eval with_handlers doWithOneRestart withOneRestart withRestartList doWithOneRestart withOneRestart withRestartList withRestarts &lt;Anonymous&gt; evaluate in_dir in_input_dir eng_r block_exec call_block process_group withCallingHandlers &lt;Anonymous&gt; process_file &lt;Anonymous&gt; &lt;Anonymous&gt; do.call eval eval eval eval eval.parent local</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/tracemem.html">untracemem</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/typeof.html">typeof</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
@@ -211,10 +211,10 @@
 <span><span class="fu"><a href="https://rdrr.io/r/base/typeof.html">typeof</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "integer"</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/tracemem.html">tracemem</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "&lt;0x55fab3947478&gt;"</span></span>
+<span><span class="co">#&gt; [1] "&lt;0x55bef00582f8&gt;"</span></span>
 <span></span>
 <span><span class="va">x</span><span class="op">[[</span><span class="fl">3</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fl">4L</span></span>
-<span><span class="co">#&gt; tracemem[0x55fab3947478 -&gt; 0x55fab3e07fd8]: eval eval withVisible withCallingHandlers eval eval with_handlers doWithOneRestart withOneRestart withRestartList doWithOneRestart withOneRestart withRestartList withRestarts &lt;Anonymous&gt; evaluate in_dir in_input_dir eng_r block_exec call_block process_group withCallingHandlers &lt;Anonymous&gt; process_file &lt;Anonymous&gt; &lt;Anonymous&gt; do.call eval eval eval eval eval.parent local</span></span>
+<span><span class="co">#&gt; tracemem[0x55bef00582f8 -&gt; 0x55bef04f83c8]: eval eval withVisible withCallingHandlers eval eval with_handlers doWithOneRestart withOneRestart withRestartList doWithOneRestart withOneRestart withRestartList withRestarts &lt;Anonymous&gt; evaluate in_dir in_input_dir eng_r block_exec call_block process_group withCallingHandlers &lt;Anonymous&gt; process_file &lt;Anonymous&gt; &lt;Anonymous&gt; do.call eval eval eval eval eval.parent local</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/tracemem.html">untracemem</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/typeof.html">typeof</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
@@ -236,20 +236,20 @@
 <span><span class="va">c</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="va">b</span>, <span class="va">a</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://lobstr.r-lib.org/reference/ref.html">ref</a></span><span class="op">(</span><span class="va">a</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1:0x55fab2a18e50] &lt;int&gt;</span></span>
+<span><span class="co">#&gt; [1:0x55beef15b748] &lt;int&gt;</span></span>
 <span></span>
 <span><span class="fu"><a href="https://lobstr.r-lib.org/reference/ref.html">ref</a></span><span class="op">(</span><span class="va">b</span><span class="op">)</span></span>
-<span><span class="co">#&gt; █ [1:0x55fab3ede1a8] &lt;list&gt; </span></span>
-<span><span class="co">#&gt; ├─[2:0x55fab2a18e50] &lt;int&gt; </span></span>
-<span><span class="co">#&gt; └─[2:0x55fab2a18e50]</span></span>
+<span><span class="co">#&gt; █ [1:0x55bef05f03c8] &lt;list&gt; </span></span>
+<span><span class="co">#&gt; ├─[2:0x55beef15b748] &lt;int&gt; </span></span>
+<span><span class="co">#&gt; └─[2:0x55beef15b748]</span></span>
 <span></span>
 <span><span class="fu"><a href="https://lobstr.r-lib.org/reference/ref.html">ref</a></span><span class="op">(</span><span class="va">c</span><span class="op">)</span></span>
-<span><span class="co">#&gt; █ [1:0x55fab4765798] &lt;list&gt; </span></span>
-<span><span class="co">#&gt; ├─█ [2:0x55fab3ede1a8] &lt;list&gt; </span></span>
-<span><span class="co">#&gt; │ ├─[3:0x55fab2a18e50] &lt;int&gt; </span></span>
-<span><span class="co">#&gt; │ └─[3:0x55fab2a18e50] </span></span>
-<span><span class="co">#&gt; ├─[3:0x55fab2a18e50] </span></span>
-<span><span class="co">#&gt; └─[4:0x55fab2a6c798] &lt;int&gt;</span></span></code></pre></div>
+<span><span class="co">#&gt; █ [1:0x55bef0e9e968] &lt;list&gt; </span></span>
+<span><span class="co">#&gt; ├─█ [2:0x55bef05f03c8] &lt;list&gt; </span></span>
+<span><span class="co">#&gt; │ ├─[3:0x55beef15b748] &lt;int&gt; </span></span>
+<span><span class="co">#&gt; │ └─[3:0x55beef15b748] </span></span>
+<span><span class="co">#&gt; ├─[3:0x55beef15b748] </span></span>
+<span><span class="co">#&gt; └─[4:0x55beef1af090] &lt;int&gt;</span></span></code></pre></div>
 <p>Here is what we learn:</p>
 <ul>
 <li>The name <code>a</code> references object <code>1:10</code> in the memory.</li>
@@ -269,7 +269,7 @@
 <span><span class="co">#&gt; [[1]]</span></span>
 <span><span class="co">#&gt;  [1]  1  2  3  4  5  6  7  8  9 10</span></span>
 <span><span class="fu"><a href="https://lobstr.r-lib.org/reference/obj_addr.html">obj_addr</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "0x55fab47f37b8"</span></span>
+<span><span class="co">#&gt; [1] "0x55bef0f29da8"</span></span>
 <span></span>
 <span><span class="va">x</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">x</span></span>
 <span><span class="va">x</span></span>
@@ -280,13 +280,13 @@
 <span><span class="co">#&gt; [[2]][[1]]</span></span>
 <span><span class="co">#&gt;  [1]  1  2  3  4  5  6  7  8  9 10</span></span>
 <span><span class="fu"><a href="https://lobstr.r-lib.org/reference/obj_addr.html">obj_addr</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "0x55fab2c9f6d8"</span></span>
+<span><span class="co">#&gt; [1] "0x55beee1e05e8"</span></span>
 <span></span>
 <span><span class="fu"><a href="https://lobstr.r-lib.org/reference/ref.html">ref</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
-<span><span class="co">#&gt; █ [1:0x55fab2c9f6d8] &lt;list&gt; </span></span>
-<span><span class="co">#&gt; ├─[2:0x55fab346cc50] &lt;int&gt; </span></span>
-<span><span class="co">#&gt; └─█ [3:0x55fab47f37b8] &lt;list&gt; </span></span>
-<span><span class="co">#&gt;   └─[2:0x55fab346cc50]</span></span></code></pre></div>
+<span><span class="co">#&gt; █ [1:0x55beee1e05e8] &lt;list&gt; </span></span>
+<span><span class="co">#&gt; ├─[2:0x55beefbae6e8] &lt;int&gt; </span></span>
+<span><span class="co">#&gt; └─█ [3:0x55bef0f29da8] &lt;list&gt; </span></span>
+<span><span class="co">#&gt;   └─[2:0x55beefbae6e8]</span></span></code></pre></div>
 <p>I don’t have access to OmniGraffle software, so I am including here the figure from the <a href="https://advanced-r-solutions.rbind.io/names-and-values.html#copy-on-modify">official solution manual</a>:</p>
 <div class="inline-figure"><img src="https://raw.githubusercontent.com/Tazinho/Advanced-R-Solutions/main/images/names_values/copy_on_modify_fig2.png" width="180pt"></div>
 <hr>
@@ -397,16 +397,16 @@
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://lobstr.r-lib.org/reference/obj_addr.html">obj_addr</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "0x55fab19ba410"</span></span>
+<span><span class="co">#&gt; [1] "0x55beee0f99b8"</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/tracemem.html">tracemem</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "&lt;0x55fab19ba410&gt;"</span></span>
+<span><span class="co">#&gt; [1] "&lt;0x55beee0f99b8&gt;"</span></span>
 <span></span>
 <span><span class="va">x</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">x</span></span>
-<span><span class="co">#&gt; tracemem[0x55fab19ba410 -&gt; 0x55fab1a66a28]: eval eval withVisible withCallingHandlers eval eval with_handlers doWithOneRestart withOneRestart withRestartList doWithOneRestart withOneRestart withRestartList withRestarts &lt;Anonymous&gt; evaluate in_dir in_input_dir eng_r block_exec call_block process_group withCallingHandlers &lt;Anonymous&gt; process_file &lt;Anonymous&gt; &lt;Anonymous&gt; do.call eval eval eval eval eval.parent local</span></span>
+<span><span class="co">#&gt; tracemem[0x55beee0f99b8 -&gt; 0x55beee1a5fd0]: eval eval withVisible withCallingHandlers eval eval with_handlers doWithOneRestart withOneRestart withRestartList doWithOneRestart withOneRestart withRestartList withRestarts &lt;Anonymous&gt; evaluate in_dir in_input_dir eng_r block_exec call_block process_group withCallingHandlers &lt;Anonymous&gt; process_file &lt;Anonymous&gt; &lt;Anonymous&gt; do.call eval eval eval eval eval.parent local</span></span>
 <span></span>
 <span><span class="fu"><a href="https://lobstr.r-lib.org/reference/obj_addr.html">obj_addr</a></span><span class="op">(</span><span class="va">x</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "0x55fab19ba410"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "0x55beee0f99b8"</span></span></code></pre></div>
 <hr>
 <p><strong>Q2.</strong> Wrap the two methods for subtracting medians into two functions, then use the ‘bench’ package to carefully compare their speeds. How does performance change as the number of columns increase?</p>
 <p><strong>A2.</strong> Let’s first microbenchmark functions that do and do not create copies for varying lengths of number of columns.</p>
@@ -500,14 +500,14 @@
 <span><span class="co">#&gt; ─ Session info ───────────────────────────────────────────</span></span>
 <span><span class="co">#&gt;  setting  value</span></span>
 <span><span class="co">#&gt;  version  R version 4.5.1 (2025-06-13)</span></span>
-<span><span class="co">#&gt;  os       Ubuntu 24.04.2 LTS</span></span>
+<span><span class="co">#&gt;  os       Ubuntu 24.04.3 LTS</span></span>
 <span><span class="co">#&gt;  system   x86_64, linux-gnu</span></span>
 <span><span class="co">#&gt;  ui       X11</span></span>
 <span><span class="co">#&gt;  language (EN)</span></span>
 <span><span class="co">#&gt;  collate  C.UTF-8</span></span>
 <span><span class="co">#&gt;  ctype    C.UTF-8</span></span>
 <span><span class="co">#&gt;  tz       UTC</span></span>
-<span><span class="co">#&gt;  date     2025-08-24</span></span>
+<span><span class="co">#&gt;  date     2025-08-31</span></span>
 <span><span class="co">#&gt;  pandoc   3.7.0.2 @ /opt/hostedtoolcache/pandoc/3.7.0.2/x64/ (via rmarkdown)</span></span>
 <span><span class="co">#&gt;  quarto   NA</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -526,7 +526,7 @@
 <span><span class="co">#&gt;  downlit        0.4.4   2024-06-10 [1] RSPM</span></span>
 <span><span class="co">#&gt;  dplyr        * 1.1.4   2023-11-17 [1] RSPM</span></span>
 <span><span class="co">#&gt;  emoji          16.0.0  2024-10-28 [1] RSPM</span></span>
-<span><span class="co">#&gt;  evaluate       1.0.4   2025-06-18 [1] RSPM</span></span>
+<span><span class="co">#&gt;  evaluate       1.0.5   2025-08-27 [1] RSPM</span></span>
 <span><span class="co">#&gt;  farver         2.1.2   2024-05-13 [1] RSPM</span></span>
 <span><span class="co">#&gt;  fastmap        1.2.0   2024-05-15 [1] RSPM</span></span>
 <span><span class="co">#&gt;  forcats      * 1.0.0   2023-01-29 [1] RSPM</span></span>
@@ -618,7 +618,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-08-24.</p>
+    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-08-31.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

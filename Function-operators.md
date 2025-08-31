@@ -95,7 +95,7 @@ possibly
 #>         })
 #>     }
 #> }
-#> <bytecode: 0x5603e0227820>
+#> <bytecode: 0x55d2a998add0>
 #> <environment: namespace:purrr>
 ```
 
@@ -121,7 +121,7 @@ safely
 #>     check_bool(quiet)
 #>     function(...) capture_error(.f(...), otherwise, quiet)
 #> }
-#> <bytecode: 0x5603e0415fe8>
+#> <bytecode: 0x55d2a9b7b4b8>
 #> <environment: namespace:purrr>
 
 purrr:::capture_error
@@ -134,7 +134,7 @@ purrr:::capture_error
 #>         list(result = otherwise, error = e)
 #>     })
 #> }
-#> <bytecode: 0x5603e04501b8>
+#> <bytecode: 0x55d2a9bb5688>
 #> <environment: namespace:purrr>
 ```
 
@@ -283,10 +283,10 @@ withr::with_tempfile("logfile", code = {
 
   cat(readLines(logfile), sep = "\n")
 })
-#> Function created at: 2025-08-24 00:19:52.922035
-#> Function called at:  2025-08-24 00:19:57.929105
-#> Function called at:  2025-08-24 00:20:02.934515
-#> Function called at:  2025-08-24 00:20:10.942957
+#> Function created at: 2025-08-31 00:23:13.132066
+#> Function called at:  2025-08-31 00:23:18.138976
+#> Function called at:  2025-08-31 00:23:23.144364
+#> Function called at:  2025-08-31 00:23:31.152791
 ```
 
 ---
@@ -328,14 +328,14 @@ sessioninfo::session_info(include_base = TRUE)
 #> ─ Session info ───────────────────────────────────────────
 #>  setting  value
 #>  version  R version 4.5.1 (2025-06-13)
-#>  os       Ubuntu 24.04.2 LTS
+#>  os       Ubuntu 24.04.3 LTS
 #>  system   x86_64, linux-gnu
 #>  ui       X11
 #>  language (EN)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-08-24
+#>  date     2025-08-31
 #>  pandoc   3.7.0.2 @ /opt/hostedtoolcache/pandoc/3.7.0.2/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -349,7 +349,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  digest        0.6.37  2024-08-19 [1] RSPM
 #>  dplyr         1.1.4   2023-11-17 [1] RSPM
 #>  emoji         16.0.0  2024-10-28 [1] RSPM
-#>  evaluate      1.0.4   2025-06-18 [1] RSPM
+#>  evaluate      1.0.5   2025-08-27 [1] RSPM
 #>  fastmap       1.2.0   2024-05-15 [1] RSPM
 #>  generics      0.1.4   2025-05-09 [1] RSPM
 #>  glue          1.8.0   2024-09-30 [1] RSPM

@@ -68,7 +68,7 @@ rm
 #>     }
 #>     .Internal(remove(list, envir, inherits))
 #> }
-#> <bytecode: 0x56499e946278>
+#> <bytecode: 0x5633751541e0>
 #> <environment: namespace:base>
 ```
 
@@ -144,8 +144,8 @@ full_join(t_bench_df, t_systime_df, by = "expression")
 #> # A tibble: 2 × 4
 #>   expression bench_mean systime_with_gc systime_with_nogc
 #>   <bch:expr>   <bch:tm>           <dbl>             <dbl>
-#> 1 sqrt(x)      808.49ns           0.611             0.487
-#> 2 x^0.5          2.11µs           1.97              1.97
+#> 1 sqrt(x)       808.6ns           0.616             0.489
+#> 2 x^0.5           2.1µs           1.97              1.98
 ```
 
 The comparison reveals that these two approaches yield quite similar results. Slight differences in exact values is possibly due to differences in the precision of timers used internally by these functions.
@@ -180,9 +180,9 @@ bench::mark(
 #> # A tibble: 4 × 2
 #>   expression      median
 #>   <bch:expr>    <bch:tm>
-#> 1 sqrt(x)         2.99µs
-#> 2 exp(log(x)/2)  12.55µs
-#> 3 x^0.5          18.21µs
+#> 1 sqrt(x)         2.98µs
+#> 2 exp(log(x)/2)  12.54µs
+#> 3 x^0.5          18.24µs
 #> 4 x^(1/2)        18.36µs
 ```
 
@@ -198,14 +198,14 @@ sessioninfo::session_info(include_base = TRUE)
 #> ─ Session info ───────────────────────────────────────────
 #>  setting  value
 #>  version  R version 4.5.1 (2025-06-13)
-#>  os       Ubuntu 24.04.2 LTS
+#>  os       Ubuntu 24.04.3 LTS
 #>  system   x86_64, linux-gnu
 #>  ui       X11
 #>  language (EN)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-08-24
+#>  date     2025-08-31
 #>  pandoc   3.7.0.2 @ /opt/hostedtoolcache/pandoc/3.7.0.2/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -220,7 +220,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  digest        0.6.37  2024-08-19 [1] RSPM
 #>  dplyr       * 1.1.4   2023-11-17 [1] RSPM
 #>  emoji         16.0.0  2024-10-28 [1] RSPM
-#>  evaluate      1.0.4   2025-06-18 [1] RSPM
+#>  evaluate      1.0.5   2025-08-27 [1] RSPM
 #>  fastmap       1.2.0   2024-05-15 [1] RSPM
 #>  generics      0.1.4   2025-05-09 [1] RSPM
 #>  glue          1.8.0   2024-09-30 [1] RSPM
