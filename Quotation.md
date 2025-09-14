@@ -171,7 +171,7 @@ rlang::expr
 #> {
 #>     enexpr(expr)
 #> }
-#> <bytecode: 0x5621ba722d40>
+#> <bytecode: 0x563328f4c5c8>
 #> <environment: namespace:rlang>
 ```
 
@@ -193,7 +193,7 @@ rlang::enexpr
 #> {
 #>     .Call(ffi_enexpr, substitute(arg), parent.frame())
 #> }
-#> <bytecode: 0x5621b765c188>
+#> <bytecode: 0x563325e85188>
 #> <environment: namespace:rlang>
 ```
 
@@ -824,7 +824,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-09-07
+#>  date     2025-09-14
 #>  pandoc   3.8 @ /opt/hostedtoolcache/pandoc/3.8/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -844,7 +844,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  farver         2.1.2   2024-05-13 [1] RSPM
 #>  fastmap        1.2.0   2024-05-15 [1] RSPM
 #>  generics       0.1.4   2025-05-09 [1] RSPM
-#>  ggplot2      * 3.5.2   2025-04-09 [1] RSPM
+#>  ggplot2      * 4.0.0   2025-09-11 [1] RSPM
 #>  glue           1.8.0   2024-09-30 [1] RSPM
 #>  graphics     * 4.5.1   2025-06-13 [3] local
 #>  grDevices    * 4.5.1   2025-06-13 [3] local
@@ -855,7 +855,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  labeling       0.4.3   2023-08-29 [1] RSPM
 #>  lifecycle      1.0.4   2023-11-07 [1] RSPM
 #>  lobstr       * 1.1.2   2022-06-22 [1] RSPM
-#>  magrittr     * 2.0.3   2022-03-30 [1] RSPM
+#>  magrittr     * 2.0.4   2025-09-12 [1] RSPM
 #>  MASS         * 7.3-65  2025-02-28 [3] CRAN (R 4.5.1)
 #>  methods      * 4.5.1   2025-06-13 [3] local
 #>  pillar         1.11.0  2025-07-04 [1] RSPM
@@ -865,11 +865,12 @@ sessioninfo::session_info(include_base = TRUE)
 #>  RColorBrewer   1.1-3   2022-04-03 [1] RSPM
 #>  rlang        * 1.1.6   2025-04-11 [1] RSPM
 #>  rmarkdown      2.29    2024-11-04 [1] RSPM
+#>  S7             0.2.0   2024-11-07 [1] RSPM
 #>  scales         1.4.0   2025-04-24 [1] RSPM
 #>  sessioninfo    1.2.3   2025-02-05 [1] RSPM
 #>  stats        * 4.5.1   2025-06-13 [3] local
 #>  stringi        1.8.7   2025-03-27 [1] RSPM
-#>  stringr        1.5.1   2023-11-14 [1] RSPM
+#>  stringr        1.5.2   2025-09-08 [1] RSPM
 #>  tibble         3.3.0   2025-06-08 [1] RSPM
 #>  tidyselect     1.2.1   2024-03-11 [1] RSPM
 #>  tools          4.5.1   2025-06-13 [3] local

@@ -64,10 +64,10 @@ bench::mark(
 #> # A tibble: 4 × 5
 #>   expression      min   median `itr/sec` mem_alloc
 #>   <bch:expr> <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 lm         861.16µs 912.72µs     1076.    1.25MB
-#> 2 speedglm     1.51ms   1.57ms      626.   72.71MB
-#> 3 biglm      800.85µs 842.82µs     1149.  589.44KB
-#> 4 fastLm          1ms   1.03ms      968.    4.61MB
+#> 1 lm         846.45µs 889.61µs     1109.    1.25MB
+#> 2 speedglm     1.47ms   1.57ms      638.   72.64MB
+#> 3 biglm      802.42µs 948.68µs     1048.  589.44KB
+#> 4 fastLm     984.39µs   1.02ms      975.    4.61MB
 ```
 
 The results might change depending on the size of the dataset, with the performance benefits accruing bigger the dataset.
@@ -100,8 +100,8 @@ bench::mark(
 #> # A tibble: 2 × 5
 #>   expression      min   median `itr/sec` mem_alloc
 #>   <bch:expr> <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 base         1.17µs   1.24µs   739217.     2.8KB
-#> 2 fastmatch    1.05µs   1.11µs   842117.    2.66KB
+#> 1 base         1.16µs   1.22µs   750872.     2.8KB
+#> 2 fastmatch    1.06µs   1.11µs   853826.    2.66KB
 ```
 
 But, with a larger vector, `fmatch()` is orders of magnitude faster! ⚡
@@ -117,13 +117,11 @@ bench::mark(
   "base" = match(c("x", "y"), large_vec),
   "fastmatch" = fmatch(c("x", "y"), large_vec)
 )[1:5]
-#> Warning: Some expressions had a GC in every iteration; so
-#> filtering is disabled.
 #> # A tibble: 2 × 5
 #>   expression      min   median `itr/sec` mem_alloc
 #>   <bch:expr> <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 base        24.76ms     28ms      26.9    31.4MB
-#> 2 fastmatch    1.05µs    1.1µs  843729.         0B
+#> 1 base        22.54ms  22.74ms      43.4    31.4MB
+#> 2 fastmatch    1.04µs   1.09µs  837604.         0B
 ```
 
 We can also look at the hash table:
@@ -202,10 +200,10 @@ bench::mark(
 #> # A tibble: 4 × 6
 #>   expression       min   median `itr/sec` mem_alloc `gc/sec`
 #>   <bch:expr>  <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 as.POSIXct   29.38µs  31.35µs    30856.        0B     0   
-#> 2 as.POSIXlt   20.08µs  21.19µs    45942.        0B    46.0 
-#> 3 ymd_hms       2.25ms   2.32ms      430.    21.5KB     3.47
-#> 4 fastPOSIXct   1.18µs   1.23µs   770898.        0B     0
+#> 1 as.POSIXct   29.69µs  31.57µs    30982.        0B     0   
+#> 2 as.POSIXlt    19.8µs  21.37µs    45347.        0B    45.4 
+#> 3 ymd_hms       2.25ms    2.3ms      432.    21.5KB     4.81
+#> 4 fastPOSIXct   1.18µs   1.22µs   771571.        0B     0
 ```
 
 There are many more packages that implement a way to convert from string to a date time object. For more, see [CRAN Task View: Time Series Analysis](https://cran.r-project.org/web/views/TimeSeries.html)
@@ -267,7 +265,7 @@ rowSums
 #>     else names(z) <- dimnames(x)[[1L]]
 #>     z
 #> }
-#> <bytecode: 0x561729051158>
+#> <bytecode: 0x55a1eb45d568>
 #> <environment: namespace:base>
 ```
 
@@ -278,7 +276,7 @@ rowSums
 .rowSums
 #> function (x, m, n, na.rm = FALSE) 
 #> .Internal(rowSums(x, m, n, na.rm))
-#> <bytecode: 0x561726ba3350>
+#> <bytecode: 0x55a1e90cc7e8>
 #> <environment: namespace:base>
 ```
 
@@ -295,8 +293,8 @@ bench::mark(
 #> # A tibble: 2 × 5
 #>   expression      min   median `itr/sec` mem_alloc
 #>   <bch:expr> <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 rowSums       822µs    1.3ms      781.     859KB
-#> 2 .rowSums      818µs   1.29ms      779.     859KB
+#> 1 rowSums      1.28ms    1.3ms      765.     859KB
+#> 2 .rowSums     1.27ms   1.29ms      771.     859KB
 ```
 
 **Q2.** Make a faster version of `chisq.test()` that only computes the chi-square test statistic when the input is two numeric vectors with no missing values. You can try simplifying `chisq.test()` or by coding from the [mathematical definition](http://en.wikipedia.org/wiki/Pearson%27s_chi-squared_test).
@@ -363,8 +361,8 @@ bench::mark(
 #> # A tibble: 2 × 5
 #>   expression      min   median `itr/sec` mem_alloc
 #>   <bch:expr> <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 base         1.06ms   1.08ms      877.    1.57MB
-#> 2 custom      683.9µs 707.94µs     1407.    1.12MB
+#> 1 base         1.05ms   1.07ms      918.    1.57MB
+#> 2 custom     668.85µs 694.98µs     1431.    1.12MB
 ```
 
 **Q3.** Can you make a faster version of `table()` for the case of an input of two integer vectors with no missing values? Can you use it to speed up your chi-square test?
@@ -421,8 +419,8 @@ bench::mark(
 #> # A tibble: 2 × 5
 #>   expression      min   median `itr/sec` mem_alloc
 #>   <bch:expr> <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 base          616µs    639µs     1556.     960KB
-#> 2 custom        341µs    352µs     2809.     484KB
+#> 1 base          599µs    621µs     1602.     960KB
+#> 2 custom        337µs    347µs     2861.     484KB
 ```
 
 We can also use this function in our custom chi-squared test function and see if the performance improves any further:
@@ -480,8 +478,8 @@ bench::mark(
 #> # A tibble: 2 × 5
 #>   expression      min   median `itr/sec` mem_alloc
 #>   <bch:expr> <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 base         1.08ms    1.1ms      894.    1.28MB
-#> 2 custom     403.88µs  422.8µs     2355.  586.98KB
+#> 1 base         1.05ms   1.07ms      928.    1.28MB
+#> 2 custom     400.55µs 422.65µs     2222.  586.98KB
 ```
 
 ## Exercises 24.5.1
@@ -604,6 +602,6 @@ bench::mark(
 #> # A tibble: 2 × 5
 #>   expression                min   median `itr/sec` mem_alloc
 #>   <bch:expr>           <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 crossprod(x, w)[[1]]    390ns    421ns  2237061.        0B
-#> 2 sum(x * w)[[1]]         440ns    481ns  1887767.        0B
+#> 1 crossprod(x, w)[[1]]    380ns    411ns  2211508.        0B
+#> 2 sum(x * w)[[1]]         440ns    481ns  1891775.        0B
 ```

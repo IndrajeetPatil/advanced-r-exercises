@@ -95,7 +95,7 @@ possibly
 #>         })
 #>     }
 #> }
-#> <bytecode: 0x55dcce1cbf50>
+#> <bytecode: 0x55e4b47bc840>
 #> <environment: namespace:purrr>
 ```
 
@@ -121,7 +121,7 @@ safely
 #>     check_bool(quiet)
 #>     function(...) capture_error(.f(...), otherwise, quiet)
 #> }
-#> <bytecode: 0x55dcce3b68e8>
+#> <bytecode: 0x55e4b49acf28>
 #> <environment: namespace:purrr>
 
 purrr:::capture_error
@@ -134,7 +134,7 @@ purrr:::capture_error
 #>         list(result = otherwise, error = e)
 #>     })
 #> }
-#> <bytecode: 0x55dcce3f0ab8>
+#> <bytecode: 0x55e4b49e70f8>
 #> <environment: namespace:purrr>
 ```
 
@@ -283,10 +283,10 @@ withr::with_tempfile("logfile", code = {
 
   cat(readLines(logfile), sep = "\n")
 })
-#> Function created at: 2025-09-07 00:19:42.487153
-#> Function called at:  2025-09-07 00:19:47.494063
-#> Function called at:  2025-09-07 00:19:52.499445
-#> Function called at:  2025-09-07 00:20:00.507843
+#> Function created at: 2025-09-14 00:19:13.203026
+#> Function called at:  2025-09-14 00:19:18.210021
+#> Function called at:  2025-09-14 00:19:23.215407
+#> Function called at:  2025-09-14 00:19:31.22384
 ```
 
 ---
@@ -335,7 +335,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-09-07
+#>  date     2025-09-14
 #>  pandoc   3.8 @ /opt/hostedtoolcache/pandoc/3.8/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -358,7 +358,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  htmltools     0.5.8.1 2024-04-04 [1] RSPM
 #>  knitr         1.50    2025-03-16 [1] RSPM
 #>  lifecycle     1.0.4   2023-11-07 [1] RSPM
-#>  magrittr    * 2.0.3   2022-03-30 [1] RSPM
+#>  magrittr    * 2.0.4   2025-09-12 [1] RSPM
 #>  methods     * 4.5.1   2025-06-13 [3] local
 #>  pillar        1.11.0  2025-07-04 [1] RSPM
 #>  pkgconfig     2.0.3   2019-09-22 [1] RSPM
@@ -369,7 +369,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  sessioninfo   1.2.3   2025-02-05 [1] RSPM
 #>  stats       * 4.5.1   2025-06-13 [3] local
 #>  stringi       1.8.7   2025-03-27 [1] RSPM
-#>  stringr       1.5.1   2023-11-14 [1] RSPM
+#>  stringr       1.5.2   2025-09-08 [1] RSPM
 #>  tibble        3.3.0   2025-06-08 [1] RSPM
 #>  tidyselect    1.2.1   2024-03-11 [1] RSPM
 #>  tools         4.5.1   2025-06-13 [3] local

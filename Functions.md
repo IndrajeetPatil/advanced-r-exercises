@@ -20,7 +20,7 @@ library(tidyverse, warn.conflicts = FALSE)
 match.fun("mean")
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x55822d28df90>
+#> <bytecode: 0x558e88c69f90>
 #> <environment: namespace:base>
 ```
 
@@ -354,7 +354,7 @@ names(primitives)
 mean
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x55822d28df90>
+#> <bytecode: 0x558e88c69f90>
 #> <environment: namespace:base>
 
 # other package function
@@ -363,7 +363,7 @@ purrr::map
 #> {
 #>     map_("list", .x, .f, ..., .progress = .progress)
 #> }
-#> <bytecode: 0x558231e3a5f8>
+#> <bytecode: 0x558e8cee2380>
 #> <environment: namespace:purrr>
 ```
 
@@ -567,7 +567,7 @@ f2 <- function(x = z) {
 }
 
 f2()
-#> [1] "0x558235388740" "0x558235388740"
+#> [1] "0x558e907c3c18" "0x558e907c3c18"
 #> [1] 100
 ```
 
@@ -662,7 +662,7 @@ show_time <- function(x = stop("Error!")) {
 }
 
 show_time()
-#> [1] "2025-09-07 00:19:31 UTC"
+#> [1] "2025-09-14 00:19:01 UTC"
 ```
 
 **A5.** Let's take this step-by-step.
@@ -887,7 +887,7 @@ withr::with_dir
 #>     on.exit(setwd(old))
 #>     force(code)
 #> }
-#> <bytecode: 0x558233863d58>
+#> <bytecode: 0x558e9044dcb0>
 #> <environment: namespace:withr>
 ```
 
@@ -969,7 +969,7 @@ capture.output
 #>         close(file)
 #>     rval %||% invisible(NULL)
 #> }
-#> <bytecode: 0x558233b9c040>
+#> <bytecode: 0x558e909100b0>
 #> <environment: namespace:utils>
 ```
 
@@ -1309,7 +1309,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-09-07
+#>  date     2025-09-14
 #>  pandoc   3.8 @ /opt/hostedtoolcache/pandoc/3.8/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -1328,7 +1328,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  fastmap        1.2.0   2024-05-15 [1] RSPM
 #>  forcats      * 1.0.0   2023-01-29 [1] RSPM
 #>  generics       0.1.4   2025-05-09 [1] RSPM
-#>  ggplot2      * 3.5.2   2025-04-09 [1] RSPM
+#>  ggplot2      * 4.0.0   2025-09-11 [1] RSPM
 #>  glue           1.8.0   2024-09-30 [1] RSPM
 #>  graphics     * 4.5.1   2025-06-13 [3] local
 #>  grDevices    * 4.5.1   2025-06-13 [3] local
@@ -1340,7 +1340,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  lifecycle      1.0.4   2023-11-07 [1] RSPM
 #>  lobstr         1.1.2   2022-06-22 [1] RSPM
 #>  lubridate    * 1.9.4   2024-12-08 [1] RSPM
-#>  magrittr     * 2.0.3   2022-03-30 [1] RSPM
+#>  magrittr     * 2.0.4   2025-09-12 [1] RSPM
 #>  methods      * 4.5.1   2025-06-13 [3] local
 #>  pillar         1.11.0  2025-07-04 [1] RSPM
 #>  pkgconfig      2.0.3   2019-09-22 [1] RSPM
@@ -1350,11 +1350,12 @@ sessioninfo::session_info(include_base = TRUE)
 #>  readr        * 2.1.5   2024-01-10 [1] RSPM
 #>  rlang          1.1.6   2025-04-11 [1] RSPM
 #>  rmarkdown      2.29    2024-11-04 [1] RSPM
+#>  S7             0.2.0   2024-11-07 [1] RSPM
 #>  scales         1.4.0   2025-04-24 [1] RSPM
 #>  sessioninfo    1.2.3   2025-02-05 [1] RSPM
 #>  stats        * 4.5.1   2025-06-13 [3] local
 #>  stringi        1.8.7   2025-03-27 [1] RSPM
-#>  stringr      * 1.5.1   2023-11-14 [1] RSPM
+#>  stringr      * 1.5.2   2025-09-08 [1] RSPM
 #>  tibble       * 3.3.0   2025-06-08 [1] RSPM
 #>  tidyr        * 1.3.1   2024-01-24 [1] RSPM
 #>  tidyselect     1.2.1   2024-03-11 [1] RSPM
