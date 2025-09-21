@@ -171,7 +171,7 @@ rlang::expr
 #> {
 #>     enexpr(expr)
 #> }
-#> <bytecode: 0x563328f4c5c8>
+#> <bytecode: 0x5649dcf68980>
 #> <environment: namespace:rlang>
 ```
 
@@ -193,7 +193,7 @@ rlang::enexpr
 #> {
 #>     .Call(ffi_enexpr, substitute(arg), parent.frame())
 #> }
-#> <bytecode: 0x563325e85188>
+#> <bytecode: 0x5649d9ea0188>
 #> <environment: namespace:rlang>
 ```
 
@@ -824,7 +824,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-09-14
+#>  date     2025-09-21
 #>  pandoc   3.8 @ /opt/hostedtoolcache/pandoc/3.8/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -858,7 +858,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  magrittr     * 2.0.4   2025-09-12 [1] RSPM
 #>  MASS         * 7.3-65  2025-02-28 [3] CRAN (R 4.5.1)
 #>  methods      * 4.5.1   2025-06-13 [3] local
-#>  pillar         1.11.0  2025-07-04 [1] RSPM
+#>  pillar         1.11.1  2025-09-17 [1] RSPM
 #>  pkgconfig      2.0.3   2019-09-22 [1] RSPM
 #>  purrr        * 1.1.0   2025-07-10 [1] RSPM
 #>  R6             2.6.1   2025-02-15 [1] RSPM

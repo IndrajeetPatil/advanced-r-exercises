@@ -95,7 +95,7 @@ possibly
 #>         })
 #>     }
 #> }
-#> <bytecode: 0x55e4b47bc840>
+#> <bytecode: 0x55932eb25d78>
 #> <environment: namespace:purrr>
 ```
 
@@ -121,7 +121,7 @@ safely
 #>     check_bool(quiet)
 #>     function(...) capture_error(.f(...), otherwise, quiet)
 #> }
-#> <bytecode: 0x55e4b49acf28>
+#> <bytecode: 0x55932ed14540>
 #> <environment: namespace:purrr>
 
 purrr:::capture_error
@@ -134,7 +134,7 @@ purrr:::capture_error
 #>         list(result = otherwise, error = e)
 #>     })
 #> }
-#> <bytecode: 0x55e4b49e70f8>
+#> <bytecode: 0x55932ed4e710>
 #> <environment: namespace:purrr>
 ```
 
@@ -283,10 +283,10 @@ withr::with_tempfile("logfile", code = {
 
   cat(readLines(logfile), sep = "\n")
 })
-#> Function created at: 2025-09-14 00:19:13.203026
-#> Function called at:  2025-09-14 00:19:18.210021
-#> Function called at:  2025-09-14 00:19:23.215407
-#> Function called at:  2025-09-14 00:19:31.22384
+#> Function created at: 2025-09-21 00:21:12.571693
+#> Function called at:  2025-09-21 00:21:17.578633
+#> Function called at:  2025-09-21 00:21:22.584005
+#> Function called at:  2025-09-21 00:21:30.592423
 ```
 
 ---
@@ -335,7 +335,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-09-14
+#>  date     2025-09-21
 #>  pandoc   3.8 @ /opt/hostedtoolcache/pandoc/3.8/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -360,7 +360,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  lifecycle     1.0.4   2023-11-07 [1] RSPM
 #>  magrittr    * 2.0.4   2025-09-12 [1] RSPM
 #>  methods     * 4.5.1   2025-06-13 [3] local
-#>  pillar        1.11.0  2025-07-04 [1] RSPM
+#>  pillar        1.11.1  2025-09-17 [1] RSPM
 #>  pkgconfig     2.0.3   2019-09-22 [1] RSPM
 #>  purrr       * 1.1.0   2025-07-10 [1] RSPM
 #>  R6            2.6.1   2025-02-15 [1] RSPM

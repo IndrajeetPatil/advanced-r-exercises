@@ -45,7 +45,7 @@ library(rlang)
 e <- env()
 e$loop <- e
 env_print(e)
-#> <environment: 0x55d5f09e3730>
+#> <environment: 0x55c01f66c730>
 #> Parent: <environment: global>
 #> Bindings:
 #> • loop: <env>
@@ -56,8 +56,8 @@ The binding `loop` should have the same memory address as the environment `e`:
 
 ``` r
 lobstr::ref(e$loop)
-#> █ [1:0x55d5f09e3730] <env> 
-#> └─loop = [1:0x55d5f09e3730]
+#> █ [1:0x55c01f66c730] <env> 
+#> └─loop = [1:0x55c01f66c730]
 ```
 
 **Q3.** Create a pair of environments as illustrated by this picture.
@@ -76,9 +76,9 @@ e2$deloop <- e1
 
 # following should be the same
 lobstr::obj_addrs(list(e1, e2$deloop))
-#> [1] "0x55d5f31f4290" "0x55d5f31f4290"
+#> [1] "0x55c021e7ec38" "0x55c021e7ec38"
 lobstr::obj_addrs(list(e2, e1$loop))
-#> [1] "0x55d5f32488d0" "0x55d5f32488d0"
+#> [1] "0x55c021ed3278" "0x55c021ed3278"
 ```
 
 **Q4.** Explain why `e[[1]]` and `e[c("a", "b")]` don't make sense when `e` is an environment.
@@ -305,7 +305,7 @@ fget("mean", inherits = FALSE)
 fget("mean", inherits = TRUE)
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x55d5eec98f90>
+#> <bytecode: 0x55c01d921f90>
 #> <environment: namespace:base>
 
 mean <- 5
@@ -512,7 +512,7 @@ rlang::caller_env
 #> {
 #>     parent.frame(n + 1)
 #> }
-#> <bytecode: 0x55d5eef56d70>
+#> <bytecode: 0x55c01dbdfd70>
 #> <environment: namespace:rlang>
 ```
 
@@ -565,7 +565,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-09-14
+#>  date     2025-09-21
 #>  pandoc   3.8 @ /opt/hostedtoolcache/pandoc/3.8/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -592,7 +592,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  lobstr        1.1.2   2022-06-22 [1] RSPM
 #>  magrittr    * 2.0.4   2025-09-12 [1] RSPM
 #>  methods     * 4.5.1   2025-06-13 [3] local
-#>  pillar        1.11.0  2025-07-04 [1] RSPM
+#>  pillar        1.11.1  2025-09-17 [1] RSPM
 #>  pkgconfig     2.0.3   2019-09-22 [1] RSPM
 #>  R6            2.6.1   2025-02-15 [1] RSPM
 #>  rlang       * 1.1.6   2025-04-11 [1] RSPM
