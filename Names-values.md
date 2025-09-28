@@ -29,7 +29,7 @@ d <- 1:10
 ``` r
 obj_addrs <- obj_addrs(list(a, b, c))
 unique(obj_addrs)
-#> [1] "0x55756d837c88"
+#> [1] "0x55e8f54fcc88"
 ```
 
 Except `d`, which is a different object, even if it has the same value as `a`, `b`, and `c`:
@@ -37,7 +37,7 @@ Except `d`, which is a different object, even if it has the same value as `a`, `
 
 ``` r
 obj_addr(d)
-#> [1] "0x55756d8be958"
+#> [1] "0x55e8f5583958"
 ```
 
 ---
@@ -66,7 +66,7 @@ obj_addrs <- obj_addrs(list(
 ))
 
 unique(obj_addrs)
-#> [1] "0x55756b60dee8"
+#> [1] "0x55e8f32d2ee8"
 ```
 
 ---
@@ -124,7 +124,7 @@ And as the docs mention (emphasis mine):
 x <- 1:10
 
 tracemem(x)
-#> [1] "<0x55756cce9d80>"
+#> [1] "<0x55e8f49aed80>"
 
 x <- x + 1
 
@@ -136,10 +136,10 @@ But since the object created in memory by `1:10` is not assigned a name, it can'
 
 ``` r
 obj_addr(1:10)
-#> [1] "0x55756d4b6340"
+#> [1] "0x55e8f517b340"
 
 tracemem(1:10)
-#> [1] "<0x55756d7ce9f8>"
+#> [1] "<0x55e8f54939f8>"
 ```
 
 ---
@@ -163,11 +163,11 @@ x <- c(1L, 2L, 3L)
 typeof(x)
 #> [1] "integer"
 tracemem(x)
-#> [1] "<0x55756e3cc1d8>"
+#> [1] "<0x55e8f60912a8>"
 
 x[[3]] <- 4
-#> tracemem[0x55756e3cc1d8 -> 0x55756e466128]: eval eval withVisible withCallingHandlers eval eval with_handlers doWithOneRestart withOneRestart withRestartList doWithOneRestart withOneRestart withRestartList withRestarts <Anonymous> evaluate in_dir in_input_dir eng_r block_exec call_block process_group withCallingHandlers <Anonymous> process_file <Anonymous> <Anonymous> do.call eval eval eval eval eval.parent local 
-#> tracemem[0x55756e466128 -> 0x55756e60ec58]: eval eval withVisible withCallingHandlers eval eval with_handlers doWithOneRestart withOneRestart withRestartList doWithOneRestart withOneRestart withRestartList withRestarts <Anonymous> evaluate in_dir in_input_dir eng_r block_exec call_block process_group withCallingHandlers <Anonymous> process_file <Anonymous> <Anonymous> do.call eval eval eval eval eval.parent local
+#> tracemem[0x55e8f60912a8 -> 0x55e8f612b1f8]: eval eval withVisible withCallingHandlers eval eval with_handlers doWithOneRestart withOneRestart withRestartList doWithOneRestart withOneRestart withRestartList withRestarts <Anonymous> evaluate in_dir in_input_dir eng_r block_exec call_block process_group withCallingHandlers <Anonymous> process_file <Anonymous> <Anonymous> do.call eval eval eval eval eval.parent local 
+#> tracemem[0x55e8f612b1f8 -> 0x55e8f62d3d28]: eval eval withVisible withCallingHandlers eval eval with_handlers doWithOneRestart withOneRestart withRestartList doWithOneRestart withOneRestart withRestartList withRestarts <Anonymous> evaluate in_dir in_input_dir eng_r block_exec call_block process_group withCallingHandlers <Anonymous> process_file <Anonymous> <Anonymous> do.call eval eval eval eval eval.parent local
 untracemem(x)
 
 typeof(x)
@@ -182,10 +182,10 @@ x <- c(1L, 2L, 3L)
 typeof(x)
 #> [1] "integer"
 tracemem(x)
-#> [1] "<0x55756c57aae8>"
+#> [1] "<0x55e8f423fae8>"
 
 x[[3]] <- 4L
-#> tracemem[0x55756c57aae8 -> 0x55756b234fe8]: eval eval withVisible withCallingHandlers eval eval with_handlers doWithOneRestart withOneRestart withRestartList doWithOneRestart withOneRestart withRestartList withRestarts <Anonymous> evaluate in_dir in_input_dir eng_r block_exec call_block process_group withCallingHandlers <Anonymous> process_file <Anonymous> <Anonymous> do.call eval eval eval eval eval.parent local
+#> tracemem[0x55e8f423fae8 -> 0x55e8f2ef9fe8]: eval eval withVisible withCallingHandlers eval eval with_handlers doWithOneRestart withOneRestart withRestartList doWithOneRestart withOneRestart withRestartList withRestarts <Anonymous> evaluate in_dir in_input_dir eng_r block_exec call_block process_group withCallingHandlers <Anonymous> process_file <Anonymous> <Anonymous> do.call eval eval eval eval eval.parent local
 untracemem(x)
 
 typeof(x)
@@ -216,20 +216,20 @@ b <- list(a, a)
 c <- list(b, a, 1:10)
 
 ref(a)
-#> [1:0x55756d4692c0] <int>
+#> [1:0x55e8f512e2c0] <int>
 
 ref(b)
-#> █ [1:0x55756e1786c8] <list> 
-#> ├─[2:0x55756d4692c0] <int> 
-#> └─[2:0x55756d4692c0]
+#> █ [1:0x55e8f5e3d6c8] <list> 
+#> ├─[2:0x55e8f512e2c0] <int> 
+#> └─[2:0x55e8f512e2c0]
 
 ref(c)
-#> █ [1:0x55756e620518] <list> 
-#> ├─█ [2:0x55756e1786c8] <list> 
-#> │ ├─[3:0x55756d4692c0] <int> 
-#> │ └─[3:0x55756d4692c0] 
-#> ├─[3:0x55756d4692c0] 
-#> └─[4:0x55756d58cb50] <int>
+#> █ [1:0x55e8f62e5688] <list> 
+#> ├─█ [2:0x55e8f5e3d6c8] <list> 
+#> │ ├─[3:0x55e8f512e2c0] <int> 
+#> │ └─[3:0x55e8f512e2c0] 
+#> ├─[3:0x55e8f512e2c0] 
+#> └─[4:0x55e8f5251b50] <int>
 ```
 
 Here is what we learn:
@@ -259,7 +259,7 @@ x
 #> [[1]]
 #>  [1]  1  2  3  4  5  6  7  8  9 10
 obj_addr(x)
-#> [1] "0x55756f166c70"
+#> [1] "0x55e8f6e2fb80"
 
 x[[2]] <- x
 x
@@ -270,13 +270,13 @@ x
 #> [[2]][[1]]
 #>  [1]  1  2  3  4  5  6  7  8  9 10
 obj_addr(x)
-#> [1] "0x55756f256598"
+#> [1] "0x55e8f6f1f4a8"
 
 ref(x)
-#> █ [1:0x55756f256598] <list> 
-#> ├─[2:0x55756f173680] <int> 
-#> └─█ [3:0x55756f166c70] <list> 
-#>   └─[2:0x55756f173680]
+#> █ [1:0x55e8f6f1f4a8] <list> 
+#> ├─[2:0x55e8f6e3c590] <int> 
+#> └─█ [3:0x55e8f6e2fb80] <list> 
+#>   └─[2:0x55e8f6e3c590]
 ```
 
 I don't have access to OmniGraffle software, so I am including here the figure from the [official solution manual](https://advanced-r-solutions.rbind.io/names-and-values.html#copy-on-modify):
@@ -425,16 +425,16 @@ x[[1]] <- x
 x <- list()
 
 obj_addr(x)
-#> [1] "0x55756ec40760"
+#> [1] "0x55e8f6909670"
 
 tracemem(x)
-#> [1] "<0x55756ec40760>"
+#> [1] "<0x55e8f6909670>"
 
 x[[1]] <- x
-#> tracemem[0x55756ec40760 -> 0x55756ece6a30]: eval eval withVisible withCallingHandlers eval eval with_handlers doWithOneRestart withOneRestart withRestartList doWithOneRestart withOneRestart withRestartList withRestarts <Anonymous> evaluate in_dir in_input_dir eng_r block_exec call_block process_group withCallingHandlers <Anonymous> process_file <Anonymous> <Anonymous> do.call eval eval eval eval eval.parent local
+#> tracemem[0x55e8f6909670 -> 0x55e8f69af940]: eval eval withVisible withCallingHandlers eval eval with_handlers doWithOneRestart withOneRestart withRestartList doWithOneRestart withOneRestart withRestartList withRestarts <Anonymous> evaluate in_dir in_input_dir eng_r block_exec call_block process_group withCallingHandlers <Anonymous> process_file <Anonymous> <Anonymous> do.call eval eval eval eval eval.parent local
 
 obj_addr(x[[1]])
-#> [1] "0x55756ec40760"
+#> [1] "0x55e8f6909670"
 ```
 
 ---
@@ -552,7 +552,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-09-21
+#>  date     2025-09-28
 #>  pandoc   3.8 @ /opt/hostedtoolcache/pandoc/3.8/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -571,7 +571,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  evaluate       1.0.5   2025-08-27 [1] RSPM
 #>  farver         2.1.2   2024-05-13 [1] RSPM
 #>  fastmap        1.2.0   2024-05-15 [1] RSPM
-#>  forcats      * 1.0.0   2023-01-29 [1] RSPM
+#>  forcats      * 1.0.1   2025-09-25 [1] RSPM
 #>  generics       0.1.4   2025-05-09 [1] RSPM
 #>  ggplot2      * 4.0.0   2025-09-11 [1] RSPM
 #>  glue           1.8.0   2024-09-30 [1] RSPM

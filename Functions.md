@@ -20,7 +20,7 @@ library(tidyverse, warn.conflicts = FALSE)
 match.fun("mean")
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x55b9fa61df90>
+#> <bytecode: 0x563f6c16cf90>
 #> <environment: namespace:base>
 ```
 
@@ -354,7 +354,7 @@ names(primitives)
 mean
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x55b9fa61df90>
+#> <bytecode: 0x563f6c16cf90>
 #> <environment: namespace:base>
 
 # other package function
@@ -363,7 +363,7 @@ purrr::map
 #> {
 #>     map_("list", .x, .f, ..., .progress = .progress)
 #> }
-#> <bytecode: 0x55b9fe88cdd8>
+#> <bytecode: 0x563f703dbeb8>
 #> <environment: namespace:purrr>
 ```
 
@@ -567,7 +567,7 @@ f2 <- function(x = z) {
 }
 
 f2()
-#> [1] "0x55ba02177dd8" "0x55ba02177dd8"
+#> [1] "0x563f73cc80a0" "0x563f73cc80a0"
 #> [1] 100
 ```
 
@@ -662,7 +662,7 @@ show_time <- function(x = stop("Error!")) {
 }
 
 show_time()
-#> [1] "2025-09-21 00:21:00 UTC"
+#> [1] "2025-09-28 00:20:04 UTC"
 ```
 
 **A5.** Let's take this step-by-step.
@@ -887,7 +887,7 @@ withr::with_dir
 #>     on.exit(setwd(old))
 #>     force(code)
 #> }
-#> <bytecode: 0x55ba01e01e00>
+#> <bytecode: 0x563f73952f00>
 #> <environment: namespace:withr>
 ```
 
@@ -969,7 +969,7 @@ capture.output
 #>         close(file)
 #>     rval %||% invisible(NULL)
 #> }
-#> <bytecode: 0x55ba022c4200>
+#> <bytecode: 0x563f73e15300>
 #> <environment: namespace:utils>
 ```
 
@@ -1309,7 +1309,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-09-21
+#>  date     2025-09-28
 #>  pandoc   3.8 @ /opt/hostedtoolcache/pandoc/3.8/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -1326,7 +1326,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  evaluate       1.0.5   2025-08-27 [1] RSPM
 #>  farver         2.1.2   2024-05-13 [1] RSPM
 #>  fastmap        1.2.0   2024-05-15 [1] RSPM
-#>  forcats      * 1.0.0   2023-01-29 [1] RSPM
+#>  forcats      * 1.0.1   2025-09-25 [1] RSPM
 #>  generics       0.1.4   2025-05-09 [1] RSPM
 #>  ggplot2      * 4.0.0   2025-09-11 [1] RSPM
 #>  glue           1.8.0   2024-09-30 [1] RSPM
