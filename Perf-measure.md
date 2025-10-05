@@ -68,7 +68,7 @@ rm
 #>     }
 #>     .Internal(remove(list, envir, inherits))
 #> }
-#> <bytecode: 0x55ef0e5611e0>
+#> <bytecode: 0x55b0f5d7a1e0>
 #> <environment: namespace:base>
 ```
 
@@ -144,8 +144,8 @@ full_join(t_bench_df, t_systime_df, by = "expression")
 #> # A tibble: 2 × 4
 #>   expression bench_mean systime_with_gc systime_with_nogc
 #>   <bch:expr>   <bch:tm>           <dbl>             <dbl>
-#> 1 sqrt(x)      844.66ns           0.639             0.484
-#> 2 x^0.5          2.11µs           1.97              1.97
+#> 1 sqrt(x)      807.11ns           0.615             0.483
+#> 2 x^0.5          2.09µs           1.97              1.97
 ```
 
 The comparison reveals that these two approaches yield quite similar results. Slight differences in exact values is possibly due to differences in the precision of timers used internally by these functions.
@@ -180,10 +180,10 @@ bench::mark(
 #> # A tibble: 4 × 2
 #>   expression      median
 #>   <bch:expr>    <bch:tm>
-#> 1 sqrt(x)         3.16µs
-#> 2 exp(log(x)/2)  12.89µs
-#> 3 x^0.5          18.24µs
-#> 4 x^(1/2)        18.38µs
+#> 1 sqrt(x)            3µs
+#> 2 exp(log(x)/2)   12.5µs
+#> 3 x^0.5           18.3µs
+#> 4 x^(1/2)         18.4µs
 ```
 
 The specialized primitive function `sqrt()` (written in `C`) is the fastest way to compute square root.
@@ -205,15 +205,15 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-09-28
-#>  pandoc   3.8 @ /opt/hostedtoolcache/pandoc/3.8/x64/ (via rmarkdown)
+#>  date     2025-10-05
+#>  pandoc   3.8.1 @ /opt/hostedtoolcache/pandoc/3.8.1/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
 #> ─ Packages ───────────────────────────────────────────────
 #>  package     * version date (UTC) lib source
 #>  base        * 4.5.1   2025-06-13 [3] local
 #>  bench         1.1.4   2025-01-16 [1] RSPM
-#>  bookdown      0.44    2025-08-21 [1] RSPM
+#>  bookdown      0.45    2025-10-03 [1] RSPM
 #>  cli           3.6.5   2025-04-23 [1] RSPM
 #>  compiler      4.5.1   2025-06-13 [3] local
 #>  datasets    * 4.5.1   2025-06-13 [3] local
@@ -238,7 +238,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  profvis     * 0.4.0   2024-09-20 [1] RSPM
 #>  R6            2.6.1   2025-02-15 [1] RSPM
 #>  rlang         1.1.6   2025-04-11 [1] RSPM
-#>  rmarkdown     2.29    2024-11-04 [1] RSPM
+#>  rmarkdown     2.30    2025-09-28 [1] RSPM
 #>  sessioninfo   1.2.3   2025-02-05 [1] RSPM
 #>  stats       * 4.5.1   2025-06-13 [3] local
 #>  stringi       1.8.7   2025-03-27 [1] RSPM

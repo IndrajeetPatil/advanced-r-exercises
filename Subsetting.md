@@ -420,14 +420,14 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-09-28
-#>  pandoc   3.8 @ /opt/hostedtoolcache/pandoc/3.8/x64/ (via rmarkdown)
+#>  date     2025-10-05
+#>  pandoc   3.8.1 @ /opt/hostedtoolcache/pandoc/3.8.1/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
 #> ─ Packages ───────────────────────────────────────────────
 #>  package     * version date (UTC) lib source
 #>  base        * 4.5.1   2025-06-13 [3] local
-#>  bookdown      0.44    2025-08-21 [1] RSPM
+#>  bookdown      0.45    2025-10-03 [1] RSPM
 #>  cli           3.6.5   2025-04-23 [1] RSPM
 #>  compiler      4.5.1   2025-06-13 [3] local
 #>  datasets    * 4.5.1   2025-06-13 [3] local
@@ -446,7 +446,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  pillar        1.11.1  2025-09-17 [1] RSPM
 #>  pkgconfig     2.0.3   2019-09-22 [1] RSPM
 #>  rlang         1.1.6   2025-04-11 [1] RSPM
-#>  rmarkdown     2.29    2024-11-04 [1] RSPM
+#>  rmarkdown     2.30    2025-09-28 [1] RSPM
 #>  sessioninfo   1.2.3   2025-02-05 [1] RSPM
 #>  stats       * 4.5.1   2025-06-13 [3] local
 #>  stringi       1.8.7   2025-03-27 [1] RSPM

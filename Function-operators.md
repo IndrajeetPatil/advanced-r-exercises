@@ -95,7 +95,7 @@ possibly
 #>         })
 #>     }
 #> }
-#> <bytecode: 0x5623af1959b8>
+#> <bytecode: 0x55907a390b70>
 #> <environment: namespace:purrr>
 ```
 
@@ -121,7 +121,7 @@ safely
 #>     check_bool(quiet)
 #>     function(...) capture_error(.f(...), otherwise, quiet)
 #> }
-#> <bytecode: 0x5623af384180>
+#> <bytecode: 0x55907a57f338>
 #> <environment: namespace:purrr>
 
 purrr:::capture_error
@@ -134,7 +134,7 @@ purrr:::capture_error
 #>         list(result = otherwise, error = e)
 #>     })
 #> }
-#> <bytecode: 0x5623af3be350>
+#> <bytecode: 0x55907a5bb428>
 #> <environment: namespace:purrr>
 ```
 
@@ -283,10 +283,10 @@ withr::with_tempfile("logfile", code = {
 
   cat(readLines(logfile), sep = "\n")
 })
-#> Function created at: 2025-09-28 00:20:15.397191
-#> Function called at:  2025-09-28 00:20:20.404211
-#> Function called at:  2025-09-28 00:20:25.409549
-#> Function called at:  2025-09-28 00:20:33.417986
+#> Function created at: 2025-10-05 00:21:58.932897
+#> Function called at:  2025-10-05 00:22:03.939877
+#> Function called at:  2025-10-05 00:22:08.945252
+#> Function called at:  2025-10-05 00:22:16.953698
 ```
 
 ---
@@ -335,14 +335,14 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-09-28
-#>  pandoc   3.8 @ /opt/hostedtoolcache/pandoc/3.8/x64/ (via rmarkdown)
+#>  date     2025-10-05
+#>  pandoc   3.8.1 @ /opt/hostedtoolcache/pandoc/3.8.1/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
 #> ─ Packages ───────────────────────────────────────────────
 #>  package     * version date (UTC) lib source
 #>  base        * 4.5.1   2025-06-13 [3] local
-#>  bookdown      0.44    2025-08-21 [1] RSPM
+#>  bookdown      0.45    2025-10-03 [1] RSPM
 #>  cli           3.6.5   2025-04-23 [1] RSPM
 #>  compiler      4.5.1   2025-06-13 [3] local
 #>  datasets    * 4.5.1   2025-06-13 [3] local
@@ -365,7 +365,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  purrr       * 1.1.0   2025-07-10 [1] RSPM
 #>  R6            2.6.1   2025-02-15 [1] RSPM
 #>  rlang         1.1.6   2025-04-11 [1] RSPM
-#>  rmarkdown     2.29    2024-11-04 [1] RSPM
+#>  rmarkdown     2.30    2025-09-28 [1] RSPM
 #>  sessioninfo   1.2.3   2025-02-05 [1] RSPM
 #>  stats       * 4.5.1   2025-06-13 [3] local
 #>  stringi       1.8.7   2025-03-27 [1] RSPM
