@@ -50,7 +50,7 @@ withr::with_tempdir(
     foo()
   }
 )
-#> <environment: 0x56512110ed08>
+#> <environment: 0x558fdc6e7d08>
 #> Parent: <environment: global>
 ```
 
@@ -251,17 +251,17 @@ q1 <- new_quosure(expr(x), env(x = 1))
 q1
 #> <quosure>
 #> expr: ^x
-#> env:  0x5651217b5ca0
+#> env:  0x558fdcd8eca0
 q2 <- new_quosure(expr(x + !!q1), env(x = 10))
 q2
 #> <quosure>
 #> expr: ^x + (^x)
-#> env:  0x565122dc7c28
+#> env:  0x558fde3a0c28
 q3 <- new_quosure(expr(x + !!q2), env(x = 100))
 q3
 #> <quosure>
 #> expr: ^x + (^x + (^x))
-#> env:  0x565123105778
+#> env:  0x558fde6de778
 ```
 
 **A1.** Correctly predicted 😉
@@ -299,7 +299,7 @@ enenv(x)
 
 foo <- function(x) enenv(x)
 foo()
-#> <environment: 0x565123e7d120>
+#> <environment: 0x558fdf456120>
 ```
 
 ---
@@ -675,8 +675,8 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-10-05
-#>  pandoc   3.8.1 @ /opt/hostedtoolcache/pandoc/3.8.1/x64/ (via rmarkdown)
+#>  date     2025-10-12
+#>  pandoc   3.8.2 @ /opt/hostedtoolcache/pandoc/3.8.2/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
 #> ─ Packages ───────────────────────────────────────────────

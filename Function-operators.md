@@ -95,7 +95,7 @@ possibly
 #>         })
 #>     }
 #> }
-#> <bytecode: 0x55907a390b70>
+#> <bytecode: 0x564ea386cce0>
 #> <environment: namespace:purrr>
 ```
 
@@ -121,7 +121,7 @@ safely
 #>     check_bool(quiet)
 #>     function(...) capture_error(.f(...), otherwise, quiet)
 #> }
-#> <bytecode: 0x55907a57f338>
+#> <bytecode: 0x564ea3a5b4a8>
 #> <environment: namespace:purrr>
 
 purrr:::capture_error
@@ -134,7 +134,7 @@ purrr:::capture_error
 #>         list(result = otherwise, error = e)
 #>     })
 #> }
-#> <bytecode: 0x55907a5bb428>
+#> <bytecode: 0x564ea3a95678>
 #> <environment: namespace:purrr>
 ```
 
@@ -283,10 +283,10 @@ withr::with_tempfile("logfile", code = {
 
   cat(readLines(logfile), sep = "\n")
 })
-#> Function created at: 2025-10-05 00:21:58.932897
-#> Function called at:  2025-10-05 00:22:03.939877
-#> Function called at:  2025-10-05 00:22:08.945252
-#> Function called at:  2025-10-05 00:22:16.953698
+#> Function created at: 2025-10-12 00:21:30.69636
+#> Function called at:  2025-10-12 00:21:35.70336
+#> Function called at:  2025-10-12 00:21:40.708748
+#> Function called at:  2025-10-12 00:21:48.717211
 ```
 
 ---
@@ -335,8 +335,8 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-10-05
-#>  pandoc   3.8.1 @ /opt/hostedtoolcache/pandoc/3.8.1/x64/ (via rmarkdown)
+#>  date     2025-10-12
+#>  pandoc   3.8.2 @ /opt/hostedtoolcache/pandoc/3.8.2/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
 #> ─ Packages ───────────────────────────────────────────────

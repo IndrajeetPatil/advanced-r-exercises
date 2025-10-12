@@ -160,7 +160,7 @@
 <span><span class="co">#&gt;         })</span></span>
 <span><span class="co">#&gt;     }</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x56131c15cc60&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x5642e6eb8c60&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:purrr&gt;</span></span></code></pre></div>
 <p>Looking at this code, we can see that <code><a href="https://purrr.tidyverse.org/reference/possibly.html">possibly()</a></code>:</p>
 <ul>
@@ -180,7 +180,7 @@
 <span><span class="co">#&gt;     check_bool(quiet)</span></span>
 <span><span class="co">#&gt;     function(...) capture_error(.f(...), otherwise, quiet)</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x56131f740620&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x5642ea49c620&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:purrr&gt;</span></span>
 <span></span>
 <span><span class="fu">purrr</span><span class="fu">:::</span><span class="va">capture_error</span></span>
@@ -193,7 +193,7 @@
 <span><span class="co">#&gt;         list(result = otherwise, error = e)</span></span>
 <span><span class="co">#&gt;     })</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x56131f7c84b0&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x5642ea5244b0&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:purrr&gt;</span></span></code></pre></div>
 <p>Looking at this code, we can see that <code><a href="https://purrr.tidyverse.org/reference/safely.html">safely()</a></code>:</p>
 <ul>
@@ -318,10 +318,10 @@
 <span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/readLines.html">readLines</a></span><span class="op">(</span><span class="va">logfile</span><span class="op">)</span>, sep <span class="op">=</span> <span class="st">"\n"</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Function created at: 2025-10-05 00:12:30.773468</span></span>
-<span><span class="co">#&gt; Function called at:  2025-10-05 00:12:35.780254</span></span>
-<span><span class="co">#&gt; Function called at:  2025-10-05 00:12:40.785567</span></span>
-<span><span class="co">#&gt; Function called at:  2025-10-05 00:12:48.793997</span></span></code></pre></div>
+<span><span class="co">#&gt; Function created at: 2025-10-12 00:11:50.350803</span></span>
+<span><span class="co">#&gt; Function called at:  2025-10-12 00:11:55.357777</span></span>
+<span><span class="co">#&gt; Function called at:  2025-10-12 00:12:00.363168</span></span>
+<span><span class="co">#&gt; Function called at:  2025-10-12 00:12:08.371621</span></span></code></pre></div>
 <hr>
 <p><strong>Q5.</strong> Modify <code>delay_by()</code> so that instead of delaying by a fixed amount of time, it ensures that a certain amount of time has elapsed since the function was last called. That is, if you called <code>g &lt;- delay_by(1, f); g(); Sys.sleep(2); g()</code> there shouldn’t be an extra delay.</p>
 <p><strong>A5.</strong> Modified version of the function meeting the specified requirements:</p>
@@ -363,8 +363,8 @@
 <span><span class="co">#&gt;  collate  C.UTF-8</span></span>
 <span><span class="co">#&gt;  ctype    C.UTF-8</span></span>
 <span><span class="co">#&gt;  tz       UTC</span></span>
-<span><span class="co">#&gt;  date     2025-10-05</span></span>
-<span><span class="co">#&gt;  pandoc   3.8.1 @ /opt/hostedtoolcache/pandoc/3.8.1/x64/ (via rmarkdown)</span></span>
+<span><span class="co">#&gt;  date     2025-10-12</span></span>
+<span><span class="co">#&gt;  pandoc   3.8.2 @ /opt/hostedtoolcache/pandoc/3.8.2/x64/ (via rmarkdown)</span></span>
 <span><span class="co">#&gt;  quarto   NA</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; ─ Packages ───────────────────────────────────────────────</span></span>
@@ -452,7 +452,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-10-05.</p>
+    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-10-12.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
