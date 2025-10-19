@@ -20,7 +20,7 @@ library(tidyverse, warn.conflicts = FALSE)
 match.fun("mean")
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x5635b457af90>
+#> <bytecode: 0x55d82fe11fa0>
 #> <environment: namespace:base>
 ```
 
@@ -354,7 +354,7 @@ names(primitives)
 mean
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x5635b457af90>
+#> <bytecode: 0x55d82fe11fa0>
 #> <environment: namespace:base>
 
 # other package function
@@ -363,7 +363,7 @@ purrr::map
 #> {
 #>     map_("list", .x, .f, ..., .progress = .progress)
 #> }
-#> <bytecode: 0x5635b8809070>
+#> <bytecode: 0x55d833f1ef88>
 #> <environment: namespace:purrr>
 ```
 
@@ -567,7 +567,7 @@ f2 <- function(x = z) {
 }
 
 f2()
-#> [1] "0x5635bc0d3790" "0x5635bc0d3790"
+#> [1] "0x55d8379acb90" "0x55d8379acb90"
 #> [1] 100
 ```
 
@@ -662,7 +662,7 @@ show_time <- function(x = stop("Error!")) {
 }
 
 show_time()
-#> [1] "2025-10-12 00:21:18 UTC"
+#> [1] "2025-10-19 00:22:16 UTC"
 ```
 
 **A5.** Let's take this step-by-step.
@@ -887,7 +887,7 @@ withr::with_dir
 #>     on.exit(setwd(old))
 #>     force(code)
 #> }
-#> <bytecode: 0x5635bbd5a628>
+#> <bytecode: 0x55d837629280>
 #> <environment: namespace:withr>
 ```
 
@@ -969,7 +969,7 @@ capture.output
 #>         close(file)
 #>     rval %||% invisible(NULL)
 #> }
-#> <bytecode: 0x5635bc21ca28>
+#> <bytecode: 0x55d837aeb680>
 #> <environment: namespace:utils>
 ```
 
@@ -1309,7 +1309,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-10-12
+#>  date     2025-10-19
 #>  pandoc   3.8.2 @ /opt/hostedtoolcache/pandoc/3.8.2/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -1334,7 +1334,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  grDevices    * 4.5.1   2025-06-13 [3] local
 #>  grid           4.5.1   2025-06-13 [3] local
 #>  gtable         0.3.6   2024-10-25 [1] RSPM
-#>  hms            1.1.3   2023-03-21 [1] RSPM
+#>  hms            1.1.4   2025-10-17 [1] RSPM
 #>  htmltools      0.5.8.1 2024-04-04 [1] RSPM
 #>  knitr          1.50    2025-03-16 [1] RSPM
 #>  lifecycle      1.0.4   2023-11-07 [1] RSPM
