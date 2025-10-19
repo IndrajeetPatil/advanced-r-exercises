@@ -131,7 +131,7 @@
 <span><span class="co">#&gt;     }</span></span>
 <span><span class="co">#&gt;     .Internal(remove(list, envir, inherits))</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x5557f54aa1e0&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x55f657df61f0&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:base&gt;</span></span></code></pre></div>
 <p>I still couldn’t figure out why. I would recommend checking out the <a href="https://advanced-r-solutions.rbind.io/measuring-performance.html#profiling">official answer</a>.</p>
 <hr>
@@ -194,8 +194,8 @@
 <span><span class="co">#&gt; # A tibble: 2 × 4</span></span>
 <span><span class="co">#&gt;   expression bench_mean systime_with_gc systime_with_nogc</span></span>
 <span><span class="co">#&gt;   &lt;bch:expr&gt;   &lt;bch:tm&gt;           &lt;dbl&gt;             &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt; 1 sqrt(x)      809.53ns           0.664             0.443</span></span>
-<span><span class="co">#&gt; 2 x^0.5          2.15µs           1.98              1.96</span></span></code></pre></div>
+<span><span class="co">#&gt; 1 sqrt(x)       808.4ns           0.664             0.439</span></span>
+<span><span class="co">#&gt; 2 x^0.5           2.1µs           1.97              1.95</span></span></code></pre></div>
 <p>The comparison reveals that these two approaches yield quite similar results. Slight differences in exact values is possibly due to differences in the precision of timers used internally by these functions.</p>
 <hr>
 <p><strong>Q2.</strong> Here are two other ways to compute the square root of a vector. Which do you think will be fastest? Which will be slowest? Use microbenchmarking to test your answers.</p>
@@ -219,9 +219,9 @@
 <span><span class="co">#&gt; # A tibble: 4 × 2</span></span>
 <span><span class="co">#&gt;   expression      median</span></span>
 <span><span class="co">#&gt;   &lt;bch:expr&gt;    &lt;bch:tm&gt;</span></span>
-<span><span class="co">#&gt; 1 sqrt(x)         2.98µs</span></span>
-<span><span class="co">#&gt; 2 exp(log(x)/2)  12.56µs</span></span>
-<span><span class="co">#&gt; 3 x^0.5          18.16µs</span></span>
+<span><span class="co">#&gt; 1 sqrt(x)         2.94µs</span></span>
+<span><span class="co">#&gt; 2 exp(log(x)/2)  12.57µs</span></span>
+<span><span class="co">#&gt; 3 x^0.5          18.21µs</span></span>
 <span><span class="co">#&gt; 4 x^(1/2)        18.34µs</span></span></code></pre></div>
 <p>The specialized primitive function <code><a href="https://rdrr.io/r/base/MathFun.html">sqrt()</a></code> (written in <code>C</code>) is the fastest way to compute square root.</p>
 <hr>

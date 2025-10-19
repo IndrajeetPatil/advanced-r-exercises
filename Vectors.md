@@ -209,7 +209,7 @@ setNames
 #>     names(object) <- nm
 #>     object
 #> }
-#> <bytecode: 0x560bcf1ce9e0>
+#> <bytecode: 0x56255ded89e0>
 #> <environment: namespace:stats>
 ```
 
@@ -239,7 +239,7 @@ unname
 #>         dimnames(obj) <- NULL
 #>     obj
 #> }
-#> <bytecode: 0x560bce7648a8>
+#> <bytecode: 0x56255d46e8a8>
 #> <environment: namespace:base>
 ```
 
