@@ -160,7 +160,7 @@
 <span><span class="co">#&gt;         })</span></span>
 <span><span class="co">#&gt;     }</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x55a57182abb8&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x55bf039d6ba8&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:purrr&gt;</span></span></code></pre></div>
 <p>Looking at this code, we can see that <code><a href="https://purrr.tidyverse.org/reference/possibly.html">possibly()</a></code>:</p>
 <ul>
@@ -180,7 +180,7 @@
 <span><span class="co">#&gt;     check_bool(quiet)</span></span>
 <span><span class="co">#&gt;     function(...) capture_error(.f(...), otherwise, quiet)</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x55a574e0e6d8&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x55bf06fba6c8&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:purrr&gt;</span></span>
 <span></span>
 <span><span class="fu">purrr</span><span class="fu">:::</span><span class="va">capture_error</span></span>
@@ -193,7 +193,7 @@
 <span><span class="co">#&gt;         list(result = otherwise, error = e)</span></span>
 <span><span class="co">#&gt;     })</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x55a574e96568&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x55bf07042558&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:purrr&gt;</span></span></code></pre></div>
 <p>Looking at this code, we can see that <code><a href="https://purrr.tidyverse.org/reference/safely.html">safely()</a></code>:</p>
 <ul>
@@ -318,10 +318,10 @@
 <span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/readLines.html">readLines</a></span><span class="op">(</span><span class="va">logfile</span><span class="op">)</span>, sep <span class="op">=</span> <span class="st">"\n"</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Function created at: 2025-10-19 12:28:06.977249</span></span>
-<span><span class="co">#&gt; Function called at:  2025-10-19 12:28:11.984287</span></span>
-<span><span class="co">#&gt; Function called at:  2025-10-19 12:28:16.98966</span></span>
-<span><span class="co">#&gt; Function called at:  2025-10-19 12:28:24.998107</span></span></code></pre></div>
+<span><span class="co">#&gt; Function created at: 2025-10-19 12:49:37.71063</span></span>
+<span><span class="co">#&gt; Function called at:  2025-10-19 12:49:42.717611</span></span>
+<span><span class="co">#&gt; Function called at:  2025-10-19 12:49:47.722998</span></span>
+<span><span class="co">#&gt; Function called at:  2025-10-19 12:49:55.731459</span></span></code></pre></div>
 <hr>
 <p><strong>Q5.</strong> Modify <code>delay_by()</code> so that instead of delaying by a fixed amount of time, it ensures that a certain amount of time has elapsed since the function was last called. That is, if you called <code>g &lt;- delay_by(1, f); g(); Sys.sleep(2); g()</code> there shouldn’t be an extra delay.</p>
 <p><strong>A5.</strong> Modified version of the function meeting the specified requirements:</p>
