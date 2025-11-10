@@ -171,7 +171,7 @@ rlang::expr
 #> {
 #>     enexpr(expr)
 #> }
-#> <bytecode: 0x557037718a58>
+#> <bytecode: 0x55caf1a16580>
 #> <environment: namespace:rlang>
 ```
 
@@ -193,7 +193,7 @@ rlang::enexpr
 #> {
 #>     .Call(ffi_enexpr, substitute(arg), parent.frame())
 #> }
-#> <bytecode: 0x557034650198>
+#> <bytecode: 0x55caee939880>
 #> <environment: namespace:rlang>
 ```
 
@@ -816,7 +816,7 @@ not_null2(4)
 sessioninfo::session_info(include_base = TRUE)
 #> ─ Session info ───────────────────────────────────────────
 #>  setting  value
-#>  version  R version 4.5.1 (2025-06-13)
+#>  version  R version 4.5.2 (2025-10-31)
 #>  os       Ubuntu 24.04.3 LTS
 #>  system   x86_64, linux-gnu
 #>  ui       X11
@@ -824,18 +824,18 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-10-19
-#>  pandoc   3.8.2 @ /opt/hostedtoolcache/pandoc/3.8.2/x64/ (via rmarkdown)
+#>  date     2025-11-10
+#>  pandoc   3.8.2.1 @ /opt/hostedtoolcache/pandoc/3.8.2.1/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
 #> ─ Packages ───────────────────────────────────────────────
 #>  package      * version date (UTC) lib source
-#>  base         * 4.5.1   2025-06-13 [3] local
+#>  base         * 4.5.2   2025-10-31 [3] local
 #>  bookdown       0.45    2025-10-03 [1] RSPM
 #>  cli            3.6.5   2025-04-23 [1] RSPM
-#>  compiler       4.5.1   2025-06-13 [3] local
+#>  compiler       4.5.2   2025-10-31 [3] local
 #>  crayon         1.5.3   2024-06-20 [1] RSPM
-#>  datasets     * 4.5.1   2025-06-13 [3] local
+#>  datasets     * 4.5.2   2025-10-31 [3] local
 #>  diffobj        0.3.6   2025-04-21 [1] RSPM
 #>  digest         0.6.37  2024-08-19 [1] RSPM
 #>  dplyr        * 1.1.4   2023-11-17 [1] RSPM
@@ -846,9 +846,9 @@ sessioninfo::session_info(include_base = TRUE)
 #>  generics       0.1.4   2025-05-09 [1] RSPM
 #>  ggplot2      * 4.0.0   2025-09-11 [1] RSPM
 #>  glue           1.8.0   2024-09-30 [1] RSPM
-#>  graphics     * 4.5.1   2025-06-13 [3] local
-#>  grDevices    * 4.5.1   2025-06-13 [3] local
-#>  grid           4.5.1   2025-06-13 [3] local
+#>  graphics     * 4.5.2   2025-10-31 [3] local
+#>  grDevices    * 4.5.2   2025-10-31 [3] local
+#>  grid           4.5.2   2025-10-31 [3] local
 #>  gtable         0.3.6   2024-10-25 [1] RSPM
 #>  htmltools      0.5.8.1 2024-04-04 [1] RSPM
 #>  knitr          1.50    2025-03-16 [1] RSPM
@@ -856,11 +856,11 @@ sessioninfo::session_info(include_base = TRUE)
 #>  lifecycle      1.0.4   2023-11-07 [1] RSPM
 #>  lobstr       * 1.1.2   2022-06-22 [1] RSPM
 #>  magrittr     * 2.0.4   2025-09-12 [1] RSPM
-#>  MASS         * 7.3-65  2025-02-28 [3] CRAN (R 4.5.1)
-#>  methods      * 4.5.1   2025-06-13 [3] local
+#>  MASS         * 7.3-65  2025-02-28 [3] CRAN (R 4.5.2)
+#>  methods      * 4.5.2   2025-10-31 [3] local
 #>  pillar         1.11.1  2025-09-17 [1] RSPM
 #>  pkgconfig      2.0.3   2019-09-22 [1] RSPM
-#>  purrr        * 1.1.0   2025-07-10 [1] RSPM
+#>  purrr        * 1.2.0   2025-11-04 [1] RSPM
 #>  R6             2.6.1   2025-02-15 [1] RSPM
 #>  RColorBrewer   1.1-3   2022-04-03 [1] RSPM
 #>  rlang        * 1.1.6   2025-04-11 [1] RSPM
@@ -868,22 +868,22 @@ sessioninfo::session_info(include_base = TRUE)
 #>  S7             0.2.0   2024-11-07 [1] RSPM
 #>  scales         1.4.0   2025-04-24 [1] RSPM
 #>  sessioninfo    1.2.3   2025-02-05 [1] RSPM
-#>  stats        * 4.5.1   2025-06-13 [3] local
+#>  stats        * 4.5.2   2025-10-31 [3] local
 #>  stringi        1.8.7   2025-03-27 [1] RSPM
-#>  stringr        1.5.2   2025-09-08 [1] RSPM
+#>  stringr        1.6.0   2025-11-04 [1] RSPM
 #>  tibble         3.3.0   2025-06-08 [1] RSPM
 #>  tidyselect     1.2.1   2024-03-11 [1] RSPM
-#>  tools          4.5.1   2025-06-13 [3] local
-#>  utils        * 4.5.1   2025-06-13 [3] local
+#>  tools          4.5.2   2025-10-31 [3] local
+#>  utils        * 4.5.2   2025-10-31 [3] local
 #>  vctrs          0.6.5   2023-12-01 [1] RSPM
 #>  waldo          0.6.2   2025-07-11 [1] RSPM
 #>  withr          3.0.2   2024-10-28 [1] RSPM
-#>  xfun           0.53    2025-08-19 [1] RSPM
+#>  xfun           0.54    2025-10-30 [1] RSPM
 #>  yaml           2.3.10  2024-07-26 [1] RSPM
 #> 
 #>  [1] /home/runner/work/_temp/Library
-#>  [2] /opt/R/4.5.1/lib/R/site-library
-#>  [3] /opt/R/4.5.1/lib/R/library
+#>  [2] /opt/R/4.5.2/lib/R/site-library
+#>  [3] /opt/R/4.5.2/lib/R/library
 #>  * ── Packages attached to the search path.
 #> 
 #> ──────────────────────────────────────────────────────────
