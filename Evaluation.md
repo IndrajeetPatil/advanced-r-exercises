@@ -50,7 +50,7 @@ withr::with_tempdir(
     foo()
   }
 )
-#> <environment: 0x5638be9a9820>
+#> <environment: 0x563daf7c5a90>
 #> Parent: <environment: global>
 ```
 
@@ -251,17 +251,17 @@ q1 <- new_quosure(expr(x), env(x = 1))
 q1
 #> <quosure>
 #> expr: ^x
-#> env:  0x5638bf03a040
+#> env:  0x563dafe456e0
 q2 <- new_quosure(expr(x + !!q1), env(x = 10))
 q2
 #> <quosure>
 #> expr: ^x + (^x)
-#> env:  0x5638c06736e8
+#> env:  0x563db149a118
 q3 <- new_quosure(expr(x + !!q2), env(x = 100))
 q3
 #> <quosure>
 #> expr: ^x + (^x + (^x))
-#> env:  0x5638c09b4b38
+#> env:  0x563db17d4cc8
 ```
 
 **A1.** Correctly predicted 😉
@@ -299,7 +299,7 @@ enenv(x)
 
 foo <- function(x) enenv(x)
 foo()
-#> <environment: 0x5638c1726080>
+#> <environment: 0x563db254b270>
 ```
 
 ---
@@ -675,7 +675,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-11-10
+#>  date     2025-11-30
 #>  pandoc   3.8.2.1 @ /opt/hostedtoolcache/pandoc/3.8.2.1/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -686,7 +686,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  cli           3.6.5   2025-04-23 [1] RSPM
 #>  compiler      4.5.2   2025-10-31 [3] local
 #>  datasets    * 4.5.2   2025-10-31 [3] local
-#>  digest        0.6.37  2024-08-19 [1] RSPM
+#>  digest        0.6.39  2025-11-19 [1] RSPM
 #>  emoji         16.0.0  2024-10-28 [1] RSPM
 #>  evaluate      1.0.5   2025-08-27 [1] RSPM
 #>  fastmap       1.2.0   2024-05-15 [1] RSPM

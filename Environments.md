@@ -45,7 +45,7 @@ library(rlang)
 e <- env()
 e$loop <- e
 env_print(e)
-#> <environment: 0x55bce0ff23d8>
+#> <environment: 0x560eb984bbc8>
 #> Parent: <environment: global>
 #> Bindings:
 #> • loop: <env>
@@ -56,8 +56,8 @@ The binding `loop` should have the same memory address as the environment `e`:
 
 ``` r
 lobstr::ref(e$loop)
-#> █ [1:0x55bce0ff23d8] <env> 
-#> └─loop = [1:0x55bce0ff23d8]
+#> █ [1:0x560eb984bbc8] <env> 
+#> └─loop = [1:0x560eb984bbc8]
 ```
 
 **Q3.** Create a pair of environments as illustrated by this picture.
@@ -76,9 +76,9 @@ e2$deloop <- e1
 
 # following should be the same
 lobstr::obj_addrs(list(e1, e2$deloop))
-#> [1] "0x55bce3804ef0" "0x55bce3804ef0"
+#> [1] "0x560ebc059df0" "0x560ebc059df0"
 lobstr::obj_addrs(list(e2, e1$loop))
-#> [1] "0x55bce3857610" "0x55bce3857610"
+#> [1] "0x560ebc0a67c0" "0x560ebc0a67c0"
 ```
 
 **Q4.** Explain why `e[[1]]` and `e[c("a", "b")]` don't make sense when `e` is an environment.
@@ -305,7 +305,7 @@ fget("mean", inherits = FALSE)
 fget("mean", inherits = TRUE)
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x55bcdf29cc18>
+#> <bytecode: 0x560eb7ae8358>
 #> <environment: namespace:base>
 
 mean <- 5
@@ -512,7 +512,7 @@ rlang::caller_env
 #> {
 #>     parent.frame(n + 1)
 #> }
-#> <bytecode: 0x55bcdf55a278>
+#> <bytecode: 0x560eb7da59b8>
 #> <environment: namespace:rlang>
 ```
 
@@ -565,7 +565,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-11-10
+#>  date     2025-11-30
 #>  pandoc   3.8.2.1 @ /opt/hostedtoolcache/pandoc/3.8.2.1/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -577,7 +577,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  compiler      4.5.2   2025-10-31 [3] local
 #>  crayon        1.5.3   2024-06-20 [1] RSPM
 #>  datasets    * 4.5.2   2025-10-31 [3] local
-#>  digest        0.6.37  2024-08-19 [1] RSPM
+#>  digest        0.6.39  2025-11-19 [1] RSPM
 #>  dplyr         1.1.4   2023-11-17 [1] RSPM
 #>  emoji         16.0.0  2024-10-28 [1] RSPM
 #>  evaluate      1.0.5   2025-08-27 [1] RSPM
@@ -589,7 +589,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  htmltools     0.5.8.1 2024-04-04 [1] RSPM
 #>  knitr         1.50    2025-03-16 [1] RSPM
 #>  lifecycle     1.0.4   2023-11-07 [1] RSPM
-#>  lobstr        1.1.2   2022-06-22 [1] RSPM
+#>  lobstr        1.1.3   2025-11-14 [1] RSPM
 #>  magrittr    * 2.0.4   2025-09-12 [1] RSPM
 #>  methods     * 4.5.2   2025-10-31 [3] local
 #>  pillar        1.11.1  2025-09-17 [1] RSPM

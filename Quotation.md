@@ -171,7 +171,7 @@ rlang::expr
 #> {
 #>     enexpr(expr)
 #> }
-#> <bytecode: 0x55caf1a16580>
+#> <bytecode: 0x55d662c0e400>
 #> <environment: namespace:rlang>
 ```
 
@@ -193,7 +193,7 @@ rlang::enexpr
 #> {
 #>     .Call(ffi_enexpr, substitute(arg), parent.frame())
 #> }
-#> <bytecode: 0x55caee939880>
+#> <bytecode: 0x55d65fb33fc0>
 #> <environment: namespace:rlang>
 ```
 
@@ -824,7 +824,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-11-10
+#>  date     2025-11-30
 #>  pandoc   3.8.2.1 @ /opt/hostedtoolcache/pandoc/3.8.2.1/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -837,14 +837,14 @@ sessioninfo::session_info(include_base = TRUE)
 #>  crayon         1.5.3   2024-06-20 [1] RSPM
 #>  datasets     * 4.5.2   2025-10-31 [3] local
 #>  diffobj        0.3.6   2025-04-21 [1] RSPM
-#>  digest         0.6.37  2024-08-19 [1] RSPM
+#>  digest         0.6.39  2025-11-19 [1] RSPM
 #>  dplyr        * 1.1.4   2023-11-17 [1] RSPM
 #>  emoji          16.0.0  2024-10-28 [1] RSPM
 #>  evaluate       1.0.5   2025-08-27 [1] RSPM
 #>  farver         2.1.2   2024-05-13 [1] RSPM
 #>  fastmap        1.2.0   2024-05-15 [1] RSPM
 #>  generics       0.1.4   2025-05-09 [1] RSPM
-#>  ggplot2      * 4.0.0   2025-09-11 [1] RSPM
+#>  ggplot2      * 4.0.1   2025-11-14 [1] RSPM
 #>  glue           1.8.0   2024-09-30 [1] RSPM
 #>  graphics     * 4.5.2   2025-10-31 [3] local
 #>  grDevices    * 4.5.2   2025-10-31 [3] local
@@ -854,7 +854,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  knitr          1.50    2025-03-16 [1] RSPM
 #>  labeling       0.4.3   2023-08-29 [1] RSPM
 #>  lifecycle      1.0.4   2023-11-07 [1] RSPM
-#>  lobstr       * 1.1.2   2022-06-22 [1] RSPM
+#>  lobstr       * 1.1.3   2025-11-14 [1] RSPM
 #>  magrittr     * 2.0.4   2025-09-12 [1] RSPM
 #>  MASS         * 7.3-65  2025-02-28 [3] CRAN (R 4.5.2)
 #>  methods      * 4.5.2   2025-10-31 [3] local
@@ -865,7 +865,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  RColorBrewer   1.1-3   2022-04-03 [1] RSPM
 #>  rlang        * 1.1.6   2025-04-11 [1] RSPM
 #>  rmarkdown      2.30    2025-09-28 [1] RSPM
-#>  S7             0.2.0   2024-11-07 [1] RSPM
+#>  S7             0.2.1   2025-11-14 [1] RSPM
 #>  scales         1.4.0   2025-04-24 [1] RSPM
 #>  sessioninfo    1.2.3   2025-02-05 [1] RSPM
 #>  stats        * 4.5.2   2025-10-31 [3] local

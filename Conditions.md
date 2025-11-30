@@ -292,7 +292,7 @@ rlang::catch_cnd
 #>         return(NULL)
 #>     })))
 #> }
-#> <bytecode: 0x55882734fcf8>
+#> <bytecode: 0x5606a5ec87b0>
 #> <environment: namespace:rlang>
 ```
 
@@ -697,7 +697,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-11-10
+#>  date     2025-11-30
 #>  pandoc   3.8.2.1 @ /opt/hostedtoolcache/pandoc/3.8.2.1/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -710,7 +710,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  compiler      4.5.2   2025-10-31 [3] local
 #>  datasets    * 4.5.2   2025-10-31 [3] local
 #>  desc          1.4.3   2023-12-10 [1] RSPM
-#>  digest        0.6.37  2024-08-19 [1] RSPM
+#>  digest        0.6.39  2025-11-19 [1] RSPM
 #>  dplyr         1.1.4   2023-11-17 [1] RSPM
 #>  emoji         16.0.0  2024-10-28 [1] RSPM
 #>  evaluate      1.0.5   2025-08-27 [1] RSPM
@@ -736,7 +736,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  stats       * 4.5.2   2025-10-31 [3] local
 #>  stringi       1.8.7   2025-03-27 [1] RSPM
 #>  stringr       1.6.0   2025-11-04 [1] RSPM
-#>  testthat    * 3.2.3   2025-01-13 [1] RSPM
+#>  testthat    * 3.3.1   2025-11-25 [1] RSPM
 #>  tibble        3.3.0   2025-06-08 [1] RSPM
 #>  tidyselect    1.2.1   2024-03-11 [1] RSPM
 #>  tools         4.5.2   2025-10-31 [3] local
