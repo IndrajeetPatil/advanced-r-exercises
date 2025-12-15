@@ -171,7 +171,7 @@ rlang::expr
 #> {
 #>     enexpr(expr)
 #> }
-#> <bytecode: 0x5555bf0cbe10>
+#> <bytecode: 0x55657dd259b0>
 #> <environment: namespace:rlang>
 ```
 
@@ -193,7 +193,7 @@ rlang::enexpr
 #> {
 #>     .Call(ffi_enexpr, substitute(arg), parent.frame())
 #> }
-#> <bytecode: 0x5555bbfeafc0>
+#> <bytecode: 0x55657ac44fb0>
 #> <environment: namespace:rlang>
 ```
 

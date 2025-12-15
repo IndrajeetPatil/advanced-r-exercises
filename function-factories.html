@@ -100,7 +100,7 @@
 <code class="sourceCode R"><span><span class="va">force</span></span>
 <span><span class="co">#&gt; function (x) </span></span>
 <span><span class="co">#&gt; x</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x557b257dae70&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x55c2165d0e70&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:base&gt;</span></span></code></pre></div>
 <p>Why is it better to <code>force(x)</code> instead of just <code>x</code>?</p>
 <p><strong>A1.</strong> Due to lazy evaluation, argument to a function won’t be evaluated until its value is needed. But sometimes we may want to have eager evaluation, and using <code><a href="https://rdrr.io/r/base/force.html">force()</a></code> makes this intent clearer.</p>
@@ -118,8 +118,8 @@
 <span><span class="va">f</span></span>
 <span><span class="co">#&gt; function (v) </span></span>
 <span><span class="co">#&gt; .approxfun(x, y, v, method, yleft, yright, f, na.rm)</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x557b2ac57378&gt;</span></span>
-<span><span class="co">#&gt; &lt;environment: 0x557b2a0f6be0&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x55c21ba4d378&gt;</span></span>
+<span><span class="co">#&gt; &lt;environment: 0x55c21aeec470&gt;</span></span>
 <span><span class="fu">f</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span><span class="co">#&gt;  [1] -0.7786629 -0.3894764 -2.0337983 -0.9823731  0.2478901</span></span>
 <span><span class="co">#&gt;  [6] -2.1038646 -0.3814180  2.0749198  1.0271384  0.4730142</span></span>
@@ -236,7 +236,7 @@
 <span><span class="co">#&gt;     i &lt;- i + 1</span></span>
 <span><span class="co">#&gt;     i</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;environment: 0x557b2d3a8f38&gt;</span></span>
+<span><span class="co">#&gt; &lt;environment: 0x55c21e19a738&gt;</span></span>
 <span></span>
 <span><span class="fu">new_counter3</span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; function () </span></span>
@@ -244,8 +244,8 @@
 <span><span class="co">#&gt;     i &lt;- i + 1</span></span>
 <span><span class="co">#&gt;     i</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x557b2dd16558&gt;</span></span>
-<span><span class="co">#&gt; &lt;environment: 0x557b2d408d78&gt;</span></span></code></pre></div>
+<span><span class="co">#&gt; &lt;bytecode: 0x55c21eb0c408&gt;</span></span>
+<span><span class="co">#&gt; &lt;environment: 0x55c21e1fc498&gt;</span></span></code></pre></div>
 <hr>
 </div>
 <div id="graphical-factories-exercises-10.3.4" class="section level2" number="10.2">
@@ -280,7 +280,7 @@
 <span><span class="co">#&gt;     }</span></span>
 <span><span class="co">#&gt;     structure(fun, class = "labeller")</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x557b2d9476d0&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x55c21e73f500&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:ggplot2&gt;</span></span></code></pre></div>
 <ul>
 <li><code><a href="https://scales.r-lib.org/reference/comma.html">scales::number_format()</a></code></li>
@@ -300,7 +300,7 @@
 <span><span class="co">#&gt;             scale_cut = scale_cut, trim = trim, ...)</span></span>
 <span><span class="co">#&gt;     }</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x557b2db83c68&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x55c21e97bdf8&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:scales&gt;</span></span></code></pre></div>
 <p>Both of these functions return formatting functions used to style the facets labels and other labels to have the desired format in <a href="https://ggplot2.tidyverse.org">ggplot2</a> plots.</p>
 <p>For example, using plotmath expression in the facet label:</p>
@@ -367,7 +367,7 @@
 <code class="sourceCode R"><span><span class="fu">boxcox2</span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
 <span><span class="co">#&gt; function (x) </span></span>
 <span><span class="co">#&gt; (x^lambda - 1)/lambda</span></span>
-<span><span class="co">#&gt; &lt;environment: 0x557b2f3e8830&gt;</span></span>
+<span><span class="co">#&gt; &lt;environment: 0x55c2201dee20&gt;</span></span>
 <span></span>
 <span><span class="fu">boxcox3</span><span class="op">(</span><span class="va">mtcars</span><span class="op">$</span><span class="va">wt</span><span class="op">)</span></span>
 <span><span class="co">#&gt; function (lambda) </span></span>
@@ -379,7 +379,7 @@
 <span><span class="co">#&gt;         (x^lambda - 1)/lambda</span></span>
 <span><span class="co">#&gt;     }</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;environment: 0x557b2f450900&gt;</span></span></code></pre></div>
+<span><span class="co">#&gt; &lt;environment: 0x55c2202469e8&gt;</span></span></code></pre></div>
 <p>As can be seen:</p>
 <ul>
 <li>in <code>boxcox2()</code>, we can vary <code>x</code> for the same value of <code>lambda</code>, while</li>
@@ -406,12 +406,12 @@
 <span><span class="co">#&gt;     col &lt;- df[[var]]</span></span>
 <span><span class="co">#&gt;     col[sample(n, replace = TRUE)]</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;environment: 0x557b2fc315d0&gt;</span></span></code></pre></div>
+<span><span class="co">#&gt; &lt;environment: 0x55c220a276f0&gt;</span></span></code></pre></div>
 <p>This is why we don’t need to worry about a copy being made because the <code>df</code> in the function environment points to the memory address of the data frame. We can confirm this by comparing their memory addresses:</p>
 <div class="sourceCode" id="cb324"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">boot_permute_env</span> <span class="op">&lt;-</span> <span class="fu">rlang</span><span class="fu">::</span><span class="fu"><a href="https://rlang.r-lib.org/reference/fn_env.html">fn_env</a></span><span class="op">(</span><span class="fu">boot_permute</span><span class="op">(</span><span class="va">mtcars</span>, <span class="st">"mpg"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu">rlang</span><span class="fu">::</span><span class="fu"><a href="https://rlang.r-lib.org/reference/env_print.html">env_print</a></span><span class="op">(</span><span class="va">boot_permute_env</span><span class="op">)</span></span>
-<span><span class="co">#&gt; &lt;environment: 0x557b2ff05f38&gt;</span></span>
+<span><span class="co">#&gt; &lt;environment: 0x55c220cfc020&gt;</span></span>
 <span><span class="co">#&gt; Parent: &lt;environment: global&gt;</span></span>
 <span><span class="co">#&gt; Bindings:</span></span>
 <span><span class="co">#&gt; • n: &lt;int&gt;</span></span>
@@ -460,8 +460,8 @@
 <span><span class="co">#&gt; # A tibble: 2 × 6</span></span>
 <span><span class="co">#&gt;   expression      min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   &lt;bch:expr&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt; 1 LL1          29.1µs   31.1µs    30534.    12.8KB     15.3</span></span>
-<span><span class="co">#&gt; 2 LL2          15.7µs   16.7µs    56566.        0B     11.3</span></span></code></pre></div>
+<span><span class="co">#&gt; 1 LL1          28.9µs   30.8µs    31188.    12.8KB     15.6</span></span>
+<span><span class="co">#&gt; 2 LL2          15.7µs   16.7µs    56658.        0B     11.3</span></span></code></pre></div>
 <p>As can be seen, the second version is much faster than the first version.</p>
 <p>We can also vary the length of the vector and confirm that across a wide range of vector lengths, this performance advantage is observed.</p>
 <div class="sourceCode" id="cb327"><pre class="downlit sourceCode r">
@@ -482,16 +482,16 @@
 <span><span class="co">#&gt; # A tibble: 10 × 5</span></span>
 <span><span class="co">#&gt;    length expression      min   median `itr/sec`</span></span>
 <span><span class="co">#&gt;     &lt;dbl&gt; &lt;bch:expr&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1     10 LL1          41.3µs   43.6µs    22305.</span></span>
-<span><span class="co">#&gt;  2     10 LL2          18.9µs   20.1µs    48081.</span></span>
-<span><span class="co">#&gt;  3     20 LL1          43.3µs   45.4µs    21424.</span></span>
-<span><span class="co">#&gt;  4     20 LL2          18.4µs   19.7µs    49283.</span></span>
-<span><span class="co">#&gt;  5     50 LL1          47.3µs   49.1µs    19870.</span></span>
-<span><span class="co">#&gt;  6     50 LL2          17.4µs   18.5µs    52607.</span></span>
-<span><span class="co">#&gt;  7    100 LL1          62.3µs   64.3µs    15159.</span></span>
-<span><span class="co">#&gt;  8    100 LL2          18.3µs   19.4µs    49699.</span></span>
-<span><span class="co">#&gt;  9   1000 LL1         833.6µs  950.4µs     1093.</span></span>
-<span><span class="co">#&gt; 10   1000 LL2          56.8µs   58.5µs    16681.</span></span>
+<span><span class="co">#&gt;  1     10 LL1          41.2µs   43.4µs    22508.</span></span>
+<span><span class="co">#&gt;  2     10 LL2          18.9µs   19.9µs    48994.</span></span>
+<span><span class="co">#&gt;  3     20 LL1          43.2µs   45.3µs    21527.</span></span>
+<span><span class="co">#&gt;  4     20 LL2          18.1µs   19.2µs    49508.</span></span>
+<span><span class="co">#&gt;  5     50 LL1          47.2µs   49.2µs    19868.</span></span>
+<span><span class="co">#&gt;  6     50 LL2          17.3µs   18.3µs    53238.</span></span>
+<span><span class="co">#&gt;  7    100 LL1          62.2µs   64.4µs    15220.</span></span>
+<span><span class="co">#&gt;  8    100 LL2          18.4µs   19.4µs    50001.</span></span>
+<span><span class="co">#&gt;  9   1000 LL1         832.5µs  949.4µs     1097.</span></span>
+<span><span class="co">#&gt; 10   1000 LL2          56.6µs   58.4µs    16745.</span></span>
 <span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span></span>
 <span>  <span class="va">df_bench</span>,</span>
