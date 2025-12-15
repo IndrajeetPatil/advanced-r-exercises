@@ -7,7 +7,7 @@
 <title>Chapter 20 Evaluation | Advanced R Exercises</title>
 <meta name="author" content="Indrajeet Patil">
 <meta name="description" content="Attaching the needed libraries: library(rlang)  20.1 Evaluation basics (Exercises 20.2.4) Q1. Carefully read the documentation for source(). What environment does it use by default? What if you...">
-<meta name="generator" content="bookdown 0.45 with bs4_book()">
+<meta name="generator" content="bookdown 0.46 with bs4_book()">
 <meta property="og:title" content="Chapter 20 Evaluation | Advanced R Exercises">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://bookdown.org/IndrajeetPatil/advanced-r-exercises/evaluation.html">
@@ -123,7 +123,7 @@
 <span>    <span class="fu">foo</span><span class="op">(</span><span class="op">)</span></span>
 <span>  <span class="op">}</span></span>
 <span><span class="op">)</span></span>
-<span><span class="co">#&gt; &lt;environment: 0x5593d215b218&gt;</span></span>
+<span><span class="co">#&gt; &lt;environment: 0x55aaae160820&gt;</span></span>
 <span><span class="co">#&gt; Parent: &lt;environment: global&gt;</span></span></code></pre></div>
 <p>To specify a custom environment, the <code><a href="https://rdrr.io/r/base/sys.source.html">sys.source()</a></code> function can be used, which provides an <code>envir</code> parameter.</p>
 <hr>
@@ -276,17 +276,17 @@
 <span><span class="va">q1</span></span>
 <span><span class="co">#&gt; &lt;quosure&gt;</span></span>
 <span><span class="co">#&gt; expr: ^x</span></span>
-<span><span class="co">#&gt; env:  0x5593d04f77b0</span></span>
+<span><span class="co">#&gt; env:  0x55aaac4fb2d8</span></span>
 <span><span class="va">q2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rlang.r-lib.org/reference/new_quosure.html">new_quosure</a></span><span class="op">(</span><span class="fu"><a href="https://rlang.r-lib.org/reference/expr.html">expr</a></span><span class="op">(</span><span class="va">x</span> <span class="op">+</span> <span class="op">!</span><span class="op">!</span><span class="va">q1</span><span class="op">)</span>, <span class="fu"><a href="https://rlang.r-lib.org/reference/env.html">env</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">q2</span></span>
 <span><span class="co">#&gt; &lt;quosure&gt;</span></span>
 <span><span class="co">#&gt; expr: ^x + (^x)</span></span>
-<span><span class="co">#&gt; env:  0x5593d0d3f958</span></span>
+<span><span class="co">#&gt; env:  0x55aaacd472b0</span></span>
 <span><span class="va">q3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rlang.r-lib.org/reference/new_quosure.html">new_quosure</a></span><span class="op">(</span><span class="fu"><a href="https://rlang.r-lib.org/reference/expr.html">expr</a></span><span class="op">(</span><span class="va">x</span> <span class="op">+</span> <span class="op">!</span><span class="op">!</span><span class="va">q2</span><span class="op">)</span>, <span class="fu"><a href="https://rlang.r-lib.org/reference/env.html">env</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">100</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">q3</span></span>
 <span><span class="co">#&gt; &lt;quosure&gt;</span></span>
 <span><span class="co">#&gt; expr: ^x + (^x + (^x))</span></span>
-<span><span class="co">#&gt; env:  0x5593d1056db8</span></span></code></pre></div>
+<span><span class="co">#&gt; env:  0x55aaad05e710</span></span></code></pre></div>
 <p><strong>A1.</strong> Correctly predicted 😉</p>
 <div class="sourceCode" id="cb598"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">q1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rlang.r-lib.org/reference/new_quosure.html">new_quosure</a></span><span class="op">(</span><span class="fu"><a href="https://rlang.r-lib.org/reference/expr.html">expr</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, <span class="fu"><a href="https://rlang.r-lib.org/reference/env.html">env</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
@@ -314,7 +314,7 @@
 <span></span>
 <span><span class="va">foo</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu">enenv</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span><span class="fu">foo</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; &lt;environment: 0x5593d1e3e980&gt;</span></span></code></pre></div>
+<span><span class="co">#&gt; &lt;environment: 0x55aaade43f88&gt;</span></span></code></pre></div>
 <hr>
 </div>
 <div id="data-masks-exercises-20.4.6" class="section level2" number="20.3">
@@ -609,14 +609,14 @@
 <span><span class="co">#&gt;  collate  C.UTF-8</span></span>
 <span><span class="co">#&gt;  ctype    C.UTF-8</span></span>
 <span><span class="co">#&gt;  tz       UTC</span></span>
-<span><span class="co">#&gt;  date     2025-11-30</span></span>
-<span><span class="co">#&gt;  pandoc   3.8.2.1 @ /opt/hostedtoolcache/pandoc/3.8.2.1/x64/ (via rmarkdown)</span></span>
+<span><span class="co">#&gt;  date     2025-12-15</span></span>
+<span><span class="co">#&gt;  pandoc   3.8.3 @ /opt/hostedtoolcache/pandoc/3.8.3/x64/ (via rmarkdown)</span></span>
 <span><span class="co">#&gt;  quarto   NA</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; ─ Packages ───────────────────────────────────────────────</span></span>
 <span><span class="co">#&gt;  package     * version date (UTC) lib source</span></span>
 <span><span class="co">#&gt;  base        * 4.5.2   2025-10-31 [3] local</span></span>
-<span><span class="co">#&gt;  bookdown      0.45    2025-10-03 [1] RSPM</span></span>
+<span><span class="co">#&gt;  bookdown      0.46    2025-12-05 [1] RSPM</span></span>
 <span><span class="co">#&gt;  bslib         0.9.0   2025-01-30 [1] RSPM</span></span>
 <span><span class="co">#&gt;  cachem        1.1.0   2024-05-16 [1] RSPM</span></span>
 <span><span class="co">#&gt;  cli           3.6.5   2025-04-23 [1] RSPM</span></span>
@@ -631,7 +631,7 @@
 <span><span class="co">#&gt;  glue          1.8.0   2024-09-30 [1] RSPM</span></span>
 <span><span class="co">#&gt;  graphics    * 4.5.2   2025-10-31 [3] local</span></span>
 <span><span class="co">#&gt;  grDevices   * 4.5.2   2025-10-31 [3] local</span></span>
-<span><span class="co">#&gt;  htmltools     0.5.8.1 2024-04-04 [1] RSPM</span></span>
+<span><span class="co">#&gt;  htmltools     0.5.9   2025-12-04 [1] RSPM</span></span>
 <span><span class="co">#&gt;  jquerylib     0.1.4   2021-04-26 [1] RSPM</span></span>
 <span><span class="co">#&gt;  jsonlite      2.0.0   2025-03-27 [1] RSPM</span></span>
 <span><span class="co">#&gt;  knitr         1.50    2025-03-16 [1] RSPM</span></span>
@@ -654,8 +654,8 @@
 <span><span class="co">#&gt;  vctrs         0.6.5   2023-12-01 [1] RSPM</span></span>
 <span><span class="co">#&gt;  withr         3.0.2   2024-10-28 [1] RSPM</span></span>
 <span><span class="co">#&gt;  xfun          0.54    2025-10-30 [1] RSPM</span></span>
-<span><span class="co">#&gt;  xml2          1.5.0   2025-11-17 [1] RSPM</span></span>
-<span><span class="co">#&gt;  yaml          2.3.10  2024-07-26 [1] RSPM</span></span>
+<span><span class="co">#&gt;  xml2          1.5.1   2025-12-01 [1] RSPM</span></span>
+<span><span class="co">#&gt;  yaml          2.3.12  2025-12-10 [1] RSPM</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;  [1] /home/runner/work/_temp/Library</span></span>
 <span><span class="co">#&gt;  [2] /opt/R/4.5.2/lib/R/site-library</span></span>
@@ -696,7 +696,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-11-30.</p>
+    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-12-15.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

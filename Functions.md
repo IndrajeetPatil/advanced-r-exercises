@@ -20,7 +20,7 @@ library(tidyverse, warn.conflicts = FALSE)
 match.fun("mean")
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x561b24688358>
+#> <bytecode: 0x56486a352358>
 #> <environment: namespace:base>
 ```
 
@@ -354,7 +354,7 @@ names(primitives)
 mean
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x561b24688358>
+#> <bytecode: 0x56486a352358>
 #> <environment: namespace:base>
 
 # other package function
@@ -363,7 +363,7 @@ purrr::map
 #> {
 #>     map_("list", .x, .f, ..., .progress = .progress)
 #> }
-#> <bytecode: 0x561b288efb58>
+#> <bytecode: 0x56486e5c27e8>
 #> <environment: namespace:purrr>
 ```
 
@@ -567,7 +567,7 @@ f2 <- function(x = z) {
 }
 
 f2()
-#> [1] "0x561b2bf90fa8" "0x561b2bf90fa8"
+#> [1] "0x564871c5b4a8" "0x564871c5b4a8"
 #> [1] 100
 ```
 
@@ -662,7 +662,7 @@ show_time <- function(x = stop("Error!")) {
 }
 
 show_time()
-#> [1] "2025-11-30 03:18:51 UTC"
+#> [1] "2025-12-15 17:26:03 UTC"
 ```
 
 **A5.** Let's take this step-by-step.
@@ -887,7 +887,7 @@ withr::with_dir
 #>     on.exit(setwd(old))
 #>     force(code)
 #> }
-#> <bytecode: 0x561b2ba73f68>
+#> <bytecode: 0x56487173f700>
 #> <environment: namespace:withr>
 ```
 
@@ -969,7 +969,7 @@ capture.output
 #>         close(file)
 #>     rval %||% invisible(NULL)
 #> }
-#> <bytecode: 0x561b2c0ab330>
+#> <bytecode: 0x564871d72c98>
 #> <environment: namespace:utils>
 ```
 
@@ -1309,14 +1309,14 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-11-30
-#>  pandoc   3.8.2.1 @ /opt/hostedtoolcache/pandoc/3.8.2.1/x64/ (via rmarkdown)
+#>  date     2025-12-15
+#>  pandoc   3.8.3 @ /opt/hostedtoolcache/pandoc/3.8.3/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
 #> ─ Packages ───────────────────────────────────────────────
 #>  package      * version date (UTC) lib source
 #>  base         * 4.5.2   2025-10-31 [3] local
-#>  bookdown       0.45    2025-10-03 [1] RSPM
+#>  bookdown       0.46    2025-12-05 [1] RSPM
 #>  cli            3.6.5   2025-04-23 [1] RSPM
 #>  compiler       4.5.2   2025-10-31 [3] local
 #>  datasets     * 4.5.2   2025-10-31 [3] local
@@ -1335,7 +1335,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  grid           4.5.2   2025-10-31 [3] local
 #>  gtable         0.3.6   2024-10-25 [1] RSPM
 #>  hms            1.1.4   2025-10-17 [1] RSPM
-#>  htmltools      0.5.8.1 2024-04-04 [1] RSPM
+#>  htmltools      0.5.9   2025-12-04 [1] RSPM
 #>  knitr          1.50    2025-03-16 [1] RSPM
 #>  lifecycle      1.0.4   2023-11-07 [1] RSPM
 #>  lobstr         1.1.3   2025-11-14 [1] RSPM
@@ -1368,7 +1368,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  vctrs          0.6.5   2023-12-01 [1] RSPM
 #>  withr          3.0.2   2024-10-28 [1] RSPM
 #>  xfun           0.54    2025-10-30 [1] RSPM
-#>  yaml           2.3.10  2024-07-26 [1] RSPM
+#>  yaml           2.3.12  2025-12-10 [1] RSPM
 #> 
 #>  [1] /home/runner/work/_temp/Library
 #>  [2] /opt/R/4.5.2/lib/R/site-library

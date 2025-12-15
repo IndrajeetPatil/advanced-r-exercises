@@ -95,7 +95,7 @@ possibly
 #>         })
 #>     }
 #> }
-#> <bytecode: 0x55760a91e420>
+#> <bytecode: 0x55e44f37e2f8>
 #> <environment: namespace:purrr>
 ```
 
@@ -121,7 +121,7 @@ safely
 #>     check_bool(quiet)
 #>     function(...) capture_error(.f(...), otherwise, quiet)
 #> }
-#> <bytecode: 0x55760ab0cbf8>
+#> <bytecode: 0x55e44f56cad0>
 #> <environment: namespace:purrr>
 
 purrr:::capture_error
@@ -134,7 +134,7 @@ purrr:::capture_error
 #>         list(result = otherwise, error = e)
 #>     })
 #> }
-#> <bytecode: 0x55760ab49228>
+#> <bytecode: 0x55e44f5a52d0>
 #> <environment: namespace:purrr>
 ```
 
@@ -283,10 +283,10 @@ withr::with_tempfile("logfile", code = {
 
   cat(readLines(logfile), sep = "\n")
 })
-#> Function created at: 2025-11-30 03:19:03.011957
-#> Function called at:  2025-11-30 03:19:08.01882
-#> Function called at:  2025-11-30 03:19:13.024155
-#> Function called at:  2025-11-30 03:19:21.032552
+#> Function created at: 2025-12-15 17:26:15.532459
+#> Function called at:  2025-12-15 17:26:20.539459
+#> Function called at:  2025-12-15 17:26:25.544882
+#> Function called at:  2025-12-15 17:26:33.553305
 ```
 
 ---
@@ -335,14 +335,14 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-11-30
-#>  pandoc   3.8.2.1 @ /opt/hostedtoolcache/pandoc/3.8.2.1/x64/ (via rmarkdown)
+#>  date     2025-12-15
+#>  pandoc   3.8.3 @ /opt/hostedtoolcache/pandoc/3.8.3/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
 #> ─ Packages ───────────────────────────────────────────────
 #>  package     * version date (UTC) lib source
 #>  base        * 4.5.2   2025-10-31 [3] local
-#>  bookdown      0.45    2025-10-03 [1] RSPM
+#>  bookdown      0.46    2025-12-05 [1] RSPM
 #>  cli           3.6.5   2025-04-23 [1] RSPM
 #>  compiler      4.5.2   2025-10-31 [3] local
 #>  datasets    * 4.5.2   2025-10-31 [3] local
@@ -355,7 +355,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  glue          1.8.0   2024-09-30 [1] RSPM
 #>  graphics    * 4.5.2   2025-10-31 [3] local
 #>  grDevices   * 4.5.2   2025-10-31 [3] local
-#>  htmltools     0.5.8.1 2024-04-04 [1] RSPM
+#>  htmltools     0.5.9   2025-12-04 [1] RSPM
 #>  knitr         1.50    2025-03-16 [1] RSPM
 #>  lifecycle     1.0.4   2023-11-07 [1] RSPM
 #>  magrittr    * 2.0.4   2025-09-12 [1] RSPM
@@ -377,7 +377,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  vctrs         0.6.5   2023-12-01 [1] RSPM
 #>  withr         3.0.2   2024-10-28 [1] RSPM
 #>  xfun          0.54    2025-10-30 [1] RSPM
-#>  yaml          2.3.10  2024-07-26 [1] RSPM
+#>  yaml          2.3.12  2025-12-10 [1] RSPM
 #> 
 #>  [1] /home/runner/work/_temp/Library
 #>  [2] /opt/R/4.5.2/lib/R/site-library

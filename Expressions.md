@@ -374,7 +374,7 @@ call_standardise(quote(mean(x = 1:10, , TRUE)))
 mean
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x55c59b3f6358>
+#> <bytecode: 0x56055f7e6358>
 #> <environment: namespace:base>
 ```
 
@@ -1005,14 +1005,14 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-11-30
-#>  pandoc   3.8.2.1 @ /opt/hostedtoolcache/pandoc/3.8.2.1/x64/ (via rmarkdown)
+#>  date     2025-12-15
+#>  pandoc   3.8.3 @ /opt/hostedtoolcache/pandoc/3.8.3/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
 #> ─ Packages ───────────────────────────────────────────────
 #>  package     * version date (UTC) lib source
 #>  base        * 4.5.2   2025-10-31 [3] local
-#>  bookdown      0.45    2025-10-03 [1] RSPM
+#>  bookdown      0.46    2025-12-05 [1] RSPM
 #>  cli           3.6.5   2025-04-23 [1] RSPM
 #>  compiler      4.5.2   2025-10-31 [3] local
 #>  crayon        1.5.3   2024-06-20 [1] RSPM
@@ -1024,7 +1024,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  glue          1.8.0   2024-09-30 [1] RSPM
 #>  graphics    * 4.5.2   2025-10-31 [3] local
 #>  grDevices   * 4.5.2   2025-10-31 [3] local
-#>  htmltools     0.5.8.1 2024-04-04 [1] RSPM
+#>  htmltools     0.5.9   2025-12-04 [1] RSPM
 #>  knitr         1.50    2025-03-16 [1] RSPM
 #>  lifecycle     1.0.4   2023-11-07 [1] RSPM
 #>  lobstr      * 1.1.3   2025-11-14 [1] RSPM
@@ -1042,7 +1042,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  utils       * 4.5.2   2025-10-31 [3] local
 #>  vctrs         0.6.5   2023-12-01 [1] RSPM
 #>  xfun          0.54    2025-10-30 [1] RSPM
-#>  yaml          2.3.10  2024-07-26 [1] RSPM
+#>  yaml          2.3.12  2025-12-10 [1] RSPM
 #> 
 #>  [1] /home/runner/work/_temp/Library
 #>  [2] /opt/R/4.5.2/lib/R/site-library

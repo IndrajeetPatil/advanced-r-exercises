@@ -7,7 +7,7 @@
 <title>Chapter 19 Quasiquotation | Advanced R Exercises</title>
 <meta name="author" content="Indrajeet Patil">
 <meta name="description" content="Attaching the needed libraries: library(rlang) library(purrr) library(lobstr) library(dplyr) library(ggplot2)  19.1 Motivation (Exercises 19.2.2) Q1. For each function in the following base R...">
-<meta name="generator" content="bookdown 0.45 with bs4_book()">
+<meta name="generator" content="bookdown 0.46 with bs4_book()">
 <meta property="og:title" content="Chapter 19 Quasiquotation | Advanced R Exercises">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://bookdown.org/IndrajeetPatil/advanced-r-exercises/quasiquotation.html">
@@ -218,7 +218,7 @@
 <span><span class="co">#&gt; {</span></span>
 <span><span class="co">#&gt;     enexpr(expr)</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x55e93e34d0a8&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x55cd78d43770&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:rlang&gt;</span></span></code></pre></div>
 <p>For example:</p>
 <div class="sourceCode" id="cb548"><pre class="downlit sourceCode r">
@@ -232,7 +232,7 @@
 <span><span class="co">#&gt; {</span></span>
 <span><span class="co">#&gt;     .Call(ffi_enexpr, substitute(arg), parent.frame())</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x55e93fd16fc0&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x55cd7a70cfc0&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:rlang&gt;</span></span></code></pre></div>
 <hr>
 <p><strong>Q2.</strong> Compare and contrast the following two functions. Can you predict the output before running them?</p>
@@ -742,14 +742,14 @@ the expression slot of the promise replaces the symbol.</p>
 <span><span class="co">#&gt;  collate  C.UTF-8</span></span>
 <span><span class="co">#&gt;  ctype    C.UTF-8</span></span>
 <span><span class="co">#&gt;  tz       UTC</span></span>
-<span><span class="co">#&gt;  date     2025-11-30</span></span>
-<span><span class="co">#&gt;  pandoc   3.8.2.1 @ /opt/hostedtoolcache/pandoc/3.8.2.1/x64/ (via rmarkdown)</span></span>
+<span><span class="co">#&gt;  date     2025-12-15</span></span>
+<span><span class="co">#&gt;  pandoc   3.8.3 @ /opt/hostedtoolcache/pandoc/3.8.3/x64/ (via rmarkdown)</span></span>
 <span><span class="co">#&gt;  quarto   NA</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; ─ Packages ───────────────────────────────────────────────</span></span>
 <span><span class="co">#&gt;  package      * version date (UTC) lib source</span></span>
 <span><span class="co">#&gt;  base         * 4.5.2   2025-10-31 [3] local</span></span>
-<span><span class="co">#&gt;  bookdown       0.45    2025-10-03 [1] RSPM</span></span>
+<span><span class="co">#&gt;  bookdown       0.46    2025-12-05 [1] RSPM</span></span>
 <span><span class="co">#&gt;  bslib          0.9.0   2025-01-30 [1] RSPM</span></span>
 <span><span class="co">#&gt;  cachem         1.1.0   2024-05-16 [1] RSPM</span></span>
 <span><span class="co">#&gt;  cli            3.6.5   2025-04-23 [1] RSPM</span></span>
@@ -772,7 +772,7 @@ the expression slot of the promise replaces the symbol.</p>
 <span><span class="co">#&gt;  grDevices    * 4.5.2   2025-10-31 [3] local</span></span>
 <span><span class="co">#&gt;  grid           4.5.2   2025-10-31 [3] local</span></span>
 <span><span class="co">#&gt;  gtable         0.3.6   2024-10-25 [1] RSPM</span></span>
-<span><span class="co">#&gt;  htmltools      0.5.8.1 2024-04-04 [1] RSPM</span></span>
+<span><span class="co">#&gt;  htmltools      0.5.9   2025-12-04 [1] RSPM</span></span>
 <span><span class="co">#&gt;  jquerylib      0.1.4   2021-04-26 [1] RSPM</span></span>
 <span><span class="co">#&gt;  jsonlite       2.0.0   2025-03-27 [1] RSPM</span></span>
 <span><span class="co">#&gt;  knitr          1.50    2025-03-16 [1] RSPM</span></span>
@@ -805,8 +805,8 @@ the expression slot of the promise replaces the symbol.</p>
 <span><span class="co">#&gt;  waldo          0.6.2   2025-07-11 [1] RSPM</span></span>
 <span><span class="co">#&gt;  withr          3.0.2   2024-10-28 [1] RSPM</span></span>
 <span><span class="co">#&gt;  xfun           0.54    2025-10-30 [1] RSPM</span></span>
-<span><span class="co">#&gt;  xml2           1.5.0   2025-11-17 [1] RSPM</span></span>
-<span><span class="co">#&gt;  yaml           2.3.10  2024-07-26 [1] RSPM</span></span>
+<span><span class="co">#&gt;  xml2           1.5.1   2025-12-01 [1] RSPM</span></span>
+<span><span class="co">#&gt;  yaml           2.3.12  2025-12-10 [1] RSPM</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;  [1] /home/runner/work/_temp/Library</span></span>
 <span><span class="co">#&gt;  [2] /opt/R/4.5.2/lib/R/site-library</span></span>
@@ -847,7 +847,7 @@ the expression slot of the promise replaces the symbol.</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-11-30.</p>
+    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-12-15.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

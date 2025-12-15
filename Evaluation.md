@@ -50,7 +50,7 @@ withr::with_tempdir(
     foo()
   }
 )
-#> <environment: 0x5586004cea90>
+#> <environment: 0x5627c458cce0>
 #> Parent: <environment: global>
 ```
 
@@ -251,17 +251,17 @@ q1 <- new_quosure(expr(x), env(x = 1))
 q1
 #> <quosure>
 #> expr: ^x
-#> env:  0x558600b4e6e0
+#> env:  0x5627c4c1a868
 q2 <- new_quosure(expr(x + !!q1), env(x = 10))
 q2
 #> <quosure>
 #> expr: ^x + (^x)
-#> env:  0x5586021a2c58
+#> env:  0x5627c625cea8
 q3 <- new_quosure(expr(x + !!q2), env(x = 100))
 q3
 #> <quosure>
 #> expr: ^x + (^x + (^x))
-#> env:  0x5586024dd5a8
+#> env:  0x5627c659dd68
 ```
 
 **A1.** Correctly predicted 😉
@@ -299,7 +299,7 @@ enenv(x)
 
 foo <- function(x) enenv(x)
 foo()
-#> <environment: 0x558603253d70>
+#> <environment: 0x5627c730f400>
 ```
 
 ---
@@ -675,14 +675,14 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-11-30
-#>  pandoc   3.8.2.1 @ /opt/hostedtoolcache/pandoc/3.8.2.1/x64/ (via rmarkdown)
+#>  date     2025-12-15
+#>  pandoc   3.8.3 @ /opt/hostedtoolcache/pandoc/3.8.3/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
 #> ─ Packages ───────────────────────────────────────────────
 #>  package     * version date (UTC) lib source
 #>  base        * 4.5.2   2025-10-31 [3] local
-#>  bookdown      0.45    2025-10-03 [1] RSPM
+#>  bookdown      0.46    2025-12-05 [1] RSPM
 #>  cli           3.6.5   2025-04-23 [1] RSPM
 #>  compiler      4.5.2   2025-10-31 [3] local
 #>  datasets    * 4.5.2   2025-10-31 [3] local
@@ -693,7 +693,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  glue          1.8.0   2024-09-30 [1] RSPM
 #>  graphics    * 4.5.2   2025-10-31 [3] local
 #>  grDevices   * 4.5.2   2025-10-31 [3] local
-#>  htmltools     0.5.8.1 2024-04-04 [1] RSPM
+#>  htmltools     0.5.9   2025-12-04 [1] RSPM
 #>  knitr         1.50    2025-03-16 [1] RSPM
 #>  lifecycle     1.0.4   2023-11-07 [1] RSPM
 #>  magrittr    * 2.0.4   2025-09-12 [1] RSPM
@@ -711,7 +711,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  vctrs         0.6.5   2023-12-01 [1] RSPM
 #>  withr         3.0.2   2024-10-28 [1] RSPM
 #>  xfun          0.54    2025-10-30 [1] RSPM
-#>  yaml          2.3.10  2024-07-26 [1] RSPM
+#>  yaml          2.3.12  2025-12-10 [1] RSPM
 #> 
 #>  [1] /home/runner/work/_temp/Library
 #>  [2] /opt/R/4.5.2/lib/R/site-library

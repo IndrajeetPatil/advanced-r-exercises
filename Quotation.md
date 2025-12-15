@@ -171,7 +171,7 @@ rlang::expr
 #> {
 #>     enexpr(expr)
 #> }
-#> <bytecode: 0x55a02b5f3d20>
+#> <bytecode: 0x5555bf0cbe10>
 #> <environment: namespace:rlang>
 ```
 
@@ -193,7 +193,7 @@ rlang::enexpr
 #> {
 #>     .Call(ffi_enexpr, substitute(arg), parent.frame())
 #> }
-#> <bytecode: 0x55a028518fc0>
+#> <bytecode: 0x5555bbfeafc0>
 #> <environment: namespace:rlang>
 ```
 
@@ -824,14 +824,14 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-11-30
-#>  pandoc   3.8.2.1 @ /opt/hostedtoolcache/pandoc/3.8.2.1/x64/ (via rmarkdown)
+#>  date     2025-12-15
+#>  pandoc   3.8.3 @ /opt/hostedtoolcache/pandoc/3.8.3/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
 #> ─ Packages ───────────────────────────────────────────────
 #>  package      * version date (UTC) lib source
 #>  base         * 4.5.2   2025-10-31 [3] local
-#>  bookdown       0.45    2025-10-03 [1] RSPM
+#>  bookdown       0.46    2025-12-05 [1] RSPM
 #>  cli            3.6.5   2025-04-23 [1] RSPM
 #>  compiler       4.5.2   2025-10-31 [3] local
 #>  crayon         1.5.3   2024-06-20 [1] RSPM
@@ -850,7 +850,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  grDevices    * 4.5.2   2025-10-31 [3] local
 #>  grid           4.5.2   2025-10-31 [3] local
 #>  gtable         0.3.6   2024-10-25 [1] RSPM
-#>  htmltools      0.5.8.1 2024-04-04 [1] RSPM
+#>  htmltools      0.5.9   2025-12-04 [1] RSPM
 #>  knitr          1.50    2025-03-16 [1] RSPM
 #>  labeling       0.4.3   2023-08-29 [1] RSPM
 #>  lifecycle      1.0.4   2023-11-07 [1] RSPM
@@ -879,7 +879,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  waldo          0.6.2   2025-07-11 [1] RSPM
 #>  withr          3.0.2   2024-10-28 [1] RSPM
 #>  xfun           0.54    2025-10-30 [1] RSPM
-#>  yaml           2.3.10  2024-07-26 [1] RSPM
+#>  yaml           2.3.12  2025-12-10 [1] RSPM
 #> 
 #>  [1] /home/runner/work/_temp/Library
 #>  [2] /opt/R/4.5.2/lib/R/site-library
