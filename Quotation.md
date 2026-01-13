@@ -44,7 +44,8 @@ The `package` argument in `library()` is quoted:
 library(MASS)
 
 MASS
-#> Error: object 'MASS' not found
+#> Error:
+#> ! object 'MASS' not found
 ```
 
 - `subset(mtcars, cyl == 4)`
@@ -58,7 +59,8 @@ mtcars2 <- subset(mtcars, cyl == 4)
 invisible(mtcars)
 
 cyl == 4
-#> Error: object 'cyl' not found
+#> Error:
+#> ! object 'cyl' not found
 ```
 
 - `with(mtcars2, sum(vs))`
@@ -73,7 +75,8 @@ with(mtcars2, sum(vs))
 invisible(mtcars2)
 
 sum(vs)
-#> Error: object 'vs' not found
+#> Error:
+#> ! object 'vs' not found
 ```
 
 - `sum(mtcars2$am)`
@@ -152,7 +155,7 @@ ggplot(by_cyl, aes(cyl, mean)) +
   geom_point()
 ```
 
-<img src="Quotation_files/figure-epub3/Quotation-12-1.png" width="100%" />
+<img src="Quotation_files/figure-epub3/Quotation-12-1.png" alt="" width="100%" />
 
 ---
 
@@ -171,7 +174,7 @@ rlang::expr
 #> {
 #>     enexpr(expr)
 #> }
-#> <bytecode: 0x55657dd259b0>
+#> <bytecode: 0x55e08195af88>
 #> <environment: namespace:rlang>
 ```
 
@@ -193,7 +196,7 @@ rlang::enexpr
 #> {
 #>     .Call(ffi_enexpr, substitute(arg), parent.frame())
 #> }
-#> <bytecode: 0x55657ac44fb0>
+#> <bytecode: 0x55e07cde5998>
 #> <environment: namespace:rlang>
 ```
 
@@ -655,7 +658,8 @@ set_attr <- function(x, ...) {
   x
 }
 set_attr(1:10, x = 10)
-#> Error in attributes(x) <- attr: attributes must be named
+#> Error in `attributes(x) <- attr`:
+#> ! attributes must be named
 ```
 
 **A3.** The `set_attr()` function signature has a parameter called `x`, and additionally it uses dynamic dots to pass multiple arguments to specify additional attributes for `x`.
@@ -670,7 +674,8 @@ set_attr <- function(x, ...) {
   x
 }
 set_attr(x = 1:10, x = 10)
-#> Error in set_attr(x = 1:10, x = 10): formal argument "x" matched by multiple actual arguments
+#> Error in `set_attr()`:
+#> ! formal argument "x" matched by multiple actual arguments
 ```
 
 We can avoid these issues by renaming the parameter:
@@ -824,7 +829,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-12-15
+#>  date     2026-01-13
 #>  pandoc   3.8.3 @ /opt/hostedtoolcache/pandoc/3.8.3/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -851,19 +856,19 @@ sessioninfo::session_info(include_base = TRUE)
 #>  grid           4.5.2   2025-10-31 [3] local
 #>  gtable         0.3.6   2024-10-25 [1] RSPM
 #>  htmltools      0.5.9   2025-12-04 [1] RSPM
-#>  knitr          1.50    2025-03-16 [1] RSPM
+#>  knitr          1.51    2025-12-20 [1] RSPM
 #>  labeling       0.4.3   2023-08-29 [1] RSPM
-#>  lifecycle      1.0.4   2023-11-07 [1] RSPM
+#>  lifecycle      1.0.5   2026-01-08 [1] RSPM
 #>  lobstr       * 1.1.3   2025-11-14 [1] RSPM
 #>  magrittr     * 2.0.4   2025-09-12 [1] RSPM
 #>  MASS         * 7.3-65  2025-02-28 [3] CRAN (R 4.5.2)
 #>  methods      * 4.5.2   2025-10-31 [3] local
 #>  pillar         1.11.1  2025-09-17 [1] RSPM
 #>  pkgconfig      2.0.3   2019-09-22 [1] RSPM
-#>  purrr        * 1.2.0   2025-11-04 [1] RSPM
+#>  purrr        * 1.2.1   2026-01-09 [1] RSPM
 #>  R6             2.6.1   2025-02-15 [1] RSPM
 #>  RColorBrewer   1.1-3   2022-04-03 [1] RSPM
-#>  rlang        * 1.1.6   2025-04-11 [1] RSPM
+#>  rlang        * 1.1.7   2026-01-09 [1] RSPM
 #>  rmarkdown      2.30    2025-09-28 [1] RSPM
 #>  S7             0.2.1   2025-11-14 [1] RSPM
 #>  scales         1.4.0   2025-04-24 [1] RSPM
@@ -871,14 +876,14 @@ sessioninfo::session_info(include_base = TRUE)
 #>  stats        * 4.5.2   2025-10-31 [3] local
 #>  stringi        1.8.7   2025-03-27 [1] RSPM
 #>  stringr        1.6.0   2025-11-04 [1] RSPM
-#>  tibble         3.3.0   2025-06-08 [1] RSPM
+#>  tibble         3.3.1   2026-01-11 [1] RSPM
 #>  tidyselect     1.2.1   2024-03-11 [1] RSPM
 #>  tools          4.5.2   2025-10-31 [3] local
 #>  utils        * 4.5.2   2025-10-31 [3] local
 #>  vctrs          0.6.5   2023-12-01 [1] RSPM
 #>  waldo          0.6.2   2025-07-11 [1] RSPM
 #>  withr          3.0.2   2024-10-28 [1] RSPM
-#>  xfun           0.54    2025-10-30 [1] RSPM
+#>  xfun           0.55    2025-12-16 [1] RSPM
 #>  yaml           2.3.12  2025-12-10 [1] RSPM
 #> 
 #>  [1] /home/runner/work/_temp/Library

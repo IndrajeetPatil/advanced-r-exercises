@@ -258,13 +258,15 @@
 <div class="sourceCode" id="cb458"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># length of first argument not 1</span></span>
 <span><span class="fu">Person</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Indrajeet"</span>, <span class="st">"Surendra"</span><span class="op">)</span>, <span class="st">"Patil"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error in validObject(.Object): invalid class "Person" object: </span></span>
+<span><span class="co">#&gt; Error in `validObject()`:</span></span>
+<span><span class="co">#&gt; ! invalid class "Person" object: </span></span>
 <span><span class="co">#&gt; Following slots must be of length 1:</span></span>
 <span><span class="co">#&gt;  @age, @given, @family, @middle, @email, @comment</span></span>
 <span></span>
 <span><span class="co"># role not recognized</span></span>
 <span><span class="fu">Person</span><span class="op">(</span><span class="st">"Indrajeet"</span>, <span class="st">"Patil"</span>, role <span class="op">=</span> <span class="st">"xyz"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error in validObject(.Object): invalid class "Person" object:  </span></span>
+<span><span class="co">#&gt; Error in `validObject()`:</span></span>
+<span><span class="co">#&gt; ! invalid class "Person" object:  </span></span>
 <span><span class="co">#&gt; Slot @role(s) must be one of the following:</span></span>
 <span><span class="co">#&gt;  NA, aut, com, cph, cre, ctb, ctr, dtc, fnd, rev, ths, trl</span></span>
 <span></span>
@@ -302,7 +304,8 @@
 <p>You can’t create an instance of this class:</p>
 <div class="sourceCode" id="cb460"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/methods/new.html">new</a></span><span class="op">(</span><span class="st">"Empty"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error in new("Empty"): trying to generate an object from a virtual class ("Empty")</span></span></code></pre></div>
+<span><span class="co">#&gt; Error in `new()`:</span></span>
+<span><span class="co">#&gt; ! trying to generate an object from a virtual class ("Empty")</span></span></code></pre></div>
 <p>So how is this useful? As mentioned in <code><a href="https://rdrr.io/r/methods/setClass.html">?setClass</a></code> docs:</p>
 <blockquote>
 <p>Classes exist for which no actual objects can be created, the virtual classes.</p>
@@ -472,14 +475,16 @@
 <span><span class="co">#&gt; in method definition changed from (object) to (x)</span></span>
 <span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/methods/setMethod.html">setMethod</a></span><span class="op">(</span><span class="st">"age"</span>, <span class="st">"Person"</span>, <span class="kw">function</span><span class="op">(</span><span class="va">object</span>, <span class="va">x</span><span class="op">)</span> <span class="va">object</span><span class="op">@</span><span class="va">age</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error in rematchDefinition(definition, fdef, mnames, fnames, signature): methods can add arguments to the generic 'age' only if '...' is an argument to the generic</span></span>
+<span><span class="co">#&gt; Error in `rematchDefinition()`:</span></span>
+<span><span class="co">#&gt; ! methods can add arguments to the generic 'age' only if '...' is an argument to the generic</span></span>
 <span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/methods/setMethod.html">setMethod</a></span><span class="op">(</span><span class="st">"age"</span>, <span class="st">"Person"</span>, <span class="kw">function</span><span class="op">(</span><span class="va">...</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/dots.html">...elt</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span><span class="op">@</span><span class="va">age</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Warning: For function 'age', signature 'Person': argument</span></span>
 <span><span class="co">#&gt; in method definition changed from (...) to (x)</span></span>
 <span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/methods/setMethod.html">setMethod</a></span><span class="op">(</span><span class="st">"age"</span>, <span class="st">"Person"</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">...</span><span class="op">)</span> <span class="va">x</span><span class="op">@</span><span class="va">age</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error in rematchDefinition(definition, fdef, mnames, fnames, signature): methods can add arguments to the generic 'age' only if '...' is an argument to the generic</span></span></code></pre></div>
+<span><span class="co">#&gt; Error in `rematchDefinition()`:</span></span>
+<span><span class="co">#&gt; ! methods can add arguments to the generic 'age' only if '...' is an argument to the generic</span></span></code></pre></div>
 <hr>
 </div>
 <div id="method-dispatch-exercises-15.5.5" class="section level2" number="15.4">
@@ -489,11 +494,11 @@
 <hr>
 <p><strong>Q1.</strong> Draw the method graph for <code>f(</code>😅, 😽<code>)</code>.</p>
 <p><strong>A1.</strong> I don’t how to prepare the visual illustrations used in the book, so I am linking to the illustration in the <a href="https://advanced-r-solutions.rbind.io/s4.html#method-dispatch">official solution manual</a>:</p>
-<div class="inline-figure"><img src="https://raw.githubusercontent.com/Tazinho/Advanced-R-Solutions/main/images/s4/method_dispatch1.png" width="100%"></div>
+<div class="inline-figure"><img src="https://raw.githubusercontent.com/Tazinho/Advanced-R-Solutions/main/images/s4/method_dispatch1.png" alt="" width="100%"></div>
 <hr>
 <p><strong>Q2.</strong> Draw the method graph for <code>f(</code>😃, 😉, 😙<code>)</code>.</p>
 <p><strong>A2.</strong> I don’t have access to the software used to prepare the visual illustrations used in the book, so I am linking to the illustration in the <a href="https://advanced-r-solutions.rbind.io/s4.html#method-dispatch">official solution manual</a>:</p>
-<div class="inline-figure"><img src="https://raw.githubusercontent.com/Tazinho/Advanced-R-Solutions/main/images/s4/method_dispatch2.png" width="100%"></div>
+<div class="inline-figure"><img src="https://raw.githubusercontent.com/Tazinho/Advanced-R-Solutions/main/images/s4/method_dispatch2.png" alt="" width="100%"></div>
 <hr>
 <p><strong>Q3.</strong> Take the last example which shows multiple dispatch over two classes that use multiple inheritance. What happens if you define a method for all terminal classes? Why does method dispatch not save us much work here?</p>
 <p><strong>A3.</strong> Because one class has distance of 2 to all terminal nodes and the other four have distance of 1 to two terminal nodes each, this will introduce ambiguity.</p>
@@ -593,7 +598,7 @@
 <span><span class="co">#&gt;  collate  C.UTF-8</span></span>
 <span><span class="co">#&gt;  ctype    C.UTF-8</span></span>
 <span><span class="co">#&gt;  tz       UTC</span></span>
-<span><span class="co">#&gt;  date     2025-12-15</span></span>
+<span><span class="co">#&gt;  date     2026-01-13</span></span>
 <span><span class="co">#&gt;  pandoc   3.8.3 @ /opt/hostedtoolcache/pandoc/3.8.3/x64/ (via rmarkdown)</span></span>
 <span><span class="co">#&gt;  quarto   NA</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -619,15 +624,15 @@
 <span><span class="co">#&gt;  htmltools     0.5.9   2025-12-04 [1] RSPM</span></span>
 <span><span class="co">#&gt;  jquerylib     0.1.4   2021-04-26 [1] RSPM</span></span>
 <span><span class="co">#&gt;  jsonlite      2.0.0   2025-03-27 [1] RSPM</span></span>
-<span><span class="co">#&gt;  knitr         1.50    2025-03-16 [1] RSPM</span></span>
-<span><span class="co">#&gt;  lifecycle     1.0.4   2023-11-07 [1] RSPM</span></span>
+<span><span class="co">#&gt;  knitr         1.51    2025-12-20 [1] RSPM</span></span>
+<span><span class="co">#&gt;  lifecycle     1.0.5   2026-01-08 [1] RSPM</span></span>
 <span><span class="co">#&gt;  lubridate   * 1.9.4   2024-12-08 [1] RSPM</span></span>
 <span><span class="co">#&gt;  magrittr    * 2.0.4   2025-09-12 [1] RSPM</span></span>
 <span><span class="co">#&gt;  memoise       2.0.1   2021-11-26 [1] RSPM</span></span>
 <span><span class="co">#&gt;  methods     * 4.5.2   2025-10-31 [3] local</span></span>
 <span><span class="co">#&gt;  pillar        1.11.1  2025-09-17 [1] RSPM</span></span>
 <span><span class="co">#&gt;  R6            2.6.1   2025-02-15 [1] RSPM</span></span>
-<span><span class="co">#&gt;  rlang         1.1.6   2025-04-11 [1] RSPM</span></span>
+<span><span class="co">#&gt;  rlang         1.1.7   2026-01-09 [1] RSPM</span></span>
 <span><span class="co">#&gt;  rmarkdown     2.30    2025-09-28 [1] RSPM</span></span>
 <span><span class="co">#&gt;  sass          0.4.10  2025-04-11 [1] RSPM</span></span>
 <span><span class="co">#&gt;  sessioninfo   1.2.3   2025-02-05 [1] RSPM</span></span>
@@ -639,7 +644,7 @@
 <span><span class="co">#&gt;  utils       * 4.5.2   2025-10-31 [3] local</span></span>
 <span><span class="co">#&gt;  vctrs         0.6.5   2023-12-01 [1] RSPM</span></span>
 <span><span class="co">#&gt;  withr         3.0.2   2024-10-28 [1] RSPM</span></span>
-<span><span class="co">#&gt;  xfun          0.54    2025-10-30 [1] RSPM</span></span>
+<span><span class="co">#&gt;  xfun          0.55    2025-12-16 [1] RSPM</span></span>
 <span><span class="co">#&gt;  xml2          1.5.1   2025-12-01 [1] RSPM</span></span>
 <span><span class="co">#&gt;  yaml          2.3.12  2025-12-10 [1] RSPM</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -682,7 +687,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-12-15.</p>
+    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2026-01-13.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -36,7 +36,8 @@ First, we try without `torture = TRUE`: it returns no meaningful results.
 
 ``` r
 profvis(f())
-#> Error in parse_rprof_lines(lines, expr_source): No parsing data available. Maybe your function was too fast?
+#> Error in `parse_rprof_lines()`:
+#> ! No parsing data available. Maybe your function was too fast?
 ```
 
 As mentioned in the docs, setting `torture = TRUE`
@@ -68,7 +69,7 @@ rm
 #>     }
 #>     .Internal(remove(list, envir, inherits))
 #> }
-#> <bytecode: 0x55b362019e38>
+#> <bytecode: 0x5560dca69740>
 #> <environment: namespace:base>
 ```
 
@@ -144,8 +145,8 @@ full_join(t_bench_df, t_systime_df, by = "expression")
 #> # A tibble: 2 × 4
 #>   expression bench_mean systime_with_gc systime_with_nogc
 #>   <bch:expr>   <bch:tm>           <dbl>             <dbl>
-#> 1 sqrt(x)      819.17ns           0.617             0.468
-#> 2 x^0.5          2.08µs           1.97              1.97
+#> 1 sqrt(x)      837.97ns            0.62             0.422
+#> 2 x^0.5          2.08µs            1.97             1.95
 ```
 
 The comparison reveals that these two approaches yield quite similar results. Slight differences in exact values is possibly due to differences in the precision of timers used internally by these functions.
@@ -180,9 +181,9 @@ bench::mark(
 #> # A tibble: 4 × 2
 #>   expression      median
 #>   <bch:expr>    <bch:tm>
-#> 1 sqrt(x)         2.99µs
-#> 2 exp(log(x)/2)  12.56µs
-#> 3 x^0.5          18.22µs
+#> 1 sqrt(x)         2.98µs
+#> 2 exp(log(x)/2)  12.76µs
+#> 3 x^0.5          18.18µs
 #> 4 x^(1/2)        18.35µs
 ```
 
@@ -205,7 +206,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-12-15
+#>  date     2026-01-13
 #>  pandoc   3.8.3 @ /opt/hostedtoolcache/pandoc/3.8.3/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -228,8 +229,8 @@ sessioninfo::session_info(include_base = TRUE)
 #>  grDevices   * 4.5.2   2025-10-31 [3] local
 #>  htmltools     0.5.9   2025-12-04 [1] RSPM
 #>  htmlwidgets   1.6.4   2023-12-06 [1] RSPM
-#>  knitr         1.50    2025-03-16 [1] RSPM
-#>  lifecycle     1.0.4   2023-11-07 [1] RSPM
+#>  knitr         1.51    2025-12-20 [1] RSPM
+#>  lifecycle     1.0.5   2026-01-08 [1] RSPM
 #>  magrittr    * 2.0.4   2025-09-12 [1] RSPM
 #>  methods     * 4.5.2   2025-10-31 [3] local
 #>  pillar        1.11.1  2025-09-17 [1] RSPM
@@ -237,20 +238,20 @@ sessioninfo::session_info(include_base = TRUE)
 #>  profmem       0.7.0   2025-05-02 [1] RSPM
 #>  profvis     * 0.4.0   2024-09-20 [1] RSPM
 #>  R6            2.6.1   2025-02-15 [1] RSPM
-#>  rlang         1.1.6   2025-04-11 [1] RSPM
+#>  rlang         1.1.7   2026-01-09 [1] RSPM
 #>  rmarkdown     2.30    2025-09-28 [1] RSPM
 #>  sessioninfo   1.2.3   2025-02-05 [1] RSPM
 #>  stats       * 4.5.2   2025-10-31 [3] local
 #>  stringi       1.8.7   2025-03-27 [1] RSPM
 #>  stringr       1.6.0   2025-11-04 [1] RSPM
-#>  tibble        3.3.0   2025-06-08 [1] RSPM
+#>  tibble        3.3.1   2026-01-11 [1] RSPM
 #>  tidyselect    1.2.1   2024-03-11 [1] RSPM
 #>  tools         4.5.2   2025-10-31 [3] local
 #>  utf8          1.2.6   2025-06-08 [1] RSPM
 #>  utils       * 4.5.2   2025-10-31 [3] local
 #>  vctrs         0.6.5   2023-12-01 [1] RSPM
 #>  withr         3.0.2   2024-10-28 [1] RSPM
-#>  xfun          0.54    2025-10-30 [1] RSPM
+#>  xfun          0.55    2025-12-16 [1] RSPM
 #>  yaml          2.3.12  2025-12-10 [1] RSPM
 #> 
 #>  [1] /home/runner/work/_temp/Library

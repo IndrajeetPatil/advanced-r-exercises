@@ -152,7 +152,8 @@
 <span><span class="co">#&gt; Current balance is: 120</span></span>
 <span></span>
 <span><span class="va">Pritesh</span><span class="op">$</span><span class="fu">withdraw</span><span class="op">(</span><span class="fl">150</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error: Can't withdraw more than your current balance: 120</span></span></code></pre></div>
+<span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! Can't withdraw more than your current balance: 120</span></span></code></pre></div>
 <p>Now let’s create a subclass that charges a fee if account is overdrawn:</p>
 <div class="sourceCode" id="cb428"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">bankAccountFee</span> <span class="op">&lt;-</span> <span class="fu">R6</span><span class="fu">::</span><span class="kw"><a href="https://r6.r-lib.org/reference/R6Class.html">R6Class</a></span><span class="op">(</span></span>
@@ -232,7 +233,8 @@
 <span><span class="co">#&gt; [1] "6 ♦"  "10 ♥" "2 ♥"  "A ♥"  "8 ♥"</span></span>
 <span></span>
 <span><span class="va">myDeck</span><span class="op">$</span><span class="fu">draw</span><span class="op">(</span><span class="fl">50</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error: Can't draw more than remaining number of cards: 43</span></span></code></pre></div>
+<span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! Can't draw more than remaining number of cards: 43</span></span></code></pre></div>
 <p><strong>Q3.</strong> Why can’t you model a bank account or a deck of cards with an S3 class?</p>
 <p><strong>A3.</strong> We can’t model a bank account or a deck of cards with an <code>S3</code> class because instances of these classes are <em>immutable</em>.</p>
 <p>On the other hand, <code>R6</code> classes encapsulate data and represent its <em>state</em>, which can change over the course of object’s lifecycle. In other words, these objects are <em>mutable</em> and well-suited to model a bank account.</p>
@@ -302,7 +304,7 @@
 <span><span class="co">#&gt; [1] "environment"</span></span>
 <span></span>
 <span><span class="fu">rlang</span><span class="fu">::</span><span class="fu"><a href="https://rlang.r-lib.org/reference/env_print.html">env_print</a></span><span class="op">(</span><span class="va">myExample</span><span class="op">)</span></span>
-<span><span class="co">#&gt; &lt;environment: 0x55937c1205c0&gt; [L]</span></span>
+<span><span class="co">#&gt; &lt;environment: 0x564e7e13f6b0&gt; [L]</span></span>
 <span><span class="co">#&gt; Parent: &lt;environment: empty&gt;</span></span>
 <span><span class="co">#&gt; Class: Example, R6</span></span>
 <span><span class="co">#&gt; Bindings:</span></span>
@@ -356,7 +358,8 @@
 <span><span class="co">#&gt; [1] "Current balance: 50"</span></span>
 <span></span>
 <span><span class="va">mySafeBankAccount</span><span class="op">$</span><span class="fu">withdraw</span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error: You can't withdraw more than your current balance.</span></span></code></pre></div>
+<span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! You can't withdraw more than your current balance.</span></span></code></pre></div>
 <p><strong>Q2.</strong> Create a class with a write-only <code>$password</code> field. It should have <code>$check_password(password)</code> method that returns <code>TRUE</code> or <code>FALSE</code>, but there should be no way to view the complete password.</p>
 <p><strong>A2.</strong> Here is an implementation of the class with the needed properties:</p>
 <div class="sourceCode" id="cb442"><pre class="downlit sourceCode r">
@@ -529,8 +532,8 @@
 <span><span class="fu"><a href="https://rdrr.io/r/base/gc.html">gc</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "Closing the file connection!"</span></span>
 <span><span class="co">#&gt;           used (Mb) gc trigger (Mb) max used (Mb)</span></span>
-<span><span class="co">#&gt; Ncells  800010 42.8    1341041 71.7  1341041 71.7</span></span>
-<span><span class="co">#&gt; Vcells 1481202 11.4    8388608 64.0  2831235 21.7</span></span></code></pre></div>
+<span><span class="co">#&gt; Ncells  804698 43.0    1346410   72  1346410 72.0</span></span>
+<span><span class="co">#&gt; Vcells 1491264 11.4    8388608   64  2754552 21.1</span></span></code></pre></div>
 </div>
 <div id="session-information-11" class="section level2" number="14.4">
 <h2>
@@ -548,7 +551,7 @@
 <span><span class="co">#&gt;  collate  C.UTF-8</span></span>
 <span><span class="co">#&gt;  ctype    C.UTF-8</span></span>
 <span><span class="co">#&gt;  tz       Europe/Berlin</span></span>
-<span><span class="co">#&gt;  date     2025-12-15</span></span>
+<span><span class="co">#&gt;  date     2026-01-13</span></span>
 <span><span class="co">#&gt;  pandoc   3.8.3 @ /opt/hostedtoolcache/pandoc/3.8.3/x64/ (via rmarkdown)</span></span>
 <span><span class="co">#&gt;  quarto   NA</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -573,14 +576,14 @@
 <span><span class="co">#&gt;  htmltools     0.5.9   2025-12-04 [1] RSPM</span></span>
 <span><span class="co">#&gt;  jquerylib     0.1.4   2021-04-26 [1] RSPM</span></span>
 <span><span class="co">#&gt;  jsonlite      2.0.0   2025-03-27 [1] RSPM</span></span>
-<span><span class="co">#&gt;  knitr         1.50    2025-03-16 [1] RSPM</span></span>
-<span><span class="co">#&gt;  lifecycle     1.0.4   2023-11-07 [1] RSPM</span></span>
+<span><span class="co">#&gt;  knitr         1.51    2025-12-20 [1] RSPM</span></span>
+<span><span class="co">#&gt;  lifecycle     1.0.5   2026-01-08 [1] RSPM</span></span>
 <span><span class="co">#&gt;  magrittr    * 2.0.4   2025-09-12 [1] RSPM</span></span>
 <span><span class="co">#&gt;  memoise       2.0.1   2021-11-26 [1] RSPM</span></span>
 <span><span class="co">#&gt;  methods     * 4.5.2   2025-10-31 [3] local</span></span>
 <span><span class="co">#&gt;  pillar        1.11.1  2025-09-17 [1] RSPM</span></span>
 <span><span class="co">#&gt;  R6          * 2.6.1   2025-02-15 [1] RSPM</span></span>
-<span><span class="co">#&gt;  rlang         1.1.6   2025-04-11 [1] RSPM</span></span>
+<span><span class="co">#&gt;  rlang         1.1.7   2026-01-09 [1] RSPM</span></span>
 <span><span class="co">#&gt;  rmarkdown     2.30    2025-09-28 [1] RSPM</span></span>
 <span><span class="co">#&gt;  sass          0.4.10  2025-04-11 [1] RSPM</span></span>
 <span><span class="co">#&gt;  sessioninfo   1.2.3   2025-02-05 [1] RSPM</span></span>
@@ -591,7 +594,7 @@
 <span><span class="co">#&gt;  utils       * 4.5.2   2025-10-31 [3] local</span></span>
 <span><span class="co">#&gt;  vctrs         0.6.5   2023-12-01 [1] RSPM</span></span>
 <span><span class="co">#&gt;  withr         3.0.2   2024-10-28 [1] RSPM</span></span>
-<span><span class="co">#&gt;  xfun          0.54    2025-10-30 [1] RSPM</span></span>
+<span><span class="co">#&gt;  xfun          0.55    2025-12-16 [1] RSPM</span></span>
 <span><span class="co">#&gt;  xml2          1.5.1   2025-12-01 [1] RSPM</span></span>
 <span><span class="co">#&gt;  yaml          2.3.12  2025-12-10 [1] RSPM</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -632,7 +635,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-12-15.</p>
+    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2026-01-13.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

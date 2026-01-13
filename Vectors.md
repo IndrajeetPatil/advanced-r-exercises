@@ -209,7 +209,7 @@ setNames
 #>     names(object) <- nm
 #>     object
 #> }
-#> <bytecode: 0x560614654c78>
+#> <bytecode: 0x557f29cf6650>
 #> <environment: namespace:stats>
 ```
 
@@ -239,7 +239,7 @@ unname
 #>         dimnames(obj) <- NULL
 #>     obj
 #> }
-#> <bytecode: 0x560613bf4098>
+#> <bytecode: 0x557f2a294608>
 #> <environment: namespace:base>
 ```
 
@@ -656,7 +656,8 @@ BOD[0, 0]
 
 ``` r
 data.frame(row.names = c(1, 1))
-#> Error in data.frame(row.names = c(1, 1)): duplicate row.names: 1
+#> Error in `data.frame()`:
+#> ! duplicate row.names: 1
 ```
 
 **Q3.** If `df` is a data frame, what can you say about `t(df)`, and `t(t(df))`? Perform some experiments, making sure to try different column types.
@@ -840,7 +841,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-12-15
+#>  date     2026-01-13
 #>  pandoc   3.8.3 @ /opt/hostedtoolcache/pandoc/3.8.3/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -859,12 +860,13 @@ sessioninfo::session_info(include_base = TRUE)
 #>  graphics    * 4.5.2   2025-10-31 [3] local
 #>  grDevices   * 4.5.2   2025-10-31 [3] local
 #>  htmltools     0.5.9   2025-12-04 [1] RSPM
-#>  knitr         1.50    2025-03-16 [1] RSPM
-#>  lifecycle     1.0.4   2023-11-07 [1] RSPM
+#>  knitr         1.51    2025-12-20 [1] RSPM
+#>  lifecycle     1.0.5   2026-01-08 [1] RSPM
 #>  magrittr    * 2.0.4   2025-09-12 [1] RSPM
 #>  methods     * 4.5.2   2025-10-31 [3] local
-#>  purrr         1.2.0   2025-11-04 [1] RSPM
-#>  rlang         1.1.6   2025-04-11 [1] RSPM
+#>  pillar        1.11.1  2025-09-17 [1] RSPM
+#>  purrr         1.2.1   2026-01-09 [1] RSPM
+#>  rlang         1.1.7   2026-01-09 [1] RSPM
 #>  rmarkdown     2.30    2025-09-28 [1] RSPM
 #>  sessioninfo   1.2.3   2025-02-05 [1] RSPM
 #>  stats       * 4.5.2   2025-10-31 [3] local
@@ -873,7 +875,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  tools         4.5.2   2025-10-31 [3] local
 #>  utils       * 4.5.2   2025-10-31 [3] local
 #>  vctrs         0.6.5   2023-12-01 [1] RSPM
-#>  xfun          0.54    2025-10-30 [1] RSPM
+#>  xfun          0.55    2025-12-16 [1] RSPM
 #>  yaml          2.3.12  2025-12-10 [1] RSPM
 #> 
 #>  [1] /home/runner/work/_temp/Library

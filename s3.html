@@ -282,10 +282,12 @@ etc.</li>
 <p>Let’s try it out:</p>
 <div class="sourceCode" id="cb363"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">new_data_frame</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"x"</span> <span class="op">=</span> <span class="fl">1</span>, <span class="st">"y"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error: All list elements in `x` should have same length.</span></span>
+<span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! All list elements in `x` should have same length.</span></span>
 <span></span>
 <span><span class="fu">new_data_frame</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"x"</span> <span class="op">=</span> <span class="fl">1</span>, <span class="st">"y"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span>, row.names <span class="op">=</span> <span class="fl">1L</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error: Row name should be of `chracter` type.</span></span>
+<span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! Row name should be of `chracter` type.</span></span>
 <span></span>
 <span><span class="fu">new_data_frame</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; data frame with 0 columns and 0 rows</span></span>
@@ -358,7 +360,8 @@ etc.</li>
 <p>Let’s try it out:</p>
 <div class="sourceCode" id="cb366"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">create_factor</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span><span class="op">)</span>, levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"a"</span>, <span class="st">"c"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error: Following values from `x` are not present in `levels`:</span></span>
+<span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! Following values from `x` are not present in `levels`:</span></span>
 <span><span class="co">#&gt; b</span></span>
 <span></span>
 <span><span class="fu">create_factor</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span><span class="op">)</span>, levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span><span class="op">)</span><span class="op">)</span></span>
@@ -387,7 +390,8 @@ etc.</li>
 <span><span class="va">levels</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"b"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">x</span>, levels <span class="op">=</span> <span class="va">levels</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error in `levels&lt;-`(`*tmp*`, value = as.character(levels)): factor level [3] is duplicated</span></span>
+<span><span class="co">#&gt; Error in `levels&lt;-`:</span></span>
+<span><span class="co">#&gt; ! factor level [3] is duplicated</span></span>
 <span></span>
 <span><span class="fu">create_factor</span><span class="op">(</span><span class="va">x</span>, levels <span class="op">=</span> <span class="va">levels</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] a b b</span></span>
@@ -404,7 +408,8 @@ etc.</li>
 <span><span class="co">#&gt; Levels:</span></span>
 <span></span>
 <span><span class="fu">create_factor</span><span class="op">(</span><span class="va">x</span>, levels <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error: Following values from `x` are not present in `levels`:</span></span>
+<span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! Following values from `x` are not present in `levels`:</span></span>
 <span><span class="co">#&gt; a</span></span>
 <span><span class="co">#&gt; b</span></span>
 <span><span class="co">#&gt; b</span></span></code></pre></div>
@@ -512,7 +517,7 @@ etc.</li>
 <code class="sourceCode R"><span><span class="va">t</span></span>
 <span><span class="co">#&gt; function (x) </span></span>
 <span><span class="co">#&gt; UseMethod("t")</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x55557b37e758&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x55bf55b50af8&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:base&gt;</span></span>
 <span><span class="fu">sloop</span><span class="fu">::</span><span class="fu"><a href="https://sloop.r-lib.org/reference/is_s3_generic.html">is_s3_generic</a></span><span class="op">(</span><span class="st">"t"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] TRUE</span></span>
@@ -520,7 +525,7 @@ etc.</li>
 <span><span class="va">t.test</span></span>
 <span><span class="co">#&gt; function (x, ...) </span></span>
 <span><span class="co">#&gt; UseMethod("t.test")</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x555578b0a400&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x55bf53351400&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:stats&gt;</span></span>
 <span><span class="fu">sloop</span><span class="fu">::</span><span class="fu"><a href="https://sloop.r-lib.org/reference/is_s3_generic.html">is_s3_generic</a></span><span class="op">(</span><span class="st">"t.test"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] TRUE</span></span></code></pre></div>
@@ -848,14 +853,14 @@ It just adds a new class to the object to indicate that it should be treated <em
 <span><span class="co">#&gt; {</span></span>
 <span><span class="co">#&gt;     .Date(NextMethod("["), oldClass(x))</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x555578dce900&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x55bf5518a020&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:base&gt;</span></span></code></pre></div>
 <p>The <code>.Date</code> function looks like this:</p>
 <div class="sourceCode" id="cb402"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">.Date</span></span>
 <span><span class="co">#&gt; function (xx, cl = "Date") </span></span>
 <span><span class="co">#&gt; `class&lt;-`(xx, cl)</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x55557951ce30&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x55bf542a4480&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:base&gt;</span></span></code></pre></div>
 <p>Here, <code>oldClass</code> is the same as <code><a href="https://rdrr.io/r/base/class.html">class()</a></code>.</p>
 <p>Therefore, by reading this code, we can surmise that:</p>
@@ -875,7 +880,7 @@ It just adds a new class to the object to indicate that it should be treated <em
 <span><span class="co">#&gt; [1] "subDate" "Date"</span></span>
 <span></span>
 <span><span class="va">x</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span>
-<span><span class="co">#&gt; [1] "2025-12-15"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "2026-01-13"</span></span></code></pre></div>
 <p><strong>Q2.</strong> R has two classes for representing date time data, <code>POSIXct</code> and <code>POSIXlt</code>, which both inherit from <code>POSIXt</code>. Which generics have different behaviours for the two classes? Which generics share the same behaviour?</p>
 <p><strong>A2.</strong> First, let’s demonstrate that <code>POSIXct</code> and <code>POSIXlt</code> are indeed subclasses and <code>POSIXt</code> is the superclass.</p>
 <div class="sourceCode" id="cb404"><pre class="downlit sourceCode r">
@@ -1129,7 +1134,8 @@ It just adds a new class to the object to indicate that it should be treated <em
 <code class="sourceCode R"><span><span class="va">df2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">FALSE</span><span class="op">)</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"a"</span>, <span class="st">"b"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">df2</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Environment variable `.Generic` set to: abs</span></span>
-<span><span class="co">#&gt; Error in Math.data.frame(df2): non-numeric-alike variable(s) in data frame: y</span></span></code></pre></div>
+<span><span class="co">#&gt; Error in `Math.data.frame()`:</span></span>
+<span><span class="co">#&gt; ! non-numeric-alike variable(s) in data frame: y</span></span></code></pre></div>
 <p><strong>Q3.</strong> <code><a href="https://rdrr.io/r/base/difftime.html">Math.difftime()</a></code> is more complicated than I described. Why?</p>
 <p><strong>A3.</strong> <a href="https://github.com/r-devel/r-svn/blob/master/src/library/base/R/datetime.R"><code>Math.difftime()</code></a> source code looks like the following:</p>
 <div class="sourceCode" id="cb421"><pre class="downlit sourceCode r">
@@ -1169,7 +1175,7 @@ It just adds a new class to the object to indicate that it should be treated <em
 <span><span class="co">#&gt;  collate  C.UTF-8</span></span>
 <span><span class="co">#&gt;  ctype    C.UTF-8</span></span>
 <span><span class="co">#&gt;  tz       UTC</span></span>
-<span><span class="co">#&gt;  date     2025-12-15</span></span>
+<span><span class="co">#&gt;  date     2026-01-13</span></span>
 <span><span class="co">#&gt;  pandoc   3.8.3 @ /opt/hostedtoolcache/pandoc/3.8.3/x64/ (via rmarkdown)</span></span>
 <span><span class="co">#&gt;  quarto   NA</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -1198,16 +1204,16 @@ It just adds a new class to the object to indicate that it should be treated <em
 <span><span class="co">#&gt;  htmltools     0.5.9   2025-12-04 [1] RSPM</span></span>
 <span><span class="co">#&gt;  jquerylib     0.1.4   2021-04-26 [1] RSPM</span></span>
 <span><span class="co">#&gt;  jsonlite      2.0.0   2025-03-27 [1] RSPM</span></span>
-<span><span class="co">#&gt;  knitr         1.50    2025-03-16 [1] RSPM</span></span>
-<span><span class="co">#&gt;  lifecycle     1.0.4   2023-11-07 [1] RSPM</span></span>
+<span><span class="co">#&gt;  knitr         1.51    2025-12-20 [1] RSPM</span></span>
+<span><span class="co">#&gt;  lifecycle     1.0.5   2026-01-08 [1] RSPM</span></span>
 <span><span class="co">#&gt;  magrittr    * 2.0.4   2025-09-12 [1] RSPM</span></span>
 <span><span class="co">#&gt;  memoise       2.0.1   2021-11-26 [1] RSPM</span></span>
 <span><span class="co">#&gt;  methods     * 4.5.2   2025-10-31 [3] local</span></span>
 <span><span class="co">#&gt;  pillar        1.11.1  2025-09-17 [1] RSPM</span></span>
 <span><span class="co">#&gt;  pkgconfig     2.0.3   2019-09-22 [1] RSPM</span></span>
-<span><span class="co">#&gt;  purrr       * 1.2.0   2025-11-04 [1] RSPM</span></span>
+<span><span class="co">#&gt;  purrr       * 1.2.1   2026-01-09 [1] RSPM</span></span>
 <span><span class="co">#&gt;  R6            2.6.1   2025-02-15 [1] RSPM</span></span>
-<span><span class="co">#&gt;  rlang         1.1.6   2025-04-11 [1] RSPM</span></span>
+<span><span class="co">#&gt;  rlang         1.1.7   2026-01-09 [1] RSPM</span></span>
 <span><span class="co">#&gt;  rmarkdown     2.30    2025-09-28 [1] RSPM</span></span>
 <span><span class="co">#&gt;  sass          0.4.10  2025-04-11 [1] RSPM</span></span>
 <span><span class="co">#&gt;  sessioninfo   1.2.3   2025-02-05 [1] RSPM</span></span>
@@ -1215,14 +1221,14 @@ It just adds a new class to the object to indicate that it should be treated <em
 <span><span class="co">#&gt;  stats       * 4.5.2   2025-10-31 [3] local</span></span>
 <span><span class="co">#&gt;  stringi       1.8.7   2025-03-27 [1] RSPM</span></span>
 <span><span class="co">#&gt;  stringr       1.6.0   2025-11-04 [1] RSPM</span></span>
-<span><span class="co">#&gt;  tibble        3.3.0   2025-06-08 [1] RSPM</span></span>
+<span><span class="co">#&gt;  tibble        3.3.1   2026-01-11 [1] RSPM</span></span>
 <span><span class="co">#&gt;  tidyselect    1.2.1   2024-03-11 [1] RSPM</span></span>
 <span><span class="co">#&gt;  tools         4.5.2   2025-10-31 [3] local</span></span>
 <span><span class="co">#&gt;  utf8          1.2.6   2025-06-08 [1] RSPM</span></span>
 <span><span class="co">#&gt;  utils       * 4.5.2   2025-10-31 [3] local</span></span>
 <span><span class="co">#&gt;  vctrs         0.6.5   2023-12-01 [1] RSPM</span></span>
 <span><span class="co">#&gt;  withr         3.0.2   2024-10-28 [1] RSPM</span></span>
-<span><span class="co">#&gt;  xfun          0.54    2025-10-30 [1] RSPM</span></span>
+<span><span class="co">#&gt;  xfun          0.55    2025-12-16 [1] RSPM</span></span>
 <span><span class="co">#&gt;  xml2          1.5.1   2025-12-01 [1] RSPM</span></span>
 <span><span class="co">#&gt;  yaml          2.3.12  2025-12-10 [1] RSPM</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -1267,7 +1273,7 @@ It just adds a new class to the object to indicate that it should be treated <em
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-12-15.</p>
+    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2026-01-13.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

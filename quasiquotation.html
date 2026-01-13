@@ -120,7 +120,8 @@
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://www.stats.ox.ac.uk/pub/MASS4/">MASS</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">MASS</span></span>
-<span><span class="co">#&gt; Error: object 'MASS' not found</span></span></code></pre></div>
+<span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! object 'MASS' not found</span></span></code></pre></div>
 <ul>
 <li><code>subset(mtcars, cyl == 4)</code></li>
 </ul>
@@ -131,7 +132,8 @@
 <span><span class="fu"><a href="https://rdrr.io/r/base/invisible.html">invisible</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">cyl</span> <span class="op">==</span> <span class="fl">4</span></span>
-<span><span class="co">#&gt; Error: object 'cyl' not found</span></span></code></pre></div>
+<span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! object 'cyl' not found</span></span></code></pre></div>
 <ul>
 <li><code>with(mtcars2, sum(vs))</code></li>
 </ul>
@@ -143,7 +145,8 @@
 <span><span class="fu"><a href="https://rdrr.io/r/base/invisible.html">invisible</a></span><span class="op">(</span><span class="va">mtcars2</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">vs</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error: object 'vs' not found</span></span></code></pre></div>
+<span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! object 'vs' not found</span></span></code></pre></div>
 <ul>
 <li><code>sum(mtcars2$am)</code></li>
 </ul>
@@ -202,7 +205,7 @@
 <div class="sourceCode" id="cb546"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">by_cyl</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">cyl</span>, <span class="va">mean</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="Quotation_files/figure-html/Quotation-12-1.png" width="100%"></div>
+<div class="inline-figure"><img src="Quotation_files/figure-html/Quotation-12-1.png" alt="" width="100%"></div>
 <hr>
 </div>
 <div id="quoting-exercises-19.3.6" class="section level2" number="19.2">
@@ -218,7 +221,7 @@
 <span><span class="co">#&gt; {</span></span>
 <span><span class="co">#&gt;     enexpr(expr)</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x5576a117d738&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x5638249165d0&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:rlang&gt;</span></span></code></pre></div>
 <p>For example:</p>
 <div class="sourceCode" id="cb548"><pre class="downlit sourceCode r">
@@ -232,7 +235,7 @@
 <span><span class="co">#&gt; {</span></span>
 <span><span class="co">#&gt;     .Call(ffi_enexpr, substitute(arg), parent.frame())</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x5576a2b46fc0&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x563823a94998&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:rlang&gt;</span></span></code></pre></div>
 <hr>
 <p><strong>Q2.</strong> Compare and contrast the following two functions. Can you predict the output before running them?</p>
@@ -614,7 +617,8 @@ the expression slot of the promise replaces the symbol.</p>
 <span>  <span class="va">x</span></span>
 <span><span class="op">}</span></span>
 <span><span class="fu">set_attr</span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span>, x <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error in attributes(x) &lt;- attr: attributes must be named</span></span></code></pre></div>
+<span><span class="co">#&gt; Error in `attributes(x) &lt;- attr`:</span></span>
+<span><span class="co">#&gt; ! attributes must be named</span></span></code></pre></div>
 <p><strong>A3.</strong> The <code>set_attr()</code> function signature has a parameter called <code>x</code>, and additionally it uses dynamic dots to pass multiple arguments to specify additional attributes for <code>x</code>.</p>
 <p>But, as shown in the example, this creates a problem when the attribute is itself named <code>x</code>. Naming the arguments won’t help either:</p>
 <div class="sourceCode" id="cb574"><pre class="downlit sourceCode r">
@@ -624,7 +628,8 @@ the expression slot of the promise replaces the symbol.</p>
 <span>  <span class="va">x</span></span>
 <span><span class="op">}</span></span>
 <span><span class="fu">set_attr</span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>, x <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error in set_attr(x = 1:10, x = 10): formal argument "x" matched by multiple actual arguments</span></span></code></pre></div>
+<span><span class="co">#&gt; Error in `set_attr()`:</span></span>
+<span><span class="co">#&gt; ! formal argument "x" matched by multiple actual arguments</span></span></code></pre></div>
 <p>We can avoid these issues by renaming the parameter:</p>
 <div class="sourceCode" id="cb575"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">set_attr</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">.x</span>, <span class="va">...</span><span class="op">)</span> <span class="op">{</span></span>
@@ -742,7 +747,7 @@ the expression slot of the promise replaces the symbol.</p>
 <span><span class="co">#&gt;  collate  C.UTF-8</span></span>
 <span><span class="co">#&gt;  ctype    C.UTF-8</span></span>
 <span><span class="co">#&gt;  tz       UTC</span></span>
-<span><span class="co">#&gt;  date     2025-12-15</span></span>
+<span><span class="co">#&gt;  date     2026-01-13</span></span>
 <span><span class="co">#&gt;  pandoc   3.8.3 @ /opt/hostedtoolcache/pandoc/3.8.3/x64/ (via rmarkdown)</span></span>
 <span><span class="co">#&gt;  quarto   NA</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -775,9 +780,9 @@ the expression slot of the promise replaces the symbol.</p>
 <span><span class="co">#&gt;  htmltools      0.5.9   2025-12-04 [1] RSPM</span></span>
 <span><span class="co">#&gt;  jquerylib      0.1.4   2021-04-26 [1] RSPM</span></span>
 <span><span class="co">#&gt;  jsonlite       2.0.0   2025-03-27 [1] RSPM</span></span>
-<span><span class="co">#&gt;  knitr          1.50    2025-03-16 [1] RSPM</span></span>
+<span><span class="co">#&gt;  knitr          1.51    2025-12-20 [1] RSPM</span></span>
 <span><span class="co">#&gt;  labeling       0.4.3   2023-08-29 [1] RSPM</span></span>
-<span><span class="co">#&gt;  lifecycle      1.0.4   2023-11-07 [1] RSPM</span></span>
+<span><span class="co">#&gt;  lifecycle      1.0.5   2026-01-08 [1] RSPM</span></span>
 <span><span class="co">#&gt;  lobstr       * 1.1.3   2025-11-14 [1] RSPM</span></span>
 <span><span class="co">#&gt;  magrittr     * 2.0.4   2025-09-12 [1] RSPM</span></span>
 <span><span class="co">#&gt;  MASS         * 7.3-65  2025-02-28 [3] CRAN (R 4.5.2)</span></span>
@@ -785,10 +790,10 @@ the expression slot of the promise replaces the symbol.</p>
 <span><span class="co">#&gt;  methods      * 4.5.2   2025-10-31 [3] local</span></span>
 <span><span class="co">#&gt;  pillar         1.11.1  2025-09-17 [1] RSPM</span></span>
 <span><span class="co">#&gt;  pkgconfig      2.0.3   2019-09-22 [1] RSPM</span></span>
-<span><span class="co">#&gt;  purrr        * 1.2.0   2025-11-04 [1] RSPM</span></span>
+<span><span class="co">#&gt;  purrr        * 1.2.1   2026-01-09 [1] RSPM</span></span>
 <span><span class="co">#&gt;  R6             2.6.1   2025-02-15 [1] RSPM</span></span>
 <span><span class="co">#&gt;  RColorBrewer   1.1-3   2022-04-03 [1] RSPM</span></span>
-<span><span class="co">#&gt;  rlang        * 1.1.6   2025-04-11 [1] RSPM</span></span>
+<span><span class="co">#&gt;  rlang        * 1.1.7   2026-01-09 [1] RSPM</span></span>
 <span><span class="co">#&gt;  rmarkdown      2.30    2025-09-28 [1] RSPM</span></span>
 <span><span class="co">#&gt;  S7             0.2.1   2025-11-14 [1] RSPM</span></span>
 <span><span class="co">#&gt;  sass           0.4.10  2025-04-11 [1] RSPM</span></span>
@@ -797,14 +802,14 @@ the expression slot of the promise replaces the symbol.</p>
 <span><span class="co">#&gt;  stats        * 4.5.2   2025-10-31 [3] local</span></span>
 <span><span class="co">#&gt;  stringi        1.8.7   2025-03-27 [1] RSPM</span></span>
 <span><span class="co">#&gt;  stringr        1.6.0   2025-11-04 [1] RSPM</span></span>
-<span><span class="co">#&gt;  tibble         3.3.0   2025-06-08 [1] RSPM</span></span>
+<span><span class="co">#&gt;  tibble         3.3.1   2026-01-11 [1] RSPM</span></span>
 <span><span class="co">#&gt;  tidyselect     1.2.1   2024-03-11 [1] RSPM</span></span>
 <span><span class="co">#&gt;  tools          4.5.2   2025-10-31 [3] local</span></span>
 <span><span class="co">#&gt;  utils        * 4.5.2   2025-10-31 [3] local</span></span>
 <span><span class="co">#&gt;  vctrs          0.6.5   2023-12-01 [1] RSPM</span></span>
 <span><span class="co">#&gt;  waldo          0.6.2   2025-07-11 [1] RSPM</span></span>
 <span><span class="co">#&gt;  withr          3.0.2   2024-10-28 [1] RSPM</span></span>
-<span><span class="co">#&gt;  xfun           0.54    2025-10-30 [1] RSPM</span></span>
+<span><span class="co">#&gt;  xfun           0.55    2025-12-16 [1] RSPM</span></span>
 <span><span class="co">#&gt;  xml2           1.5.1   2025-12-01 [1] RSPM</span></span>
 <span><span class="co">#&gt;  yaml           2.3.12  2025-12-10 [1] RSPM</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -847,7 +852,7 @@ the expression slot of the promise replaces the symbol.</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-12-15.</p>
+    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2026-01-13.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

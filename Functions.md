@@ -20,7 +20,7 @@ library(tidyverse, warn.conflicts = FALSE)
 match.fun("mean")
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x55c3d540b348>
+#> <bytecode: 0x55a084b03fa8>
 #> <environment: namespace:base>
 ```
 
@@ -60,7 +60,8 @@ f
 #> function (x) 
 #> 3()
 f()
-#> Error in f(): attempt to apply non-function
+#> Error in `f()`:
+#> ! attempt to apply non-function
 
 rlang::is_syntactic_literal(3)
 #> [1] TRUE
@@ -354,7 +355,7 @@ names(primitives)
 mean
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x55c3d540b348>
+#> <bytecode: 0x55a084b03fa8>
 #> <environment: namespace:base>
 
 # other package function
@@ -363,7 +364,7 @@ purrr::map
 #> {
 #>     map_("list", .x, .f, ..., .progress = .progress)
 #> }
-#> <bytecode: 0x55c3d9677998>
+#> <bytecode: 0x55a088454408>
 #> <environment: namespace:purrr>
 ```
 
@@ -567,7 +568,7 @@ f2 <- function(x = z) {
 }
 
 f2()
-#> [1] "0x55c3dcd12fa8" "0x55c3dcd12fa8"
+#> [1] "0x55a08b86c710" "0x55a08b86c710"
 #> [1] 100
 ```
 
@@ -638,7 +639,7 @@ Explain how `hist()` works to get a correct `xlim` value.
 hist(mtcars$wt, xlim = c(1, 6))
 ```
 
-<img src="Functions_files/figure-epub3/Functions-36-1.png" width="100%" />
+<img src="Functions_files/figure-epub3/Functions-36-1.png" alt="" width="100%" />
 
 The default `xlim = range(breaks)` and `breaks = "Sturges"` arguments reveal that the function uses Sturges' algorithm to compute the number of breaks.
 
@@ -662,7 +663,7 @@ show_time <- function(x = stop("Error!")) {
 }
 
 show_time()
-#> [1] "2025-12-15 17:51:03 UTC"
+#> [1] "2026-01-13 06:47:54 UTC"
 ```
 
 **A5.** Let's take this step-by-step.
@@ -775,7 +776,7 @@ For `mean()` function, there is only one parameter (`x`) and it's matched by the
 plot(1:10, col = "red", pch = 20, xlab = "x", col.lab = "blue")
 ```
 
-<img src="Functions_files/figure-epub3/Functions-43-1.png" width="100%" />
+<img src="Functions_files/figure-epub3/Functions-43-1.png" alt="" width="100%" />
 
 **A2.** Typing `?plot` in the console, we see its documentation, which also shows its signature:
 
@@ -887,7 +888,7 @@ withr::with_dir
 #>     on.exit(setwd(old))
 #>     force(code)
 #> }
-#> <bytecode: 0x55c3dc7f7200>
+#> <bytecode: 0x55a08b402810>
 #> <environment: namespace:withr>
 ```
 
@@ -969,7 +970,7 @@ capture.output
 #>         close(file)
 #>     rval %||% invisible(NULL)
 #> }
-#> <bytecode: 0x55c3dce2a798>
+#> <bytecode: 0x55a08b8d9028>
 #> <environment: namespace:utils>
 ```
 
@@ -1083,7 +1084,8 @@ The following doesn't because the code above evaluates to:
 
 ``` r
 `get<-`("x", 10)
-#> Error in `get<-`("x", 10): could not find function "get<-"
+#> Error in `get<-`:
+#> ! could not find function "get<-"
 ```
 
 And there is no `get<-` function in R.
@@ -1309,7 +1311,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-12-15
+#>  date     2026-01-13
 #>  pandoc   3.8.3 @ /opt/hostedtoolcache/pandoc/3.8.3/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -1336,19 +1338,19 @@ sessioninfo::session_info(include_base = TRUE)
 #>  gtable         0.3.6   2024-10-25 [1] RSPM
 #>  hms            1.1.4   2025-10-17 [1] RSPM
 #>  htmltools      0.5.9   2025-12-04 [1] RSPM
-#>  knitr          1.50    2025-03-16 [1] RSPM
-#>  lifecycle      1.0.4   2023-11-07 [1] RSPM
+#>  knitr          1.51    2025-12-20 [1] RSPM
+#>  lifecycle      1.0.5   2026-01-08 [1] RSPM
 #>  lobstr         1.1.3   2025-11-14 [1] RSPM
 #>  lubridate    * 1.9.4   2024-12-08 [1] RSPM
 #>  magrittr     * 2.0.4   2025-09-12 [1] RSPM
 #>  methods      * 4.5.2   2025-10-31 [3] local
 #>  pillar         1.11.1  2025-09-17 [1] RSPM
 #>  pkgconfig      2.0.3   2019-09-22 [1] RSPM
-#>  purrr        * 1.2.0   2025-11-04 [1] RSPM
+#>  purrr        * 1.2.1   2026-01-09 [1] RSPM
 #>  R6             2.6.1   2025-02-15 [1] RSPM
 #>  RColorBrewer   1.1-3   2022-04-03 [1] RSPM
 #>  readr        * 2.1.6   2025-11-14 [1] RSPM
-#>  rlang          1.1.6   2025-04-11 [1] RSPM
+#>  rlang          1.1.7   2026-01-09 [1] RSPM
 #>  rmarkdown      2.30    2025-09-28 [1] RSPM
 #>  S7             0.2.1   2025-11-14 [1] RSPM
 #>  scales         1.4.0   2025-04-24 [1] RSPM
@@ -1356,8 +1358,8 @@ sessioninfo::session_info(include_base = TRUE)
 #>  stats        * 4.5.2   2025-10-31 [3] local
 #>  stringi        1.8.7   2025-03-27 [1] RSPM
 #>  stringr      * 1.6.0   2025-11-04 [1] RSPM
-#>  tibble       * 3.3.0   2025-06-08 [1] RSPM
-#>  tidyr        * 1.3.1   2024-01-24 [1] RSPM
+#>  tibble       * 3.3.1   2026-01-11 [1] RSPM
+#>  tidyr        * 1.3.2   2025-12-19 [1] RSPM
 #>  tidyselect     1.2.1   2024-03-11 [1] RSPM
 #>  tidyverse    * 2.0.0   2023-02-22 [1] RSPM
 #>  timechange     0.3.0   2024-01-18 [1] RSPM
@@ -1367,7 +1369,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  utils        * 4.5.2   2025-10-31 [3] local
 #>  vctrs          0.6.5   2023-12-01 [1] RSPM
 #>  withr          3.0.2   2024-10-28 [1] RSPM
-#>  xfun           0.54    2025-10-30 [1] RSPM
+#>  xfun           0.55    2025-12-16 [1] RSPM
 #>  yaml           2.3.12  2025-12-10 [1] RSPM
 #> 
 #>  [1] /home/runner/work/_temp/Library

@@ -36,7 +36,7 @@ map(x, 1)
 as_mapper(1)
 #> function (x, ...) 
 #> pluck_raw(x, list(1), .default = NULL)
-#> <environment: 0x5561e073e8d0>
+#> <environment: 0x55bbe679cc10>
 
 map(x, list(2, 1))
 #> [[1]]
@@ -47,7 +47,7 @@ map(x, list(2, 1))
 as_mapper(list(2, 1))
 #> function (x, ...) 
 #> pluck_raw(x, list(2, 1), .default = NULL)
-#> <environment: 0x5561e030b710>
+#> <environment: 0x55bbe6719bf8>
 
 # mapping by name -----------------------
 
@@ -65,7 +65,7 @@ map(y, "m")
 as_mapper("m")
 #> function (x, ...) 
 #> pluck_raw(x, list("m"), .default = NULL)
-#> <environment: 0x5561dfd842f8>
+#> <environment: 0x55bbe649e6d0>
 
 # mixing position and name
 map(y, list(2, "m"))
@@ -77,7 +77,7 @@ map(y, list(2, "m"))
 as_mapper(list(2, "m"))
 #> function (x, ...) 
 #> pluck_raw(x, list(2, "m"), .default = NULL)
-#> <environment: 0x5561dfcaadd0>
+#> <environment: 0x55bbe6385430>
 
 # compact functions ----------------------------
 
@@ -139,7 +139,7 @@ map(1:3, runif(2))
 as_mapper(runif(2))
 #> function (x, ...) 
 #> pluck_raw(x, list(0.597890264587477, 0.587997315218672), .default = NULL)
-#> <environment: 0x5561dfd6c878>
+#> <environment: 0x55bbe7721308>
 ```
 
 ---
@@ -237,14 +237,14 @@ trials <- map(1:100, ~ t.test(rpois(10, 10), rpois(7, 10)))
 plot(p)
 ```
 
-<img src="Functionals_files/figure-epub3/Functionals-11-1.png" width="100%" />
+<img src="Functionals_files/figure-epub3/Functionals-11-1.png" alt="" width="100%" />
 
 ``` r
 
 hist(p)
 ```
 
-<img src="Functionals_files/figure-epub3/Functionals-11-2.png" width="100%" />
+<img src="Functionals_files/figure-epub3/Functionals-11-2.png" alt="" width="100%" />
 
 ---
 
@@ -575,9 +575,11 @@ simple_reduce <- function(x, f) {
 
 ``` r
 simple_reduce(numeric(), sum)
-#> Error in x[[1]]: subscript out of bounds
+#> Error in `x[[1]]`:
+#> ! subscript out of bounds
 simple_reduce(1, sum)
-#> Error in x[[i]]: subscript out of bounds
+#> Error in `x[[i]]`:
+#> ! subscript out of bounds
 simple_reduce(1:3, sum)
 #> [1] 6
 ```
@@ -879,7 +881,7 @@ library(rlang)
 
 e <- env("x" = 1, "y" = 2)
 rlang::env_print(e)
-#> <environment: 0x5561e0862560>
+#> <environment: 0x55bbe85cd6c0>
 #> Parent: <environment: global>
 #> Bindings:
 #> • x: <dbl>
@@ -1014,7 +1016,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-12-15
+#>  date     2026-01-13
 #>  pandoc   3.8.3 @ /opt/hostedtoolcache/pandoc/3.8.3/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -1035,27 +1037,27 @@ sessioninfo::session_info(include_base = TRUE)
 #>  graphics    * 4.5.2   2025-10-31 [3] local
 #>  grDevices   * 4.5.2   2025-10-31 [3] local
 #>  htmltools     0.5.9   2025-12-04 [1] RSPM
-#>  knitr         1.50    2025-03-16 [1] RSPM
-#>  lifecycle     1.0.4   2023-11-07 [1] RSPM
+#>  knitr         1.51    2025-12-20 [1] RSPM
+#>  lifecycle     1.0.5   2026-01-08 [1] RSPM
 #>  magrittr    * 2.0.4   2025-09-12 [1] RSPM
 #>  methods     * 4.5.2   2025-10-31 [3] local
 #>  pillar        1.11.1  2025-09-17 [1] RSPM
 #>  pkgconfig     2.0.3   2019-09-22 [1] RSPM
-#>  purrr       * 1.2.0   2025-11-04 [1] RSPM
+#>  purrr       * 1.2.1   2026-01-09 [1] RSPM
 #>  R6            2.6.1   2025-02-15 [1] RSPM
-#>  rlang       * 1.1.6   2025-04-11 [1] RSPM
+#>  rlang       * 1.1.7   2026-01-09 [1] RSPM
 #>  rmarkdown     2.30    2025-09-28 [1] RSPM
 #>  sessioninfo   1.2.3   2025-02-05 [1] RSPM
 #>  stats       * 4.5.2   2025-10-31 [3] local
 #>  stringi       1.8.7   2025-03-27 [1] RSPM
 #>  stringr       1.6.0   2025-11-04 [1] RSPM
-#>  tibble        3.3.0   2025-06-08 [1] RSPM
+#>  tibble        3.3.1   2026-01-11 [1] RSPM
 #>  tidyselect    1.2.1   2024-03-11 [1] RSPM
 #>  tools         4.5.2   2025-10-31 [3] local
 #>  utils       * 4.5.2   2025-10-31 [3] local
 #>  vctrs         0.6.5   2023-12-01 [1] RSPM
 #>  withr         3.0.2   2024-10-28 [1] RSPM
-#>  xfun          0.54    2025-10-30 [1] RSPM
+#>  xfun          0.55    2025-12-16 [1] RSPM
 #>  yaml          2.3.12  2025-12-10 [1] RSPM
 #> 
 #>  [1] /home/runner/work/_temp/Library

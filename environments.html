@@ -135,7 +135,7 @@
 </tbody>
 </table></div>
 <p><strong>Q2.</strong> Create an environment as illustrated by this picture.</p>
-<div class="inline-figure"><img src="diagrams/environments/recursive-1.png" width="100%"></div>
+<div class="inline-figure"><img src="diagrams/environments/recursive-1.png" alt="" width="100%"></div>
 <p><strong>A2.</strong> Creating the environment illustrated in the picture:</p>
 <div class="sourceCode" id="cb192"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rlang.r-lib.org">rlang</a></span><span class="op">)</span></span>
@@ -143,17 +143,17 @@
 <span><span class="va">e</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rlang.r-lib.org/reference/env.html">env</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">e</span><span class="op">$</span><span class="va">loop</span> <span class="op">&lt;-</span> <span class="va">e</span></span>
 <span><span class="fu"><a href="https://rlang.r-lib.org/reference/env_print.html">env_print</a></span><span class="op">(</span><span class="va">e</span><span class="op">)</span></span>
-<span><span class="co">#&gt; &lt;environment: 0x5639ddad3bd0&gt;</span></span>
+<span><span class="co">#&gt; &lt;environment: 0x55f21ba672a8&gt;</span></span>
 <span><span class="co">#&gt; Parent: &lt;environment: global&gt;</span></span>
 <span><span class="co">#&gt; Bindings:</span></span>
 <span><span class="co">#&gt; • loop: &lt;env&gt;</span></span></code></pre></div>
 <p>The binding <code>loop</code> should have the same memory address as the environment <code>e</code>:</p>
 <div class="sourceCode" id="cb193"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">lobstr</span><span class="fu">::</span><span class="fu"><a href="https://lobstr.r-lib.org/reference/ref.html">ref</a></span><span class="op">(</span><span class="va">e</span><span class="op">$</span><span class="va">loop</span><span class="op">)</span></span>
-<span><span class="co">#&gt; █ [1:0x5639ddad3bd0] &lt;env&gt; </span></span>
-<span><span class="co">#&gt; └─loop = [1:0x5639ddad3bd0]</span></span></code></pre></div>
+<span><span class="co">#&gt; █ [1:0x55f21ba672a8] &lt;env&gt; </span></span>
+<span><span class="co">#&gt; └─loop = [1:0x55f21ba672a8]</span></span></code></pre></div>
 <p><strong>Q3.</strong> Create a pair of environments as illustrated by this picture.</p>
-<div class="inline-figure"><img src="diagrams/environments/recursive-2.png" width="100%"></div>
+<div class="inline-figure"><img src="diagrams/environments/recursive-2.png" alt="" width="100%"></div>
 <p><strong>A3.</strong> Creating the specified environment:</p>
 <div class="sourceCode" id="cb194"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">e1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rlang.r-lib.org/reference/env.html">env</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -164,9 +164,9 @@
 <span></span>
 <span><span class="co"># following should be the same</span></span>
 <span><span class="fu">lobstr</span><span class="fu">::</span><span class="fu"><a href="https://lobstr.r-lib.org/reference/obj_addr.html">obj_addrs</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="va">e1</span>, <span class="va">e2</span><span class="op">$</span><span class="va">deloop</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "0x5639db03e3a8" "0x5639db03e3a8"</span></span>
+<span><span class="co">#&gt; [1] "0x55f218fceb88" "0x55f218fceb88"</span></span>
 <span><span class="fu">lobstr</span><span class="fu">::</span><span class="fu"><a href="https://lobstr.r-lib.org/reference/obj_addr.html">obj_addrs</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="va">e2</span>, <span class="va">e1</span><span class="op">$</span><span class="va">loop</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "0x5639dafd5248" "0x5639dafd5248"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "0x55f218f2aeb8" "0x55f218f2aeb8"</span></span></code></pre></div>
 <p><strong>Q4.</strong> Explain why <code>e[[1]]</code> and <code>e[c("a", "b")]</code> don’t make sense when <code>e</code> is an environment.</p>
 <p><strong>A4.</strong> An environment is a non-linear data structure, and has no concept of ordered elements. Therefore, indexing it (e.g. <code>e[[1]]</code>) doesn’t make sense.</p>
 <p>Subsetting a list or a vector returns a subset of the underlying data structure. For example, subsetting a vector returns another vector. But it’s unclear what subsetting an environment (e.g. <code>e[c("a", "b")]</code>) should return because there is no data structure to contain its returns. It can’t be another environment since environments have reference semantics.</p>
@@ -216,7 +216,8 @@
 <span>  <span class="op">}</span></span>
 <span><span class="op">}</span></span>
 <span><span class="fu">rebind</span><span class="op">(</span><span class="st">"a"</span>, <span class="fl">10</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error: Can't find `a`</span></span>
+<span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! Can't find `a`</span></span>
 <span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fl">5</span></span>
 <span><span class="fu">rebind</span><span class="op">(</span><span class="st">"a"</span>, <span class="fl">10</span><span class="op">)</span></span>
 <span><span class="va">a</span></span>
@@ -256,7 +257,8 @@
 <span></span>
 <span><span class="co"># so function will produce an error instead of creating it for us</span></span>
 <span><span class="fu">rebind</span><span class="op">(</span><span class="st">"abc"</span>, <span class="fl">10</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error: Can't find `abc`</span></span>
+<span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! Can't find `abc`</span></span>
 <span></span>
 <span><span class="co"># but it will work as expected when the variable already exists</span></span>
 <span><span class="va">abc</span> <span class="op">&lt;-</span> <span class="fl">5</span></span>
@@ -344,17 +346,19 @@
 <p>Let’s try it out:</p>
 <div class="sourceCode" id="cb204"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">fget</span><span class="op">(</span><span class="st">"mean"</span>, inherits <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error: No function objects with matching name was found.</span></span>
+<span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! No function objects with matching name was found.</span></span>
 <span></span>
 <span><span class="fu">fget</span><span class="op">(</span><span class="st">"mean"</span>, inherits <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; function (x, ...) </span></span>
 <span><span class="co">#&gt; UseMethod("mean")</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x5639d98e9358&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x55f2187e5fa8&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:base&gt;</span></span>
 <span></span>
 <span><span class="va">mean</span> <span class="op">&lt;-</span> <span class="fl">5</span></span>
 <span><span class="fu">fget</span><span class="op">(</span><span class="st">"mean"</span>, inherits <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error: No function objects with matching name was found.</span></span>
+<span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! No function objects with matching name was found.</span></span>
 <span></span>
 <span><span class="va">mean</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="cn">NULL</span></span>
 <span><span class="fu">fget</span><span class="op">(</span><span class="st">"mean"</span>, inherits <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
@@ -408,7 +412,7 @@
 <span><span class="op">}</span></span>
 <span><span class="fu">f1</span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span></code></pre></div>
 <p><strong>A2.</strong> I don’t have access to the graphics software used to create diagrams in the book, so I am linking the diagram from the <a href="https://advanced-r-solutions.rbind.io/environments.html#special-environments">official solutions manual</a>, where you will also find a more detailed description for the figure:</p>
-<div class="inline-figure"><img src="https://raw.githubusercontent.com/Tazinho/Advanced-R-Solutions/main/images/environments/function_environments_corrected.png" width="100%"></div>
+<div class="inline-figure"><img src="https://raw.githubusercontent.com/Tazinho/Advanced-R-Solutions/main/images/environments/function_environments_corrected.png" alt="" width="100%"></div>
 <p><strong>Q3.</strong> Write an enhanced version of <code><a href="https://rdrr.io/r/utils/str.html">str()</a></code> that provides more information about functions. Show where the function was found and what environment it was defined in.</p>
 <p><strong>A3.</strong> To write the required function, we can first re-purpose the <code>fget()</code> function we wrote above to return the environment in which it was found and its enclosing environment:</p>
 <div class="sourceCode" id="cb208"><pre class="downlit sourceCode r">
@@ -517,7 +521,7 @@
 <span><span class="co">#&gt; {</span></span>
 <span><span class="co">#&gt;     parent.frame(n + 1)</span></span>
 <span><span class="co">#&gt; }</span></span>
-<span><span class="co">#&gt; &lt;bytecode: 0x5639d9ba69b8&gt;</span></span>
+<span><span class="co">#&gt; &lt;bytecode: 0x55f2170bcc60&gt;</span></span>
 <span><span class="co">#&gt; &lt;environment: namespace:rlang&gt;</span></span></code></pre></div>
 <p>Let’s try it out:</p>
 <ul>
@@ -565,7 +569,7 @@
 <span><span class="co">#&gt;  collate  C.UTF-8</span></span>
 <span><span class="co">#&gt;  ctype    C.UTF-8</span></span>
 <span><span class="co">#&gt;  tz       UTC</span></span>
-<span><span class="co">#&gt;  date     2025-12-15</span></span>
+<span><span class="co">#&gt;  date     2026-01-13</span></span>
 <span><span class="co">#&gt;  pandoc   3.8.3 @ /opt/hostedtoolcache/pandoc/3.8.3/x64/ (via rmarkdown)</span></span>
 <span><span class="co">#&gt;  quarto   NA</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -593,8 +597,8 @@
 <span><span class="co">#&gt;  htmltools     0.5.9   2025-12-04 [1] RSPM</span></span>
 <span><span class="co">#&gt;  jquerylib     0.1.4   2021-04-26 [1] RSPM</span></span>
 <span><span class="co">#&gt;  jsonlite      2.0.0   2025-03-27 [1] RSPM</span></span>
-<span><span class="co">#&gt;  knitr         1.50    2025-03-16 [1] RSPM</span></span>
-<span><span class="co">#&gt;  lifecycle     1.0.4   2023-11-07 [1] RSPM</span></span>
+<span><span class="co">#&gt;  knitr         1.51    2025-12-20 [1] RSPM</span></span>
+<span><span class="co">#&gt;  lifecycle     1.0.5   2026-01-08 [1] RSPM</span></span>
 <span><span class="co">#&gt;  lobstr        1.1.3   2025-11-14 [1] RSPM</span></span>
 <span><span class="co">#&gt;  magrittr    * 2.0.4   2025-09-12 [1] RSPM</span></span>
 <span><span class="co">#&gt;  memoise       2.0.1   2021-11-26 [1] RSPM</span></span>
@@ -602,20 +606,20 @@
 <span><span class="co">#&gt;  pillar        1.11.1  2025-09-17 [1] RSPM</span></span>
 <span><span class="co">#&gt;  pkgconfig     2.0.3   2019-09-22 [1] RSPM</span></span>
 <span><span class="co">#&gt;  R6            2.6.1   2025-02-15 [1] RSPM</span></span>
-<span><span class="co">#&gt;  rlang       * 1.1.6   2025-04-11 [1] RSPM</span></span>
+<span><span class="co">#&gt;  rlang       * 1.1.7   2026-01-09 [1] RSPM</span></span>
 <span><span class="co">#&gt;  rmarkdown     2.30    2025-09-28 [1] RSPM</span></span>
 <span><span class="co">#&gt;  sass          0.4.10  2025-04-11 [1] RSPM</span></span>
 <span><span class="co">#&gt;  sessioninfo   1.2.3   2025-02-05 [1] RSPM</span></span>
 <span><span class="co">#&gt;  stats       * 4.5.2   2025-10-31 [3] local</span></span>
 <span><span class="co">#&gt;  stringi       1.8.7   2025-03-27 [1] RSPM</span></span>
 <span><span class="co">#&gt;  stringr       1.6.0   2025-11-04 [1] RSPM</span></span>
-<span><span class="co">#&gt;  tibble        3.3.0   2025-06-08 [1] RSPM</span></span>
+<span><span class="co">#&gt;  tibble        3.3.1   2026-01-11 [1] RSPM</span></span>
 <span><span class="co">#&gt;  tidyselect    1.2.1   2024-03-11 [1] RSPM</span></span>
 <span><span class="co">#&gt;  tools         4.5.2   2025-10-31 [3] local</span></span>
 <span><span class="co">#&gt;  utils       * 4.5.2   2025-10-31 [3] local</span></span>
 <span><span class="co">#&gt;  vctrs         0.6.5   2023-12-01 [1] RSPM</span></span>
 <span><span class="co">#&gt;  withr         3.0.2   2024-10-28 [1] RSPM</span></span>
-<span><span class="co">#&gt;  xfun          0.54    2025-10-30 [1] RSPM</span></span>
+<span><span class="co">#&gt;  xfun          0.55    2025-12-16 [1] RSPM</span></span>
 <span><span class="co">#&gt;  xml2          1.5.1   2025-12-01 [1] RSPM</span></span>
 <span><span class="co">#&gt;  yaml          2.3.12  2025-12-10 [1] RSPM</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -657,7 +661,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2025-12-15.</p>
+    <p>"<strong>Advanced R Exercises</strong>" was written by <a class="text-light" href="https://sites.google.com/site/indrajeetspatilmorality/">Indrajeet Patil</a>. It was last built on 2026-01-13.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

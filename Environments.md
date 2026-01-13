@@ -34,7 +34,7 @@ library(rlang, warn.conflicts = FALSE)
 
 **Q2.** Create an environment as illustrated by this picture.
 
-<img src="diagrams/environments/recursive-1.png" width="100%" />
+<img src="diagrams/environments/recursive-1.png" alt="" width="100%" />
 
 **A2.** Creating the environment illustrated in the picture:
 
@@ -45,7 +45,7 @@ library(rlang)
 e <- env()
 e$loop <- e
 env_print(e)
-#> <environment: 0x5611ca3018c0>
+#> <environment: 0x55a30455eff8>
 #> Parent: <environment: global>
 #> Bindings:
 #> • loop: <env>
@@ -56,13 +56,13 @@ The binding `loop` should have the same memory address as the environment `e`:
 
 ``` r
 lobstr::ref(e$loop)
-#> █ [1:0x5611ca3018c0] <env> 
-#> └─loop = [1:0x5611ca3018c0]
+#> █ [1:0x55a30455eff8] <env> 
+#> └─loop = [1:0x55a30455eff8]
 ```
 
 **Q3.** Create a pair of environments as illustrated by this picture.
 
-<img src="diagrams/environments/recursive-2.png" width="100%" />
+<img src="diagrams/environments/recursive-2.png" alt="" width="100%" />
 
 **A3.** Creating the specified environment:
 
@@ -76,9 +76,9 @@ e2$deloop <- e1
 
 # following should be the same
 lobstr::obj_addrs(list(e1, e2$deloop))
-#> [1] "0x5611ccb0f790" "0x5611ccb0f790"
+#> [1] "0x55a30749fca8" "0x55a30749fca8"
 lobstr::obj_addrs(list(e2, e1$loop))
-#> [1] "0x5611ccb5c160" "0x5611ccb5c160"
+#> [1] "0x55a3074ee448" "0x55a3074ee448"
 ```
 
 **Q4.** Explain why `e[[1]]` and `e[c("a", "b")]` don't make sense when `e` is an environment.
@@ -148,7 +148,8 @@ rebind <- function(name, value, env = caller_env()) {
   }
 }
 rebind("a", 10)
-#> Error: Can't find `a`
+#> Error:
+#> ! Can't find `a`
 a <- 5
 rebind("a", 10)
 a
@@ -196,7 +197,8 @@ exists("abc")
 
 # so function will produce an error instead of creating it for us
 rebind("abc", 10)
-#> Error: Can't find `abc`
+#> Error:
+#> ! Can't find `abc`
 
 # but it will work as expected when the variable already exists
 abc <- 5
@@ -300,17 +302,19 @@ Let's try it out:
 
 ``` r
 fget("mean", inherits = FALSE)
-#> Error: No function objects with matching name was found.
+#> Error:
+#> ! No function objects with matching name was found.
 
 fget("mean", inherits = TRUE)
 #> function (x, ...) 
 #> UseMethod("mean")
-#> <bytecode: 0x5611c859e348>
+#> <bytecode: 0x55a30384dfa8>
 #> <environment: namespace:base>
 
 mean <- 5
 fget("mean", inherits = FALSE)
-#> Error: No function objects with matching name was found.
+#> Error:
+#> ! No function objects with matching name was found.
 
 mean <- function() NULL
 fget("mean", inherits = FALSE)
@@ -377,7 +381,7 @@ f1(1)
 
 **A2.** I don't have access to the graphics software used to create diagrams in the book, so I am linking the diagram from the [official solutions manual](https://advanced-r-solutions.rbind.io/environments.html#special-environments), where you will also find a more detailed description for the figure:
 
-<img src="https://raw.githubusercontent.com/Tazinho/Advanced-R-Solutions/main/images/environments/function_environments_corrected.png" width="100%" />
+<img src="https://raw.githubusercontent.com/Tazinho/Advanced-R-Solutions/main/images/environments/function_environments_corrected.png" alt="" width="100%" />
 
 **Q3.** Write an enhanced version of `str()` that provides more information about functions. Show where the function was found and what environment it was defined in.
 
@@ -512,7 +516,7 @@ rlang::caller_env
 #> {
 #>     parent.frame(n + 1)
 #> }
-#> <bytecode: 0x5611c885b9a8>
+#> <bytecode: 0x55a302124c60>
 #> <environment: namespace:rlang>
 ```
 
@@ -565,7 +569,7 @@ sessioninfo::session_info(include_base = TRUE)
 #>  collate  C.UTF-8
 #>  ctype    C.UTF-8
 #>  tz       UTC
-#>  date     2025-12-15
+#>  date     2026-01-13
 #>  pandoc   3.8.3 @ /opt/hostedtoolcache/pandoc/3.8.3/x64/ (via rmarkdown)
 #>  quarto   NA
 #> 
@@ -587,26 +591,26 @@ sessioninfo::session_info(include_base = TRUE)
 #>  graphics    * 4.5.2   2025-10-31 [3] local
 #>  grDevices   * 4.5.2   2025-10-31 [3] local
 #>  htmltools     0.5.9   2025-12-04 [1] RSPM
-#>  knitr         1.50    2025-03-16 [1] RSPM
-#>  lifecycle     1.0.4   2023-11-07 [1] RSPM
+#>  knitr         1.51    2025-12-20 [1] RSPM
+#>  lifecycle     1.0.5   2026-01-08 [1] RSPM
 #>  lobstr        1.1.3   2025-11-14 [1] RSPM
 #>  magrittr    * 2.0.4   2025-09-12 [1] RSPM
 #>  methods     * 4.5.2   2025-10-31 [3] local
 #>  pillar        1.11.1  2025-09-17 [1] RSPM
 #>  pkgconfig     2.0.3   2019-09-22 [1] RSPM
 #>  R6            2.6.1   2025-02-15 [1] RSPM
-#>  rlang       * 1.1.6   2025-04-11 [1] RSPM
+#>  rlang       * 1.1.7   2026-01-09 [1] RSPM
 #>  rmarkdown     2.30    2025-09-28 [1] RSPM
 #>  sessioninfo   1.2.3   2025-02-05 [1] RSPM
 #>  stats       * 4.5.2   2025-10-31 [3] local
 #>  stringi       1.8.7   2025-03-27 [1] RSPM
 #>  stringr       1.6.0   2025-11-04 [1] RSPM
-#>  tibble        3.3.0   2025-06-08 [1] RSPM
+#>  tibble        3.3.1   2026-01-11 [1] RSPM
 #>  tidyselect    1.2.1   2024-03-11 [1] RSPM
 #>  tools         4.5.2   2025-10-31 [3] local
 #>  utils       * 4.5.2   2025-10-31 [3] local
 #>  vctrs         0.6.5   2023-12-01 [1] RSPM
-#>  xfun          0.54    2025-10-30 [1] RSPM
+#>  xfun          0.55    2025-12-16 [1] RSPM
 #>  yaml          2.3.12  2025-12-10 [1] RSPM
 #> 
 #>  [1] /home/runner/work/_temp/Library
